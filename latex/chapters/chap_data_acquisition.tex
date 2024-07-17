@@ -82,8 +82,8 @@ important characteristics of the crystals are:
 
 \begin{table}
 \centering
-\caption{Characteristics of a few scintillation crystals.
-\label{tab:crystals}}
+\caption{Characteristics of a few scintillation crystals.}
+\label{tab:crystals}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
        & NaI(Tl) &    BGO      & LSO      & GSO \\
@@ -167,7 +167,7 @@ scintillation. One way is to use a single very large crystal and connect
 multiple PMT's to it. The other way is to combine small crystals in a
 large matrix.
 
-\subsubsection{Single crystal detector \label{sec:single_crystal}}
+\subsubsection{Single crystal detector} \label{sec:single_crystal}
 %------------------------------------
 This is the standard design for single photon detectors with NaI(Tl). One
 side of a single large crystal (e.g. 50 cm x 40 cm, 1 cm thick) is covered
@@ -281,7 +281,7 @@ detectors. However, single crystal PET systems and multi-crystal gamma cameras
 exist as well.
 
 
-\subsection{Resolution \label{sec:resolution}}
+\subsection{Resolution} \label{sec:resolution}
 %=================================
 The coordinates $(x, y, E, t)$ can only be measured with limited precision.
 They depend on the actual depth where the incoming photon was stopped, on
@@ -325,7 +325,7 @@ Energy resolution is about 10\% FWHM (so 14 keV for a 140 keV tracer) in
 NaI(Tl) cameras, about 20\% FWHM (about 130 keV at 511 keV) or worse in
 BGO PET-systems, and about 15\% FWHM in LSO and GSO PET-systems.
 
-\subsection{Storing the data \label{sec:storing_data}}
+\subsection{Storing the data} \label{sec:storing_data}
 %=================================
 To store the data, the information must be digitized. We do not want to lose
 information, so the round-off errors made during digitization should be small
@@ -510,7 +510,7 @@ two-dimensional image can be regarded as a set of line integrals of a
 three dimensional distribution. Such images are usually called {\em
 projections}.
 
-\subsection{Mechanical collimation in the gamma camera \label{sec:collimation}}
+\subsection{Mechanical collimation in the gamma camera} \label{sec:collimation}
 %====================================================
 Figure \ref{fig:lenscollimator} shows that the sensitivity obtained
 with a mechanical collimation is very poor compared to that obtained with a
@@ -528,7 +528,8 @@ selection by a parallel hole collimator}}
 \begin{figure}[tb]
 \centering
 \includegraphics[width=0.5\textwidth]{figs/fig_collimator_calc.pdf}
-\caption{\label{fig:collimator_calc} \emph{Parallel hole collimator.}}
+\caption{\emph{Parallel hole collimator.}}
+\label{fig:collimator_calc}
 \end{figure}
 
 Fig. \ref{fig:collimator_calc} shows the cross section of a parallel
@@ -681,8 +682,7 @@ thickness. Using thicker septa while keeping the resolution reduces
 the collimator sensitivity.
 
 
-\subsection{Electronic and mechanical collimation in the PET camera
-   \label{sec:petcollim}}
+\subsection{Electronic and mechanical collimation in the PET camera} \label{sec:petcollim}
 %===================================================================
 \subsubsection{Electronic collimation: coincidence detection}
 %------------------------------------
@@ -791,8 +791,8 @@ theoretical resolution of PET.
 
 \begin{table}
 \caption{Maximum and mean kinetic energy (k.e.), maximum and mean path length
-of the positron for the most common PET isotopes.
-\label{tab:positron_length}}
+of the positron for the most common PET isotopes.}
+\label{tab:positron_length}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
@@ -854,7 +854,7 @@ been designed and built that can measure the depth of interaction to
 reduce this loss of resolution.
 
 
-\subsubsection{Mechanical collimation: inter-plane septa \label{sec:septa}}
+\subsubsection{Mechanical collimation: inter-plane septa} \label{sec:septa}
 %------------------------------------
 In the previous section we have seen why a PET-camera does not need a
 collimator. We also know that the PET-camera can only measure photon pairs
@@ -1052,7 +1052,7 @@ reduce all unwanted events. Obviously, we need to leave some room for
 the patient.
 
 
-\subsubsection{2D and 3D PET \label{sec:2D3DPET}}
+\subsubsection{2D and 3D PET} \label{sec:2D3DPET}
 %------------------------------------
 In the previous paragraphs we have studied a single ring of PET
 detectors, and we have shown that shielding the detectors with septa
@@ -1127,7 +1127,7 @@ is no longer acceptable in 3D PET. Various scatter correction
 algorithms for 3D PET have been proposed in the literature, the one
 mostly used is described below (\ref{sec:petscatcor}).
 
-\section{Partial volume effect \label{sec:pv}}
+\section{Partial volume effect} \label{sec:pv}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[tb]
 \centering
@@ -1171,12 +1171,12 @@ maximum. The so-called {\em spill over} is the amount of apparent
 activity showing up outside the true object boundaries due to the
 blurring.
 
-\section{Compton scatter correction \label{sec:scatter}}
+\section{Compton scatter correction} \label{sec:scatter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Scatter in SPECT, evt meerdere energieen.
 % Pile-up
 %----
-\subsection{Gamma camera \label{sec:spectscatcor}}
+\subsection{Gamma camera} \label{sec:spectscatcor}
 %------------------------
 Compton scatter causes photons to be deviated from their original trajectory,
 and to propagate with reduced energy along a new path. Consequently, photons
@@ -1275,7 +1275,7 @@ amount of scattered photons accepted in window C1 is estimated as a fraction
 of the counts in windows C2 and C3.}}
 \end{figure}
 
-\subsection{PET camera \label{sec:petscatcor}}
+\subsection{PET camera} \label{sec:petscatcor}
 %----------------------
 Just like the gamma camera, the PET camera uses a primary energy
 window to reject photons with an energy that is clearly different from
@@ -1337,7 +1337,7 @@ of the detector pairs (see also fig. \ref{fig:pet_norm}). The scatter
 distribution is smooth, and its amplitude is significant.
 
 
-\section{Other corrections \label{sec:corrections}}
+\section{Other corrections} \label{sec:corrections}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Typische gamma camera
 % Typische PET camera
@@ -1515,7 +1515,7 @@ the corrected image will be the sum of the relative noise variances on the
 two Poisson variables (see appendix \ref{app:error} for estimating the error
 on a function of noisy variables).
 
-\subsubsection{PET camera \label{sec:normalization1}}
+\subsubsection{PET camera} \label{sec:normalization1}
 %-------------------------
 In PET-vocabulary, uniformity correction is often called {\em detector
 normalization}. The approach is similar as for the gamma camera, but
@@ -1676,7 +1676,7 @@ clinical gamma cameras and all PET systems provide dead time correction based
 on some dead time model. However, for very high count rates the models are no
 longer valid and the correction will not be accurate.
 
-\subsection{Random coincidence correction \label{sec:randoms}}
+\subsection{Random coincidence correction} \label{sec:randoms}
 %=========================================
 The random coincidence was defined in section \ref{sec:petcollim}: two
 non-related events may be detected simultaneously and be interpreted as a

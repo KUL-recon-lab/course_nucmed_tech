@@ -1,4 +1,4 @@
-\chapter{Image formation \label{ch:image_formation}}
+\chapter{Image formation}  \label{ch:image_formation}
 
 % Wat meten we: CT, PET, SPECT (attenuated projection)
 %--------------
@@ -299,7 +299,8 @@ distribution (fig \ref{fig:fouriertheorem}).
 \begin{figure}[tb]
 \centering
 \includegraphics[width=0.6\textwidth]{figs/fig_fouriertheorem.pdf}
-\caption{\label{fig:fouriertheorem} \emph{The Fourier theorem.}}
+\caption{\emph{The Fourier theorem.}}
+\label{fig:fouriertheorem} 
 \end{figure}
 
 The Fourier theorem directly leads to a reconstruction algorithm by simply
@@ -334,7 +335,7 @@ for each slice through the patient body}}
 \end{figure}
 
 
-\subsubsection{Backprojection \label{sec:backprojection}}
+\subsubsection{Backprojection} \label{sec:backprojection}
 %------------------------------------
 This Fourier-based reconstruction works, but usually an alternative expression
 is used, called ``filtered backprojection''. To explain it, we must first define
@@ -455,7 +456,7 @@ projection data are noisy, the reconstructed image will suffer from
 high frequency noise. To reduce that noise, filtered backprojection is
 always applied in combination with a smoothing (low pass) filter.
 
-\subsubsection{Attenuation correction \label{sec:attencor}}
+\subsubsection{Attenuation correction} \label{sec:attencor}
 %------------------------------------
 From a CT-measurement, we can directly compute a sinogram of line integrals.
 Starting from eq (\ref{eq:ct_proj}) we obtain:
@@ -501,7 +502,7 @@ came a bit late in fact, because by then, iterative reconstruction had replaced
 analytical reconstruction as the standard approach in SPECT. And in iterative
 reconstruction, non-uniform attenuation poses no particular problems.
 
-\subsection{Iterative Reconstruction \label{sec:iterrecon}}
+\subsection{Iterative Reconstruction} \label{sec:iterrecon}
 %====================================
 Filtered backprojection is elegant and fast, but not very
 flexible. The actual acquisition differs considerably from the ideal
@@ -534,7 +535,7 @@ measurement are stored in a digital way. However, the true tracer
 distribution is continuous, so the underlying assumption is that this
 distribution can be well described with a discrete representation.
 
-\subsubsection{Bayesian approach \label{sec:bayes}}
+\subsubsection{Bayesian approach} \label{sec:bayes}
 %--------------------------------
 Assume that somehow we have computed the reconstruction $\Lambda$ from the
 measurement $Q$. The likelihood that both the measurement and the
@@ -863,7 +864,7 @@ the ML-EM algorithm then becomes
 
 
 
-\subsection{Regularization \label{sec:regularization}}
+\subsection{Regularization} \label{sec:regularization}
 %==========================
 Since the levels of radioactivity must be low, the number of detected photons
 is also low. As a result, the uncertainty due to Poisson noise is important:
@@ -921,7 +922,7 @@ instead! Deleting high spatial frequencies results in poorer resolution (wider
 point spread function), so excessive smoothing is ill advised if you hope to
 see small structures in the image.
 
-\subsection{Convergence \label{sec:mlemconverge}}
+\subsection{Convergence} \label{sec:mlemconverge}
 %==========================
 \begin{figure}[tb]
 \centering
@@ -993,7 +994,7 @@ size, more iterations are needed for larger images. So if computer time is not
 a problem, it is recommended to apply really many iterations (several
 hundreds) and regularize with a prior or with post-smoothing.
 
-\subsection{OSEM \label{sec:osem}}
+\subsection{OSEM} \label{sec:osem}
 %==========================
 \begin{figure}[tb]
 \centering
@@ -1142,7 +1143,7 @@ only applies an approximate expression derived from it, because it is
 much faster and sufficiently accurate for most configurations. This
 algorithm (called FORE) is available on all commercial PET systems.
 
-\section{Time-of-flight PET \label{sec:TOF}}
+\section{Time-of-flight PET} \label{sec:TOF}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The speed of light is c = 30 cm/ns. Suppose that a point source is put
 exactly in the center between two PET detectors, which are connected
@@ -1318,7 +1319,7 @@ true, for imaging a point source, TOF-PET does not better than non-TOF
 PET.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Reconstruction with resolution modeling \label{sec:resol}}
+\section{Reconstruction with resolution modeling} \label{sec:resol}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In every MLEM iteration a projection and backprojection is
 executed. The projection $\sum_j c_{ij} \lambda_j$ simulates the
