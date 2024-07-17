@@ -134,7 +134,7 @@ planar images (e.g. thorax X-ray) already provide useful information.
 
 \begin{figure}[tb]
 \centering
-\includegraphics[width=\figbig]{figs/fig_renaldynimg.pdf}
+\includegraphics[width=0.9\textwidth]{figs/fig_renaldynimg.pdf}
 \caption{\label{fig:renaldyn} \emph{A few images from a
     renography. The numbers are the minutes after injection of the
     \textsuperscript{99m}Tc-labeled tracer. The left kidney (at the right in the
@@ -201,7 +201,7 @@ curve.
 
 \begin{figure}[tb]
 \centering
-\includegraphics[width=\figbig]{figs/fig_sinogram.pdf}
+\includegraphics[width=0.9\textwidth]{figs/fig_sinogram.pdf}
 \caption{\label{fig:sinogram} \emph{A sinogram is obtained by storing the 1D
 parallel projections as the rows in a matrix (or image). Left: the camera with
 a radioactive disk. Center: the corresponding sinogram. Right: the
@@ -326,7 +326,7 @@ projection lines simultaneously, no rotation is required.
 
 \begin{figure}[tb]
 \centering
-\includegraphics[width=0.8\figbig]{figs/fig_jnproj_sino.pdf}
+\includegraphics[width=0.72\textwidth]{figs/fig_jnproj_sino.pdf}
 \caption{\label{fig:jnproj_sino} \emph{Raw PET data, organized as projections
 (a) or as a sinogram (b). There are typically a few hundred projections, one
 for each projection angle, and several tens to hundred sinograms, one
@@ -830,7 +830,7 @@ shown is not the true maximum likelihood image, since iterations were stopped
 early as discussed below).
 \begin{figure}[tb]
 \centering
-\includegraphics[width=0.8\figbig]{figs/fig_jnfbpml.pdf}
+\includegraphics[width=0.72\textwidth]{figs/fig_jnfbpml.pdf}
 \caption{\label{fig:jnfbpml} \emph{Reconstruction obtained with filtered
 backprojection (top) and maximum-likelihood expectation-maximization (34
 iterations) (bottom). The streak artifacts in the filtered backprojection
@@ -925,7 +925,7 @@ see small structures in the image.
 %==========================
 \begin{figure}[tb]
 \centering
-\includegraphics[width=\figbig]{figs/fig_mlem_converge.pdf}
+\includegraphics[width=0.9\textwidth]{figs/fig_mlem_converge.pdf}
 \caption{\label{fig:mlem_converge} \emph{Simulation designed to challenge
 convergence of MLEM: the point between the hot regions convergence very slowly
 relative to the other point. The maximum converges slower than the width, so
@@ -970,7 +970,7 @@ mentioned that stopping iterations early has a noise-suppressing effect.
 %
 \begin{figure}[tb]
 \centering
-\includegraphics[width=\figbig]{figs/fig_mlem_1000iter.pdf}
+\includegraphics[width=0.9\textwidth]{figs/fig_mlem_1000iter.pdf}
 \caption{\label{fig:mlem_1000iter} \emph{Reconstruction of a cardiac PET scan
 with FBP, and with MLEM. The images obtained after 34, 118 and 1000 iterations
 are shown. The image at 1000 iterations is very noisy, but a bit of smoothing
@@ -997,7 +997,7 @@ hundreds) and regularize with a prior or with post-smoothing.
 %==========================
 \begin{figure}[tb]
 \centering
-\includegraphics[width=1.1\figbig]{figs/fig_osem.pdf}
+\includegraphics[width=\textwidth]{figs/fig_osem.pdf}
 \caption{\label{fig:osem} \emph{Illustration of OSEM: there are 160
     projections in the sinogram, for an acquisition over
     360\textdegree. OSEM used 40 subsets of 4 projections each, the first
@@ -1181,7 +1181,7 @@ for new systems (new in 2020).
 
 \begin{figure}[t]
 \centering
-  \includegraphics[width=0.8\figbig]{figs/fig_tofsino.pdf}
+  \includegraphics[width=0.72\textwidth]{figs/fig_tofsino.pdf}
   \vspace{-4mm}
   \caption{\label{fig:tofsino} \emph{A single plane from a clinical
   TOF-data set, sampled at 13 TOF-bins. The first bin corresponds to
@@ -1261,7 +1261,7 @@ image), because of the Fourier theorem.
 
 \begin{figure}[tb]
 \centering
-\includegraphics[width=\figbig]{figs/fig_TOF_matej.pdf}
+\includegraphics[width=0.9\textwidth]{figs/fig_TOF_matej.pdf}
 \caption{\label{fig:TOFmatej} \emph{CT and TOF-PET image, acquired on
     a PET/CT system with time-of-flight resolution of about 700
     ps. The TOF-PET image reveals a small lesion not seen on the
@@ -1334,7 +1334,7 @@ the width of the TOF-resolution.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\figbig]{figs/fig_resol_line_cone.pdf}
+\includegraphics[width=0.9\textwidth]{figs/fig_resol_line_cone.pdf}
 \caption{\label{fig:resolcone} \emph{In a simple projector/backprojector,
     the projection is modeled as a (weighted) line integral. To
     account for the position dependent collimator blurring, the line
@@ -1364,7 +1364,7 @@ the PET reconstruction.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\figbig]{figs/fig_resol_spectpet.pdf}
+\includegraphics[width=0.9\textwidth]{figs/fig_resol_spectpet.pdf}
 \caption{\label{fig:resolspectpet} \emph{Reconstructions with and
     without resolution modeling from a SPECT bone scan of a child and
     a brain PET scan. ``MIP'' denotes ``maximum intensity
@@ -1384,7 +1384,7 @@ modeling produced a sharper image, but that image is different from
 the true image that was used in the simulation. 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\figbig]{figs/fig_resol_petgibbs.pdf}
+\includegraphics[width=0.9\textwidth]{figs/fig_resol_petgibbs.pdf}
 \caption{\label{fig:resolpetgibbs} \emph{PET simulation without noise
     but with finite resolution modeling. MLEM with deblurring produced
     sharper images, but they are clearly different from the ground truth.}}
@@ -1420,7 +1420,7 @@ much that they will be lost in the noise.
 %
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\figbig]{figs/fig_resol_gibbs.pdf}
+\includegraphics[width=0.9\textwidth]{figs/fig_resol_gibbs.pdf}
 \caption{\label{fig:resolgibbs} \emph{Impulse responses (top) and
     their corresponding frequency spectra or MTF (bottom). From left
     to right: (1) the ideal PSF (a flat MTF), a Gaussian PSF (Gaussian
@@ -1462,7 +1462,7 @@ overshoots. These ripples are often called Gibbs artefacts.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\figbig]{figs/fig_resol_sinc.pdf}
+\includegraphics[width=0.9\textwidth]{figs/fig_resol_sinc.pdf}
 \caption{\label{fig:resolsinc} \emph{The convolution of a block-shaped
     signal with a sinc-shaped PSF produces a smoother version of the
     block with ripples, also called Gibbs artefacts, on top of it.}}
