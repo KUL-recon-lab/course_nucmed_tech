@@ -75,7 +75,7 @@ can be regarded as the sum of an infinite number of Dirac impulses
 $\delta(x,y)$, one at every location $(x,y)$:
 \begin{eqnarray}
 f(x,y) & = & (f \otimes \delta) (x,y)\\
-       & = & \intii du \intii dv \, f(u,v) \, \delta(x-u, y-v)
+       & = & \int_{-\infty}^{\infty} du \int_{-\infty}^{\infty} dv \, f(u,v) \, \delta(x-u, y-v)
 \end{eqnarray}
 
 \item
@@ -84,7 +84,7 @@ impulse, but a PSF. Therefore, replace each of the Dirac impulses in the image
 by the corresponding PSF, centered at the position of the Dirac impulse.
 \begin{eqnarray}
 g(x,y) & = & (f \otimes \mbox{PSF}) (x,y)\\
-       & = & \intii du \intii dv \, f(u,v) \, \mbox{PSF}(x-u, y-v)
+       & = & \int_{-\infty}^{\infty} du \int_{-\infty}^{\infty} dv \, f(u,v) \, \mbox{PSF}(x-u, y-v)
 \end{eqnarray}
 \end{enumerate}
 
@@ -131,8 +131,8 @@ similar for the other PSF. The convolution is then written as:
 %
 \begin{eqnarray}
 (F_1 \otimes F_2)(x) & = &
-  AB \intii \exp\left(- \frac{u^2}{a^2} - \frac{(x-u)^2}{b^2}\right) du\\
-& = & AB \intii \exp\left(- m u^2   + \frac{2xu}{b^2} - \frac{x^2}{b^2}\right)
+  AB \int_{-\infty}^{\infty} \exp\left(- \frac{u^2}{a^2} - \frac{(x-u)^2}{b^2}\right) du\\
+& = & AB \int_{-\infty}^{\infty} \exp\left(- m u^2   + \frac{2xu}{b^2} - \frac{x^2}{b^2}\right)
   du \\
 m & = & \left( \frac{1}{a^2} + \frac{1}{b^2}\right)
 \end{eqnarray}
@@ -143,12 +143,12 @@ form $(u + C)^2$, and rewriting everything as $(u + C)^2 - C^2$. The $C^2$ is
 not a function of $u$, so it can be put in front of the integral sign.
 % 
 \begin{eqnarray}
- (F_1 \otimes F_2)(x)  &  = & AB \intii \exp\left(- \left( \sqrt{m} u 
+ (F_1 \otimes F_2)(x)  &  = & AB \int_{-\infty}^{\infty} \exp\left(- \left( \sqrt{m} u 
          - \frac{x}{b^2 \sqrt{m}} \right)^2
        + \frac{x^2}{b^4 m}
        - \frac{x^2}{b^2}\right) du\\
  & = &  AB \exp\left(\frac{x^2}{b^4 m} - \frac{x^2}{b^2}\right)
-     \intii \exp\left(- \left( \sqrt{m} u 
+     \int_{-\infty}^{\infty} \exp\left(- \left( \sqrt{m} u 
          - \frac{x}{b^2 \sqrt{m}} \right)^2\right) du
 \end{eqnarray}
 The integrand is a Gaussian. The center is a function of $x$, but the standard
@@ -289,20 +289,20 @@ division is obtained by summing the relative variances.
 This appendix gives a proof of eq (\pref{fouriertheorem}) for any angle
 $\theta$. The projection $q(s,\theta)$ can be written as
 \begin{equation}
-  q(s, \theta) = \intii \lambda(s \cos\theta - r\sin\theta, 
+  q(s, \theta) = \int_{-\infty}^{\infty} \lambda(s \cos\theta - r\sin\theta, 
                                 s \sin\theta + r\cos\theta) dr
 \end{equation}
 The 1D Fourier transform of $q(s,\theta)$ along $s$ equals:
 \begin{eqnarray}
-  Q_1(\nu_s, \theta) &=& \intii q(s, \theta) e^{-j2\pi \nu_s s} ds 
+  Q_1(\nu_s, \theta) &=& \int_{-\infty}^{\infty} q(s, \theta) e^{-j2\pi \nu_s s} ds 
     \nonumber\\
-  &=& \intii\intii\lambda(s\cos\theta - r\sin\theta, 
+  &=& \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\lambda(s\cos\theta - r\sin\theta, 
                           s\sin\theta + r\cos\theta)e^{-j2\pi \nu_s s} dr ds
       \label{eq:Q1}
 \end{eqnarray}
 Now consider the 2D Fourier transform of $\lambda(x,y)$:
 \begin{equation}
-  \Lambda(\nu_x, \nu_y) = \intii \intii \lambda(x,y) 
+  \Lambda(\nu_x, \nu_y) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \lambda(x,y) 
        e^{-j2\pi (\nu_x x + \nu_y y)} dx dy
 \end{equation}
 We now switch to a rotated coordinate system by setting:
@@ -317,7 +317,7 @@ of the transformation equals unity, so $dx dy = dr ds$. Thus, we obtain:
 \begin{eqnarray}
 \lefteqn{\Lambda(\nu_s \cos\theta - \nu_r\sin\theta, 
       \nu_s\sin\theta + \nu_r\cos\theta)} \nonumber\\
-   &=& \intii \intii 
+   &=& \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} 
      \lambda(s \cos\theta - r\sin\theta, s\sin\theta + r\cos\theta) 
        e^{-j2\pi (\nu_s s + \nu_r r)} ds dr
 \end{eqnarray}
