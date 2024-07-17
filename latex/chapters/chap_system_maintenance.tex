@@ -3,7 +3,7 @@
 The photomultiplier tubes are analog devices, with characteristics
 that are influenced by the age and the history of the device. To
 produce correct images, some corrections are applied (section
-\pref{sec:corrections}). The most important are the linearity
+\ref{sec:corrections}). The most important are the linearity
 correction and the energy correction. In most cameras, there is an
 additional correction, called the uniformity correction, taking care
 of remaining second order deviations. It is important to keep on eye
@@ -148,7 +148,7 @@ problem in head 1 (left)}}
 \subsubsection{Pixel size}
 %--------------
 The $x$ and $y$ coordinates are computed according to equation
-(\pref{eq:gammaposition}), so they are affected by the PMT characteristics, the
+(\ref{eq:gammaposition}), so they are affected by the PMT characteristics, the
 amplification of the analogue signals prior to A/D conversion and possibly by
 the energy of the incoming photon, since that affects the PMT outputs.
 
@@ -271,7 +271,7 @@ gamma camera with poor linearity correction.}}
 \subsubsection{Dead time}
 %--------------
 The dead time measurements are based on some dead time model, for example
-equations (\pref{eq:dead1}) or (\ref{eq:dead2}). The effective dead time $\tau$
+equations (\ref{eq:dead1}) or (\ref{eq:dead2}). The effective dead time $\tau$
 is the parameter we want to obtain. Usually, the exact amount of radioactivity
 is unknown as well, so there are two unknown variables. Consequently, we need
 at least two measurements to determine them. Many procedures can be devised. A
@@ -279,7 +279,7 @@ straightforward one is to use a strong source with short half life, and
 acquire images while the activity decays. At low count rates the gamma camera
 is known to work well, so we assume that this part of the curve is correct
 (slope 1). Thus, we can compute what the camera should have measured, the true
-count rate, allowing us to draw the curve of figure \pref{fig:dead_time}. Then,
+count rate, allowing us to draw the curve of figure \ref{fig:dead_time}. Then,
 $\tau$ can be computed, e.g. by fitting the model to the rest of the curve.
 
 A faster method suggested in \cite{Aanbevelingen} is to prepare two sources
@@ -333,7 +333,7 @@ continuously moving with respect to the camera. In some systems the
 patient bed is translated, in other systems the camera is moved, but
 the potential problems are the same. During whole body imaging a
 single large planar image is acquired (see figure
-\pref{fig:planarwb}), which is as wide as the crystal (let us call
+\ref{fig:planarwb}), which is as wide as the crystal (let us call
 that the $x$-axis) but much longer (the $y$-axis). Consequently, the
 coordinates $(x_{\mbox{wb}}, y_{\mbox{wb}})$ in the large image are
 computed as
@@ -587,7 +587,7 @@ performance of the individual detectors.
 \subsection{Normalization}
 %==========
 Normalization is used to correct for non-uniformities in PET detector
-sensitivities (see section \pref{sec:normalization1}). The
+sensitivities (see section \ref{sec:normalization1}). The
 manufacturers provide software to compute and apply the sensitivity
 correction based on a scan of a particular phantom (e.g. a radioactive
 cylinder positioned in the center of the field of view). Current

@@ -215,14 +215,14 @@ possible, so that we can separate truly simultaneous events from events that
 happen to occur almost simultaneously.
 
 The scintillation has a finite duration, depending on the scintillator
-(see table \pref{tab:crystals}).  The scintillation duration is
+(see table \ref{tab:crystals}).  The scintillation duration is
 characterized by the the decay time $\tau$, assuming that the number
 of scintillation photons decreases as $\exp(- t/\tau)$. The decay
 times of the different scintillation crystals are in the range of 40
 to several 100 ns. This seems short, but since a photon travels about
 1 meter in only 3.3 ns, we want the time resolution to be in the order
 of a few ns (e.g. to suppress the random coincidence rate in PET, as
-will be explained in section \pref{sec:septa}). To assign such a
+will be explained in section \ref{sec:septa}). To assign such a
 precise time to a relatively slow event, the electronics typically
 computes the time at which a predefined fraction of the scintillation
 light has been collected (constant fraction discriminator). In current
@@ -246,7 +246,7 @@ proportional to the total output of the PMT coupled to the crystal. In
 such a design, the top of the crystal is usually a square of 3 to 5
 mm, and the crystal is a cm (140 keV) or a few cm (511 keV) thick.
 Consequently, the spatial resolution is about 4 mm, as in the single
-crystal case (see section \pref{sec:resolution}).
+crystal case (see section \ref{sec:resolution}).
 
 \begin{figure}[tb]
 \centering
@@ -335,7 +335,7 @@ must be preserved, we can directly store the four numbers in a list (list-mode
 acquisition). Obviously, this list may become very long. Often, we do not need
 all this information. The energy is usually simply used to decide whether we
 will accept or discard the photon, it does not need to be stored (this will be
-explained in section \pref{sec:scatter}). Similarly, we often want to
+explained in section \ref{sec:scatter}). Similarly, we often want to
 make a single image representing the situation in a certain time interval, so
 we only need a single two-dimensional image. To store this information
 efficiently, we prepare a zero two-dimensional matrix, an ``empty'' image, and
@@ -627,10 +627,10 @@ collimator must be a compromise between high sensitivity and low FWHM.
 
 The PSF is an important characteristic of the linear system, which allows us
 to predict how the system will react to any input. See appendix
-\pref{app:convolution} if you are not familiar with the concept of PSF and
+\ref{app:convolution} if you are not familiar with the concept of PSF and
 convolution integrals.
 
-In section \pref{sec:resolution} we have seen that the {\em intrinsic
+In section \ref{sec:resolution} we have seen that the {\em intrinsic
 resolution} of a typical scintillation detector has a FWHM of about 4 mm. Now,
 we have seen that the collimator contributes significantly to the FWHM, but in
 the derivation, we have ignored the intrinsic resolution.  Obviously, they
@@ -640,7 +640,7 @@ described as a PSF. To compute the overall probability distribution, the
 second PSF must be ``applied'' to every point of the first
 one. Mathematically, this means that the two PSFs must be convolved. If we
 make the reasonable assumption that the PSFs are Gaussian, convolution
-becomes very simple, as shown in appendix \pref{app:convol2gauss}: the result
+becomes very simple, as shown in appendix \ref{app:convol2gauss}: the result
 is again a Gaussian, and its variance equals the sum of variances of the
 contributing Gaussians.
 
@@ -668,7 +668,7 @@ relatively thin, and $a/T$ is small, resulting in high resolution but
 not so high sensitivity. High sensitivity collimators have a larger
 $a/T$, producing poorer resolution. High energy collimators are
 designed for isotopes emitting high energy photons, such as $^{131}$I
-(see table \pref{tab:rntisotopes}). They have thicker septa to
+(see table \ref{tab:rntisotopes}). They have thicker septa to
 minimize the number of photons penetrating them. To account for
 the septa thickness, equation (\ref{eq:collim:sens}) can be extended
 to
@@ -898,7 +898,7 @@ For these reasons, current systems use a time window of about 5 to 10
 ns. Recently, PET systems have been built with a time resolution
 better than 1 ns. With those systems, one can measure the difference
 in arrival time between the two photons and deduce some position
-information from it. This will be discussed in section \pref{sec:TOF}.
+information from it. This will be discussed in section \ref{sec:TOF}.
 
 Figure \ref{fig:pet_random_enzo} shows the difference between a true
 coincidence, which provides valuable information, and several other events
@@ -1107,7 +1107,7 @@ reconstruction.
 This has no effect on spatial resolution, since that is determined by
 the detector size. But the impact on sensitivity is very high. In fact,
 we have already computed all the sensitivities in section
-\pref{sec:septa}. Those expressions are still valid for 3D PET, if we
+\ref{sec:septa}. Those expressions are still valid for 3D PET, if we
 replace $d$ (the distance between the septa) with $Nd$, where $N$ is
 the number of neighboring detector rings. To see the improvement for
 3D mode, you have to compare to a concatenation of $N$ independent
@@ -1125,7 +1125,7 @@ important in 3D PET than in 2D PET. It turns out that scatter in
 particular poses problems: it was usually ignored in 2D PET, but this
 is no longer acceptable in 3D PET. Various scatter correction
 algorithms for 3D PET have been proposed in the literature, the one
-mostly used is described below (\pref{sec:petscatcor}).
+mostly used is described below (\ref{sec:petscatcor}).
 
 \section{Partial volume effect \label{sec:pv}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1324,7 +1324,7 @@ procedure can be iterated to refine the scatter estimate.
     projection data with their estimated scatter contribution. Data
     were acquired with a Biograph 16 PET/CT system (Siemens). The
     regular pattern in the raw data is due to sensitivity differences
-    between different detector pairs (see also fig \pref{fig:pet_norm}).}}
+    between different detector pairs (see also fig \ref{fig:pet_norm}).}}
 \end{figure}
 
 Figure \ref{fig:petscatter} gives an example of the original raw PET
@@ -1333,7 +1333,7 @@ something), together with the corresponding estimated scatter
 contribution (using the same gray scales). Maximum intensity
 projections of the CT and PET images are shown as well. The regular
 pattern in the raw PET data is due to position dependent sensitivities
-of the detector pairs (see also fig. \pref{fig:pet_norm}). The scatter
+of the detector pairs (see also fig. \ref{fig:pet_norm}). The scatter
 distribution is smooth, and its amplitude is significant.
 
 
@@ -1355,8 +1355,8 @@ the cost of the gamma camera, the price increases rapidly with the number of
 detector heads.
 
 Most PET systems have a multi-crystal design, they consist of multiple rings
-(fig \pref{fig:jnpet}) of small detectors. The detectors are usually arranged
-in modules (fig \pref{fig:multicrystal}) to reduce the number of PMT's.
+(fig \ref{fig:jnpet}) of small detectors. The detectors are usually arranged
+in modules (fig \ref{fig:multicrystal}) to reduce the number of PMT's.
 
 The performance of the PMT's is not ideal for our purposes, and in addition
 they show small individual differences in their characteristics. In current
@@ -1383,7 +1383,7 @@ non-linear response as a function of position. As a result, the image of a
 straight radioactive line would be distorted as in this drawing.}}
 \end{figure}
 
-In section \pref{sec:single_crystal} we have seen that the position of
+In section \ref{sec:single_crystal} we have seen that the position of
 a scintillation in a large crystal is computed as the first moment in
 $x$ and $y$ directions (the ``mass'' center of the PMT response). This
 would be exact if the PMT response would vary linearly with
@@ -1422,7 +1422,7 @@ compute $\Delta_x(x,y)$ and $\Delta_y(x,y)$.
 \subsection{Energy correction}
 %=================================
 Recall that the energy of the detected photon was computed as the sum of all
-PMT responses (section \pref{sec:single_crystal}). Of course, the sum is
+PMT responses (section \ref{sec:single_crystal}). Of course, the sum is
 dominated by the few PMTs close to the point of scintillation, the other PMT's
 receive very few or even no scintillation photons. Because the
 PMT-characteristics show small individual differences, the computed energy is
@@ -1499,7 +1499,7 @@ verify that with $H = 5 D$, where $D$ is the length of the crystal diagonal,
 the maximum error equals about 1.5\%.
 
 The number of photons detected in every pixel is Poisson distributed. Recall
-from section \pref{sec:statistics} that the standard deviation of a Poisson
+from section \ref{sec:statistics} that the standard deviation of a Poisson
 number is proportional to the square root of the expected value. So if we
 accept an error (a standard deviation) of 0.5\%, we need to continue the
 measurement until we have about 40000 counts per pixel. Computation of the
@@ -1512,7 +1512,7 @@ where $I$ is the acquired image.
 Consequently, if a uniformity correction is applied to a planar image, one
 Poisson variable is divided by another one. The relative noise variance in
 the corrected image will be the sum of the relative noise variances on the
-two Poisson variables (see appendix \pref{app:error} for estimating the error
+two Poisson variables (see appendix \ref{app:error} for estimating the error
 on a function of noisy variables).
 
 \subsubsection{PET camera \label{sec:normalization1}}
@@ -1587,7 +1587,7 @@ dead time of 700 ns, the axes are in counts per second. Measured count rate is
 
 \subsubsection{Front-end dead time}
 %------------------------------------
-Recall (section \pref{sec:single_crystal}) that the scintillation has
+Recall (section \ref{sec:single_crystal}) that the scintillation has
 a finite duration. E.g., the decay time of NaI(Tl) is 230 ns. The PMT
 response time adds a few ns. To have an accurate estimate of the
 energy, we need to integrate over a sufficient fraction of the
@@ -1678,14 +1678,14 @@ longer valid and the correction will not be accurate.
 
 \subsection{Random coincidence correction \label{sec:randoms}}
 %=========================================
-The random coincidence was defined in section \pref{sec:petcollim}: two
+The random coincidence was defined in section \ref{sec:petcollim}: two
 non-related events may be detected simultaneously and be interpreted as a
 coincidence. There is no way to discriminate between true and random
 coincidences. However, there is a ``simple'' way to measure a reliable
 estimate of the number of randoms along every projection line. This is done
 via the delayed window technique.
 
-The number of randoms (equation (\pref{eq:pet_randoms})) was obtained by
+The number of randoms (equation (\ref{eq:pet_randoms})) was obtained by
 squaring the probability to measure a single event during a time window
 $\tau$. In the delayed window technique, an additional time window is used,
 which is identical in length to the normal one but delayed over a short time
@@ -1699,5 +1699,5 @@ windowing we obtain {\em trues + randoms1}, and with the delayed method we
 obtain a value {\em randoms2}. The values {\em randoms1} and {\em randoms2}
 are not identical because of Poisson noise, but at least their expectations
 are identical. Subtraction will eliminate the bias, but will increase the
-variance on the estimated number of trues. See appendix \pref{app:error} for
+variance on the estimated number of trues. See appendix \ref{app:error} for
 some comments on error propagation.

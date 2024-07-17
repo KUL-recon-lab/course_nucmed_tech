@@ -57,7 +57,7 @@ radionuclide calibrator. Therefor, the sensitivity of the tomograph must be
 determined. This is done by acquiring an image of a uniform phantom filled
 with a know tracer concentration. From the reconstructed phantom image we can
 compute a calibration factor which converts ``reconstructed pixel values''
-into Bq/ml (see section \pref{sec:scalefactor}).
+into Bq/ml (see section \ref{sec:scalefactor}).
 
 A SUV of 1 means that the tracer concentration in the ROI is identical
 to the average tracer concentration in the entire patient body. A SUV
@@ -361,7 +361,7 @@ are obtained by solving the operational function.
 \paragraph{Deriving the operational function\\}
 %''''''''''''''''''''''''''''''''''''''''''''
 To deal with differential equations, the Laplace transform is a valuable
-tool. Appendix \pref{app:laplace} gives the definition and a short table of the
+tool. Appendix \ref{app:laplace} gives the definition and a short table of the
 features we need for the problem at hand. The strength of the Laplace
 transform is that derivatives and integrals with respect to $t$ become simple
 functions of $s$. After transformation, elimination of variables is easy. The
@@ -393,7 +393,7 @@ Applying this to (\ref{eq:c_I}) and rearranging a bit yields:
            \frac{K_1 k_3}{(k_2 + k_3)} \frac{c_P(s)}{s}
 \end{equation}
 Applying the inverse Laplace transform is now straightforward (see appendix
-\pref{app:laplace}) and produces the operational function:
+\ref{app:laplace}) and produces the operational function:
 \begin{equation}
   C_I(t) = \frac{K_1 k_2}{k_2 + k_3} \int_0^t C_P(u) e^{-(k_2 + k_3)(t - u)}du
          + \frac{K_1 k_3}{k_2 + k_3} \int_0^t C_P(u) du. \label{eq:3comp_ci}
@@ -566,7 +566,7 @@ minimal. It is always useful to plot both the measured and computed curves
 $C_I(t)$ to verify that the fit has succeeded, since there is small chance
 that the solution corresponds to an unacceptable local minimum. In that case,
 the process must be repeated, starting from a different set of rate constant
-values. The tissue curve in fig.\ \pref{fig:kinemodel} is the result of
+values. The tissue curve in fig.\ \ref{fig:kinemodel} is the result of
 non-linear regression. The fit was successful, since the curve is close to the
 measured values.
 
@@ -588,7 +588,7 @@ constants.
 \paragraph{Computing the trapping rate with linear regression\\}
 %'''''''''''''''''''''''''''''''''''''''''
 By introducing a small approximation, the computation of the glucose
-consumption can be simplified. Figure \pref{fig:kinemodel} shows a typical
+consumption can be simplified. Figure \ref{fig:kinemodel} shows a typical
 blood function. The last part of the curve is always very smooth. As a result,
 the first term of (\ref{eq:3comp_ci}) nicely follows the shape of
 $C_p(t)$. Stated otherwise, $C_p(u)$ changes very little over the range where

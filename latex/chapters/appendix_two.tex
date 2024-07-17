@@ -3,7 +3,7 @@
 \section{Expectation of Poisson data contributing to a measurement
 \label{app:expected_a_b}}
 %=========================
-Assume the configuration of figure \pref{fig:expected_a_b}: two radioactive
+Assume the configuration of figure \ref{fig:expected_a_b}: two radioactive
 sources contribute to a single measurement $N$. We know the a-priori expected
 values $\bar{a}$ and $\bar{b}$ for each of the sources, and we know the
 measured count $N = a + b$. The question is to compute the expected values of
@@ -111,7 +111,7 @@ denoted as $M$. $M$ is a GEM-algorithm if
 \end{equation}
 This means that we want $M$ to increase $h$. We can be more demanding and
 require that $M$ maximizes $h$; then we have a regular EM algorithm, such as
-the MLEM algorithm of section \pref{sec:iterrecon}.
+the MLEM algorithm of section \ref{sec:iterrecon}.
 
 Now, from equation (\ref{eq:appmlem_h2}) we can compute what happens with $L$
 if we apply a GEM-step to increase the value of $h$:
@@ -253,7 +253,7 @@ corresponding backprojection operator is obtained by applying the same
 blurring to the projections, followed by integration over
 $\theta$. The convolution of a Gaussian with itself is equivalent to
 multiplying its standard deviation with $\sqrt{2}$ (see appendix
-\pref{app:convol2gauss}). One finds
+\ref{app:convol2gauss}). One finds
 \begin{eqnarray}
   b(x,y) & = & \int_0^\pi \frac{1}{2\sqrt{\pi}\sigma}
                \exp(-\frac{x^2+y^2}{4 \sigma^2}) \;
@@ -261,4 +261,4 @@ multiplying its standard deviation with $\sqrt{2}$ (see appendix
  &=& \frac{1}{2\sqrt{\pi}\sigma \sqrt{x^2 + y^2}}
                \exp(-\frac{x^2+y^2}{4 \sigma^2}),
 \end{eqnarray}
-which is equivalent to equation (\pref{eq:TOFpsf}).
+which is equivalent to equation (\ref{eq:TOFpsf}).

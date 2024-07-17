@@ -52,7 +52,7 @@ $s = b$. A known amount of photons $t_0$ is emitted in $a$ towards the
 detector element at $b$. Only $t(b)$ photons arrive, the others have been
 eliminated by attenuation. If $\mu(s)$ is the linear attenuation coefficient
 in the body of the patient at position $s$, we have (see also eq
-(\pref{jn:spectatten}))
+(\ref{jn:spectatten}))
 \begin{equation}
   t(b) = t_0 e^{- \int_a^b \mu(s) ds}. \label{eq:ct_proj}
 \end{equation}
@@ -291,7 +291,7 @@ Formulated for any angle $\theta$ this becomes:
   \label{fouriertheorem}
 \end{equation}
 A more rigorous proof for any angle $\theta$ is given in appendix
-\pref{app:cs}.  In words: the 1-D Fourier transform of the projection
+\ref{app:cs}.  In words: the 1-D Fourier transform of the projection
 acquired for angle $\theta$ is identical to a central profile along
 the same angle through the 2-D Fourier transform of the original
 distribution (fig \ref{fig:fouriertheorem}).
@@ -384,7 +384,7 @@ except in the center where it equals $A$, we find:
  b(x,y) & = & (\mbox{backproj}(\mbox{proj}(f))(x,y) \; = \;
   \frac{A}{\sqrt{x^2 + y^2}}.
 \end{eqnarray}
-A more rigorous derivation is given in appendix \pref{app:bprojproj}.
+A more rigorous derivation is given in appendix \ref{app:bprojproj}.
 
 Projection followed by backprojection is a linear operation. In the
 idealized case considered here, it is also a shift invariant
@@ -424,13 +424,13 @@ domain:
 \end{equation}
 where $\otimes$ denotes convolution. This convolution filter is
 obtained by taking the inverse Fourier transform of the ramp filter,
-which is done in appendix \pref{app:ramp}. The ramp filter and the
+which is done in appendix \ref{app:ramp}. The ramp filter and the
 corresponding convolution mask are shown in figure
 \ref{fig:rampfilter}.
 
 One can regard the ramp filter as a high pass filter which is designed to undo
 the blurring caused by backprojecting the projection, where the blurring mask
-is the point spread function computed in section \pref{sec:backprojection}.
+is the point spread function computed in section \ref{sec:backprojection}.
 
 Mathematically, filtered backprojection is identical to Fourier-based
 reconstruction, so the same conditions hold: e.g. we need projections over 180
@@ -458,7 +458,7 @@ always applied in combination with a smoothing (low pass) filter.
 \subsubsection{Attenuation correction \label{sec:attencor}}
 %------------------------------------
 From a CT-measurement, we can directly compute a sinogram of line integrals.
-Starting from eq (\pref{eq:ct_proj}) we obtain:
+Starting from eq (\ref{eq:ct_proj}) we obtain:
 \begin{equation}
   \ln \frac{t_0}{t(b)} = \int_a^b \mu(s) ds. \label{eq:attencor}
 \end{equation}
@@ -483,9 +483,9 @@ patient is:
 \frac{N(d)}{N_0} = e^{-\int_a^d \mu(x) dx} \label{eq:ct_proj2}.
 \end{equation}
 This is identical to the attenuation-factor in the PET-projection, equation
-(\pref{eq:pet_proj}). So we can correct for attenuation by multiplying the
+(\ref{eq:pet_proj}). So we can correct for attenuation by multiplying the
 emission measurement $q(d)$ with the correction factor $N_0 / N(d)$.
-For SPECT (equation (\pref{eq:spect_proj})), this is not possible.
+For SPECT (equation (\ref{eq:spect_proj})), this is not possible.
 
 In many cases, we can assume that attenuation is approximately constant (with
 known attenuation coefficient $\mu$) within the body contour. Often, we can
@@ -580,7 +580,7 @@ SPECT camera, when the true tracer distribution is $\Lambda$?
 
 We start by computing what we would expect to measure. We have already
 done that, it is the attenuated projection from equations
-(\pref{eq:spect_proj}) and (\ref{eq:pet_proj}). However, we want a
+(\ref{eq:spect_proj}) and (\ref{eq:pet_proj}). However, we want a
 discrete version here:
 \begin{equation}
   r_i = \sum_{j=1,J} c_{ij} \lambda_j, \;\; i = 1,I.  \label{jn:mlproj}
@@ -604,7 +604,7 @@ for SPECT and PET.
 We now have for every detector two values: the expected value $r_i$ and the
 measured value $q_i$. Since we assume that the data are samples from a Poisson
 distribution, we can compute the likelihood of measuring $q_i$, if $r_i$
-photons were expected (see eq. (\pref{jn:Poisson})):
+photons were expected (see eq. (\ref{jn:Poisson})):
 \begin{equation}
   p(q_i | r_i) = \frac{e^{-r_i} r_i^{q_i}}{q_i!}.
 \end{equation}
@@ -661,7 +661,7 @@ A very nice and simple algorithm with guaranteed convergence is the {\em
 expectation- maximization (EM)} algorithm.  Although the resulting algorithm
 is simple, the underlying theory is not. In the following we simply state that
 convergence is proved and only show what the EM algorithm does. The interested
-reader is referred to appendix \pref{app:em} for some notes on convergence.
+reader is referred to appendix \ref{app:em} for some notes on convergence.
 
 \paragraph{Expected value of Poisson variables, given a single measurement
  \label{sec:expect_a_b}\\}
@@ -691,7 +691,7 @@ from vial 2. But then the detector should have measured $\bar{a} + \bar{b}$
 photons. In general, $N \neq \bar{a} + \bar{b}$ because of Poisson noise. So
 the measurement $N$ supplies additional information, which we must use to
 improve our expectations about $a$ and $b$. The answer is computed in appendix
-\pref{app:expected_a_b}. The expected value of $a$, given $N$ is:
+\ref{app:expected_a_b}. The expected value of $a$, given $N$ is:
 \begin{equation}
   E(a | a + b = N) = \bar{a} \frac{N}{\bar{a} + \bar{b}}, \label{eq:expect_a_b}
 \end{equation}
@@ -751,7 +751,7 @@ that the unknown $x_{ij}$ values have been replaced by their expected values
 $n_{ij}$. We would expect that $n_{ij}$ equals $c_{ij}
 \lambda_j^{old}$. However, we also know that the sum of all $c_{ij}
 \lambda_j^{old}$ equals the number of measured photons $q_i$. This situation
-is identical to the problem studied in section \pref{sec:expect_a_b}, and 
+is identical to the problem studied in section \ref{sec:expect_a_b}, and 
 equation (\ref{eq:jnestep2}) is the straightforward extension of equation
 (\ref{eq:expect_a_b}) for multiple sources.
 
@@ -790,7 +790,7 @@ operation is
   \mbox{backprojection of $f$ equals: } b_j = \sum_i c_{ij} f_i.
 \end{equation}
 We have seen the continuous version of the backprojection in
-(\pref{eq:jnbackproj}). The digital version clearly shows that
+(\ref{eq:jnbackproj}). The digital version clearly shows that
 backprojection is the transpose (or the adjoint) of projection
 \footnote{The adjoint of a matrix is its conjugate transpose. Because
   the projection coefficients are real values, the adjoint of the
@@ -815,7 +815,7 @@ non-negative too, since all factors are non-negative. This is in most
 applications a desirable feature, since the amount of radioactivity
 cannot be negative.
 
-Comparing with (\pref{eq:jnmlgrad}) shows that the ML-algorithm is really a
+Comparing with (\ref{eq:jnmlgrad}) shows that the ML-algorithm is really a
 gradient ascent method. It can be rewritten as
 \begin{equation}
  \lambda_j^{\mbox{new}} = \lambda_j 
@@ -840,14 +840,14 @@ noise).}}
 
 \subsection{Compton scatter, random coincidences}
 %================================================
-As explained in section \pref{sec:randoms}, an estimate of the randoms
+As explained in section \ref{sec:randoms}, an estimate of the randoms
 contribution to the PET sinogram can be obtained, e.g. with the
 delayed window technique. Similarly, various methods exist to estimate
-the scatter contribution in SPECT (section \pref{sec:spectscatcor})
-and PET (section \pref{sec:petscatcor}). If an estimate of such an
+the scatter contribution in SPECT (section \ref{sec:spectscatcor})
+and PET (section \ref{sec:petscatcor}). If an estimate of such an
 additive contribution to the sinogram is available, it can be
 incorporated in the ML-EM algorithm. The forward acquisition model
-of (\pref{jn:mlproj}) is then extended as 
+of (\ref{jn:mlproj}) is then extended as 
 \begin{equation}
   r_i = \sum_{j=1,J} c_{ij} \lambda_j + s_i, \;\; i = 1 \ldots I,
   \label{jn:mlprojscat}
@@ -908,7 +908,7 @@ faster than high ones, so stopping early has an effect similar to low-pass
 filtering.
 
 Finally, one can go back to the basics, and in particular to the
-Bayesian expression (\pref{eq:jnpost}). Instead of ignoring the prior,
+Bayesian expression (\ref{eq:jnpost}). Instead of ignoring the prior,
 one can try and define some prior probability function that encourages
 smooth solutions. This leads to maximum-a-posteriori (MAP)
 algorithm. The algorithms can be very powerful, but they also have
@@ -1070,8 +1070,8 @@ has to be treated as a fully three-dimensional one. There are many
 different geometries of mechanical collimators, and some of these
 acquire along lines that cannot be grouped in parallel sets. Examples
 are the cone beam and pinhole collimators in SPECT (fig
-\pref{fig:collimators}). Another example is 3D PET (section
-\pref{sec:2D3DPET}). Three approaches to fully 3D reconstruction are
+\ref{fig:collimators}). Another example is 3D PET (section
+\ref{sec:2D3DPET}). Three approaches to fully 3D reconstruction are
 discussed below.
 
 Note that the terminology may create some confusion about the
@@ -1109,7 +1109,7 @@ backprojection.
 \subsubsection{ML-EM reconstruction}
 %-----------------------------------
 ML-EM can be directly applied to the 3D data set: the formulation is very
-general, the coefficients $c_{ij}$ in (\pref{eq:jnmlem}) can be directly used
+general, the coefficients $c_{ij}$ in (\ref{eq:jnmlem}) can be directly used
 to describe fully 3D projection lines.
 
 In every iteration, we have to compute a projection and a backprojection along
@@ -1169,11 +1169,11 @@ than offset by the loss due to the decreased detection
 sensitivity. For that reason, TOF was abandoned, and nearly all
 commercial PET scanners were built using BGO, which has a very high
 stopping power but a long scintillation time (see table
-\pref{tab:crystals}).
+\ref{tab:crystals}).
 
 More recently, new scintillation crystals have been found, which
 combine high stopping power with fast scintillation decay (table
-\pref{tab:crystals}). In current scanners, LSO (or LYSO) is mostly
+\ref{tab:crystals}). In current scanners, LSO (or LYSO) is mostly
 used. And since the eighties, the electronics have become faster as
 well. The current commercial TOF-PET systems have a TOF resolution
 ranging from around 500 ps (7.5 cm) for older systems to around 200 ps
@@ -1208,7 +1208,7 @@ a 1D Gaussian blurring, as illustrated in fig \ref{fig:TOFproj}.
   A) can be considered as a 1D smoothing along the projection
   angle. Right: the TOF-PET backprojection of TOF-PET projection is
   equivalent to a 2D blurring filter. The blurring is much less than
-  in the non-TOF case (fig \pref{fig:backproj}).}}
+  in the non-TOF case (fig \ref{fig:backproj}).}}
 \end{figure}
 
 
@@ -1219,7 +1219,7 @@ projection can be written as:
   q_i = \sum_j c_{ij} \lambda_j,
 \end{equation}
 which is the same expression as for non-TOF-PET and SPECT
-(eq. \pref{jn:mlproj}), but of course, the elements $c_{ij}$ of the
+(eq. \ref{jn:mlproj}), but of course, the elements $c_{ij}$ of the
 system matrix are different. The corresponding backprojection is then
 given by
 \begin{equation}
@@ -1240,12 +1240,12 @@ resolution, and Gauss($r,s$) is a Gaussian with standard deviation
 $s$, evaluated in $r$. The standard deviation in (\ref{eq:TOFpsf}) is
 $\sqrt{2}\sigma$ and not simply $\sigma$, because the blurring has
 been applied twice, once during projection and once during
-backprojection. See appendix \pref{app:bprojproj} for a more
+backprojection. See appendix \ref{app:bprojproj} for a more
 mathematical derivation.
 
 For very large $\sigma$, this reduces to $b(r) = 1 / |r|$, which is
 the result for backprojection in non-TOF PET, obtained just after eq
-(\pref{eq:bprojvalue}). The projection and backprojection operators
+(\ref{eq:bprojvalue}). The projection and backprojection operators
 are illustrated in fig \ref{fig:TOFproj}.
 
 Also for TOF-PET, filtered backprojection algorithms can be
@@ -1329,7 +1329,7 @@ image from the acquired tomographic data. In SPECT, the system matrix
 elements $c_{ij}$ should account for the position dependent
 attenuation to ensure that MLEM produces quantitative images. In PET,
 the elements $c_{ij}$ should model the attenuation and detector
-sensitivities (see equation \pref{eq:petnorm}), and for TOF-PET, also
+sensitivities (see equation \ref{eq:petnorm}), and for TOF-PET, also
 the width of the TOF-resolution.
 
 \begin{figure}[htb]
@@ -1340,7 +1340,7 @@ the width of the TOF-resolution.
     account for the position dependent collimator blurring, the line
     integral can be replaced by a weighted integral over a cone.}}
 \end{figure}
-In section \pref{sec:collimation}, we have seen that gamma cameras
+In section \ref{sec:collimation}, we have seen that gamma cameras
 suffer from position dependent collimator blurring. As illustrated in
 figure \ref{fig:resolcone}, this can be modeled by computing the
 projection not as a line integral, but as the integral over a cone,

@@ -9,14 +9,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 To accurately reconstruct images from emission sinograms, information about
 the attenuation is needed. Recall that more information is needed for SPECT
-than for PET (section \pref{sec:attencor}). For PET, the
+than for PET (section \ref{sec:attencor}). For PET, the
 sinograms can be precorrected for attenuation and then be reconstructed with
 FBP. For SPECT, there is no simple attenuation precorrection.
 
 If reconstruction is done with MLEM, precorrection is not recommended since it
 destroys the Poisson nature of the data. It is better to include the
 attenuation factors in the coefficients $c_{ij}$ in equation
-(\pref{eq:jnmlem}). Remember that MLEM deals with attenuation by simulating it,
+(\ref{eq:jnmlem}). Remember that MLEM deals with attenuation by simulating it,
 not by inverting it: there is no explicit attenuation {\em correction} in
 MLEM. The MLEM-algorithm simulates the effect of attenuation during
 projection, and will iterate until the computed projections are (nearly) equal
@@ -83,7 +83,7 @@ transmission projections of the same patient.}}
 \end{figure}
 
 For every projection line, we also need to know the number of photons
-emitted by the source (see eq. (\pref{eq:attencor}) and
+emitted by the source (see eq. (\ref{eq:attencor}) and
 (\ref{eq:ct_proj2})). These values are measured during a blank
 scan. The blank scan is identical to the transmission scan, except
 that there is nothing in the field of view. Blank scans can be
@@ -116,7 +116,7 @@ difference, the MLEM algorithm cannot be applied directly, so several new
 ones have been presented in recent literature. Similarly as in the emission
 case, one can use a non-trivial prior distribution for the reconstruction
 images. In that case, the reconstruction is called a maximum-a-posteriori
-algorithm or MAP-algorithm (see section \pref{sec:bayes}).
+algorithm or MAP-algorithm (see section \ref{sec:bayes}).
 
 The prior $p(\Lambda)$ is the probability we assign to the image $\Lambda$,
 independently of any measurement. To suppress the noise, the prior probability
@@ -139,7 +139,7 @@ Figure \ref{fig:pettranskort} shows the reconstructions of a 1 min
 transmission scan obtained with the same three algorithms. In this short scan,
 the noise is prominent. As a result, streak artifacts show up in the filtered
 backprojection image. The ML-image produces non-correlated noise with high
-amplitude. As argued in section \pref{sec:regularization}, this can be expected,
+amplitude. As argued in section \ref{sec:regularization}, this can be expected,
 since the true number of photons attenuated during the experiment in every
 pixel is subject to statistical noise. And if that number is small, the
 relative noise amplitude is large. The MAP-reconstruction is much smoother,
@@ -373,7 +373,7 @@ matter is currently being investigated, no standard solution exists.
 A related problem is that of metal artifacts. Because the attenuation
 of metal prostheses or dental fillings is extremely high at 70 keV,
 such objects can attenuate almost all photons. The number of acquired
-photons is in the denominator of equation (\pref{eq:attencor}), so the
+photons is in the denominator of equation (\ref{eq:attencor}), so the
 CT-reconstruction gets into problems when the number of acquired
 photons goes to zero. This numerical instability can produce artifacts
 in the CT-reconstruction, which will propagate into the PET image via
