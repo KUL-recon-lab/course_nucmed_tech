@@ -18,41 +18,34 @@
 %   - biological half life
 %   - typical injected dosis in SIRT, Lu-177d dotatate, Lu-177 PSMA therapy
 
-%#####################
-% use latex en dvipdfm
-%#####################
 \documentclass[11pt,oneside]{book}
-\usepackage{a4wide}
-%\usepackage{epsf}
-%\input ./epsf/epsf.tex
+\usepackage[T1]{fontenc}
+\usepackage[a4paper]{geometry}
 \usepackage{cite}
 \usepackage[usenames]{color}
 \usepackage{graphicx}
 \usepackage{amsmath}
-%----------------------------
-% hyperlinks for xdvi or pdf! (seems you can't have both)
-% use latex en dvipdfm
-%----------------------------
-%% \usepackage[dvipdfm,colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue,
-%%             anchorcolor=blue,
-%%             pdftitle={Nuclear Medicine Technology and Techniques},
-%%             pdfauthor={Johan Nuyts},pdfstartview=FitH]{hyperref}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue,
             anchorcolor=blue,
             pdftitle={Nuclear Medicine Technology and Techniques},
-            pdfauthor={Johan Nuyts},pdfstartview=FitH]{hyperref}
-
-%\usepackage[hypertex,colorlinks=true]{hyperref} 
-
+            pdfauthor={Johan Nuyts and Georg Schramm},pdfstartview=FitH]{hyperref}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
 
 %------------------------------------
+% font related packages
 \renewcommand{\sfdefault}{phv}
 \renewcommand{\rmdefault}{ptm}
 \renewcommand{\ttdefault}{pcr}
 % enable Times now - so that all class options can see
 % the correct font families
 \normalfont\selectfont
+
 %------------------------------------
+
+
 \definecolor{MyRed}{rgb}{0.5,0.0,0.0}
 \definecolor{MyBlue}{rgb}{0.0,0.0,0.6}
 \newcommand{\Red}{\color{MyRed}}
@@ -64,23 +57,15 @@
 
 
 \setcounter{secnumdepth}{3}
+
 \title{Nuclear Medicine Technology and Techniques}
-\author{Johan Nuyts\\[3mm]
-        Nuclear Medicine, K.U.Leuven\\
-                U.Z. Gasthuisberg, Herestraat 49\\
-                B3000 Leuven\\
-                tel: 016/34.37.15\\
-                e-mail: Johan.Nuyts@uz.kuleuven.be}
-\date{September, 2023}
+\author{Johan Nuyts and Georg Schramm\\[3mm]
+        Department of Imaging and Pathology \\
+        Division of Nuclear Medicine \\
+        KU Leuven}
+\date{\today}
 \newcommand{\ol}[1]{\overline{#1}}
 \newcommand{\E}[1]{E\left[{#1}\right]}
-
-%\addtolength{\textwidth}{3cm}
-%\addtolength{\oddsidemargin}{-1.5cm}
-%\addtolength{\evensidemargin}{-1.5cm}
-% PostScript figures are resized (and framed if wanted).
-%\newcommand{\figbox}[2]{\resizebox{#1}{!}{\includegraphics{#2}}}
-%\newcommand{\figbox}[2]{\resizebox{#1}{!}{\epsfbox{#2}}}
 
 \newcommand{\intii}{\int_{-\infty}^{\infty}}
 \newcommand{\degrees}{$^{\circ}$}
