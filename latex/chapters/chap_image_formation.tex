@@ -193,7 +193,7 @@ of view. A two-dimensional image that uses $d$ as the column coordinate and
 $\theta$ as the row coordinate is called a {\em sinogram}. Figure
 \ref{fig:sinogram} shows that the name is well chosen: the sinogram of point
 source is zero everywhere except on a sinusoidal curve. The sinogram in the
-figure is for 180$^{\circ}$. A sinogram for 360$^{\circ}$\ shows a full period of
+figure is for 180\textdegree. A sinogram for 360\textdegree\ shows a full period of
 the sinusoidal curve. It is easy to show that, using the conventions of figure
 \ref{fig:sinogram}, $s(x,y) = s_x + s_y = x \cos \theta + y \sin \theta$, so
 the non-zero projections in the sinogram are indeed following a sinusoidal
@@ -316,7 +316,7 @@ tomography. They can be organized either as projections or as
 sinograms. There are typically in the order of 100 (SPECT) or a few hundreds
 (PET) of projection angles. The figure shows 9 of them. During a clinical
 study, the gamma camera automatically rotates around the patient to acquire
-projections over 180$^{\circ}$ or 360$^{\circ}$. Because the spatial resolution
+projections over 180\textdegree or 360\textdegree. Because the spatial resolution
 deteriorates rapidly with distance to the collimator, the gamma camera not
 only rotates, it also moves radially as close as possible to the patient to
 optimize the resolution.
@@ -1000,9 +1000,9 @@ hundreds) and regularize with a prior or with post-smoothing.
 \includegraphics[width=1.1\figbig]{figs/fig_osem.pdf}
 \caption{\label{fig:osem} \emph{Illustration of OSEM: there are 160
     projections in the sinogram, for an acquisition over
-    360$^{\circ}$. OSEM used 40 subsets of 4 projections each, the first
-    subset has projections at 0$^{\circ}$, 90$^{\circ}$, 180$^{\circ}$ and
-    270$^{\circ}$. The second subset starts at 45$^{\circ}$ and so on. One
+    360\textdegree. OSEM used 40 subsets of 4 projections each, the first
+    subset has projections at 0\textdegree, 90\textdegree, 180\textdegree and
+    270\textdegree. The second subset starts at 45\textdegree and so on. One
     OSEM iteration has 40 subiterations. The top row shows the first
     few and the last subiteration of OSEM. The bottom row shows the
     corresponding MLEM-iterations, where all projections are used for
@@ -1023,9 +1023,9 @@ basic idea is to use only a part of the projections in every
 ML-iteration. This is illustrated in fig \ref{fig:osem}. In this
 example, there are 160 projections, which are divided in 40 subsets of
 4 projections per subset. The first subset contains the projections
-acquired at 0$^{\circ}$, 90$^{\circ}$, 180$^{\circ}$ and 270$^{\circ}$. The
-second subset has the projections at 45$^{\circ}$, 135$^{\circ}$,
-225$^{\circ}$ and 315$^{\circ}$ and so on. One OSEM iteration consists of
+acquired at 0\textdegree, 90\textdegree, 180\textdegree and 270\textdegree. The
+second subset has the projections at 45\textdegree, 135\textdegree,
+225\textdegree and 315\textdegree and so on. One OSEM iteration consists of
 40 subiterations. In the first subiteration, the projection and
 backprojection is restricted to the first subset, the second
 subiteration only uses the second subset and so on. After the last
