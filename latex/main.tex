@@ -1,0 +1,140 @@
+% - slide on current state of the art TOF-PET
+%
+% - chapter of Kristof
+%
+% less important:
+% - interaction of electrons, protons, alpha-particles with matter?
+%   PSF van interactie positron/electron: tonen dat het niet
+%      Gaussiaans is.
+%
+% - PSF modeling during reconstruction
+%
+% - MLEM herschrijven, blijkt te ingewikkeld ?
+%
+% - Logan plot (suggestie van Georg)?
+%
+% - Dosimetry
+%   - what limits the dose: organ doses, lung shunt ...
+%   - biological half life
+%   - typical injected dosis in SIRT, Lu-177d dotatate, Lu-177 PSMA therapy
+
+%#####################
+% use latex en dvipdfm
+%#####################
+\documentclass[11pt,oneside]{book}
+\usepackage{a4wide}
+%\usepackage{epsf}
+%\input ./epsf/epsf.tex
+\usepackage{cite}
+\usepackage[usenames]{color}
+\usepackage{graphicx}
+\usepackage{amsmath}
+%----------------------------
+% hyperlinks for xdvi or pdf! (seems you can't have both)
+% use latex en dvipdfm
+%----------------------------
+%% \usepackage[dvipdfm,colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue,
+%%             anchorcolor=blue,
+%%             pdftitle={Nuclear Medicine Technology and Techniques},
+%%             pdfauthor={Johan Nuyts},pdfstartview=FitH]{hyperref}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue,
+            anchorcolor=blue,
+            pdftitle={Nuclear Medicine Technology and Techniques},
+            pdfauthor={Johan Nuyts},pdfstartview=FitH]{hyperref}
+
+%\usepackage[hypertex,colorlinks=true]{hyperref} 
+
+
+%------------------------------------
+\renewcommand{\sfdefault}{phv}
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\ttdefault}{pcr}
+% enable Times now - so that all class options can see
+% the correct font families
+\normalfont\selectfont
+%------------------------------------
+\definecolor{MyRed}{rgb}{0.5,0.0,0.0}
+\definecolor{MyBlue}{rgb}{0.0,0.0,0.6}
+\newcommand{\Red}{\color{MyRed}}
+\newcommand{\Blue}{\color{MyBlue}}
+
+\newcommand{\figbox}[2]{\centerline{\epsfxsize #1 \epsffile{#2} }}
+\newcommand{\figboxx}[4]{\centerline{\epsfxsize #1 \epsffile{#2}
+                                     \epsfxsize #3 \epsffile{#4}}}
+
+
+\setcounter{secnumdepth}{3}
+\title{Nuclear Medicine Technology and Techniques}
+\author{Johan Nuyts\\[3mm]
+        Nuclear Medicine, K.U.Leuven\\
+                U.Z. Gasthuisberg, Herestraat 49\\
+                B3000 Leuven\\
+                tel: 016/34.37.15\\
+                e-mail: Johan.Nuyts@uz.kuleuven.be}
+\date{September, 2023}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\E}[1]{E\left[{#1}\right]}
+
+%\addtolength{\textwidth}{3cm}
+%\addtolength{\oddsidemargin}{-1.5cm}
+%\addtolength{\evensidemargin}{-1.5cm}
+% PostScript figures are resized (and framed if wanted).
+%\newcommand{\figbox}[2]{\resizebox{#1}{!}{\includegraphics{#2}}}
+%\newcommand{\figbox}[2]{\resizebox{#1}{!}{\epsfbox{#2}}}
+
+\newcommand{\intii}{\int_{-\infty}^{\infty}}
+\newcommand{\degrees}{$^{\circ}$}
+\newcommand{\pref}[1]{\ref{#1}, p \pageref{#1}}
+\newcommand{\preq}[1]{(\ref{#1}), p \pageref{#1}}
+\newcommand{\R}{\mbox{$I\!\!R$}}
+\newcommand{\N}{\mbox{$I\!\!N$}}
+\newcommand{\Frac}[2]{{\displaystyle\frac{#1}{#2}}}
+\newcommand{\Tc}{$^{99\mathrm{m}}$Tc}
+
+\begin{document}           
+\pagenumbering{arabic}
+\maketitle
+% Length commands standardize the figure widths.  There are no absolute
+% lengths, all is scaled according to the \textwidth defined by LaTeX in the
+% document class.
+
+% A single figure has a width that is 0.5 * \textwidth
+\newlength{\figbig} \setlength{\figbig}{0.9\textwidth}
+\newlength{\figmedium} \setlength{\figmedium}{0.7\textwidth}
+\newlength{\figone} \setlength{\figone}{0.5\textwidth}
+\newlength{\figsmall} \setlength{\figsmall}{0.3\textwidth}
+\newlength{\figtiny} \setlength{\figsmall}{0.22\textwidth}
+\typeout{Figure width for stand-alone figure = \the\figone}
+
+
+\tableofcontents
+
+\input{chap_introduction.tex}
+
+\input{chap_radionuclides.tex}
+
+\input{chap_photon_interactions.tex}
+
+\input{chap_data_acquisition.tex}
+
+\input{chap_image_formation.tex}
+
+\input{chap_transmission_scan.tex}
+
+\input{chap_system_maintenance.tex}
+
+\input{chap_radiation_detectors.tex}
+
+\input{chap_image_analysis.tex}
+
+\input{chap_radiation_biology.tex}
+
+\input{appendix_one.tex}
+
+\input{appendix_two.tex}
+
+\input{bibliography.tex}
+
+
+\end{document}
+
