@@ -91,7 +91,7 @@ immediately  imply that
 
 The objective function we construct during the E-step is defined as
 \begin{equation}
-  h(\Lambda' | \Lambda) = \E{\ln f(X | \Lambda') | Q, \Lambda)},
+  h(\Lambda' | \Lambda) = E\left[\ln f(X | \Lambda') | Q, \Lambda)\right],
       \label{eq:appmlem_h}
 \end{equation}
 which means that we write the log-likelihood of the complete variables as a
@@ -99,7 +99,7 @@ function of $\Lambda'$, and that we eliminate the unknown variables $X$ by
 computing the expectation based on the current reconstruction $\Lambda$.
 Combining (\ref{eq:appmlem_f}) and (\ref{eq:appmlem_h}) results in
 \begin{equation}
-  h(\Lambda' | \Lambda) = L(\Lambda') + \E{\ln k(X | Q, \Lambda') | Q,\Lambda}
+  h(\Lambda' | \Lambda) = L(\Lambda') + E\left[\ln k(X | Q, \Lambda') | Q,\Lambda\right]
    \label{eq:appmlem_h2}
 \end{equation}
 
@@ -118,20 +118,20 @@ if we apply a GEM-step to increase the value of $h$:
 \begin{eqnarray}
   L(M(\Lambda)) - L(\Lambda) & = &
   h(M(\Lambda) | \Lambda) - h(\Lambda, \Lambda) \nonumber \\
-  & &  + \E{\ln k(X | Q, \Lambda) | Q,\Lambda} 
-       - \E{\ln k(X | Q, M(\Lambda)) | Q,\Lambda} \label{eq:appmlem_l}
+  & &  + E\left[\ln k(X | Q, \Lambda) | Q,\Lambda\right] 
+       - E\left[\ln k(X | Q, M(\Lambda)) | Q,\Lambda\right] \label{eq:appmlem_l}
 \end{eqnarray}
 Because $M$ is a GEM-algorithm, we already know that $h(M(\Lambda) | \Lambda) -
 h(\Lambda, \Lambda)$ is positive. If we can also show that
 \begin{equation}
-  \E{\ln k(X | Q, \Lambda) | Q,\Lambda} 
-   - \E{\ln k(X | Q, M(\Lambda)) | Q,\Lambda} \geq 0 \label{eq:appmlem_k}
+  E\left[\ln k(X | Q, \Lambda) | Q,\Lambda\right] 
+   - E\left[\ln k(X | Q, M(\Lambda)) | Q,\Lambda\right] \geq 0 \label{eq:appmlem_k}
 \end{equation}
 then we have proven that every GEM-step increases the likelihood $L$.\\[3mm]
 
 By definition, we have
 \begin{equation}
-  \E{\ln k(X | Q, \Lambda') | Q,\Lambda} =
+  E\left[\ln k(X | Q, \Lambda') | Q,\Lambda\right] =
      \int k(X | Q, \Lambda) \ln k(X | Q, \Lambda') dX.
 \end{equation}
 Therefore, the left hand side of equation (\ref{eq:appmlem_k}) can be

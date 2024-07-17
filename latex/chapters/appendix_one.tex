@@ -203,16 +203,16 @@ We have two variables $a$ and $b$ with mean $\overline{a}$ and $\overline{b}$
 and variance $\sigma_a^2$ and $\sigma_b^2$. We compute $a \pm b$ and estimate
 the corresponding variance $\sigma_{a \pm b}^2$.
 \begin{eqnarray}
-\sigma_{a \pm b}^2 & = & \E{\left((a \pm b) - (\overline{a} \pm \overline{b}) \right)^2}
+\sigma_{a \pm b}^2 & = & E\left[\left((a \pm b) - (\overline{a} \pm \overline{b}) \right)^2\right]
            \nonumber\\
- & = & \E{(a-\overline{a})^2} + \E{(b-\overline{b})^2} \pm \E{2(a-\overline{a})(b-\overline{b})}
+ & = & E\left[(a-\overline{a})^2\right] + E\left[(b-\overline{b})^2\right] \pm E\left[2(a-\overline{a})(b-\overline{b})\right]
            \nonumber\\
- & = & \E{(a-\overline{a})^2} + \E{(b-\overline{b})^2} \pm 2 \E{(a-\overline{a})}\E{(b-\overline{b})}
+ & = & E\left[(a-\overline{a})^2\right] + E\left[(b-\overline{b})^2\right] \pm 2 E\left[(a-\overline{a})\right]E\left[(b-\overline{b})\right]
            \nonumber\\
  & = & \sigma_a^2 + \sigma_b^2, \label{eq:app_sumerror}
 \end{eqnarray}
 because the expectation of $(a - \overline{a})$ is zero. The expectation
-$\E{(a-\overline{a})(b-\overline{b})}$ is the covariance of $a$ and $b$. The
+$E\left[(a-\overline{a})(b-\overline{b})\right]$ is the covariance of $a$ and $b$. The
 expectation of the product is the product of the expectations if the
 variables are independent samples, and therefore, the covariance of
 independent variables is zero.
@@ -225,16 +225,16 @@ if the variables are subtracted!
 For independent variables, the expectation of the product is the
 product of the expectations, so we have:
 \begin{eqnarray}
- \sigma_{ab}^2 & = & \E{\left( ab - \overline{a} \overline{b}\right)^2} \nonumber\\
-  & = & \E{a^2b^2} + \overline{a}^2\overline{b}^2 - \E{2 a b \overline{a} \overline{b}} \nonumber\\
-  & = & \E{a^2} \E{b^2} - \overline{a}^2 \overline{b}^2 \label{eq:app_noise_prod1}
+ \sigma_{ab}^2 & = & E\left[\left( ab - \overline{a} \overline{b}\right)^2\right] \nonumber\\
+  & = & E\left[a^2b^2\right] + \overline{a}^2\overline{b}^2 - E\left[2 a b \overline{a} \overline{b}\right] \nonumber\\
+  & = & E\left[a^2\right] E\left[b^2\right] - \overline{a}^2 \overline{b}^2 \label{eq:app_noise_prod1}
 \end{eqnarray}
 This expression is not very useful, it must be rewritten as a function of
 $\overline{a}$, $\overline{b}$, $\sigma_a$ and $\sigma_b$. To obtain that, we rewrite $a$
 as $\overline{a} + (a - \overline{a})$:
 \begin{eqnarray}
-  \E{a^2} & = & \E{(\overline{a} + (a - \overline{a}))^2} \nonumber\\
- & = & \overline{a}^2 + \E{\left( a - \overline{a} \right)^2} + \E{2 \overline{a}(a - \overline{a})}
+  E\left[a^2\right] & = & E\left[(\overline{a} + (a - \overline{a}))^2\right] \nonumber\\
+ & = & \overline{a}^2 + E\left[\left( a - \overline{a} \right)^2\right] + E\left[2 \overline{a}(a - \overline{a})\right]
        \nonumber\\
  & = & \overline{a}^2 + \sigma_a^2
 \end{eqnarray}
@@ -263,13 +263,13 @@ $f(x_1, x_2, \ldots x_n)$ where the $x_i$ are independent samples from
 distributions characterized by $\overline{x_i}$ and $\sigma_i$. Applying first order
 equations means that $f$ is treated as a linear function:
 \begin{eqnarray}
-  \E{\left( f(x_1, \ldots x_n) - \E{f(x_1, \ldots x_n)}\right)^2}
-  \simeq  \E{\left( f(x_1,\ldots x_n) 
-        - f(\overline{x_1}, \ldots \overline{x_n})\right)^2} \nonumber \\
-  \simeq  \E{\left( \left. \frac{\partial f}{\partial x_1} \right|_{\overline{x_1}}
+  E\left[\left( f(x_1, \ldots x_n) - E\left[f(x_1, \ldots x_n)\right]\right)^2\right]
+  \simeq  E\left[\left( f(x_1,\ldots x_n) 
+        - f(\overline{x_1}, \ldots \overline{x_n})\right)^2\right] \nonumber \\
+  \simeq  E\left[\left( \left. \frac{\partial f}{\partial x_1} \right|_{\overline{x_1}}
                  (x_1 - \overline{x_1}) + \ldots
             \left. \frac{\partial f}{\partial x_n} \right|_{\overline{x_n}}
-                 (x_n - \overline{x_n}) \right)^2} \nonumber \\
+                 (x_n - \overline{x_n}) \right)^2\right] \nonumber \\
   = \left( \left. \frac{\partial f}{\partial x_1} \right|_{\overline{x_1}} \right)^2
         \sigma_1^2 + \ldots
     \left( \left. \frac{\partial f}{\partial x_n} \right|_{\overline{x_n}} \right)^2
