@@ -591,10 +591,10 @@ Integration assumes that $a$ and $T$ are infinitely small. Since we use only
 the ratio, this poses no problems.
 %
 \begin{align}
-\mbox{sens} & = & \frac{1}{4 \pi H^2}
-                  \int_0^R (1 - \frac{r T}{a H}) 2 \pi r dr \nonumber\\
-            & = & \frac{1}{4 \pi H^2}\frac{\pi R^2}{3}
-              = \frac{1}{12} \left( \frac{a}{T} \right)^2
+\mbox{sens} &= \frac{1}{4 \pi H^2}
+                  \int_0^R (1 - \frac{r T}{a H}) 2 \pi r dr \nonumber \\
+            &= \frac{1}{4 \pi H^2}\frac{\pi R^2}{3}
+             = \frac{1}{12} \left( \frac{a}{T} \right)^2
     \label{eq:collim:sens}\\
 R & = & \frac{a H}{T}  \label{eq:collim:fwhm}
 \end{align}
@@ -754,8 +754,8 @@ rectangular close to the detectors and trapezoidal in between.  Introducing
 that third dimension, we obtain for the PSF in the center and close to the
 detector respectively:
 \begin{align}
-  \mbox{PSF}(x, y, 0) & = & \frac{(d - 2|x|)(d - 2 |y|)}{2 \pi R^2}\\
-  \mbox{PSF}(x, y, R) & = & \frac{d^2}{8 \pi R^2}
+  \mbox{PSF}(x, y, 0) &= \frac{(d - 2|x|)(d - 2 |y|)}{2 \pi R^2}\\
+  \mbox{PSF}(x, y, R) &= \frac{d^2}{8 \pi R^2}
 \end{align}
 We can compute the average sensitivity within the field of view by integrating
 the PSF over the detector area $x \in [-d/2, d/2], y \in [-d/2,
@@ -1395,8 +1395,8 @@ measured, and the errors $\Delta_x$ and $\Delta_y$ can be stored as a
 function of $x$ and $y$ in a lookup table. Correction is then
 straightforward:
 \begin{align}
- x_{\mbox{corrected}} & = & x + \Delta_x(x,y) \nonumber\\
- y_{\mbox{corrected}} & = & y + \Delta_y(x,y)
+ x_{\text{corrected}} &= x + \Delta_x(x,y) \nonumber \\
+ y_{\text{corrected}} &= y + \Delta_y(x,y)
 \end{align}
 After correction, the image of a straight line will be a straight line.
 
@@ -1655,19 +1655,19 @@ If the count rates are small compared to the dead times (such that $R_x
 expression simpler. The approximation is based on the following relations,
 which are acceptable if $x$ is small:
 \begin{align}
-  e^{-x} & \simeq & e^{-0} + x \left. \frac{d e^{-x}}{dx} \right|_{x=0}= 1-x\\
-         & = & \frac{1+x}{1+x} - x = \frac{1+x-x-x^2}{1+x} 
+  e^{-x} &\simeq e^{-0} + x \left. \frac{d e^{-x}}{dx} \right|_{x=0}= 1-x\\
+         &= \frac{1+x}{1+x} - x = \frac{1+x-x-x^2}{1+x} 
         \simeq \frac{1}{1 + x}.
 \end{align}
 Applying this to (\ref{eq:deadtime_front}) and (\ref{eq:deadtime_proc}) yields:
 \begin{align}
-  R_1 & \simeq & R_0 (1 - R_0 \tau_1)\\
-  R_2 & \simeq & R_1 (1 - R_1 \tau_2)
+  R_1 &\simeq R_0 (1 - R_0 \tau_1)\\
+  R_2 &\simeq R_1 (1 - R_1 \tau_2)
 \end{align}
 Combining both equation and deleting higher order terms results in
 \begin{align}
-  R_2 & \simeq & R_0 \left(1 - R_0 (\tau_1 + \tau_2) \right) \label{eq:dead1}\\
-      & \simeq & R_0 e^{- R_0 (\tau_1 + \tau_2)} \label{eq:dead2}
+  R_2 &\simeq R_0 \left(1 - R_0 (\tau_1 + \tau_2) \right) \label{eq:dead1}\\
+      &\simeq R_0 e^{- R_0 (\tau_1 + \tau_2)} \label{eq:dead2}
 \end{align}
 So if the count rate is relatively low, there is little difference between
 paralyzable and non-paralyzable dead time, and we can obtain a global dead
