@@ -30,13 +30,13 @@ larger.  To make it exact, we simply have to let $k$ go to infinity.
 It turns out that computing the limit of the logarithm is easier, so we have
 \begin{align}
   \lim_{k \rightarrow \infty} \left( 1 - \frac{r}{k} \right)^k
- & = &
+ &=
  \exp \left(\lim_{k \rightarrow \infty} \frac{\ln(k - r) - ln(k)}{1/k}  \right)
 \nonumber\\
-& = & 
+&= 
   \exp \left(\lim_{k \rightarrow \infty}  
   \frac{1/ (k-r) - 1/k}{-1/k^2} \right) \nonumber \\
-& = & \exp (-r)
+&= \exp (-r)
 \end{align}
 So it follows that 
 \begin{equation}
@@ -74,8 +74,8 @@ Let $f(x,y)$ represent the image value at position $(x,y)$. This image
 can be regarded as the sum of an infinite number of Dirac impulses
 $\delta(x,y)$, one at every location $(x,y)$:
 \begin{align}
-f(x,y) & = & (f \otimes \delta) (x,y)\\
-       & = & \int_{-\infty}^{\infty} du \int_{-\infty}^{\infty} dv \, f(u,v) \, \delta(x-u, y-v)
+f(x,y) &= (f \otimes \delta) (x,y)\\
+       &= \int_{-\infty}^{\infty} du \int_{-\infty}^{\infty} dv \, f(u,v) \, \delta(x-u, y-v)
 \end{align}
 
 \item
@@ -83,8 +83,8 @@ Correction of the first step: the expected image of a point is not a Dirac
 impulse, but a PSF. Therefore, replace each of the Dirac impulses in the image
 by the corresponding PSF, centered at the position of the Dirac impulse.
 \begin{align}
-g(x,y) & = & (f \otimes \mbox{PSF}) (x,y)\\
-       & = & \int_{-\infty}^{\infty} du \int_{-\infty}^{\infty} dv \, f(u,v) \, \mbox{PSF}(x-u, y-v)
+g(x,y) &= (f \otimes \mbox{PSF}) (x,y)\\
+       &= \int_{-\infty}^{\infty} du \int_{-\infty}^{\infty} dv \, f(u,v) \, \mbox{PSF}(x-u, y-v)
 \end{align}
 \end{enumerate}
 
@@ -129,11 +129,11 @@ Thus, $\sigma_1 = a / \sqrt{2}$ and $A = 1 / (\sqrt{2 \pi} \sigma_1)$, and
 similar for the other PSF. The convolution is then written as:
 %
 \begin{align}
-(F_1 \otimes F_2)(x) & = &
+(F_1 \otimes F_2)(x) &=
   AB \int_{-\infty}^{\infty} \exp\left(- \frac{u^2}{a^2} - \frac{(x-u)^2}{b^2}\right) du\\
-& = & AB \int_{-\infty}^{\infty} \exp\left(- m u^2   + \frac{2xu}{b^2} - \frac{x^2}{b^2}\right)
+&= AB \int_{-\infty}^{\infty} \exp\left(- m u^2   + \frac{2xu}{b^2} - \frac{x^2}{b^2}\right)
   du \\
-m & = & \left( \frac{1}{a^2} + \frac{1}{b^2}\right)
+m &= \left( \frac{1}{a^2} + \frac{1}{b^2}\right)
 \end{align}
 %
 The exponentiation contains a term in $u^2$ and a term in $u$. We can get rid of
@@ -142,11 +142,11 @@ form $(u + C)^2$, and rewriting everything as $(u + C)^2 - C^2$. The $C^2$ is
 not a function of $u$, so it can be put in front of the integral sign.
 % 
 \begin{align}
- (F_1 \otimes F_2)(x)  &  = & AB \int_{-\infty}^{\infty} \exp\left(- \left( \sqrt{m} u 
+ (F_1 \otimes F_2)(x)  &= AB \int_{-\infty}^{\infty} \exp\left(- \left( \sqrt{m} u 
          - \frac{x}{b^2 \sqrt{m}} \right)^2
        + \frac{x^2}{b^4 m}
        - \frac{x^2}{b^2}\right) du\\
- & = &  AB \exp\left(\frac{x^2}{b^4 m} - \frac{x^2}{b^2}\right)
+ &=  AB \exp\left(\frac{x^2}{b^4 m} - \frac{x^2}{b^2}\right)
      \int_{-\infty}^{\infty} \exp\left(- \left( \sqrt{m} u 
          - \frac{x}{b^2 \sqrt{m}} \right)^2\right) du
 \end{align}
@@ -176,8 +176,8 @@ multiple PSFs:
 %==========================
 The mean and the variance of a distribution $a$ are defined as:
 \begin{align}
-  \mbox{mean}(a) & = & \overline{a} = E(a) = \frac{1}{N} \sum_{i=1}^N a_i\\
-  \mbox{variance}(a) & = & \sigma_a^2 = E\left[ (a - \overline{a})^2 \right]
+  \mbox{mean}(a) &= \overline{a} = E(a) = \frac{1}{N} \sum_{i=1}^N a_i\\
+  \mbox{variance}(a) &= \sigma_a^2 = E\left[ (a - \overline{a})^2 \right]
    = \frac{1}{N} \sum_{i=1}^N (a_i - \overline{a})^2,
 \end{align}
 where $E$ is the expectation, $a_i$ is a sample from the distribution and the
@@ -202,13 +202,13 @@ We have two variables $a$ and $b$ with mean $\overline{a}$ and $\overline{b}$
 and variance $\sigma_a^2$ and $\sigma_b^2$. We compute $a \pm b$ and estimate
 the corresponding variance $\sigma_{a \pm b}^2$.
 \begin{align}
-\sigma_{a \pm b}^2 & = & E\left[\left((a \pm b) - (\overline{a} \pm \overline{b}) \right)^2\right]
+\sigma_{a \pm b}^2 &= E\left[\left((a \pm b) - (\overline{a} \pm \overline{b}) \right)^2\right]
            \nonumber\\
- & = & E\left[(a-\overline{a})^2\right] + E\left[(b-\overline{b})^2\right] \pm E\left[2(a-\overline{a})(b-\overline{b})\right]
+ &= E\left[(a-\overline{a})^2\right] + E\left[(b-\overline{b})^2\right] \pm E\left[2(a-\overline{a})(b-\overline{b})\right]
            \nonumber\\
- & = & E\left[(a-\overline{a})^2\right] + E\left[(b-\overline{b})^2\right] \pm 2 E\left[(a-\overline{a})\right]E\left[(b-\overline{b})\right]
+ &= E\left[(a-\overline{a})^2\right] + E\left[(b-\overline{b})^2\right] \pm 2 E\left[(a-\overline{a})\right]E\left[(b-\overline{b})\right]
            \nonumber\\
- & = & \sigma_a^2 + \sigma_b^2, \label{eq:app_sumerror}
+ &= \sigma_a^2 + \sigma_b^2, \label{eq:app_sumerror}
 \end{align}
 because the expectation of $(a - \overline{a})$ is zero. The expectation
 $E\left[(a-\overline{a})(b-\overline{b})\right]$ is the covariance of $a$ and $b$. The
@@ -224,30 +224,30 @@ if the variables are subtracted!
 For independent variables, the expectation of the product is the
 product of the expectations, so we have:
 \begin{align}
- \sigma_{ab}^2 & = & E\left[\left( ab - \overline{a} \overline{b}\right)^2\right] \nonumber\\
-  & = & E\left[a^2b^2\right] + \overline{a}^2\overline{b}^2 - E\left[2 a b \overline{a} \overline{b}\right] \nonumber\\
-  & = & E\left[a^2\right] E\left[b^2\right] - \overline{a}^2 \overline{b}^2 \label{eq:app_noise_prod1}
+ \sigma_{ab}^2 &= E\left[\left( ab - \overline{a} \overline{b}\right)^2\right] \nonumber\\
+  &= E\left[a^2b^2\right] + \overline{a}^2\overline{b}^2 - E\left[2 a b \overline{a} \overline{b}\right] \nonumber\\
+  &= E\left[a^2\right] E\left[b^2\right] - \overline{a}^2 \overline{b}^2 \label{eq:app_noise_prod1}
 \end{align}
 This expression is not very useful, it must be rewritten as a function of
 $\overline{a}$, $\overline{b}$, $\sigma_a$ and $\sigma_b$. To obtain that, we rewrite $a$
 as $\overline{a} + (a - \overline{a})$:
 \begin{align}
-  E\left[a^2\right] & = & E\left[(\overline{a} + (a - \overline{a}))^2\right] \nonumber\\
- & = & \overline{a}^2 + E\left[\left( a - \overline{a} \right)^2\right] + E\left[2 \overline{a}(a - \overline{a})\right]
+  E\left[a^2\right] &= E\left[(\overline{a} + (a - \overline{a}))^2\right] \nonumber\\
+ &= \overline{a}^2 + E\left[\left( a - \overline{a} \right)^2\right] + E\left[2 \overline{a}(a - \overline{a})\right]
        \nonumber\\
- & = & \overline{a}^2 + \sigma_a^2
+ &= \overline{a}^2 + \sigma_a^2
 \end{align}
 Substituting this result for $E[a^2]$ and $E[b^2]$ in
 (\ref{eq:app_noise_prod1}) we obtain:
 \begin{align}
-\sigma_{ab}^2 & = & (\overline{a}^2 + \sigma_a^2)(\overline{b}^2 + \sigma_b^2) 
+\sigma_{ab}^2 &= (\overline{a}^2 + \sigma_a^2)(\overline{b}^2 + \sigma_b^2) 
                      - \overline{a}^2 \overline{b}^2 \nonumber\\
- & = & \overline{a}^2\sigma_b^2 + \overline{b}^2\sigma_a^2 + \sigma_a^2 \sigma_b^2
+ &= \overline{a}^2\sigma_b^2 + \overline{b}^2\sigma_a^2 + \sigma_a^2 \sigma_b^2
         \nonumber\\
- & = & \overline{a}^2\overline{b^2}\left( \frac{\sigma_a^2}{\overline{a}^2} + 
+ &= \overline{a}^2\overline{b^2}\left( \frac{\sigma_a^2}{\overline{a}^2} + 
        \frac{\sigma_b^2}{\overline{b}^2} 
      + \frac{\sigma_a^2\sigma_b^2}{\overline{a}^2\overline{b}^2}\right)\\
- & \simeq & \overline{a}^2\overline{b^2}\left( \frac{\sigma_a^2}{\overline{a}^2} + 
+ &\simeq \overline{a}^2\overline{b^2}\left( \frac{\sigma_a^2}{\overline{a}^2} + 
        \frac{\sigma_b^2}{\overline{b}^2}\right)
 \end{align}
 The last line is a first order approximation which is acceptable if the
@@ -263,13 +263,13 @@ distributions characterized by $\overline{x_i}$ and $\sigma_i$. Applying first o
 equations means that $f$ is treated as a linear function:
 \begin{align}
   E\left[\left( f(x_1, \ldots x_n) - E\left[f(x_1, \ldots x_n)\right]\right)^2\right]
-  \simeq  E\left[\left( f(x_1,\ldots x_n) 
+  &\simeq  E\left[\left( f(x_1,\ldots x_n) 
         - f(\overline{x_1}, \ldots \overline{x_n})\right)^2\right] \nonumber \\
-  \simeq  E\left[\left( \left. \frac{\partial f}{\partial x_1} \right|_{\overline{x_1}}
+  &\simeq  E\left[\left( \left. \frac{\partial f}{\partial x_1} \right|_{\overline{x_1}}
                  (x_1 - \overline{x_1}) + \ldots
             \left. \frac{\partial f}{\partial x_n} \right|_{\overline{x_n}}
                  (x_n - \overline{x_n}) \right)^2\right] \nonumber \\
-  = \left( \left. \frac{\partial f}{\partial x_1} \right|_{\overline{x_1}} \right)^2
+  &= \left( \left. \frac{\partial f}{\partial x_1} \right|_{\overline{x_1}} \right)^2
         \sigma_1^2 + \ldots
     \left( \left. \frac{\partial f}{\partial x_n} \right|_{\overline{x_n}} \right)^2
          \sigma_n^2
