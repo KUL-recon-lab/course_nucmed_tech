@@ -42,12 +42,12 @@ chapter on kinetic modeling and discusses several analysis techniques.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The standardized uptake value provides a robust scale of tracer amounts. It is
 defined as:
-\begin{eqnarray}
+\begin{align}
   \mbox{SUV}_j & = & \frac{\mbox{tracer concentration in $j$}}
                           {\mbox{average tracer concentration}}\\
   & = & \frac{\mbox{tracer amount in Bq/g at pixel $j$}}
                       {\mbox{total dose in Bq / total mass in g}}
-\end{eqnarray}
+\end{align}
 To compute it, we must know the total dose administered to the patient. Since
 the total dose is measured prior to injection, and the image is produced after
 injection, we must correct for the decay of the tracer in between. Moreover,
@@ -293,11 +293,11 @@ glucose. Since it ceases to exist after transport to compartment $M$ we ignore
 all further steps in the metabolic pathway. In our compartment model, it is as
 if glucose is accumulated in the metabolites compartment. This virtual
 accumulation rate is the metabolization rate we want to find:
-\begin{eqnarray}
+\begin{align}
   \frac{d C_M^g}{d t} = k_3^g C_E^g & = & 
    \frac{K_1^g k_3^g}{k_2^g + k_3^g} C_P^g.\\
   & = & \bar{K^g}  C_P^g. \hspace{2cm} \mbox{$($definition of } \bar{K^g})
-\end{eqnarray}
+\end{align}
 
 So if we can find the values of the rate constants, we can compute the glucose
 metabolization rate. As mentioned before, we cannot compute them via the
@@ -334,10 +334,10 @@ we must know the FDG rate constants. Since the tracer is not in steady state,
 the equations will be a bit more difficult than for the target molecule.  We
 can easily derive differential equations for the concentration changes in the
 second and third compartment:
-\begin{eqnarray}
+\begin{align}
   \frac{dC_E(t)}{dt} & = & K_1 C_P(t) - (k_2 + k_3) C_E(t) \label{eq:C_E}\\
   \frac{dC_M(t)}{dt} & = & k_3 C_E(t) \label{eq:C_M}
-\end{eqnarray}
+\end{align}
 For a cardiac study, we can derive the tracer concentration $C_P(t)$ in the
 blood from the pixel values in the center of the left ventricle or atrium. If
 the heart is not in the field of view, we can still determine $C_P(t)$ by
@@ -367,22 +367,22 @@ transform is that derivatives and integrals with respect to $t$ become simple
 functions of $s$. After transformation, elimination of variables is easy. The
 result is then back-transformed to the time domain.  Laplace transform of
 (\ref{eq:C_E}) and (\ref{eq:C_M}) results in
-\begin{eqnarray}
+\begin{align}
   s c_E(s) & = & K_1 c_P(s) - (k_2 + k_3) c_E(s) \label{eq:sc_E}\\
   s c_M(s) & = & k_3 c_E(s)  \label{eq:sc_M}
-\end{eqnarray}
+\end{align}
 where we have assumed that at time $t=0$ (time of injection) all tracer
 amounts are zero.  From (\ref{eq:sc_E}) we find $c_E(s)$ as a function of
 $c_P(s)$. Inserting in (\ref{eq:sc_M}) produces $c_M(s)$ as a function of
 $c_P(s)$.
-\begin{eqnarray}
+\begin{align}
   c_E(s) & = & \frac{K_1}{s + k_2 + k_3} c_P(s)\\
   c_M(s) & = & \frac{K_1 k_3}{s (s + k_2 + k_3)} c_P(s)\\
   c_I(s) & = & c_E(s) + c_M(s) \\
          & = & \left( \frac{K_1}{s + k_2 + k_3} 
                     + \frac{K_1 k_3}{s (s + k_2 + k_3)}\right) c_P(s)
            \label{eq:c_I}
-\end{eqnarray}
+\end{align}
 The two factors in $s$ can be split from the denominator using the equation
 \begin{equation}
   \frac{a}{x(x + b)} = \frac{a}{b} \left( \frac{1}{x} - \frac{1}{x+b} \right)
@@ -438,12 +438,12 @@ This is a convolution of the input function with the factor in
 brackets, showing that that factor is the impulse response
 function. To illustrate this, we simply compute the response to an
 impulse, by replacing $C_p(u)$ with a Dirac impulse at time $\xi$:
-\begin{eqnarray}
+\begin{align}
   C_I(t) &=& \frac{K_1}{k_2 + k_3} \int_0^t \delta(u-\xi) \left(
                 k_2 \; e^{-(k_2 + k_3)(t - u)} + k_3 \right) du\\
    &=& \frac{K_1}{k_2 + k_3} \left( k_2 \; e^{-(k_2 + k_3)(t - \xi)} +
                 k_3 \right).
-\end{eqnarray}
+\end{align}
 
 
 \paragraph{Alternative derivation, avoiding the Laplace transform\\}
@@ -464,7 +464,7 @@ The solution is $C_E(t) = A e^{-\beta t}$. Now we assume that the
 solution to (\ref{eq:vp1}) is similar, except that the constant $A$
 must be replaced by a function of $t$: $C_E(t) = A(t) \; e^{-\beta
 t}$. Inserting this in (\ref{eq:vp1}) we obtain:
-\begin{eqnarray}
+\begin{align}
    \frac{d ( A(t) \; e^{-\beta t})}{dt} 
              &=&  K_1 C_P(t) - \beta A(t) \; e^{-\beta t}\\
  = \hspace{5mm} 
@@ -477,17 +477,17 @@ t}$. Inserting this in (\ref{eq:vp1}) we obtain:
 \Leftrightarrow  \hspace{5mm} 
    C_E(t) = A(t)  \; e^{-\beta t}
       &=& K_1 \int_0^t C_P(u) e^{- \beta (t -u)} du \label{eq:vp2}
-\end{eqnarray}
+\end{align}
 %
 Having solved the equation for the first tissue compartment, we can
 use $C_E(t)$ to find the activity in the second compartment.  We
 simply insert (\ref{eq:vp2}) in the equation (\ref{eq:C_M}) for
 $C_M(t)$ to obtain:
-\begin{eqnarray}
+\begin{align}
   \frac{d C_M(t)}{dt} = k_3 C_E(t) 
     &=& K_1 k_3 \int_0^t C_P(u) e^{- \beta (t -u)} du \nonumber\\
     &=& K_1 k_3 \; e^{- \beta t} \; \int_0^t C_P(u) e^{\beta u} du
-\end{eqnarray}
+\end{align}
 and therefore
 \begin{equation}
   C_M(t) = K_1 k_3 \; \int_0^t d\xi \; e^{-\beta \xi} 
@@ -498,11 +498,11 @@ intimidating at first. However, it can be simplified using integration
 by parts. If you are unfamiliar with that trick, you can easily derive
 it by noting that the integral of the derivative of the product of two
 functions $f(t)$ and $g(t)$ equals:
-\begin{eqnarray}
+\begin{align}
   f(t) g(t) - f(0) g(0) = \int_0^t \frac{d ((f(\xi) g(\xi))}{d\xi} d\xi
  = \int_0^t \frac{d f(\xi)}{d\xi} g(\xi) d\xi 
    +  \int_0^t f(\xi) \frac{d g(\xi)}{d\xi} d\xi
-\end{eqnarray}
+\end{align}
 And therefore we can write
 \begin{equation}
   \int_0^t \frac{d f(\xi)}{d\xi} g(\xi) d\xi = f(t) g(t) - f(0) g(0)
@@ -510,16 +510,16 @@ And therefore we can write
 \end{equation}
 We apply this trick to get rid of the inner integral in (\ref{eq:vp3})
 as follows:
-\begin{eqnarray}
+\begin{align}
   f(\xi) &=& -\frac{e^{-\beta \xi}}{\beta}\\
   \frac{d f(\xi)}{d\xi} &=& e^{-\beta\xi}\\
   g(\xi) &=& \int_0^\xi  C_P(u) e^{\beta u} du\\
   \frac{d g(\xi)}{d\xi} &=& C_P(\xi) e^{\beta \xi}
-\end{eqnarray}
+\end{align}
 With these definitions, the left hand side of (\ref{eq:vptrick}) is
 equal to (\ref{eq:vp3}). Note that $g(0) = 0$ here, which makes things
 slightly simpler.  The trick converts (\ref{eq:vp3}) into:
-\begin{eqnarray}
+\begin{align}
  C_M(t) &=& K_1 k_3 \left( 
   -\frac{e^{-\beta t}}{\beta} \int_0^t  C_P(u) e^{\beta u} du
   - \int_0^t (-\frac{e^{-\beta u}}{\beta}) C_P(u) e^{\beta u} du
@@ -527,11 +527,11 @@ slightly simpler.  The trick converts (\ref{eq:vp3}) into:
  &=& \frac{K_1 k_3}{k_2 + k_3} \left(
    - \int_0^t C_P(u) e^{-(k_2 + k_3) (t -u)} du + \int_0^t C_P(u) du
  \right) \label{eq:vp4}
-\end{eqnarray}
+\end{align}
 where we have replaced $\beta$ again with $k_2 + k_3$.
 Finally, to obtain $C_I(t) = C_E(t) + C_M(t)$ we sum (\ref{eq:vp2})
 and (\ref{eq:vp4}):
-\begin{eqnarray}
+\begin{align}
 C_I(t) &=& (K_1 - \frac{K_1 k_3}{k_2 + k_3}) 
             \int_0^t C_P(u) e^{- (k_2 + k_3) (t -u)} du \;\;
        + \;\; \frac{K_1 k_3}{k_2 + k_3} \int_0^t C_P(u) du \nonumber\\
@@ -539,7 +539,7 @@ C_I(t) &=& (K_1 - \frac{K_1 k_3}{k_2 + k_3})
   \frac{K_1 k_2}{k_2 + k_3} \int_0^t C_P(u) e^{- (k_2 + k_3) (t -u)} du
     \;\; + \;\;
    \frac{K_1 k_3}{k_2 + k_3} \int_0^t C_P(u) du,
-\end{eqnarray}
+\end{align}
 which is identical to equation (\ref{eq:3comp_ci}).
 
 \paragraph{Computing the rate constants with non-linear regression\\}
@@ -595,13 +595,13 @@ $C_p(t)$. Stated otherwise, $C_p(u)$ changes very little over the range where
 $e^{-(k_2 + k_3)(t - u)}$ is significantly different from zero. Thus, we can
 put $C_p(t)$ in front of the integral sign. Since $t$ is large relative to the
 decay time of the exponential, we can set $t$ to $\infty$:
-\begin{eqnarray}
+\begin{align}
 \int_0^t C_P(u) e^{-(k_2 + k_3)(t - u)}du
   & \simeq &  C_P(t) \int_0^t  e^{-(k_2 + k_3)(t - u)}du\\
   & =      &  C_P(t) \int_0^t  e^{-(k_2 + k_3)u}du\\
   & \simeq &  C_P(t) \int_0^\infty  e^{-(k_2 + k_3)u}du\\
   & = & \frac{C_p(t)}{k_2 + k_3}
-\end{eqnarray}
+\end{align}
 The operational function then becomes:
 \begin{equation}
   C_I(t) \simeq \frac{K_1 k_3}{k_2 + k_3} \int_0^t C_P(u) du + 
@@ -707,10 +707,10 @@ by smoothing, while the bias only increases near the edges of the
 wave.  If we keep on smoothing, the entire wave will converge to its
 mean value; then there is no variance but huge bias. Bias and variance
 of a sample (pixel) $j$ can be defined as follows:
-\begin{eqnarray}
+\begin{align}
   \mbox{bias}_j     & = & E(\lambda_j - r_j)\\
   \mbox{variance}_j & = & E\left((\lambda_j - E(\lambda_j))^2 \right),
-\end{eqnarray}
+\end{align}
 where $E(x)$ is the expectation of $x$. Variance can be directly computed from
 repeated independent measurements. If the true data happen to be smooth and if
 the measurement has good resolution, neighboring samples can be regarded as

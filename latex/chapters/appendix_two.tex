@@ -25,11 +25,11 @@ The prior expectations for $a$ and $b$ are:
 After the measurement, we know that the first detector can only have produced
 $a$ counts if the other one happened to contribute $N-a$ counts. Dropping some
 constants this yields:
-\begin{eqnarray}
+\begin{align}
   p(a | a + b = N) \sim e^{-\bar{a}} \frac{\bar{a}^a}{a!} \;\;
                         e^{-\bar{b}} \frac{\bar{b}^{N-a}}{(N-a)!}\\
     \sim \frac{\bar{a}^a}{a!} \frac{\bar{b}^{N-a}}{(N-a)!}
-\end{eqnarray}
+\end{align}
 Applying \ref{eq:appab1} yields:
 \begin{equation}
   E(a | a+b=N)
@@ -44,7 +44,7 @@ Let us first look at the denominator:
    = \frac{N!}{a! (N-a)!}
 \end{equation}
 A bit more work needs to be done for the numerator:
-\begin{eqnarray}
+\begin{align}
  \sum_{a=0}^N \frac{\bar{a}^a}{a!} \frac{\bar{b}^{N-a}}{(N-a)!} a
   & = & \sum_{a=1}^N \frac{\bar{a}^a}{a!} \frac{\bar{b}^{N-a}}{(N-a)!} a
     \hspace{1cm} \mbox{summation can start from 1}\\
@@ -54,13 +54,13 @@ A bit more work needs to be done for the numerator:
   & = & \bar{a} \sum_{a=0}^{N-1} \frac{\bar{a}^a}{a!} 
                                  \frac{\bar{b}^{N-1-a}}{(N-1-a)!}\\
   & = & \bar{a} \frac{(\bar{a} + \bar{b})^{N-1}}{(N-1)!}
-\end{eqnarray}
+\end{align}
 Combining numerator and denominator results in:
-\begin{eqnarray}
+\begin{align}
   E(a | a+b=N) & = & \bar{a} \frac{(\bar{a} + \bar{b})^{N-1}}{(N-1)!}
                      \frac{N!}{(\bar{a} + \bar{b})^N}\\
   & = & \bar{a} \frac{N}{\bar{a} + \bar{b}}
-\end{eqnarray}
+\end{align}
 
 \newpage
 \section{The convergence of the EM algorithm} \label{app:em}
@@ -114,12 +114,12 @@ the MLEM algorithm of section \ref{sec:iterrecon}.
 
 Now, from equation (\ref{eq:appmlem_h2}) we can compute what happens with $L$
 if we apply a GEM-step to increase the value of $h$:
-\begin{eqnarray}
+\begin{align}
   L(M(\Lambda)) - L(\Lambda) & = &
   h(M(\Lambda) | \Lambda) - h(\Lambda, \Lambda) \nonumber \\
   & &  + E\left[\ln k(X | Q, \Lambda) | Q,\Lambda\right] 
        - E\left[\ln k(X | Q, M(\Lambda)) | Q,\Lambda\right] \label{eq:appmlem_l}
-\end{eqnarray}
+\end{align}
 Because $M$ is a GEM-algorithm, we already know that $h(M(\Lambda) | \Lambda) -
 h(\Lambda, \Lambda)$ is positive. If we can also show that
 \begin{equation}
@@ -135,13 +135,13 @@ By definition, we have
 \end{equation}
 Therefore, the left hand side of equation (\ref{eq:appmlem_k}) can be
 rewritten as
-\begin{eqnarray}
+\begin{align}
 & &  \int k(X | Q, \Lambda) \ln k(X | Q, \Lambda) dX 
   - \int k(X | Q, \Lambda) \ln k(X | Q, M(\Lambda)) dX \\
 & = & \int k(X | Q, \Lambda)
         \ln \frac{k(X | Q, \Lambda)}{k(X | Q, M(\Lambda))} dX, 
         \label{eq:appmlem_k2}
-\end{eqnarray}
+\end{align}
 with the additional requirement that $\int k(X | Q, \Lambda) dX = \int k(X |
 Q, M(\Lambda)) dX = 1$. It turns out that (\ref{eq:appmlem_k2}) is always
 positive, due to the convexity of $t \ln t$. We will have a look at that
@@ -149,10 +149,10 @@ now.\\[3mm]
 
 Consider the function $\psi(t) = t \ln t$. It is only defined for $t >
 0$. Here are its derivatives:
-\begin{eqnarray}
+\begin{align}
   \psi'(t) = \frac{d \psi(t)}{dt} & = & 1 + \ln t\\
   \psi''(t) = \frac{d^2 \psi(t)}{dt^2} & = & \frac{1}{t} > 0
-\end{eqnarray}
+\end{align}
 The second derivative is continuous and strictly positive ($t \ln t$ is a
 convex function). Consequently, we can always find a value $u$ such that
 \begin{equation}
@@ -171,7 +171,7 @@ Consider now an integral of the same form as in (\ref{eq:appmlem_k2}):
   \int f_1(x) dx = \int f_2(x) dx = 1.
 \end{equation}
 We can rework it such that we can exploit the convexity of $t \ln t$:
-\begin{eqnarray}
+\begin{align}
   & &  \int f_1(x) \ln \frac{f_1(x)}{f_2(x)} dx \nonumber\\
   & = & \int \frac{f_1(x)}{f_2(x)} \ln \left( \frac{f_1(x)}{f_2(x)} \right)
         f_2(x) dx \nonumber\\
@@ -183,7 +183,7 @@ We can rework it such that we can exploit the convexity of $t \ln t$:
         \frac{1}{2} \int \left( \frac{f_1(x)}{f_2(x)} - 1 2\right)^2
         \psi''(u(x)) f_2(x) dx \;\; \geq \;\; 0 \nonumber\\
   & & \mbox{q.e.d.} \nonumber
-\end{eqnarray}
+\end{align}
 
 Now we have proved that the GEM-step increases $L$. It still remains
 to be shown that the algorithm indeed converges towards the maximum
@@ -206,12 +206,12 @@ The projection is a sinogram $q(s, \theta)$, given by
 where $\delta(x)$ is the delta function: $\delta(x) = 1$ if $x = 0$, and
 $\delta(x) = 0$ if $x \neq 0$.
 The backprojection $b(x,y)$ is then given by
-\begin{eqnarray}
+\begin{align}
   b(x,y) & = & \int_0^\pi q(x \cos\theta + y\sin\theta, \theta)
                 d\theta \nonumber\\
          & = & \int_0^\pi \delta(x\cos\theta + y\sin\theta) d\theta
                 \label{eq:app2bp1}
-\end{eqnarray}
+\end{align}
 To proceed, the argument of the delta function must be changed. This
 can be done with the following expression:
 \begin{equation}
@@ -253,11 +253,11 @@ blurring to the projections, followed by integration over
 $\theta$. The convolution of a Gaussian with itself is equivalent to
 multiplying its standard deviation with $\sqrt{2}$ (see appendix
 \ref{app:convol2gauss}). One finds
-\begin{eqnarray}
+\begin{align}
   b(x,y) & = & \int_0^\pi \frac{1}{2\sqrt{\pi}\sigma}
                \exp(-\frac{x^2+y^2}{4 \sigma^2}) \;
               \delta(x\cos\theta + y\sin\theta) d\theta\\
  &=& \frac{1}{2\sqrt{\pi}\sigma \sqrt{x^2 + y^2}}
                \exp(-\frac{x^2+y^2}{4 \sigma^2}),
-\end{eqnarray}
+\end{align}
 which is equivalent to equation (\ref{eq:TOFpsf}).
