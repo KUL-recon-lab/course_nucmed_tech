@@ -75,9 +75,9 @@ photons. Both have a different probability of surviving attenuation. Since the
 detection is only valid if both arrive, and since their fate is independent,
 we must multiply the survival probabilities:
 \begin{align}
-  q(b) & = & \int_a^b \lambda(s) e^{- \int_a^s \mu(\xi) d\xi} 
+  q(b) &= \int_a^b \lambda(s) e^{- \int_a^s \mu(\xi) d\xi} 
                              e^{- \int_s^b \mu(\xi) d\xi} ds \\
-  & = & e^{- \int_a^b \mu(\xi) d\xi} \int_a^b \lambda(s) ds.
+  &= e^{- \int_a^b \mu(\xi) d\xi} \int_a^b \lambda(s) ds.
         \label{eq:pet_proj}
 \end{align}
 
@@ -247,9 +247,9 @@ with $\vec{p} = (s \cos \theta, s \sin \theta)$, $\vec{r} = (r \sin \theta, - r
 Such an ideal projection $q$ is then defined as follows (using the conventions
 of figure \ref{fig:sinogram}):
 \begin{align}
-q(s, \theta) & = &\int_{(x,y) \in \; \mbox{projection line}}
+q(s, \theta) &= \int_{(x,y) \in \; \mbox{projection line}}
                   \lambda(x,y) dx dy\\
-             & = &\int_{-\infty}^{\infty}
+             &= \int_{-\infty}^{\infty}
         \lambda(s \cos \theta + r \sin \theta,
                 s \sin \theta - r \cos \theta) dr. \label{eq:jnidealproj}
 \end{align}
@@ -273,9 +273,9 @@ In the following $Q$ is the 1-D Fourier transform (in the first coordinate) of
 $q$. Because the angle is fixed and zero, we have
 $q(s, \theta) = q(s, 0) = q(x,0)$.
 \begin{align}
-  q(x,0) & = & \int_{-\infty}^{\infty} \lambda(x,y) dy \\
-  Q(\nu_x,0) & = & \int_{-\infty}^{\infty}  q(x,0) e^{-j2\pi \nu_x x} dx \\
-          & = & \int_{-\infty}^{\infty}  \int_{-\infty}^{\infty}
+  q(x,0) &= \int_{-\infty}^{\infty} \lambda(x,y) dy \\
+  Q(\nu_x,0) &= \int_{-\infty}^{\infty}  q(x,0) e^{-j2\pi \nu_x x} dx \\
+          &= \int_{-\infty}^{\infty}  \int_{-\infty}^{\infty}
                  \lambda(x,y) e^{-j2\pi \nu_x x} dx dy.
 \end{align}
 Here, $j = \sqrt{-1}$. Let us now compute the 2-D Fourier transform
@@ -341,9 +341,9 @@ This Fourier-based reconstruction works, but usually an alternative expression
 is used, called ``filtered backprojection''. To explain it, we must first define
 the operation {\em backprojection}:
 \begin{align}
- b(x,y) & = & \int_0^\pi q(x \cos \theta + y \sin \theta, \theta) d \theta
+ b(x,y) &= \int_0^\pi q(x \cos \theta + y \sin \theta, \theta) d \theta
              \nonumber\\
-      & = & \mbox{Backproj} \left( q(s, \theta) \right). \label{eq:jnbackproj}
+      &= \mbox{Backproj} \left( q(s, \theta) \right). \label{eq:jnbackproj}
 \end{align}
 
 \begin{figure}[tb]
@@ -381,8 +381,8 @@ in every point of a circle with radius $R$ is $2 A \pi / (2 \pi R) =
 A/R$. In conclusion, starting with an image $f(x,y)$ which is zero everywhere,
 except in the center where it equals $A$, we find:
 \begin{align}
-  f(x,y) & = & A \delta(x) \delta(y)\\
- b(x,y) & = & (\mbox{backproj}(\mbox{proj}(f))(x,y) \; = \;
+  f(x,y) &= A \delta(x) \delta(y)\\
+ b(x,y) &= (\mbox{backproj}(\mbox{proj}(f))(x,y) \; = \;
   \frac{A}{\sqrt{x^2 + y^2}}.
 \end{align}
 A more rigorous derivation is given in appendix \ref{app:bprojproj}.
@@ -396,21 +396,21 @@ of that operation.
 %------------------------------------
 Filtered backprojection follows directly from the Fourier theorem:
 \begin{align}
-  \lambda(x,y) & = & \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}
+  \lambda(x,y) &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}
          \Lambda(\nu_x, \nu_y) e^{j2\pi (\nu_x x + \nu_y y)} d \nu_x d \nu_y\\
-      & \Downarrow & \mbox{Polar transform:} d \nu_x d \nu_y = |\nu|
+      &\Downarrow \mbox{Polar transform:} d \nu_x d \nu_y = |\nu|
          d\nu d\theta \nonumber\\
-      & = & \int_{-\infty}^{\infty} d\nu \int_0^\pi |\nu| d\theta
+      &= \int_{-\infty}^{\infty} d\nu \int_0^\pi |\nu| d\theta
             \Lambda(\nu \cos \theta, \nu \sin \theta)
             e^{j2\pi \nu (x \cos \theta + y \sin \theta)}\\
-      & \Downarrow & \mbox{Fourier theorem and switching integral signs}
+      &\Downarrow \mbox{Fourier theorem and switching integral signs}
                \nonumber\\
-      & = & \int_0^\pi d\theta \int_{-\infty}^{\infty} |\nu| d\nu
+      &= \int_0^\pi d\theta \int_{-\infty}^{\infty} |\nu| d\nu
             Q(\nu, \theta) e^{j2\pi \nu (x \cos \theta + y \sin \theta)}\\
-      & \Downarrow & \mbox{Apply definition of backprojection} \nonumber\\
-      & = & \mbox{Backproj} \left( \int_{-\infty}^{\infty}
+      &\Downarrow \mbox{Apply definition of backprojection} \nonumber\\
+      &= \mbox{Backproj} \left( \int_{-\infty}^{\infty}
             |\nu| Q(\nu, \theta) e^{j2\pi \nu x} d\nu \right)\\
-      & = & \mbox{Backproj}\left( \mbox{Rampfilter} \left( q(s,\theta) \right)
+      &= \mbox{Backproj}\left( \mbox{Rampfilter} \left( q(s,\theta) \right)
             \right).
 \end{align}
 The ramp filter is defined as the sequence of 1D Fourier transform,
@@ -629,8 +629,8 @@ the logarithm is monotonically increasing. When maximizing over $\Lambda$,
 factors not depending on $\lambda_j$ can be ignored, so we will drop $q_i!$
 from the equations. The resulting log-likelihood function is
 \begin{align}
-  L(Q | \Lambda) & = & \sum_i q_i \ln(r_i) - r_i \\
-        & = & \sum_i q_i \ln(\sum_j c_{ij} \lambda_j) - \sum_j c_{ij}
+  L(Q | \Lambda) &= \sum_i q_i \ln(r_i) - r_i \\
+        &= \sum_i q_i \ln(\sum_j c_{ij} \lambda_j) - \sum_j c_{ij}
            \lambda_j. \label{eq:likelihood}
 \end{align}
 
@@ -741,10 +741,10 @@ $\Lambda^{new}$. The two stages are:
 %'''''''''''''''''''''''
 The E-step yields the following expressions:
 \begin{align}
-E(L_x(X, \Lambda) | Q, \Lambda^{old}) & = & 
+E(L_x(X, \Lambda) | Q, \Lambda^{old}) &= 
    \sum_i \sum_j ( n_{ij} \ln (c_{ij} \lambda_j) -  c_{ij} \lambda_j)
    \label{eq:jnestep1}\\
-n_{ij} & = & c_{ij} \lambda_j^{old} \frac{q_i}{\sum_k c_{ik} \lambda_k^{old}}
+n_{ij} &= c_{ij} \lambda_j^{old} \frac{q_i}{\sum_k c_{ik} \lambda_k^{old}}
    \label{eq:jnestep2}
 \end{align}
 Equation (\ref{eq:jnestep1}) is identical to equation (\ref{eq:jnlx}), except
@@ -1440,12 +1440,12 @@ rectangular function is a sinc function ($\mbox{sinc}(x) =
 \sin(x)/x$), as can easily be verified:
 \begin{align}
   {\cal F}^{-1}(\mbox{rectangle}_{f_c}(f))
-  &=& \int_{-\infty}^{\infty} \mbox{rectangle}_{f_c}(f) e^{2j\pi f x}
+  &= \int_{-\infty}^{\infty} \mbox{rectangle}_{f_c}(f) e^{2j\pi f x}
   df \nonumber\\
-  &=& \int_{-f_x}^{f_c} e^{2j\pi f x} df \nonumber\\
-  &=& \frac{e^{2j\pi f_c x} - e^{- 2j\pi f_c x}}{2j\pi x} \nonumber\\
-  &=& \frac{2j \sin(2\pi f_c x)}{2j\pi x} \nonumber\\
-  &=& \frac{\sin(2\pi f_c x)}{ \pi x},
+  &= \int_{-f_x}^{f_c} e^{2j\pi f x} df \nonumber\\
+  &= \frac{e^{2j\pi f_c x} - e^{- 2j\pi f_c x}}{2j\pi x} \nonumber\\
+  &= \frac{2j \sin(2\pi f_c x)}{2j\pi x} \nonumber\\
+  &= \frac{\sin(2\pi f_c x)}{ \pi x},
 \end{align}
 where we used $e^{jx} = \cos(x) + j \sin(x)$, and $j =
 \sqrt{-1}$. Figure \ref{fig:resolgibbs} shows a sinc function (to plot
