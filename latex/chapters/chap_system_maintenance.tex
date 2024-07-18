@@ -104,9 +104,9 @@ acquiring a large amount of counts (typically 10000) per pixel. Acquisition
 time will be in the order of an hour. Two parameters are computed from an
 image reduced to 64 $\times$ 64 pixels:
 \begin{align}
- \mbox{Integral uniformity} & = & \frac{max - min}{max + min} \times 100 \%
+ \mbox{Integral uniformity} &= \frac{max - min}{max + min} \times 100 \%
       \label{eq:int_unif}\\
- \mbox{Differential uniformity} & = & \max_{i=1..N} \left( \mbox{regional
+ \mbox{Differential uniformity} &= \max_{i=1..N} \left( \mbox{regional
  uniformity $i$}, \right)
 \end{align}
 where the regional uniformity is computed by applying (\ref{eq:int_unif}) to a
@@ -291,16 +291,16 @@ count rate $R_1$. Put the second source on the camera and measure $R_{12}$.
 Remove the first source and measure $R_2$. This produces the following
 equations:
 \begin{align}
-    R_1    & = & R^\ast_1 e^{-R^\ast_1 \tau}\\
-    R_2    & = & R^\ast_2 e^{-R^\ast_2 \tau}\\
-    R_{12} & = & (R^\ast_1 + R^\ast_2) e^{-(R^\ast_1 + R^\ast_2) \tau},
+    R_1    &= R^\ast_1 e^{-R^\ast_1 \tau}\\
+    R_2    &= R^\ast_2 e^{-R^\ast_2 \tau}\\
+    R_{12} &= (R^\ast_1 + R^\ast_2) e^{-(R^\ast_1 + R^\ast_2) \tau},
 \end{align}
 where the (unknown) true count rates are marked with an asterisk. If we did a
 good job preparing the sources, then we have $R_1 \simeq R_2$, so we can
 simplify the equations into
 \begin{align}
-  R       & = & R^\ast e^{- R^\ast \tau}\\
-  R_{12}  & = & 2 R^\ast e^{- 2 R^\ast \tau},
+  R       &= R^\ast e^{- R^\ast \tau}\\
+  R_{12}  &= 2 R^\ast e^{- 2 R^\ast \tau},
 \end{align}
 where we define $R = (R_1 + R_2) / 2$. A bit of work (left as an exercise
 to the reader) leads to
@@ -338,8 +338,8 @@ that the $x$-axis) but much longer (the $y$-axis). Consequently, the
 coordinates $(x_{\mbox{wb}}, y_{\mbox{wb}})$ in the large image are
 computed as
 \begin{align}
-  x_{\mbox{wb}} & = & x\\
-  y_{\mbox{wb}} & = & y + v t,
+  x_{\mbox{wb}} &= x\\
+  y_{\mbox{wb}} &= y + v t,
 \end{align}
 where $(x,y)$ is the normal planar coordinate, $v$ is the table speed and $t$
 is the time. The speed $v$ must be expressed in pixels per s, while the motor
@@ -482,7 +482,7 @@ tracer molecules to obtain a uniform distribution: it takes for ever before the
 phantom is truly uniform. The water must be stirred.
 \begin{figure}[tb]
 \centering
-\includegraphics[width=10.7\textwidth]{figs/fig_jaszczakphantom.pdf}
+\includegraphics[width=0.7\textwidth]{figs/fig_jaszczakphantom.pdf}
 \caption{\label{fig:jaszczak} \emph{A typical ``Jaszczak phantom'',
     named after a very well known SPECT researcher who developed many
     such phantoms (figure from P. Zanzonico, {\em J Nucl Med} 2008;
