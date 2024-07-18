@@ -46,20 +46,20 @@ Let us first look at the denominator:
 A bit more work needs to be done for the numerator:
 \begin{align}
  \sum_{a=0}^N \frac{\bar{a}^a}{a!} \frac{\bar{b}^{N-a}}{(N-a)!} a
-  & = & \sum_{a=1}^N \frac{\bar{a}^a}{a!} \frac{\bar{b}^{N-a}}{(N-a)!} a
+  & = \sum_{a=1}^N \frac{\bar{a}^a}{a!} \frac{\bar{b}^{N-a}}{(N-a)!} a
     \hspace{1cm} \mbox{summation can start from 1}\\
-  & = & \sum_{a=1}^N \frac{\bar{a}^a}{(a-1)!} \frac{\bar{b}^{N-a}}{(N-a)!}\\
-  & = & \bar{a} \sum_{a=1}^N \frac{\bar{a}^{a-1}}{(a-1)!}
+  & = \sum_{a=1}^N \frac{\bar{a}^a}{(a-1)!} \frac{\bar{b}^{N-a}}{(N-a)!}\\
+  & = \bar{a} \sum_{a=1}^N \frac{\bar{a}^{a-1}}{(a-1)!}
                              \frac{\bar{b}^{N-a}}{(N-a)!}\\
-  & = & \bar{a} \sum_{a=0}^{N-1} \frac{\bar{a}^a}{a!} 
+  & = \bar{a} \sum_{a=0}^{N-1} \frac{\bar{a}^a}{a!} 
                                  \frac{\bar{b}^{N-1-a}}{(N-1-a)!}\\
-  & = & \bar{a} \frac{(\bar{a} + \bar{b})^{N-1}}{(N-1)!}
+  & = \bar{a} \frac{(\bar{a} + \bar{b})^{N-1}}{(N-1)!}
 \end{align}
 Combining numerator and denominator results in:
 \begin{align}
-  E(a | a+b=N) & = & \bar{a} \frac{(\bar{a} + \bar{b})^{N-1}}{(N-1)!}
+  E(a | a+b=N) &= \bar{a} \frac{(\bar{a} + \bar{b})^{N-1}}{(N-1)!}
                      \frac{N!}{(\bar{a} + \bar{b})^N}\\
-  & = & \bar{a} \frac{N}{\bar{a} + \bar{b}}
+  &= \bar{a} \frac{N}{\bar{a} + \bar{b}}
 \end{align}
 
 \newpage
@@ -115,9 +115,9 @@ the MLEM algorithm of section \ref{sec:iterrecon}.
 Now, from equation (\ref{eq:appmlem_h2}) we can compute what happens with $L$
 if we apply a GEM-step to increase the value of $h$:
 \begin{align}
-  L(M(\Lambda)) - L(\Lambda) & = &
+  L(M(\Lambda)) - L(\Lambda) &=
   h(M(\Lambda) | \Lambda) - h(\Lambda, \Lambda) \nonumber \\
-  & &  + E\left[\ln k(X | Q, \Lambda) | Q,\Lambda\right] 
+  &  + E\left[\ln k(X | Q, \Lambda) | Q,\Lambda\right] 
        - E\left[\ln k(X | Q, M(\Lambda)) | Q,\Lambda\right] \label{eq:appmlem_l}
 \end{align}
 Because $M$ is a GEM-algorithm, we already know that $h(M(\Lambda) | \Lambda) -
@@ -136,9 +136,9 @@ By definition, we have
 Therefore, the left hand side of equation (\ref{eq:appmlem_k}) can be
 rewritten as
 \begin{align}
-& &  \int k(X | Q, \Lambda) \ln k(X | Q, \Lambda) dX 
+&  \int k(X | Q, \Lambda) \ln k(X | Q, \Lambda) dX 
   - \int k(X | Q, \Lambda) \ln k(X | Q, M(\Lambda)) dX \\
-& = & \int k(X | Q, \Lambda)
+&= \int k(X | Q, \Lambda)
         \ln \frac{k(X | Q, \Lambda)}{k(X | Q, M(\Lambda))} dX, 
         \label{eq:appmlem_k2}
 \end{align}
@@ -150,8 +150,8 @@ now.\\[3mm]
 Consider the function $\psi(t) = t \ln t$. It is only defined for $t >
 0$. Here are its derivatives:
 \begin{align}
-  \psi'(t) = \frac{d \psi(t)}{dt} & = & 1 + \ln t\\
-  \psi''(t) = \frac{d^2 \psi(t)}{dt^2} & = & \frac{1}{t} > 0
+  \psi'(t) &= \frac{d \psi(t)}{dt} = 1 + \ln t\\
+  \psi''(t) &= \frac{d^2 \psi(t)}{dt^2} = \frac{1}{t} > 0
 \end{align}
 The second derivative is continuous and strictly positive ($t \ln t$ is a
 convex function). Consequently, we can always find a value $u$ such that
@@ -172,17 +172,16 @@ Consider now an integral of the same form as in (\ref{eq:appmlem_k2}):
 \end{equation}
 We can rework it such that we can exploit the convexity of $t \ln t$:
 \begin{align}
-  & &  \int f_1(x) \ln \frac{f_1(x)}{f_2(x)} dx \nonumber\\
-  & = & \int \frac{f_1(x)}{f_2(x)} \ln \left( \frac{f_1(x)}{f_2(x)} \right)
+  &  \int f_1(x) \ln \frac{f_1(x)}{f_2(x)} dx \nonumber\\
+  &= \int \frac{f_1(x)}{f_2(x)} \ln \left( \frac{f_1(x)}{f_2(x)} \right)
         f_2(x) dx \nonumber\\
-  & = & \int \left[ \frac{f_1(x)}{f_2(x)} -1 + 
+  &= \int \left[ \frac{f_1(x)}{f_2(x)} -1 + 
        \frac{1}{2}\left( \frac{f_1(x)}{f_2(x)} - 1\right)^2 
         \psi''(u(x)) \right]  f_2(x) dx \; \mbox{with} \; 0 < u(x) < \infty 
         \nonumber\\
-  & = & \int \left( f_1(x) - f_2(x) \right) dx + 
+  &= \int \left( f_1(x) - f_2(x) \right) dx + 
         \frac{1}{2} \int \left( \frac{f_1(x)}{f_2(x)} - 1 2\right)^2
-        \psi''(u(x)) f_2(x) dx \;\; \geq \;\; 0 \nonumber\\
-  & & \mbox{q.e.d.} \nonumber
+        \psi''(u(x)) f_2(x) dx \;\; \geq \;\; 0
 \end{align}
 
 Now we have proved that the GEM-step increases $L$. It still remains
@@ -207,9 +206,9 @@ where $\delta(x)$ is the delta function: $\delta(x) = 1$ if $x = 0$, and
 $\delta(x) = 0$ if $x \neq 0$.
 The backprojection $b(x,y)$ is then given by
 \begin{align}
-  b(x,y) & = & \int_0^\pi q(x \cos\theta + y\sin\theta, \theta)
+  b(x,y) &= \int_0^\pi q(x \cos\theta + y\sin\theta, \theta)
                 d\theta \nonumber\\
-         & = & \int_0^\pi \delta(x\cos\theta + y\sin\theta) d\theta
+         &= \int_0^\pi \delta(x\cos\theta + y\sin\theta) d\theta
                 \label{eq:app2bp1}
 \end{align}
 To proceed, the argument of the delta function must be changed. This
@@ -254,10 +253,10 @@ $\theta$. The convolution of a Gaussian with itself is equivalent to
 multiplying its standard deviation with $\sqrt{2}$ (see appendix
 \ref{app:convol2gauss}). One finds
 \begin{align}
-  b(x,y) & = & \int_0^\pi \frac{1}{2\sqrt{\pi}\sigma}
+  b(x,y) &= \int_0^\pi \frac{1}{2\sqrt{\pi}\sigma}
                \exp(-\frac{x^2+y^2}{4 \sigma^2}) \;
               \delta(x\cos\theta + y\sin\theta) d\theta\\
- &=& \frac{1}{2\sqrt{\pi}\sigma \sqrt{x^2 + y^2}}
+ &= \frac{1}{2\sqrt{\pi}\sigma \sqrt{x^2 + y^2}}
                \exp(-\frac{x^2+y^2}{4 \sigma^2}),
 \end{align}
 which is equivalent to equation (\ref{eq:TOFpsf}).

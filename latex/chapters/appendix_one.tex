@@ -293,9 +293,8 @@ $\theta$. The projection $q(s,\theta)$ can be written as
 \end{equation}
 The 1D Fourier transform of $q(s,\theta)$ along $s$ equals:
 \begin{align}
-  Q_1(\nu_s, \theta) &=& \int_{-\infty}^{\infty} q(s, \theta) e^{-j2\pi \nu_s s} ds 
-    \nonumber\\
-  &=& \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\lambda(s\cos\theta - r\sin\theta, 
+  Q_1(\nu_s, \theta) &= \int_{-\infty}^{\infty} q(s, \theta) e^{-j2\pi \nu_s s} ds \nonumber \\
+  &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\lambda(s\cos\theta - r\sin\theta, 
                           s\sin\theta + r\cos\theta)e^{-j2\pi \nu_s s} dr ds
       \label{eq:Q1}
 \end{align}
@@ -313,13 +312,13 @@ We now switch to a rotated coordinate system by setting:
 \end{align}
 It follows that $\nu_x x + \nu_y y = \nu_s s + \nu_r r$. The Jacobian
 of the transformation equals unity, so $dx dy = dr ds$. Thus, we obtain:
-\begin{align}
-\lefteqn{\Lambda(\nu_s \cos\theta - \nu_r\sin\theta, 
-      \nu_s\sin\theta + \nu_r\cos\theta)} \nonumber\\
-   &=& \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} 
+\begin{multline}
+\Lambda(\nu_s \cos\theta - \nu_r\sin\theta, 
+      \nu_s\sin\theta + \nu_r\cos\theta) \\
+   = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} 
      \lambda(s \cos\theta - r\sin\theta, s\sin\theta + r\cos\theta) 
        e^{-j2\pi (\nu_s s + \nu_r r)} ds dr
-\end{align}
+\end{multline}
 Comparison with (\ref{eq:Q1}) reveals that setting $\nu_r = 0$ in
 $\Lambda$ produces $Q_1$:
 \begin{equation}
@@ -353,14 +352,12 @@ Consider the rectangular filter ${\cal R}(\omega)$ of figure  \ref{fig:rampapp2}
 value equals $W$ for frequency $\omega$ between $-W$ and $W$, and it is
 zero elsewhere. Its inverse Fourier transform equals:
 \begin{align}
-R(x) & = & W \int_{-\infty}^{\infty} {\cal R}(\omega) e^{2\pi j \omega x} 
-           d\omega \nonumber\\
- &=& W \int_{-W}^W e^{2\pi j \omega x} d\omega 
-   \hspace{5mm} = \hspace{5mm} 
-     W \int_{-W}^W (\cos(2\pi \omega x) + j \sin(2\pi \omega x)) d\omega 
-       \nonumber\\
- &=& W \int_{-W}^W \cos(2\pi \omega x) d\omega \nonumber\\
- & = & W \frac{\sin(2\pi W x)}{\pi x} 
+R(x) & =  W \int_{-\infty}^{\infty} {\cal R}(\omega) e^{2\pi j \omega x} 
+           d\omega \nonumber \\
+ &= W \int_{-W}^W e^{2\pi j \omega x} d\omega = W \int_{-W}^W (\cos(2\pi \omega x) + j \sin(2\pi \omega x)) d\omega 
+       \nonumber \\
+ &= W \int_{-W}^W \cos(2\pi \omega x) d\omega \nonumber \\
+ & = W \frac{\sin(2\pi W x)}{\pi x} 
 \end{align}
 The third equality follows from the fact that the integral of a sine
 over an interval symmetrical about zero is always zero. The inverse
@@ -370,22 +367,31 @@ The convolution of a rectangular function with itself is a triangular
 function. More precisely, consider the rectangular function 
 ${\cal R}_2(\omega)$ and the triangular function ${\cal T}(\omega)$
 defined as:
-\begin{align}
- {\cal R}_2(\omega) &=& 1 \hspace{5mm} \mbox{if   $-W/2 < \omega < W/2$}
-                        \nonumber \\
-                    &=& 0  \hspace{5mm} \mbox{otherwise}\\
- {\cal T}(\omega) &=& W - |\omega| \hspace{5mm} 
-             \mbox{if   $-W < \omega < W$} \nonumber\\
-                  &=& 0  \hspace{5mm} \mbox{otherwise}
-\end{align}
+%
+\begin{equation}
+ {\cal R}_2(\omega) = 
+\begin{cases}
+1 &\text{if}   -W/2 < \omega < W/2 \\
+0 &\text{otherwise}
+\end{cases}
+\end{equation}
+%
+\begin{equation}
+{\cal T}(\omega) = 
+\begin{cases}
+W - |\omega| &\text{if} -W < \omega < W \\
+0 &\text{otherwise}
+\end{cases}
+\end{equation}
+%
 Then it is easy to verify that the convolution of ${\cal R}_2(\omega)$
 with itself equals ${\cal T}(\omega)$:
 \begin{align}
     \int_{-\infty}^\infty {\cal R}_2(\omega') 
                           {\cal R}_2(\omega - \omega') d\omega'
-&=& \int_{-W/2}^{W/2} {\cal R}_2(\omega - \omega') d\omega' \nonumber\\
-&=& \int_{\omega-W/2}^{\omega+W/2} {\cal R}_2(\omega') d\omega' \nonumber\\
-&=& {\cal T}(\omega) 
+&= \int_{-W/2}^{W/2} {\cal R}_2(\omega - \omega') d\omega' \nonumber\\
+&= \int_{\omega-W/2}^{\omega+W/2} {\cal R}_2(\omega') d\omega' \nonumber\\
+&= {\cal T}(\omega) 
 \end{align}
 Note that the rectangular filters ${\cal R}_2(\omega)$ and ${\cal
 R}(\omega)$ have a different width and amplitude.
@@ -429,16 +435,16 @@ transformed to very simple functions of $s$. Some of its interesting features
 are listed below (most are easy to prove). The functions of the time are at
 the left, the corresponding Laplace transforms are at the right:
 \begin{align}
-F(t)                        & \Longleftrightarrow & f(s) \\
-\frac{dF(t)}{dt}            & \Longleftrightarrow & s f(s) - F(0) \\
-e^{at} F(t)                 & \Longleftrightarrow & f(s - a)\\
-\int_0^t F(u) G(t - u) du   & \Longleftrightarrow & f(s) g(s) \label{eq:lap1}\\
-\int_0^t F(u) du            & \Longleftrightarrow & \frac{f(s)}{s}\\
-1                           & \Longleftrightarrow & \frac{1}{s}\\
-e^{at}                      & \Longleftrightarrow & \frac{1}{s - a} \label{eq:lap2}
+F(t)                        & \Longleftrightarrow f(s) \\
+\frac{dF(t)}{dt}            & \Longleftrightarrow s f(s) - F(0) \\
+e^{at} F(t)                 & \Longleftrightarrow f(s - a)\\
+\int_0^t F(u) G(t - u) du   & \Longleftrightarrow f(s) g(s) \label{eq:lap1}\\
+\int_0^t F(u) du            & \Longleftrightarrow \frac{f(s)}{s}\\
+1                           & \Longleftrightarrow \frac{1}{s}\\
+e^{at}                      & \Longleftrightarrow \frac{1}{s - a} \label{eq:lap2}
 \end{align}
 
 By combining (\ref{eq:lap1}) and (\ref{eq:lap2}) one obtains
 \begin{align}
-\int_0^\infty F(u) e^{-a(t - u)} du & \Longleftrightarrow & \frac{f(s)}{s-a}
+\int_0^\infty F(u) e^{-a(t - u)} du & \Longleftrightarrow \frac{f(s)}{s-a}
 \end{align}
