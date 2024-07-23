@@ -5,7 +5,14 @@ project:
   title: Nuclear Medicine Technology and Techniques
   # description:
   # keywords: []
-  authors: [Johan Nuyts, Georg Schramm]
+  authors:
+  - name: Johan Nuyts
+    affiliations:
+      - id: kul
+        institution: KU Leuven
+  - name: Georg Schramm
+    affiliation: kul
+
   github: https://github.com/KUL-recon-lab/course_nucmed_tech
   # To autogenerate a Table of Contents, run "myst init --write-toc"
    
