@@ -20,6 +20,7 @@ project:
     - file: 01_introduction.md
     - file: 02_radionuclides.md
     - file: 03_photon_matter_interactions.md
+    - file: 04_data_acquisition.md
 
   export:
     - md
