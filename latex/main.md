@@ -93,7 +93,7 @@ For quantitative analysis, the influence of Poisson noise must be minimized by a
 \end{align}
 ```
 
-where the regional uniformity is computed by applying ([98](#eq:int_unif)) to a small line interval containing only 5 pixels, and this for all possible vertical and horizontal line intervals. The differential uniformity is always a bit smaller than the integral uniformity, and insensitive to gradual changes in image intensity.
+where the regional uniformity is computed by applying [](#eq:int_unif) to a small line interval containing only 5 pixels, and this for all possible vertical and horizontal line intervals. The differential uniformity is always a bit smaller than the integral uniformity, and insensitive to gradual changes in image intensity.
 
 In an image of 64 × 64 with 10000 counts per pixel, the integral uniformity due to Poisson noise only is about 4%, typical specifications are a bit larger, e.g. 4.5%.
 
@@ -114,7 +114,7 @@ The uniformity test is sensitive to most of the things that can go wrong with a 
 
 % --------------
 
-The {math}`x` and {math}`y` coordinates are computed according to equation ([19](#eq:gammaposition)), so they are affected by the PMT characteristics, the amplification of the analogue signals prior to A/D conversion and possibly by the energy of the incoming photon, since that affects the PMT outputs.
+The {math}`x` and {math}`y` coordinates are computed according to equation [](#eq:gammaposition), so they are affected by the PMT characteristics, the amplification of the analogue signals prior to A/D conversion and possibly by the energy of the incoming photon, since that affects the PMT outputs.
 
 Measuring the pixel size is simple: put two point sources at a known distance, acquire an image and measure the distance in the image. Sub-pixel accuracy is obtained by computing the mass center of the point source response. The precision will be better for larger distances. The pixel size must be measured in {math}`x` *and* in {math}`y` direction, since usually each direction has its own amplifiers.
 
@@ -194,7 +194,7 @@ With current computers, it is not difficult to implement a better and more repro
 
 % --------------
 
-The dead time measurements are based on some dead time model, for example equations ([54](#eq:dead1)) or ([55](#eq:dead2)). The effective dead time τ is the parameter we want to obtain. Usually, the exact amount of radioactivity is unknown as well, so there are two unknown variables. Consequently, we need at least two measurements to determine them. Many procedures can be devised. A straightforward one is to use a strong source with short half life, and acquire images while the activity decays. At low count rates the gamma camera is known to work well, so we assume that this part of the curve is correct (slope 1). Thus, we can compute what the camera should have measured, the true count rate, allowing us to draw the curve of figure [31](#fig:dead_time). Then, τ can be computed, e.g. by fitting the model to the rest of the curve.
+The dead time measurements are based on some dead time model, for example equations [](#eq:dead1) or [](#eq:dead2). The effective dead time τ is the parameter we want to obtain. Usually, the exact amount of radioactivity is unknown as well, so there are two unknown variables. Consequently, we need at least two measurements to determine them. Many procedures can be devised. A straightforward one is to use a strong source with short half life, and acquire images while the activity decays. At low count rates the gamma camera is known to work well, so we assume that this part of the curve is correct (slope 1). Thus, we can compute what the camera should have measured, the true count rate, allowing us to draw the curve of figure [31](#fig:dead_time). Then, τ can be computed, e.g. by fitting the model to the rest of the curve.
 
 A faster method suggested in {cite:t}`Aanbevelingen` is to prepare two sources with the same amount of radioactivity (difference less than 10%). Select the sources such that when combined the count rate is probably high enough to produce a noticeable dead time effect (otherwise the subsequent analysis will be very sensitive to noise). Put one source on the camera and measure the count rate {math}`R_1`. Put the second source on the camera and measure {math}`R_{12}`. Remove the first source and measure {math}`R_2`. This produces the following equations:
 
@@ -449,7 +449,7 @@ The crystal is usually several centimeters thick to further improve the detectio
 :alt: Left: diagram of a well counter, showing a test tube inside the well. Right: the geometrical sensitivity of the well counter to activity inside the tube, as a function of the depth inside the crystal (H = 2 cm).
 :::
 
-One problem of the well counter is that its sensitivity varies with the position of the source inside the crystal: the deeper a point source is positioned inside the crystal, the smaller the chance that its photons will escape through the entrance of the cavity. A simple approximate calculation illustrates the effect. Suppose that the radius of the cylindrical cavity is {math}`H` and that a point source is positioned centrally in the hole at a depth {math}`D`. As illustrated in fig. [79](#fig:wellcountersens), we have to compute the solid angle of the entrance, as seen from the point source, to obtain the chance that a photon escapes. A similar computation was done near equation [(25)](#eq:collim:fwhm), but this time, we cannot ignore the curvature of the sphere surface, because the entrance hole is fairly large:
+One problem of the well counter is that its sensitivity varies with the position of the source inside the crystal: the deeper a point source is positioned inside the crystal, the smaller the chance that its photons will escape through the entrance of the cavity. A simple approximate calculation illustrates the effect. Suppose that the radius of the cylindrical cavity is {math}`H` and that a point source is positioned centrally in the hole at a depth {math}`D`. As illustrated in fig. [79](#fig:wellcountersens), we have to compute the solid angle of the entrance, as seen from the point source, to obtain the chance that a photon escapes. A similar computation was done near equation [](#eq:collim:fwhm), but this time, we cannot ignore the curvature of the sphere surface, because the entrance hole is fairly large:
 
 ```{math}
 \mbox{escape-chance}(D)
@@ -485,7 +485,7 @@ And the chance that the photon will be detected equals
 
 We find that for {math}`D = 0`, the sensitivity is 0.5, which makes sense, because all photons going up will escape and all photons going down will hit the crystal. For {math}`D` going to ∞, the sensitivity goes to unity. Note that the equation also holds for negative {math}`D`, which means putting {math}`D` above the crystal. That makes the sensitivity smaller than 0.5, and for {math}`D = -\infty`, the sensitivity becomes zero. A plot of the sensitivity as a function of the depth {math}`D` is also shown in figure [79](#fig:wellcountersens), for {math}`H` = 2 cm, i.e. a cylinder diameter of 4 cm. This figure clearly shows that the sensitivity variations are not negligible. One should obviously put objects as deep as possible inside the crystal. Suppose we have two identical test tubes, both with exactly the same amount of activity, but dissolved in different amounts of water. If we measure the test tubes one after the other with a well counter, putting each tube in exactly the same position, the tube with less water will produce more counts!
 
-Expression ([108](#eq:wellcountersens)) is approximate in an optimistic way, because it ignores (amongst other effects) the possibility of a photon traveling through the crystal without any interaction. Although the well counter is well shielded, it not impossible that there would be other sources of radioactivity in the vicinity of the device, which could contribute a bit of radiation during the measurement. Even a very small amount of background radiation could influence the measurement, in particular if samples with very low activity are being measured. For that reason, the well counter can do a background measurement (simply a measurement without a source in the detector), and subtract the recorded value from subsequent measurements. Of course, if there would be a significant background contribution, it would usually be much better to remove or shield it than to leave it there and correct for it.
+Expression [](#eq:wellcountersens) is approximate in an optimistic way, because it ignores (amongst other effects) the possibility of a photon traveling through the crystal without any interaction. Although the well counter is well shielded, it not impossible that there would be other sources of radioactivity in the vicinity of the device, which could contribute a bit of radiation during the measurement. Even a very small amount of background radiation could influence the measurement, in particular if samples with very low activity are being measured. For that reason, the well counter can do a background measurement (simply a measurement without a source in the detector), and subtract the recorded value from subsequent measurements. Of course, if there would be a significant background contribution, it would usually be much better to remove or shield it than to leave it there and correct for it.
 
 (radionuclide-calibrator)=
 ### Radionuclide calibrator
@@ -539,7 +539,7 @@ The output of the detector is proportional to the total number of ionized gas at
 
 Ionisation chambers often use air, but for radionuclide calibrators, typically pressurised Argon is used. The high pressure in the chamber reduces the sensitivity to the atmospheric pressure. In addition, the high pressure (more atoms) and the higher attenuation of Ar improve the sensitivity of the detector. Radionuclide calibrators designed for higher activities (up to ± 20 Ci or ± 750 GBq) use typically a pressure of around 5 bar. These radionuclide calibrators are more likely to be found at PET sites, where higher activities can be used because of the short half lifes of most PET isotopes. For quantifying lower activities (up to ± 5 Ci or ± 200 GBq), radionuclide calibrators with a higher pressure (± 12 bar) are used, because a higher pressure improves the stability for low activity counting.
 
-Since the geometry of the radionuclide calibrator is similar to that of the well counter, it suffers from the same position dependent response illustrated in fig. [108](#eq:wellcountersens). But in contrast to the well counter, the response of the radionuclide calibrator is also heavily dependent upon the energy of the photons emitted by the isotope. The photons have to reach the gas, and to do so, they must travel through the water in the test tube, through the wall of the test tube and through the wall of the radionuclide calibrator. Then, they have to interact with the gas to produce ionisations. The probability of interactions (attenuation) decreases with increasing energy. Finally, in every interaction, a few tens of eV are transferred, so the higher the energy of the photon, the more ionisations that same photon could produce. These three effects are illustrated in figure [81](#fig:dosecalib). The figure also shows their product, which has a sharp local maximum at low energies, and increases with increasing energy. This is only a rough approximation, the actual curve for a particular radionuclide calibrator depends on many things and it is safer (and much easier) to measure it than to compute it. Knowing the emissions of a particular isotope, and the sensitivity of the radionuclide calibrator for each of those emissions, one can deduce the activity of the isotope from the radionuclide calibrator measurement. A well calibrated radionuclide calibrator will do this automatically for you, you only have to tell it which isotope you are measuring, typically by selecting it from a menu.
+Since the geometry of the radionuclide calibrator is similar to that of the well counter, it suffers from the same position dependent response illustrated in [](#fig:wellcountersens). But in contrast to the well counter, the response of the radionuclide calibrator is also heavily dependent upon the energy of the photons emitted by the isotope. The photons have to reach the gas, and to do so, they must travel through the water in the test tube, through the wall of the test tube and through the wall of the radionuclide calibrator. Then, they have to interact with the gas to produce ionisations. The probability of interactions (attenuation) decreases with increasing energy. Finally, in every interaction, a few tens of eV are transferred, so the higher the energy of the photon, the more ionisations that same photon could produce. These three effects are illustrated in figure [81](#fig:dosecalib). The figure also shows their product, which has a sharp local maximum at low energies, and increases with increasing energy. This is only a rough approximation, the actual curve for a particular radionuclide calibrator depends on many things and it is safer (and much easier) to measure it than to compute it. Knowing the emissions of a particular isotope, and the sensitivity of the radionuclide calibrator for each of those emissions, one can deduce the activity of the isotope from the radionuclide calibrator measurement. A well calibrated radionuclide calibrator will do this automatically for you, you only have to tell it which isotope you are measuring, typically by selecting it from a menu.
 
 The high sensitivity at low energies can be problematic for isotopes such as {sup}`123`I and {sup}`111`In, which emit a fairly large amount of low energy photons (see table [3](#tab:dosiscalib)). The problem is that these low energy photons are easily attenuated by a little bit of water or a small amount of glass, and therefore, the dosis calibrator would give very different responses when measuring the same activity in different test tubes. The reproducibility improves dramatically when these photons are eliminated by adding a bit of attenuating material, such as a “Cu-filter”. This filter is basically a copper recipient with a very thin wall (half a mm or less), which has very high attenuation for low energies, but only moderate attenuation for higher energies. This is illustrated in the right panel of fig. [81](#fig:dosecalib).
 
@@ -823,14 +823,14 @@ The compartments {math}`E` and {math}`M` can only be separated with subcellular 
 C_I(t) = C_E(t) + C_M(t).
 ```
 
-Consequently, we must combine the equations ([117](#eq:C_E)) and ([118](#eq:C_M)) in order to write {math}`C_I(t)` as a function of {math}`C_P(t)` and the rate constants. This is the operational function. Since {math}`C_I(t)` and {math}`C_P(t)` are known, the only remaining unknown variables will be the rate constants, which are obtained by solving the operational function.
+Consequently, we must combine the equations [](#eq:C_E) and [](#eq:C_M) in order to write {math}`C_I(t)` as a function of {math}`C_P(t)` and the rate constants. This is the operational function. Since {math}`C_I(t)` and {math}`C_P(t)` are known, the only remaining unknown variables will be the rate constants, which are obtained by solving the operational function.
 
 (deriving-the-operational-function)=
 ##### Deriving the operational function 
 
 % ''''''''''''''''''''''''''''''''''''''''''''
 
-To deal with differential equations, the Laplace transform is a valuable tool. Appendix [??](#app:laplace) gives the definition and a short table of the features we need for the problem at hand. The strength of the Laplace transform is that derivatives and integrals with respect to {math}`t` become simple functions of {math}`s`. After transformation, elimination of variables is easy. The result is then back-transformed to the time domain. Laplace transform of ([117](#eq:C_E)) and ([118](#eq:C_M)) results in
+To deal with differential equations, the Laplace transform is a valuable tool. Appendix [??](#app:laplace) gives the definition and a short table of the features we need for the problem at hand. The strength of the Laplace transform is that derivatives and integrals with respect to {math}`t` become simple functions of {math}`s`. After transformation, elimination of variables is easy. The result is then back-transformed to the time domain. Laplace transform of [](#eq:C_E) and [](#eq:C_M) results in
 
 ```{math}
 :label: eq:sc_E
@@ -844,7 +844,7 @@ s c_E(s) = K_1 c_P(s) - (k_2 + k_3) c_E(s)
 s c_M(s) = k_3 c_E(s)
 ```
 
-where we have assumed that at time {math}`t=0` (time of injection) all tracer amounts are zero. From ([120](#eq:sc_E)) we find {math}`c_E(s)` as a function of {math}`c_P(s)`. Inserting in ([121](#eq:sc_M)) produces {math}`c_M(s)` as a function of {math}`c_P(s)`.
+where we have assumed that at time {math}`t=0` (time of injection) all tracer amounts are zero. From [](#eq:sc_E) we find {math}`c_E(s)` as a function of {math}`c_P(s)`. Inserting in [](#eq:sc_M) produces {math}`c_M(s)` as a function of {math}`c_P(s)`.
 
 ```{math}
 :label: eq:c_I
@@ -865,7 +865,7 @@ The two factors in {math}`s` can be split from the denominator using the equatio
 \frac{a}{x(x + b)} = \frac{a}{b} \left( \frac{1}{x} - \frac{1}{x+b} \right)
 ```
 
-Applying this to ([122](#eq:c_I)) and rearranging a bit yields:
+Applying this to [](#eq:c_I) and rearranging a bit yields:
 
 ```{math}
 c_I(s) = \frac{K_1 k_2}{(k_2 + k_3)} \frac{c_P(s)}{(s + k_2 + k_3)} + 
@@ -886,21 +886,21 @@ C_I(t) = \frac{K_1 k_2}{k_2 + k_3} \int_0^t C_P(u) e^{-(k_2 + k_3)(t - u)}du
 :align: center
 :alt: The tracer amount C_I(t) and its two terms when C_P(t) is a step function (equation (%s)).
 
-*The tracer amount {math}`C_I(t)` and its two terms when {math}`C_P(t)` is a step function (equation ([125](#eq:3comp_ci))).*
+*The tracer amount {math}`C_I(t)` and its two terms when {math}`C_P(t)` is a step function (equation [](#eq:3comp_ci)).*
 :::
 
 
 
-Figure [85](#fig:3comp_ci) plots {math}`C_I` and the two terms of equation ([125](#eq:3comp_ci)) for the case when {math}`C_P(t)` is a step function. {math}`C_P(t)` is never a step function, but the plot provides interesting information. The first term of ([125](#eq:3comp_ci)) represents tracer molecules that leave the vascular space, stay a while in compartment {math}`E` and then return back to the blood. As soon as the tracer is present in the blood, this component starts to grow until it reaches a maximum. When {math}`C_P(t)` becomes zero again, the component gradually decreases towards zero. This first term follows the input, but with some delay (CI{sub}`1`(t) in fig. [85](#fig:3comp_ci)).
+Figure [85](#fig:3comp_ci) plots {math}`C_I` and the two terms of equation [](#eq:3comp_ci) for the case when {math}`C_P(t)` is a step function. {math}`C_P(t)` is never a step function, but the plot provides interesting information. The first term of [](#eq:3comp_ci) represents tracer molecules that leave the vascular space, stay a while in compartment {math}`E` and then return back to the blood. As soon as the tracer is present in the blood, this component starts to grow until it reaches a maximum. When {math}`C_P(t)` becomes zero again, the component gradually decreases towards zero. This first term follows the input, but with some delay (CI{sub}`1`(t) in fig. [85](#fig:3comp_ci)).
 
-The second term of ([125](#eq:3comp_ci)) represent tracer molecules that enter compartment {math}`E` and will never leave (CI{sub}`2`(t) in fig. [85](#fig:3comp_ci)). Eventually, they will be trapped in compartment {math}`M`. Note that the first term is not equal to but smaller than {math}`C_E(t)`. The reason is that part of the molecules in {math}`E` will not return to the blood but end up in {math}`M`. It is easy to compute which fraction of {math}`C_E(t)` is described by the first term of ([125](#eq:3comp_ci)). (The rest of {math}`C_E(t)` and {math}`C_M(t)` correspond to the second term of ([125](#eq:3comp_ci)).) This is left as an exercise to the reader.
+The second term of [](#eq:3comp_ci) represent tracer molecules that enter compartment {math}`E` and will never leave (CI{sub}`2`(t) in fig. [85](#fig:3comp_ci)). Eventually, they will be trapped in compartment {math}`M`. Note that the first term is not equal to but smaller than {math}`C_E(t)`. The reason is that part of the molecules in {math}`E` will not return to the blood but end up in {math}`M`. It is easy to compute which fraction of {math}`C_E(t)` is described by the first term of [](#eq:3comp_ci). (The rest of {math}`C_E(t)` and {math}`C_M(t)` correspond to the second term of [](#eq:3comp_ci)). This is left as an exercise to the reader.
 
 (impulse-response)=
 ##### Impulse response 
 
 % '''''''''''''''''''''''''''''
 
-Equation [125](#eq:3comp_ci) can be rewritten as
+Equation [](#eq:3comp_ci) can be rewritten as
 
 ```{math}
 C_I(t) = \frac{K_1}{k_2 + k_3} \int_0^t C_P(u) \left(
@@ -923,7 +923,7 @@ This is a convolution of the input function with the factor in brackets, showing
 
 % '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-The same result ([125](#eq:3comp_ci)) can be obtained with the method of variation of parameters. For simplicity, we set {math}`\beta = k_2 + k_3`, rewriting equation ([117](#eq:C_E)) as follows
+The same result [](#eq:3comp_ci) can be obtained with the method of variation of parameters. For simplicity, we set {math}`\beta = k_2 + k_3`, rewriting equation [](#eq:C_E) as follows
 
 ```{math}
 :label: eq:vp1
@@ -937,8 +937,8 @@ First, we solve the corresponding homogeneous equation, obtained by dropping the
 \frac{dC_E(t)}{dt}  =  - \beta C_E(t).
 ```
 
-The solution is {math}`C_E(t) = A e^{-\beta t}`. Now we assume that the solution to ([128](#eq:vp1)) is similar, except that the constant {math}`A` must be replaced by a function of {math}`t`: {math}`C_E(t) = A(t) \; e^{-\beta
-t}`. Inserting this in ([128](#eq:vp1)) we obtain:
+The solution is {math}`C_E(t) = A e^{-\beta t}`. Now we assume that the solution to [](#eq:vp1) is similar, except that the constant {math}`A` must be replaced by a function of {math}`t`: {math}`C_E(t) = A(t) \; e^{-\beta
+t}`. Inserting this in [](#eq:vp1) we obtain:
 
 ```{math}
 :label: eq:vp2
@@ -961,7 +961,7 @@ t}`. Inserting this in ([128](#eq:vp1)) we obtain:
 
 
 
-Having solved the equation for the first tissue compartment, we can use {math}`C_E(t)` to find the activity in the second compartment. We simply insert ([130](#eq:vp2)) in the equation ([118](#eq:C_M)) for {math}`C_M(t)` to obtain:
+Having solved the equation for the first tissue compartment, we can use {math}`C_E(t)` to find the activity in the second compartment. We simply insert [](#eq:vp2) in the equation [](#eq:C_M) for {math}`C_M(t)` to obtain:
 
 ```{math}
 \begin{align}
@@ -997,7 +997,7 @@ And therefore we can write
         - \int_0^t f(\xi) \frac{d g(\xi)}{d\xi} d\xi
 ```
 
-We apply this trick to get rid of the inner integral in ([132](#eq:vp3)) as follows:
+We apply this trick to get rid of the inner integral in [](#eq:vp3) as follows:
 
 ```{math}
 \begin{align}
@@ -1008,7 +1008,7 @@ We apply this trick to get rid of the inner integral in ([132](#eq:vp3)) as foll
 \end{align}
 ```
 
-With these definitions, the left hand side of ([134](#eq:vptrick)) is equal to ([132](#eq:vp3)). Note that {math}`g(0) = 0` here, which makes things slightly simpler. The trick converts ([132](#eq:vp3)) into:
+With these definitions, the left hand side of [](#eq:vptrick) is equal to [](#eq:vp3). Note that {math}`g(0) = 0` here, which makes things slightly simpler. The trick converts [](#eq:vp3) into:
 
 ```{math}
 :label: eq:vp4
@@ -1024,7 +1024,8 @@ With these definitions, the left hand side of ([134](#eq:vptrick)) is equal to (
 \end{align}
 ```
 
-where we have replaced β again with {math}`k_2 + k_3`. Finally, to obtain {math}`C_I(t) = C_E(t) + C_M(t)` we sum ([130](#eq:vp2)) and ([136](#eq:vp4)):
+where we have replaced β again with {math}`k_2 + k_3`. Finally, to obtain {math}`C_I(t) = C_E(t) + C_M(t)` 
+we sum [](#eq:vp2) and [](#eq:vp4):
 
 ```{math}
 \begin{align}
@@ -1038,7 +1039,7 @@ C_I(t) &= (K_1 - \frac{K_1 k_3}{k_2 + k_3})
 \end{align}
 ```
 
-which is identical to equation ([125](#eq:3comp_ci)).
+which is identical to equation [](#eq:3comp_ci).
 
 (computing-the-rate-constants-with-non-linear-regression)=
 ##### Computing the rate constants with non-linear regression 
@@ -1066,7 +1067,7 @@ Non-linear regression programs often provide an estimate of the confidence inter
 
 % '''''''''''''''''''''''''''''''''''''''''
 
-By introducing a small approximation, the computation of the glucose consumption can be simplified. Figure [83](#fig:kinemodel) shows a typical blood function. The last part of the curve is always very smooth. As a result, the first term of ([125](#eq:3comp_ci)) nicely follows the shape of {math}`C_p(t)`. Stated otherwise, {math}`C_p(u)` changes very little over the range where {math}`e^{-(k_2 + k_3)(t - u)}` is significantly different from zero. Thus, we can put {math}`C_p(t)` in front of the integral sign. Since {math}`t` is large relative to the decay time of the exponential, we can set {math}`t` to ∞:
+By introducing a small approximation, the computation of the glucose consumption can be simplified. Figure [83](#fig:kinemodel) shows a typical blood function. The last part of the curve is always very smooth. As a result, the first term of [](#eq:3comp_ci) nicely follows the shape of {math}`C_p(t)`. Stated otherwise, {math}`C_p(u)` changes very little over the range where {math}`e^{-(k_2 + k_3)(t - u)}` is significantly different from zero. Thus, we can put {math}`C_p(t)` in front of the integral sign. Since {math}`t` is large relative to the decay time of the exponential, we can set {math}`t` to ∞:
 
 ```{math}
 \begin{align}
@@ -1095,9 +1096,10 @@ Now both sides are divided by {math}`C_p(t)`:
   \frac{K_1 k_2}{(k_2 + k_3)^2}.
 ```
 
-Equation ([141](#eq:patlak)) says that {math}`C_I(t)/C_P(t)` is a linear function of {math}`\int_0^t C_P(u) du / C_P(t)`, at least for large values of {math}`t`. We can ignore the constants, all we need is the slope of the straight curve. This can be obtained with simple linear regression. For linear regression no iterations are required, there is a closed form expression, so this solution is orders of magnitudes faster to compute than the previous one.
+Equation [](#eq:patlak) says that {math}`C_I(t)/C_P(t)` is a linear function of {math}`\int_0^t C_P(u) du / C_P(t)`, at least for large values of {math}`t`. We can ignore the constants, all we need is the slope of the straight curve. This can be obtained with simple linear regression. For linear regression no iterations are required, there is a closed form expression, so this solution is orders of magnitudes faster to compute than the previous one.
 
-The integral {math}`\int_0^t C_P(u) du / C_P(t)` has the unit of time. If {math}`C_P(t)` would be a constant, the integral simply equals {math}`t`. It can be regarded as a correction, required because {math}`C_P(t)` is not constant but slowly varying. As shown in figure [85](#fig:3comp_ci), when {math}`C_P(t)` is constant, {math}`C_I(t)` has a linear and a constant term. Equation ([125](#eq:3comp_ci)) confirms that the slope of the linear term is indeed {math}`\bar{K}`. A potential disadvantage is that the values of the rate constants are not computed.
+The integral {math}`\int_0^t C_P(u) du / C_P(t)` has the unit of time. If {math}`C_P(t)` would be a constant, the integral simply equals {math}`t`. It can be regarded as a correction, required because {math}`C_P(t)` is not constant but slowly varying. As shown in figure [85](#fig:3comp_ci), when {math}`C_P(t)` is constant, {math}`C_I(t)` has a linear and a constant term. 
+Equation [](#eq:3comp_ci) confirms that the slope of the linear term is indeed {math}`\bar{K}`. A potential disadvantage is that the values of the rate constants are not computed.
 
 (image-quality)=
 ### Image quality
@@ -1415,7 +1417,8 @@ The ideal tracer for single photon emission would emit exactly one photon in eve
 
 % =========================
 
-The number of particles emitted per s changes with time. Due to the finite half life, the radioactivity decays exponentially (see eq ([6](#eq:decay))). Moreover, the distribution of the tracer molecule in the body is determined by the metabolism, and it changes continuously from the time of injection. Often, the tracer molecule is metabolized: the molecule is cut in pieces or transformed into another one. In those cases, the radioactive atoms may follow one or several metabolic pathways. As a result, it is often very difficult or simply impossible to accurately predict the amount of radioactivity in every organ as a function of time. When a new tracer is introduced, the typical time-activity curves are mostly determined by repeated emission scans in a group of subjects.
+The number of particles emitted per s changes with time. Due to the finite half life, the radioactivity decays exponentially 
+(see equation [](#eq:decay)). Moreover, the distribution of the tracer molecule in the body is determined by the metabolism, and it changes continuously from the time of injection. Often, the tracer molecule is metabolized: the molecule is cut in pieces or transformed into another one. In those cases, the radioactive atoms may follow one or several metabolic pathways. As a result, it is often very difficult or simply impossible to accurately predict the amount of radioactivity in every organ as a function of time. When a new tracer is introduced, the typical time-activity curves are mostly determined by repeated emission scans in a group of subjects.
 
 Assuming that we know the amount of radioactivity as a function of time, we can compute the total number of particles as
 
@@ -1436,7 +1439,7 @@ where {math}`n_{iA}(t)` is the number of particles emitted per s at time {math}`
 
 Here {math}`n_{iA}(0)` is the number of particles or photons emitted per s at time 0, and {math}`t_{1/2}` is the half life. For a source of 1 MBq at time 0, {math}`n_{iA}(0) = 10^6` per s, since 1 Bq is defined as 1 emission per s.
 
-Often, the tracer is metabolized and sent to the bladder, which implies a decrease of the tracer concentration in most other organs. Therefore, the amount of radioactivity decreases faster than predicted by ([148](#eq:biol_decay)) in these organs. One way to approximate the combined effect of metabolism and physical decay could be to replace the physical half life with a shorter, effective half life in ([148](#eq:biol_decay)). In other cases, it may be necessary to integrate the measured time activity curves numerically.
+Often, the tracer is metabolized and sent to the bladder, which implies a decrease of the tracer concentration in most other organs. Therefore, the amount of radioactivity decreases faster than predicted by [](#eq:biol_decay) in these organs. One way to approximate the combined effect of metabolism and physical decay could be to replace the physical half life with a shorter, effective half life in [](#eq:biol_decay). In other cases, it may be necessary to integrate the measured time activity curves numerically.
 
 (the-probability-p-i-a-rightarrow-b)=
 ### The probability {math}`p_i(A \rightarrow B)`
@@ -1496,7 +1499,7 @@ W_{\mbox{right}} = d^2 L\; \times \; 1 \frac{\mbox{kg}}{\mbox{dm}^3}
       = 0.016 \;\mbox{kg}.
 ```
 
-Because a few days lasts several half lifes, a good approximation is to integrate until infinity using equation ([148](#eq:biol_decay)). Consequently, the total number of desintegrations is estimated as
+Because a few days lasts several half lifes, a good approximation is to integrate until infinity using equation [](#eq:biol_decay). Consequently, the total number of desintegrations is estimated as
 
 ```{math}
 N = 1 \mbox{MBq} \times \frac{13\ \mbox{hours}}{\ln(2)} 
@@ -1525,7 +1528,7 @@ The radius of the left box is large compared with the mean path length of the el
       = 5 \mbox{mGy}.
 ```
 
-For the photons, the situation is slightly more complicated, because not all of them will deposit their energy in the box. Because the box is spherical and the point source is in the center, the amount of attenuating material seen by a photon is the same for every direction. With equation ([17](#eq:spectatten)) we can compute the probability that a photon will escape without interaction:
+For the photons, the situation is slightly more complicated, because not all of them will deposit their energy in the box. Because the box is spherical and the point source is in the center, the amount of attenuating material seen by a photon is the same for every direction. With equation [](#eq:spectatten) we can compute the probability that a photon will escape without interaction:
 
 ```{math}
 p_{\mbox{escape}} = e^{- \int_0^R \mu dr} = e^{- \mu R} 
@@ -1800,7 +1803,7 @@ The time integrated activity {math}`\tilde A` has no units, since Bq is the numb
 and therefore {math}`\tilde A(r_S) = \tilde a(r_S) A_0`. The unit of {math}`\tilde
 a` is time, and for that reason it was called the *residence time*. If all the administered activity {math}`A_0` would stay for a short duration {math}`\tilde a(r_S)` in the region {math}`r_S` and then vanish, then the same {math}`\tilde A(r_S)` would be obtained. Since 2009, {math}`\tilde a(r_S)` is called the *time-integrated activity coefficient* of {math}`r_S` [^w6qBGbp2DM][^w6qBGbp2DM]: In 2009, the MIRD committee adopted a standardization of nomenclature (Journal of Nuclear Medicine, 2009; 50: 477-484)..
 
-To apply equation ([167](#eq:mirddose)) for treatment planning or verification, we need
+To apply equation [](#eq:mirddose) for treatment planning or verification, we need
 
 1.  a 3D segmentation (delineation) of all important structures: organs, parts of organs, tumors, lesions, …, to produce the set of regions
 
@@ -1820,7 +1823,7 @@ This should really be done for each individual patient (“personalized dosimetr
 :alt: Left: representation of the average man for MIRD dose computation, as used in 1969 . Right: human body models based on non-uniform rational B-splines (NURBS) .
 :::
 
-When the patient model is available, the S-value can be computed with equation ([165](#eq:Svalue)) for every region pair and for all radionuclides of interest. For electrons, positrons and α-particles, one can usually assume that their energy is deposited locally. That makes the calculation of {math}`\phi(r_T \leftarrow
+When the patient model is available, the S-value can be computed with equation [](#eq:Svalue) for every region pair and for all radionuclides of interest. For electrons, positrons and α-particles, one can usually assume that their energy is deposited locally. That makes the calculation of {math}`\phi(r_T \leftarrow
 r_S, E_i, t)` very easy:
 
 *   if {math}`r_S \neq r_T`, then {math}`\phi(r_T \leftarrow r_S, E_i, t) \simeq 0`
@@ -1890,7 +1893,7 @@ k_{\dot D}(t) = \alpha \dot D(t) + 2 \beta D(t) \dot D(t)
 
 [^t5hYUpKegJ]
 
-[^t5hYUpKegJ]: The factor 2 in the second term of ([173](#eq:kdotD)) is added to make the final expression ([174](#eq:BED)) slightly shorter. We can add any factor, it will be absorbed in β, which must be determined from measurements.
+[^t5hYUpKegJ]: The factor 2 in the second term of [](#eq:kdotD) is added to make the final expression [](#eq:BED) slightly shorter. We can add any factor, it will be absorbed in β, which must be determined from measurements.
 
 
 
@@ -1910,7 +1913,7 @@ Integration over time produces
 \end{align}
 ```
 
-This expression can be further refined to include also the effect of repair mechanisms. After sublethal damage, the cell may be able to undo that damage, in which case it would survive a second sublethal hit. Assume for convenience that the probability of repair is constant over time, such that a fraction μ of the damaged cells heal themselves per unit of time. Then if {math}`M` cells took a sublethal hit at time {math}`s`, only {math}`M e^{-\mu (t - s)}` of them would still be damaged at time {math}`t > s`. Adjusting equation ([174](#eq:BED)) accordingly produces
+This expression can be further refined to include also the effect of repair mechanisms. After sublethal damage, the cell may be able to undo that damage, in which case it would survive a second sublethal hit. Assume for convenience that the probability of repair is constant over time, such that a fraction μ of the damaged cells heal themselves per unit of time. Then if {math}`M` cells took a sublethal hit at time {math}`s`, only {math}`M e^{-\mu (t - s)}` of them would still be damaged at time {math}`t > s`. Adjusting equation [](#eq:BED) accordingly produces
 
 ```{math}
 :label: eq:BEDrepair
@@ -1926,7 +1929,7 @@ This expression can be further refined to include also the effect of repair mech
 ```
 
 The G-factor is called the Lea-Catcheside factor (after the authors who derived these equations). It is easy to check that with {math}`\mu =
-0`, i.e. no cell repair, equation ([175](#eq:BEDrepair)) reduces to ([174](#eq:BED)). Fortunately, normal cells are typically better at repairing radiation damage than tumor cells.
+0`, i.e. no cell repair, equation [](#eq:BEDrepair) reduces to [](#eq:BED). Fortunately, normal cells are typically better at repairing radiation damage than tumor cells.
 
 (dosimetry-software)=
 ### Dosimetry software
@@ -2112,7 +2115,7 @@ The time integrated activity {math}`\tilde A` equals
   \;=\; A_0 \frac{T_{1/2}}{\ln 2}
 ```
 
-where {math}`A_0` is the activity in Bq in a particular region of interest, and {math}`T_{1/2}` = 64.1 hours is the half life of {sup}`90`Y. Following equation ([167](#eq:mirddose)), the dose is obtained by multiplying {math}`\tilde A` with the S-factor, given by equation ([165](#eq:Svalue)). For {sup}`90`Y, the S-factor reduces to
+where {math}`A_0` is the activity in Bq in a particular region of interest, and {math}`T_{1/2}` = 64.1 hours is the half life of {sup}`90`Y. Following equation [](#eq:mirddose), the dose is obtained by multiplying {math}`\tilde A` with the S-factor, given by equation [](#eq:Svalue). For {sup}`90`Y, the S-factor reduces to
 
 ```{math}
 S(r \leftarrow r) = \frac{E}{M(r)}
@@ -2193,7 +2196,7 @@ p_r(n) = \left( \frac{r}{k} \right)^n \left(1 - \frac{r}{k} \right)^{k-n}
 
 The first factor is the probability of detecting {math}`n` photons in {math}`n` intervals. The second factor is the probability of detecting no photons in {math}`n - k` intervals. The third factor is the amount of ways that these {math}`n` successful and {math}`n-k` unsuccessful intervals can be combined in different measurements.
 
-As mentioned above, equation ([184](#eq:poisson:1)) becomes better when {math}`k` is larger. To make it exact, we simply have to let {math}`k` go to infinity.
+As mentioned above, equation [](#eq:poisson:1) becomes better when {math}`k` is larger. To make it exact, we simply have to let {math}`k` go to infinity.
 
 ```{math}
 \lim_{k \rightarrow \infty} p_r(n) 
@@ -2395,7 +2398,7 @@ This expression is not very useful, it must be rewritten as a function of {math}
 \end{align}
 ```
 
-Substituting this result for {math}`E[a^2]` and {math}`E[b^2]` in ([197](#eq:app_noise_prod1)) we obtain:
+Substituting this result for {math}`E[a^2]` and {math}`E[b^2]` in [](#eq:app_noise_prod1) we obtain:
 
 ```{math}
 \begin{align}
@@ -2436,7 +2439,7 @@ If we can live with first order approximations, the variance of any function of 
 \end{align}
 ```
 
-The first step is a first order approximation: the expectation of a linear function is the function of the expectations. Similarly, the second line is a Taylor expansion, assuming all higher derivatives are zero. The third step is the application of ([196](#eq:app_sumerror)).
+The first step is a first order approximation: the expectation of a linear function is the function of the expectations. Similarly, the second line is a Taylor expansion, assuming all higher derivatives are zero. The third step is the application of [](#eq:app_sumerror).
 
 With this approach you can easily verify that the variance on a product or division is obtained by summing the relative variances.
 
@@ -2495,7 +2498,7 @@ It follows that {math}`\nu_x x + \nu_y y = \nu_s s + \nu_r r`. The Jacobian of t
 \end{align}
 ```
 
-Comparison with ([202](#eq:Q1)) reveals that setting {math}`\nu_r = 0` in Λ produces {math}`Q_1`:
+Comparison with [](#eq:Q1) reveals that setting {math}`\nu_r = 0` in Λ produces {math}`Q_1`:
 
 ```{math}
 Q_1(\nu_s, \theta) = \Lambda(\nu_s\cos\theta, \nu_s\sin\theta )
@@ -2580,7 +2583,7 @@ Convolution in the Fourier transform corresponds to a product in the spatial dom
 W \frac{\sin(2 \pi W x)}{\pi x} - \frac{\sin^2(\pi W x)}{(\pi x)^2}.
 ```
 
-Figure [96](#fig:rampapp) shows a plot of ([211](#eq:ramp)). In a discrete implementation, where one only needs the function values at integer positions {math}`x = -N, -N+1, \ldots,N`, the highest possible value for {math}`W` is 0.5, the Nyquist frequency. The red dots in the figure show these discrete function values for {math}`W = 0.5`.
+Figure [96](#fig:rampapp) shows a plot of [](#eq:ramp). In a discrete implementation, where one only needs the function values at integer positions {math}`x = -N, -N+1, \ldots,N`, the highest possible value for {math}`W` is 0.5, the Nyquist frequency. The red dots in the figure show these discrete function values for {math}`W = 0.5`.
 
 :::{figure} figs/fig_rampfilter_app.pdf
 :name: fig:rampapp
@@ -2626,7 +2629,7 @@ e^{at}                      & \Longleftrightarrow \frac{1}{s - a}
 \end{align}
 ```
 
-By combining ([213](#eq:lap1)) and ([214](#eq:lap2)) one obtains
+By combining [](#eq:lap1) and [](#eq:lap2) one obtains
 
 ```{math}
 \begin{align}
@@ -2673,7 +2676,7 @@ After the measurement, we know that the first detector can only have produced {m
 \end{align}
 ```
 
-Applying [216](#eq:appab1) yields:
+Applying [](#eq:appab1) yields:
 
 ```{math}
 E(a | a+b=N)
@@ -2751,7 +2754,7 @@ The objective function we construct during the E-step is defined as
 h(\Lambda' | \Lambda) = E\left[\ln f(X | \Lambda') | Q, \Lambda)\right],
 ```
 
-which means that we write the log-likelihood of the complete variables as a function of {math}`\Lambda'`, and that we eliminate the unknown variables {math}`X` by computing the expectation based on the current reconstruction Λ. Combining ([225](#eq:appmlem_f)) and ([226](#eq:appmlem_h)) results in
+which means that we write the log-likelihood of the complete variables as a function of {math}`\Lambda'`, and that we eliminate the unknown variables {math}`X` by computing the expectation based on the current reconstruction Λ. Combining [](#eq:appmlem_f) and [](#eq:appmlem_h) results in
 
 ```{math}
 :label: eq:appmlem_h2
@@ -2767,7 +2770,7 @@ h(M(\Lambda) | \Lambda) \geq h(\Lambda | \Lambda).
 
 This means that we want {math}`M` to increase {math}`h`. We can be more demanding and require that {math}`M` maximizes {math}`h`; then we have a regular EM algorithm, such as the MLEM algorithm of section [??](#sec:iterrecon).
 
-Now, from equation ([227](#eq:appmlem_h2)) we can compute what happens with {math}`L` if we apply a GEM-step to increase the value of {math}`h`:
+Now, from equation [](#eq:appmlem_h2) we can compute what happens with {math}`L` if we apply a GEM-step to increase the value of {math}`h`:
 
 ```{math}
 :label: eq:appmlem_l
@@ -2800,7 +2803,7 @@ E\left[\ln k(X | Q, \Lambda') | Q,\Lambda\right] =
      \int k(X | Q, \Lambda) \ln k(X | Q, \Lambda') dX.
 ```
 
-Therefore, the left hand side of equation ([230](#eq:appmlem_k)) can be rewritten as
+Therefore, the left hand side of equation [](#eq:appmlem_k) can be rewritten as
 
 ```{math}
 :label: eq:appmlem_k2
@@ -2814,8 +2817,9 @@ Therefore, the left hand side of equation ([230](#eq:appmlem_k)) can be rewritte
 \end{align}
 ```
 
-with the additional requirement that {math}`\int k(X | Q, \Lambda) dX = \int k(X |
-Q, M(\Lambda)) dX = 1`. It turns out that ([232](#eq:appmlem_k2)) is always positive, due to the convexity of {math}`t \ln t`. We will have a look at that now.\
+with the additional requirement that 
+{math}`\int k(X | Q, \Lambda) dX = \int k(X |Q, M(\Lambda)) dX = 1`. 
+It turns out that [](#eq:appmlem_k2) is always positive, due to the convexity of {math}`t \ln t`. We will have a look at that now.\
 
 
 Consider the function {math}`\psi(t) = t \ln t`. It is only defined for {math}`t >
@@ -2842,7 +2846,7 @@ Because {math}`\psi(1) = 0` and {math}`\psi'(1) = 1`, this becomes:
        \;\; \mbox{with} \;\; 0 < u \leq t.
 ```
 
-Consider now an integral of the same form as in ([232](#eq:appmlem_k2)):
+Consider now an integral of the same form as in [](#eq:appmlem_k2):
 
 ```{math}
 \int f_1(x) \ln \frac{f_1(x)}{f_2(x)} dx \;\; \mbox{with} \;\;
@@ -2904,7 +2908,7 @@ To proceed, the argument of the delta function must be changed. This can be done
 ```
 
 where {math}`f'` is the derivative of {math}`f`, and {math}`x_n, n=1 \ldots N` are the zeros of {math}`f(x)`, i.e. {math}`f(x_n) = 0`. A simple example is {math}`\delta(ax) =
-\delta(x) / |a|`. Applying this to ([239](#eq:app2bp1)) yields:
+\delta(x) / |a|`. Applying this to [](#eq:app2bp1) yields:
 
 ```{math}
 b(x,y)  =  \int_0^\pi \frac{\delta(\theta - \theta_0)}
@@ -2951,4 +2955,4 @@ where σ represents the uncertainty of the TOF-measurement. The corresponding ba
 \end{align}
 ```
 
-which is equivalent to equation ([92](#eq:TOFpsf)).
+which is equivalent to equation [](#eq:TOFpsf).
