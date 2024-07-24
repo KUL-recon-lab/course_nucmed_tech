@@ -22,6 +22,7 @@ project:
     - file: 03_photon_matter_interactions.md
     - file: 04_data_acquisition.md
     - file: 05_image_formation.md
+    - file: 06_transmission_scan.md
 
   export:
     - md
