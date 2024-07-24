@@ -64,26 +64,6 @@ There are many ways in which unstable isotopes can decay. Depending on the decay
 
     Examples of radionuclides decaying with EC are {sup}`57`Co, {sup}`111`In, {sup}`123`I and {sup}`201`Tl. Figure [1](#fig:In111) shows the decay scheme for {sup}`111`In and (a small part of) the decay table. Conversion electrons are denoted with “ce-{math}`X`, {math}`y`”, where {math}`X` is the electron shell and {math}`y` is the gamma ray. The table also gives the kinetic energy of the conversion electron, which must of course be less than the energy of the photon that produced it. The ejection of the conversion electron creates a vacancy in the involved electron shell, which is filled by an electron from a higher shell. The excess energy is released as an X-ray or as an Auger electron. In the decay table, X-rays are denoted with “{math}`Xa` X-ray”, where {math}`X` is the electron shell that had a vacancy, and {math}`a` says (in code) from which shell the new electron comes. The energy of this X-ray exactly equals the difference between the energies of the two electron shells. Instead of emitting an X-ray, the excess energy can be used to emit another electron from the atom. This is called the Auger-effect, and the emitted electron is called an Auger-electron. In the table an Auger electron is denoted as “Auger-{math}`XYZ`”, if a vacancy in shell {math}`X` is filled by an electron from shell {math}`Y`, using the excess energy to emit an electron from shell {math}`Z`. The table gives the kinetic energy of the emitted Auger-electron. The table also gives the frequency, i.e. the probability that each particular emission occurs when the isotope decays.
 
-
-
-    % % \begin{figure}[htb]
-
-    % % \centering
-
-    % % \figbox{0.9\textwidth}{fig_In111.eps}
-
-    % % \caption{\label{fig:In111} \emph{Decay scheme of $^{111}$In, by
-
-    % %     electron capture. The scheme is dominated by the emission of two
-
-    % %     gamma rays (171 and 245 keV). These gamma rays can be involved in
-
-    % %     production of conversion electrons. A more complete table is given
-
-    % %     in \cite{Cherry}.}}
-
-    % % \end{figure}
-
     :::{figure} figs/fig_In111.pdf
     :name: fig:In111
     :align: center
