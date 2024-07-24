@@ -2,7 +2,13 @@
 title: Image formation
 ---
 
+(introduction-image-formation)=
+# Introduction
+
+The tomographic systems are shown (once again) in [](#fig:spect_pet_ct_bis). They have in common that they perform an indirect measurement of what we want to know: we want to obtain information about the distribution in every point, but we acquire information integrated over projection lines. So the desired information must be computed from the measured data. In order to do that, we need a mathematical function that describes (simulates) what happens during the acquisition: this function is an operator that computes measurements from distributions. If we have that function, we must derive its inverse: this will be an operator that computes distributions from measurements.
+
 :::{figure} figs/fig_spect_pet_ct.png
+:width: 400px
 :name: fig:spect_pet_ct_bis
 :align: center
 :alt: Information acquired along lines in the PET camera, the gamma camera and the CT-scanner.
@@ -10,10 +16,6 @@ title: Image formation
 *Information acquired along lines in the PET camera, the gamma camera and the CT-scanner.*
 :::
 
-(introduction-image-formation)=
-# Introduction
-
-The tomographic systems are shown (once again) in [](#fig:spect_pet_ct_bis). They have in common that they perform an indirect measurement of what we want to know: we want to obtain information about the distribution in every point, but we acquire information integrated over projection lines. So the desired information must be computed from the measured data. In order to do that, we need a mathematical function that describes (simulates) what happens during the acquisition: this function is an operator that computes measurements from distributions. If we have that function, we must derive its inverse: this will be an operator that computes distributions from measurements.
 
 In the previous chapters we have studied the physics of the acquisition, so we are ready to compose the acquisition model. We can decide to introduce some approximation to obtain a simple acquisition model, hoping that deriving the inverse will not be too difficult. The disadvantage is that the inverse operator will not be an accurate inverse of the true acquisition process, so the computed distribution will not be identical to the true distribution. On the other hand, if we start from a very detailed acquisition model, inverting it may become mathematically and/or numerically intractable.
 
@@ -66,6 +68,7 @@ It can be shown (and we will do so below) that it is possible to reconstruct the
 Before discussing how the activity and/or attenuation distributions can be reconstructed, it is interesting to have a look at the raw data. For a gamma camera equipped with parallel hole collimator, the raw data are naturally organized as interpretable images, “side views” of the tracer concentration in the transparent body of the patient. For a PET camera, the raw data can be organized in sets of parallel projections as well, as shown in [](#fig:pet_parallel).
 
 :::{figure} figs/fig_pet_parallel.png
+:width: 400px
 :name: fig:pet_parallel
 :align: center
 :alt: Raw PET data can be organized in parallel projections, similar as in the gamma camera.
@@ -74,6 +77,7 @@ Before discussing how the activity and/or attenuation distributions can be recon
 :::
 
 :::{figure} figs/fig_jnwb.png
+:width: 400px
 :name: fig:planarwb
 :align: center
 :alt: 99mTc-MDP study acquired on a dual head gamma camera. Detector size is about 40 \times 50 cm, the whole body images are acquired with slow translation of the patient bed. MDP accumulates in bone, allowing visualization of increased bone metabolism. Due to attenuation, the spine is better visualized on the posterior image.
@@ -84,6 +88,7 @@ Before discussing how the activity and/or attenuation distributions can be recon
 [](#fig:planarwb) shows a planar whole body image, which is obtained by slowly moving the gamma camera over the patient and combining the projections into a single image. In this case, a gamma camera with two opposed detector heads was used, so the posterior and anterior views are acquired simultaneously. There is no rotation, these are simply raw data, but they provide valuable diagnostic information. A similar approach is applied in radiological studies: with the CT tomographic images can be produced, but the planar images (e.g. thorax X-ray) already provide useful information.
 
 :::{figure} figs/fig_renaldynimg.png
+:width: 500px
 :name: fig:renaldyn
 :align: center
 :alt: A few images from a renography. The numbers are the minutes after injection of the 99mTc-labeled tracer. The left kidney (at the right in the image) is functioning normally, the other one is not: both uptake and clearance of the tracer are slowed down.
@@ -92,6 +97,7 @@ Before discussing how the activity and/or attenuation distributions can be recon
 :::
 
 :::{figure} figs/fig_renalrois.png
+:width: 300px
 :name: fig:renalroi
 :align: center
 :alt: Summing all frames of the dynamic renal study yields the image on the left, where the kidneys can be easily delineated. The total count in these regions as a function of time (time activity curves or TACs) are shown on the right, revealing a distinct difference in kidney function.
@@ -123,6 +129,7 @@ In contrast, planar PET studies are very uncommon, because most PET-cameras are 
 In this section, we will study the reconstruction of a planar distribution from its line integrals. The data are two-dimensional: a projection line is completely specified by its angle and its distance to the center of the field of view. A two-dimensional image that uses {math}`d` as the column coordinate and θ as the row coordinate is called a *sinogram*. [](#fig:sinogram) shows that the name is well chosen: the sinogram of point source is zero everywhere except on a sinusoidal curve. The sinogram in the figure is for 180º. A sinogram for 360º shows a full period of the sinusoidal curve. It is easy to show that, using the conventions of [](#fig:sinogram), {math}`s(x,y) = s_x + s_y = x \cos \theta + y \sin \theta`, so the non-zero projections in the sinogram are indeed following a sinusoidal curve.
 
 :::{figure} figs/fig_sinogram.png
+:width: 600px
 :name: fig:sinogram
 :align: center
 :alt: A sinogram is obtained by storing the 1D parallel projections as the rows in a matrix (or image). Left: the camera with a radioactive disk. Center: the corresponding sinogram. Right: the conventions, \theta is positive in clockwise direction.
@@ -150,6 +157,7 @@ Filtered backprojection (FBP) is the mathematical inverse of an idealized acquis
 
 :::{figure} figs/fig_fbp_math.png
 :name: fig:fbp_math
+:width: 300px
 :align: center
 :alt: The projection line as a function of a single parameter r. The line consists of the points \vec{p} + \vec{r}, with \vec{p} = (s \cos \theta, s \sin \theta), \vec{r} = (r \sin \theta, - r \cos \theta).
 
@@ -211,6 +219,7 @@ So it immediately follows that {math}`\Lambda(\nu_x, 0) = Q(\nu_x)`. Formulated 
 A more rigorous proof for any angle θ is given in appendix [](#app:cs). In words: the 1-D Fourier transform of the projection acquired for angle θ is identical to a central profile along the same angle through the 2-D Fourier transform of the original distribution ([](#fig:fouriertheorem)).
 
 :::{figure} figs/fig_fouriertheorem.png
+:width: 400px
 :name: fig:fouriertheorem
 :align: center
 :alt: The Fourier theorem.
@@ -225,6 +234,7 @@ Obviously, this will only work if we have enough data. Every projection produces
 As mentioned before, the PET camera consisting of detector rings measures all projection lines simultaneously, no rotation is required.
 
 :::{figure} figs/fig_jnproj_sino.png
+:width: 400px
 :name: fig:jnproj_sino
 :align: center
 :alt: Raw PET data, organized as projections (a) or as a sinogram (b). There are typically a few hundred projections, one for each projection angle, and several tens to hundred sinograms, one for each slice through the patient body
@@ -250,6 +260,7 @@ This Fourier-based reconstruction works, but usually an alternative expression i
 ```
 
 :::{figure} figs/fig_backproj.png
+:width: 400px
 :name: fig:backproj
 :align: center
 :alt: A point source, its sinogram and the backprojection of the sinogram (logarithmic gray value scale).
@@ -328,6 +339,7 @@ Mathematically, filtered backprojection is identical to Fourier-based reconstruc
 
 
 :::{figure} figs/fig_rampfilter1.png
+:width: 400px
 :name: fig:rampfilter
 :alt: The rampfilter in the frequency domain (left) and its point spread function (right). The latter is by definition also the mask needed to compute the filter with a convolution in the spatial domain.
 
@@ -482,6 +494,7 @@ The iterative algorithm described below makes use of the expected value of a Poi
 
 
 :::{figure} figs/fig_expected_a_b.png
+:width: 300px
 :name: fig:expected_a_b
 :align: center
 :alt: A detector measures the counts emitted by two sources.
@@ -624,6 +637,7 @@ So the gradient is weighted by the current reconstruction value, which is guaran
 [](#fig:jnfbpml) shows the filtered backprojection and ML-EM reconstructions from the same dataset. (The image shown is not the true maximum likelihood image, since iterations were stopped early as discussed below).
 
 :::{figure} figs/fig_jnfbpml.png
+:width: 500px
 :name: fig:jnfbpml
 :align: center
 :alt: Reconstruction obtained with filtered backprojection (top) and maximum-likelihood expectation-maximization (34 iterations) (bottom). The streak artifacts in the filtered backprojection image are due to the statistical noise on the measured projection (Poisson noise).
@@ -680,6 +694,7 @@ Although regularized (smoothed) images look much nicer than the original ones, t
 % ==========================
 
 :::{figure} figs/fig_mlem_converge.png
+:width: 500px
 :name: fig:mlem_converge
 :align: center
 :alt: Simulation designed to challenge convergence of MLEM: the point between the hot regions convergence very slowly relative to the other point. The maximum converges slower than the width, so counts are not preserved.
@@ -702,6 +717,7 @@ Consequently, it is important to apply “enough” iterations, to get “suffic
 
 
 :::{figure} figs/fig_mlem_1000iter.png
+:width: 500px
 :name: fig:mlem_1000iter
 :align: center
 :alt: Reconstruction of a cardiac PET scan with FBP, and with MLEM. The images obtained after 34, 118 and 1000 iterations are shown. The image at 1000 iterations is very noisy, but a bit of smoothing turns it into a very useful image.
@@ -721,6 +737,7 @@ From [](#fig:mlem_converge) and [](#fig:mlem_1000iter) it follows that it is bet
 % ==========================
 
 :::{figure} figs/fig_osem.png
+:width: 600px
 :name: fig:osem
 :align: center
 :alt: Illustration of OSEM: there are 160 projections in the sinogram, for an acquisition over 360º. OSEM used 40 subsets of 4 projections each, the first subset has projections at 0º, 90º, 180º and 270º. The second subset starts at 45º and so on. One OSEM iteration has 40 subiterations. The top row shows the first few and the last subiteration of OSEM. The bottom row shows the corresponding MLEM-iterations, where all projections are used for each iteration.
@@ -801,6 +818,7 @@ In the eighties, TOF-PET scanners were built, but their performance was disappoi
 More recently, new scintillation crystals have been found, which combine high stopping power with fast scintillation decay ([](#tab:crystals)). In current scanners, LSO (or LYSO) is mostly used. And since the eighties, the electronics have become faster as well. The current commercial TOF-PET systems have a TOF resolution ranging from around 500 ps (7.5 cm) for older systems to around 200 ps for new systems (new in 2020).
 
 :::{figure} figs/fig_tofsino.png
+:width: 600px
 :name: fig:tofsino
 :align: center
 :alt: A single plane from a clinical TOF-data set, sampled at 13 TOF-bins. The first bin corresponds to the center, the subsequent bins are for increasing distances, alternatedly in both directions. The non-TOF sinogram was obtained by summing the 13 TOF-sinograms.
@@ -813,6 +831,7 @@ TOF-PET sinograms (or projections) have one dimension more than the correspondin
 Consequently, a parallel projection of a 2D image along a single projection angle, is not a 1D profile but a 2D image. This projection can be considered as a blurred version of the original image, where the blurring represents the uncertainty due to the point spread function of the TOF-position measurement. This can be well modeled as a 1D Gaussian blurring, as illustrated in [](#fig:TOFproj).
 
 :::{figure} figs/fig_TOF_projbproj.png
+:width: 400px
 :name: fig:TOFproj
 :align: center
 :alt: Left: TOF-PET projection (matrix A) can be considered as a 1D smoothing along the projection angle. Right: the TOF-PET backprojection of TOF-PET projection is equivalent to a 2D blurring filter. The blurring is much less than in the non-TOF case (fig %s).
@@ -849,6 +868,7 @@ after equation [](#eq:bprojvalue). The projection and backprojection operators a
 Also for TOF-PET, filtered backprojection algorithms can be developed. Because of the data redundancy, different versions of FBP can be derived. A natural choice is to use the same backprojector as mentioned above. With this backprojector, the backprojection of the TOF-PET measurement of a point source will yield the image of blob given by equation [](#eq:TOFpsf). Consequently, the reconstruction filter can be obtained by computing the inverse operator of [](#eq:TOFpsf). As before, the filter can be applied before backprojection (in the sinogram) or after backprojection (in the image), because of the Fourier theorem.
 
 :::{figure} figs/fig_TOF_matej.png
+:width: 600px
 :name: fig:TOFmatej
 :align: center
 :alt: CT and TOF-PET image, acquired on a PET/CT system with time-of-flight resolution of about 700 ps. The TOF-PET image reveals a small lesion not seen on the non-TOF PET image. (Courtesy Joel Karp and Samuel Matej, University of Pennsylvania. The image is acquired on a Philips Gemini TOF-PET system)
@@ -876,6 +896,7 @@ Finally, the gain due to TOF is higher when the region of interest is surrounded
 In every MLEM iteration a projection and backprojection is executed. The projection {math}`\sum_j c_{ij} \lambda_j` simulates the acquisition and the backprojection {math}`\sum_i c_{ij} q_i` is the corresponding adjoint operator. A more accurate simulation of the acquisition should result in a more accurate reconstruction of the image from the acquired tomographic data. In SPECT, the system matrix elements {math}`c_{ij}` should account for the position dependent attenuation to ensure that MLEM produces quantitative images. In PET, the elements {math}`c_{ij}` should model the attenuation and detector sensitivities (see equation [](#eq:petnorm)), and for TOF-PET, also the width of the TOF-resolution.
 
 :::{figure} figs/fig_resol_line_cone.png
+:width: 400px
 :name: fig:resolcone
 :align: center
 :alt: In a simple projector/backprojector, the projection is modeled as a (weighted) line integral. To account for the position dependent collimator blurring, the line integral can be replaced by a weighted integral over a cone.
@@ -890,6 +911,7 @@ During the iterations, MLEM (or OSEM) uses the system matrix in every projection
 [](#fig:resolspectpet). Interestingly, modeling the finite system resolution in MLEM not only improves the resolution in the reconstructed image, it also suppresses the noise, as can be seen in the PET reconstruction.
 
 :::{figure} figs/fig_resol_spectpet.png
+:width: 500px
 :name: fig:resolspectpet
 :align: center
 :alt: Reconstructions with and without resolution modeling from a SPECT bone scan of a child and a brain PET scan. “MIP” denotes “maximum intensity projection”. MLEM with resolution modeling recovers image detail that was suppressed by the finite system resolution.
@@ -900,6 +922,7 @@ During the iterations, MLEM (or OSEM) uses the system matrix in every projection
 However, the deblurring cannot be 100% successful, because deblurring is a very ill-posed problem. Except in special cases, deblurring problems have multiple solutions, and iterative algorithms cannot “know” which of those possible solutions they should produce. This is illustrated in [](#fig:resolpetgibbs). A noise-free PET simulation was done, accounting for finite spatial resolution. MLEM images without and with resolution modeling were reconstructed from the noise-free sinogram. The figure shows that MLEM with resolution modeling produced a sharper image, but that image is different from the true image that was used in the simulation.
 
 :::{figure} figs/fig_resol_petgibbs.png
+:width: 600px
 :name: fig:resolpetgibbs
 :align: center
 :alt: PET simulation without noise but with finite resolution modeling. MLEM with deblurring produced sharper images, but they are clearly different from the ground truth.
@@ -922,6 +945,7 @@ The wider the Gaussian PSF, the narrower the corresponding Gaussian MTF, and the
 
 
 :::{figure} figs/fig_resol_gibbs.png
+:width: 500px
 :name: fig:resolgibbs
 :align: center
 :alt: Impulse responses (top) and their corresponding frequency spectra or MTF (bottom). From left to right: (1) the ideal PSF (a flat MTF), a Gaussian PSF (Gaussian MTF) and a sinc-shaped PSF, corresponding to a rectangular MTF
@@ -953,6 +977,7 @@ Knowing the PSF, we can compute what the deblurred measurement will look like fo
 [](#fig:resolsinc) shows the result for a block-shaped signal. The result is still block-like, but the two edges are less steep and are accompanied by ripples creating under- and overshoots. These ripples are often called Gibbs artefacts.
 
 :::{figure} figs/fig_resol_sinc.png
+:width: 500px
 :name: fig:resolsinc
 :align: center
 :alt: The convolution of a block-shaped signal with a sinc-shaped PSF produces a smoother version of the block with ripples, also called Gibbs artefacts, on top of it.
