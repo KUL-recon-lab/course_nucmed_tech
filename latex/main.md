@@ -17,7 +17,7 @@ github: https://github.com/KUL-recon-lab/course_nucmed_tech
 (system-maintenance)=
 ## System maintenance
 
-The photomultiplier tubes are analog devices, with characteristics that are influenced by the age and the history of the device. To produce correct images, some corrections are applied (section [??](#sec:corrections)). The most important are the linearity correction and the energy correction. In most cameras, there is an additional correction, called the uniformity correction, taking care of remaining second order deviations. It is important to keep on eye on the camera performance and tune it every now and then. Failure to do so will lead to gradual deterioration of image quality.
+The photomultiplier tubes are analog devices, with characteristics that are influenced by the age and the history of the device. To produce correct images, some corrections are applied (section [](#sec:corrections)). The most important are the linearity correction and the energy correction. In most cameras, there is an additional correction, called the uniformity correction, taking care of remaining second order deviations. It is important to keep on eye on the camera performance and tune it every now and then. Failure to do so will lead to gradual deterioration of image quality.
 
 When a camera is first installed, the client tests it extensively to verify that the system meets all required specifications (the acceptance test). The National Electrical Manufacturers Association (NEMA, “national” is the USA here) has defined standard protocols to measure the specifications. The standards are widely accepted, such that specifications from different vendors can be compared, and that discussions between customers and companies about acceptance test procedures can be avoided. You can find information on *http://www.nema.org*.
 
@@ -382,7 +382,7 @@ With the introduction of PET/CT, PET-systems no longer have these built-in trans
 
 % ==========
 
-Normalization is used to correct for non-uniformities in PET detector sensitivities (see section [??](#sec:normalization1)). The manufacturers provide software to compute and apply the sensitivity correction based on a scan of a particular phantom (e.g. a radioactive cylinder positioned in the center of the field of view). Current PET/CT (or PET/MR) systems do not have a transmission scan. Instead of the blank scan, they use a scan of this phantom to detect, quantify and correct changes in detector performance over time.
+Normalization is used to correct for non-uniformities in PET detector sensitivities (see section [](#sec:normalization1)). The manufacturers provide software to compute and apply the sensitivity correction based on a scan of a particular phantom (e.g. a radioactive cylinder positioned in the center of the field of view). Current PET/CT (or PET/MR) systems do not have a transmission scan. Instead of the blank scan, they use a scan of this phantom to detect, quantify and correct changes in detector performance over time.
 
 (front-end-calibration)=
 #### Front end calibration
@@ -539,13 +539,13 @@ A radionuclide calibrator looks similar to a well counter, it also has a small c
 
 
 
-The output of the detector is proportional to the total number of ionized gas atoms, which in turn is proportional to the energy deposited in the gas, and therefore also proportional to the activity put in the detector gap. The detector measures the contribution of many photons simultaneously, and therefore it obtains no information about the energy of individual photons. This lack of energy discrimination is a drawback, but the capability of dealing with many simultaneous incident photons (or other particles) makes this detector useful for the measurement of high activities (which would saturate photon counting devices, see section [??](#sec:deadtime)).
+The output of the detector is proportional to the total number of ionized gas atoms, which in turn is proportional to the energy deposited in the gas, and therefore also proportional to the activity put in the detector gap. The detector measures the contribution of many photons simultaneously, and therefore it obtains no information about the energy of individual photons. This lack of energy discrimination is a drawback, but the capability of dealing with many simultaneous incident photons (or other particles) makes this detector useful for the measurement of high activities (which would saturate photon counting devices, see section [](#sec:deadtime)).
 
 Ionisation chambers often use air, but for radionuclide calibrators, typically pressurised Argon is used. The high pressure in the chamber reduces the sensitivity to the atmospheric pressure. In addition, the high pressure (more atoms) and the higher attenuation of Ar improve the sensitivity of the detector. Radionuclide calibrators designed for higher activities (up to ± 20 Ci or ± 750 GBq) use typically a pressure of around 5 bar. These radionuclide calibrators are more likely to be found at PET sites, where higher activities can be used because of the short half lifes of most PET isotopes. For quantifying lower activities (up to ± 5 Ci or ± 200 GBq), radionuclide calibrators with a higher pressure (± 12 bar) are used, because a higher pressure improves the stability for low activity counting.
 
 Since the geometry of the radionuclide calibrator is similar to that of the well counter, it suffers from the same position dependent response illustrated in [](#fig:wellcountersens). But in contrast to the well counter, the response of the radionuclide calibrator is also heavily dependent upon the energy of the photons emitted by the isotope. The photons have to reach the gas, and to do so, they must travel through the water in the test tube, through the wall of the test tube and through the wall of the radionuclide calibrator. Then, they have to interact with the gas to produce ionisations. The probability of interactions (attenuation) decreases with increasing energy. Finally, in every interaction, a few tens of eV are transferred, so the higher the energy of the photon, the more ionisations that same photon could produce. These three effects are illustrated in [](#fig:dosecalib). The figure also shows their product, which has a sharp local maximum at low energies, and increases with increasing energy. This is only a rough approximation, the actual curve for a particular radionuclide calibrator depends on many things and it is safer (and much easier) to measure it than to compute it. Knowing the emissions of a particular isotope, and the sensitivity of the radionuclide calibrator for each of those emissions, one can deduce the activity of the isotope from the radionuclide calibrator measurement. A well calibrated radionuclide calibrator will do this automatically for you, you only have to tell it which isotope you are measuring, typically by selecting it from a menu.
 
-The high sensitivity at low energies can be problematic for isotopes such as {sup}`123`I and {sup}`111`In, which emit a fairly large amount of low energy photons (see table [3](#tab:dosiscalib)). The problem is that these low energy photons are easily attenuated by a little bit of water or a small amount of glass, and therefore, the dosis calibrator would give very different responses when measuring the same activity in different test tubes. The reproducibility improves dramatically when these photons are eliminated by adding a bit of attenuating material, such as a “Cu-filter”. This filter is basically a copper recipient with a very thin wall (half a mm or less), which has very high attenuation for low energies, but only moderate attenuation for higher energies. This is illustrated in the right panel of [](#fig:dosecalib).
+The high sensitivity at low energies can be problematic for isotopes such as {sup}`123`I and {sup}`111`In, which emit a fairly large amount of low energy photons (see [](#tab:dosiscalib)). The problem is that these low energy photons are easily attenuated by a little bit of water or a small amount of glass, and therefore, the dosis calibrator would give very different responses when measuring the same activity in different test tubes. The reproducibility improves dramatically when these photons are eliminated by adding a bit of attenuating material, such as a “Cu-filter”. This filter is basically a copper recipient with a very thin wall (half a mm or less), which has very high attenuation for low energies, but only moderate attenuation for higher energies. This is illustrated in the right panel of [](#fig:dosecalib).
 
 :::{list-table} Emissions of {sup}`123`I and {sup}`111`In.
 :header-rows: 0
@@ -654,7 +654,7 @@ The standardized uptake value provides a robust scale of tracer amounts. It is d
 \end{align}
 ```
 
-To compute it, we must know the total dose administered to the patient. Since the total dose is measured prior to injection, and the image is produced after injection, we must correct for the decay of the tracer in between. Moreover, the tracer amounts are measured with different devices: the regional tracer concentration is measured with the SPECT or PET, the dose is measured with a radionuclide calibrator. Therefor, the sensitivity of the tomograph must be determined. This is done by acquiring an image of a uniform phantom filled with a know tracer concentration. From the reconstructed phantom image we can compute a calibration factor which converts “reconstructed pixel values” into Bq/ml (see section [??](#sec:scalefactor)).
+To compute it, we must know the total dose administered to the patient. Since the total dose is measured prior to injection, and the image is produced after injection, we must correct for the decay of the tracer in between. Moreover, the tracer amounts are measured with different devices: the regional tracer concentration is measured with the SPECT or PET, the dose is measured with a radionuclide calibrator. Therefor, the sensitivity of the tomograph must be determined. This is done by acquiring an image of a uniform phantom filled with a know tracer concentration. From the reconstructed phantom image we can compute a calibration factor which converts “reconstructed pixel values” into Bq/ml (see section [](#sec:scalefactor)).
 
 A SUV of 1 means that the tracer concentration in the ROI is identical to the average tracer concentration in the entire patient body. A SUV of 4 indicates markedly increased tracer uptake. The SUV-value is intended to be robust, independent from the administered tracer amount and the mass of the patient. However, it changes with time, since the tracer participates in a metabolic process. So SUVs can only be compared if they correspond to the same time after injection. Even then, one can think of many reasons why SUV may not be very reproducible, and several publications have been written about its limitations. Nevertheless, it works well in practice and is used all the time.
 
@@ -834,7 +834,7 @@ Consequently, we must combine the equations [](#eq:C_E) and [](#eq:C_M) in order
 
 % ''''''''''''''''''''''''''''''''''''''''''''
 
-To deal with differential equations, the Laplace transform is a valuable tool. Appendix [??](#app:laplace) gives the definition and a short table of the features we need for the problem at hand. The strength of the Laplace transform is that derivatives and integrals with respect to {math}`t` become simple functions of {math}`s`. After transformation, elimination of variables is easy. The result is then back-transformed to the time domain. Laplace transform of [](#eq:C_E) and [](#eq:C_M) results in
+To deal with differential equations, the Laplace transform is a valuable tool. Appendix [](#app:laplace) gives the definition and a short table of the features we need for the problem at hand. The strength of the Laplace transform is that derivatives and integrals with respect to {math}`t` become simple functions of {math}`s`. After transformation, elimination of variables is easy. The result is then back-transformed to the time domain. Laplace transform of [](#eq:C_E) and [](#eq:C_M) results in
 
 ```{math}
 :label: eq:sc_E
@@ -876,7 +876,7 @@ c_I(s) = \frac{K_1 k_2}{(k_2 + k_3)} \frac{c_P(s)}{(s + k_2 + k_3)} +
            \frac{K_1 k_3}{(k_2 + k_3)} \frac{c_P(s)}{s}
 ```
 
-Applying the inverse Laplace transform is now straightforward (see appendix [??](#app:laplace)) and produces the operational function:
+Applying the inverse Laplace transform is now straightforward (see appendix [](#app:laplace)) and produces the operational function:
 
 ```{math}
 :label: eq:3comp_ci
@@ -1220,7 +1220,7 @@ The amount of radiation deposited in an object is expressed in gray (Gy). A dose
 1 Gy = 1 \frac{J}{kg}.
 ```
 
-To quantify (at least approximately) the amount of damage done to living tissue, the influence of the particle type must be included as well. E.g. it turns out that 1 J deposited by neutrons does more damage than the same energy deposited by photons. To take this effect into account, a quality factor {math}`Q` is introduced. Multiplication with the quality factor converts the dose into the dose equivalent. Quality factors are given in table [4](#tab:qualfactor).
+To quantify (at least approximately) the amount of damage done to living tissue, the influence of the particle type must be included as well. E.g. it turns out that 1 J deposited by neutrons does more damage than the same energy deposited by photons. To take this effect into account, a quality factor {math}`Q` is introduced. Multiplication with the quality factor converts the dose into the dose equivalent. Quality factors are given in [](#tab:qualfactor).
 
 
 
@@ -1272,7 +1272,7 @@ The older units for radiation dose and dose equivalent are rad and rem:
 \end{align}
 ```
 
-When the dose to every organ is computed, one can in addition compute an “effective dose”, which is a weighted sum of organ doses. The weights are introduced because damage in one organ is more dangerous than damage in another organ. The most sensitive organs are the gonads (weight about 0.25), the breast, the bone marrow and the lungs (weight about 0.15), the thyroid and the bones (weight about 0.05), see table [5](#tab:effdose). The sum of all the weights is 1. The weighted average produces a single value in mSv. The risk of death due to tumor induction is about 5% per “effective Sv” according to report ICRP-60 (International Commission on Radiological Protection (http://www.icrp.org)), but it is of course very dependent upon age (e.g. 14% for children under 10). Research in this field is not finished and the tables and weighting coefficients are adapted every now and then.
+When the dose to every organ is computed, one can in addition compute an “effective dose”, which is a weighted sum of organ doses. The weights are introduced because damage in one organ is more dangerous than damage in another organ. The most sensitive organs are the gonads (weight about 0.25), the breast, the bone marrow and the lungs (weight about 0.15), the thyroid and the bones (weight about 0.05), see [](#tab:effdose). The sum of all the weights is 1. The weighted average produces a single value in mSv. The risk of death due to tumor induction is about 5% per “effective Sv” according to report ICRP-60 (International Commission on Radiological Protection (http://www.icrp.org)), but it is of course very dependent upon age (e.g. 14% for children under 10). Research in this field is not finished and the tables and weighting coefficients are adapted every now and then.
 
 :::{list-table} Organ weight factors to compute the effective dose (ICRP 103, 2007).
 :header-rows: 0
@@ -1452,7 +1452,7 @@ Often, the tracer is metabolized and sent to the bladder, which implies a decrea
 
 % =========================
 
-This probability depends on the geometric configuration of the organs and on the attenuation coefficients. The situation is very different for photons on the one hand and electrons and positrons on the other. As illustrated by table [2](#tab:positron_length) for positrons, the mean path length of an electron and positron in tissue is very short, even for relatively high kinetic energies. Consequently, for these particles, {math}`p_i(A \rightarrow A)` is close to 1, while {math}`p_i(A \rightarrow B)` is negligible for different organs {math}`A` and {math}`B`. The probability that a photon travels from A to B depends on the attenuation along that trajectory. Similarly the probability that it deposits all or a part of its energy in B depends on the attenuation coefficient in organ B.
+This probability depends on the geometric configuration of the organs and on the attenuation coefficients. The situation is very different for photons on the one hand and electrons and positrons on the other. As illustrated by [](#tab:positron_length) for positrons, the mean path length of an electron and positron in tissue is very short, even for relatively high kinetic energies. Consequently, for these particles, {math}`p_i(A \rightarrow A)` is close to 1, while {math}`p_i(A \rightarrow B)` is negligible for different organs {math}`A` and {math}`B`. The probability that a photon travels from A to B depends on the attenuation along that trajectory. Similarly the probability that it deposits all or a part of its energy in B depends on the attenuation coefficient in organ B.
 
 (the-energy-e-i)=
 ### The energy {math}`E_i`
@@ -1587,7 +1587,7 @@ This is much less than the dose of the left box. The right box is protected by i
 
 % =========================
 
-Here, we study the same setup of [](#fig:biol-singlephoton), but now with a point source containing 1 MBq of {sup}`18`F. This is a positron emitter. From table [2](#tab:positron_length), we know that the average kinetic energy of the positron is 250 keV. Most of this energy is dissipated in the tissue before the positron annihilates. Thus, there are three contributions to the dose of the left box: the positron and the two photons. The right box can at most be hit by one of the photons.
+Here, we study the same setup of [](#fig:biol-singlephoton), but now with a point source containing 1 MBq of {sup}`18`F. This is a positron emitter. From [](#tab:positron_length), we know that the average kinetic energy of the positron is 250 keV. Most of this energy is dissipated in the tissue before the positron annihilates. Thus, there are three contributions to the dose of the left box: the positron and the two photons. The right box can at most be hit by one of the photons.
 
 
 
@@ -1841,7 +1841,7 @@ On the other hand, for photons the calculations are very complicated and have to
 
 Finally, to obtain a dose for a particular case, we need to determine the time-activity curves {math}`A\left(r_{S_j},t\right)` for each organ {math}`r_{S_j}`. Currently, this is done by acquiring SPECT or PET scans and manually segmenting the organs in the activity images, or in the corresponding CT images (relying on the spatial alignment produced by the SPECT/CT or PET/CT system). The time-activity curve is typically obtained by acquiring a dynamic SPECT or PET scan. For tracers with long (physical and biological) half life, some additional scans at later time points may be required. A good balance must be found between minimizing the number of scans (and their duration) for optimal patient comfort, and obtaining sufficient samples to reach an acceptable accuracy. In single photon emission imaging, some of the SPECT or SPECT/CT scans may be replaced by planar imaging to improve the temporal resolution (early after injection) or to reduce the imaging time (late after injection).
 
-The anatomical models have been designed for assessing the typical radiation dose associated with diagnostic procedures. Because these doses are relatively low, it is assumed that the dose estimates obtained for such average patients are sufficiently accurate for producing clinical guidelines on the activity to be injected for different tracers and imaging tasks. Novel tracers are often first characterized in animal experiments. If those tests produce good results, they are evaluated in a small group of healthy volunteers, using one or multiple SPECT/CT or PET/CT scans, manual organ delineation and the S-values from the average patient. Because organ delineation is extremely time consuming, the delineation is usually restricted to source organs that accumulate a significant amount of activity and target organs that are known to be radiosensitive. The resulting radiation doses (in mGy or Gy) can then be converted to an effective dose (in mSv or Sv) by multiplying the energies with the appropriate quality factor Q (table [4](#tab:qualfactor)) and computing the weighted sum of the organ doses [5](#tab:effdose).
+The anatomical models have been designed for assessing the typical radiation dose associated with diagnostic procedures. Because these doses are relatively low, it is assumed that the dose estimates obtained for such average patients are sufficiently accurate for producing clinical guidelines on the activity to be injected for different tracers and imaging tasks. Novel tracers are often first characterized in animal experiments. If those tests produce good results, they are evaluated in a small group of healthy volunteers, using one or multiple SPECT/CT or PET/CT scans, manual organ delineation and the S-values from the average patient. Because organ delineation is extremely time consuming, the delineation is usually restricted to source organs that accumulate a significant amount of activity and target organs that are known to be radiosensitive. The resulting radiation doses (in mGy or Gy) can then be converted to an effective dose (in mSv or Sv) by multiplying the energies with the appropriate quality factor Q ([](#tab:qualfactor)) and computing the weighted sum of the organ doses [](#tab:effdose).
 
 Application of such models to compute the required activity for radionuclide therapy is controversial, because the model may deviate strongly from the individual patient. However, because no clinical tools are currently available for accurate personalized dosimetry, they are often used for estimating tumor and organ doses in radionuclide therapy as well. This is likely to change in the next several years. It is found that “deep learning” (using multiple layers of convolutional neural networks or CNNs) is an excellent tool to capture the prior knowledge of experts, and it is increasingly being used for organ segmentation in clinical images. In addition, the execution time of Monte Carlo simulation can be decreased from several days to several minutes by implementing them in a clever way on GPU. Consequently, personalized dosimetry for radionuclide therapy in clinically acceptable times and with acceptable efforts seems possible.
 
@@ -2048,7 +2048,7 @@ This calculation seems OK, since the UNSCEAR 2008 report gives also 0.17 mSv for
 
 % =========================================
 
-The thyroid has a strong affinity for iodine, and thyroid tumors inherit this affinity from the normal cells. Consequently, a beta-emitting isotope like {sup}`131`I is a good radionuclide for treating thyroid cancer. As can be seen in table [6](#tab:rntisotopes), {sup}`131`I not only emits electrons, but also several gammas. This has the drawback that the radionuclide trapped in the tumor will not only irradiate the tumor with electrons, it will also send some energy to the entire body as photons. But an advantage of these photons is that they can be used for imaging with a gamma camera or activity estimations with a gamma detector. Because several of these gammas have high energies, imaging must be done with high energy collimators, and detectors targeting the thyroid must be well shielded to avoid contributions from {sup}`131`I uptake in the rest of the body.
+The thyroid has a strong affinity for iodine, and thyroid tumors inherit this affinity from the normal cells. Consequently, a beta-emitting isotope like {sup}`131`I is a good radionuclide for treating thyroid cancer. As can be seen in [](#tab:rntisotopes), {sup}`131`I not only emits electrons, but also several gammas. This has the drawback that the radionuclide trapped in the tumor will not only irradiate the tumor with electrons, it will also send some energy to the entire body as photons. But an advantage of these photons is that they can be used for imaging with a gamma camera or activity estimations with a gamma detector. Because several of these gammas have high energies, imaging must be done with high energy collimators, and detectors targeting the thyroid must be well shielded to avoid contributions from {sup}`131`I uptake in the rest of the body.
 
 To determine the activity to be administered, a low activity of {sup}`131`I is administered and imaging is performed to see which fraction of the activity is taken up in the thyroid. For therapy follow up, imaging (or photon counting) is be done to monitor the {sup}`131`I uptake in the thyroid as a function of time.
 
@@ -2111,7 +2111,7 @@ One of the electron-emitting isotopes that is often used for SIRT is the yttrium
 
 % '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-As shown in table [6](#tab:rntisotopes), {sup}`90`Y is really a pure β-emitter, but in 32 of each million decays, it produces a positron. Obviously, it is a poor positron emitter, but because the treatment involves large doses (a few GBq), because the microspheres are concentrated near the liver tumors and because the effective sensitivity of current PET systems is high, it is possible to make quantitative images of the {sup}`90`Y distribution in the body of the patient. Since the microspheres remain trapped for a long time in the microvessels, we can assume that the microspheres concentrations remain constant over time, and that the radioactive decay of {sup}`90`Y is the only cause of change to the activity concentration. Therefore, we only need a single PET image for dose verification after treatment.
+As shown in [](#tab:rntisotopes), {sup}`90`Y is really a pure β-emitter, but in 32 of each million decays, it produces a positron. Obviously, it is a poor positron emitter, but because the treatment involves large doses (a few GBq), because the microspheres are concentrated near the liver tumors and because the effective sensitivity of current PET systems is high, it is possible to make quantitative images of the {sup}`90`Y distribution in the body of the patient. Since the microspheres remain trapped for a long time in the microvessels, we can assume that the microspheres concentrations remain constant over time, and that the radioactive decay of {sup}`90`Y is the only cause of change to the activity concentration. Therefore, we only need a single PET image for dose verification after treatment.
 
 Since the electrons deposit their energy very close to their emission source, the radiation dose to the tissues can be computed using the “local deposition model”. That means that with good approximation, the dose is proportional to the activity concentration achieved shortly after injection: multiplication with a global scale factor transforms the PET activity image with voxel values in Bq/ml to a dose image with voxel values in Gy.
 
@@ -2180,7 +2180,7 @@ As explained in previous chapters, PET and SPECT are quantitative, provided that
 
 *   all corrections for sensitivity, attenuation, Compton scatter and/or randoms are performed well.
 
-*   the reconstructed image values are calibrated by determining the calibration factor, which converts the reconstructed voxel values into values in Bq/ml, see sections [??](#sec:spectquant) for SPECT and [??](#sec:scalefactor) for PET. The calibration factor is radionuclide dependent, and in particular in SPECT, this dependence is so complicated that it necessitates determining the calibration factor from phantom measurements for each tracer.
+*   the reconstructed image values are calibrated by determining the calibration factor, which converts the reconstructed voxel values into values in Bq/ml, see sections [](#sec:spectquant) for SPECT and [](#sec:scalefactor) for PET. The calibration factor is radionuclide dependent, and in particular in SPECT, this dependence is so complicated that it necessitates determining the calibration factor from phantom measurements for each tracer.
 
 +++
 (appendix)=
@@ -2236,7 +2236,7 @@ So it follows that
 
 % =========================
 
-In section [??](#sec:collimation), the collimator point spread function (PSF) was computed. The collimator PSF tells us which image is obtained for a point source at distance {math}`H` from the collimator. What happens if two point sources are positioned in front of the camera, both at the same distance {math}`H`? Since the sources and the photons don’t interact with each other, all what was said above still applies, for each of the sources. The resulting image will consist of two PSFs, each centered at the detector point closest to the point source. Where the PSFs overlap, they must be added, since the detector area in the overlap region gets photons from both sources. The same is true for three, four, or one million point sources, all located at the same distance {math}`H` from the collimator. To predict the image for a set of one million point sources, simply calculate the corresponding PSFs centered at the corresponding positions on the detector, and sum everything.
+In section [](#sec:collimation), the collimator point spread function (PSF) was computed. The collimator PSF tells us which image is obtained for a point source at distance {math}`H` from the collimator. What happens if two point sources are positioned in front of the camera, both at the same distance {math}`H`? Since the sources and the photons don’t interact with each other, all what was said above still applies, for each of the sources. The resulting image will consist of two PSFs, each centered at the detector point closest to the point source. Where the PSFs overlap, they must be added, since the detector area in the overlap region gets photons from both sources. The same is true for three, four, or one million point sources, all located at the same distance {math}`H` from the collimator. To predict the image for a set of one million point sources, simply calculate the corresponding PSFs centered at the corresponding positions on the detector, and sum everything.
 
 The usual mathematical description of this can be considered as a two step approach:
 
@@ -2274,7 +2274,7 @@ If the distance to the collimator is not the same for every point source, then t
 
 Very often, the PSF can be well approximated as a Gaussian. This fact comes in handy if we want to combine two PSFs. For example: what is the combined effect of the intrinsic resolution (PSF of scintillation detection) and the collimator resolution (collimator PSF)?
 
-How can two PSFs be combined? The solution is given in appendix [??](#app:convolution): one of the PSFs is regarded as a collection of Dirac impulses. The second PSF must be applied to each of these pulses. So we must compute the convolution of both PSFs. This appendix shows that if both are approximately Gaussian, the convolution is easy to compute.
+How can two PSFs be combined? The solution is given in appendix [](#app:convolution): one of the PSFs is regarded as a collection of Dirac impulses. The second PSF must be applied to each of these pulses. So we must compute the convolution of both PSFs. This appendix shows that if both are approximately Gaussian, the convolution is easy to compute.
 
 Let us represent the first and second PSFs as follows:
 
@@ -2775,7 +2775,7 @@ Finally, we define a generalized EM (GEM) algorithm. This is a procedure which c
 h(M(\Lambda) | \Lambda) \geq h(\Lambda | \Lambda).
 ```
 
-This means that we want {math}`M` to increase {math}`h`. We can be more demanding and require that {math}`M` maximizes {math}`h`; then we have a regular EM algorithm, such as the MLEM algorithm of section [??](#sec:iterrecon).
+This means that we want {math}`M` to increase {math}`h`. We can be more demanding and require that {math}`M` maximizes {math}`h`; then we have a regular EM algorithm, such as the MLEM algorithm of section [](#sec:iterrecon).
 
 Now, from equation [](#eq:appmlem_h2) we can compute what happens with {math}`L` if we apply a GEM-step to increase the value of {math}`h`:
 
@@ -2950,7 +2950,7 @@ q(x,y,\theta) = \frac{1}{\sqrt{2\pi}\sigma}
               \delta(x\cos\theta + y\sin\theta),
 ```
 
-where σ represents the uncertainty of the TOF-measurement. The corresponding backprojection operator is obtained by applying the same blurring to the projections, followed by integration over θ. The convolution of a Gaussian with itself is equivalent to multiplying its standard deviation with {math}`\sqrt{2}` (see appendix [??](#app:convol2gauss)). One finds
+where σ represents the uncertainty of the TOF-measurement. The corresponding backprojection operator is obtained by applying the same blurring to the projections, followed by integration over θ. The convolution of a Gaussian with itself is equivalent to multiplying its standard deviation with {math}`\sqrt{2}` (see appendix [](#app:convol2gauss)). One finds
 
 ```{math}
 \begin{align}
