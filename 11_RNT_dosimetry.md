@@ -2,7 +2,7 @@
 title: Radionuclide therapy and dosimetry
 ---
 
-(introduction)=
+(introduction-rnt)=
 # Introduction
 
 % %%%%%%%%%%%%%%%%%%%%%
@@ -94,7 +94,7 @@ To be effective, the amount of radioactivity administered to the patient should 
 
 MIRD refers to the Committee on Medical Internal Radiation Dose of the Society of Nuclear Medicine, which provides standard methods for internal radiation dosimetry. The focus has mostly been on producing reasonable dose estimates, to assess and control the risk associated with diagnostic imaging. These days, refinements are being made for more accurate dose calculations as required for radionuclide therapy.
 
-The basic principles of internal dosimetry have already been explained in chapter [??](#chap:biol). MIRD uses the same principles, but formulates them slightly differently, introducing the dose rate and the S-factors. Another difference is that in chapter [??](#chap:biol), we integrated the activity over time to compute the total number of decays, and then computed the resulting dose from them. MIRD computes the dose associated with a single decay event (the dose rate), and integrates that over time.
+The basic principles of internal dosimetry have already been explained in chapter [](10_radiation_biology.md). MIRD uses the same principles, but formulates them slightly differently, introducing the dose rate and the S-factors. Another difference is that in chapter [](10_radiation_biology.md), we integrated the activity over time to compute the total number of decays, and then computed the resulting dose from them. MIRD computes the dose associated with a single decay event (the dose rate), and integrates that over time.
 
 The body of the patient is considered as a collection of 3D regions which contain an amount of radioactivity. To compute the dose (in Gy) received by a particular region, that region is treated as the *target region* {math}`r_T`, while all regions (including {math}`r_T`) are considered one by one as *source regions* {math}`r_S`. The source region contains a time dependent activity {math}`A(t)`, which is usually assumed uniform for convenience. At each point in time, that activity {math}`A(t)` in the source region produces a dose rate {math}`\dot{D}(t)` in the target region. It is assumed that the two are proportional:
 

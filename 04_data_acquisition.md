@@ -148,7 +148,7 @@ The response time of a PMT is very short (a few ns) compared to the scintillatio
 There are two ways to build a two-dimensional gamma detector based on scintillation. One way is to use a single very large crystal and connect multiple PMT’s to it. The other way is to combine small crystals in a large matrix.
 
 (sec:single_crystal)=
-##### Single crystal detector
+### Single crystal detector
 
 % ------------------------------------
 
@@ -184,7 +184,7 @@ In principle, all PMT’s contribute to the detection of a single scintillation 
     The scintillation has a finite duration, depending on the scintillator (see [](#tab:crystals)). The scintillation duration is characterized by the the decay time τ, assuming that the number of scintillation photons decreases as {math}`\exp(- t/\tau)`. The decay times of the different scintillation crystals are in the range of 40 to several 100 ns. This seems short, but since a photon travels about 1 meter in only 3.3 ns, we want the time resolution to be in the order of a few ns (e.g. to suppress the random coincidence rate in PET, as will be explained in section [](#sec:septa)). To assign such a precise time to a relatively slow event, the electronics typically computes the time at which a predefined fraction of the scintillation light has been collected (constant fraction discriminator). In current time-of-flight PET systems based on LSO, one obtains a timing resolution of about 400 ps.
 
 (multi-crystal-detector-matrix)=
-##### Multi-crystal detector matrix
+### Multi-crystal detector matrix
 
 % ------------------------------------
 
@@ -244,7 +244,7 @@ which are the coordinates of a single detected photon. If all information must b
 Although most current gamma cameras and PET systems are based on scintillation crystals combined with photomultipliers, there are many other detection systems. Some of these have very good characteristics, but their acceptance is hampered by the high cost price and, in some cases, by the fact that new algorithms must be developed before their full potential can be exploited. In the following, we only mention two promising technologies. Avalanche photodiodes can replace the PMT, CdZnTe detectors can replace the entire standard detection system.
 
 (avalanche-photodiodes)=
-##### Avalanche photodiodes
+### Avalanche photodiodes
 
 % ------------------------------------
 
@@ -261,7 +261,7 @@ APD’s can be used to replace the photomultiplier. The advantage is that they a
 A limitation of the APD is the long response time. Their timing resolution is not good enough for time-of-flight PET.
 
 (multi-pixel-photon-counters-mppc-or-sipm)=
-##### Multi-pixel photon counters (MPPC or SiPM)
+### Multi-pixel photon counters (MPPC or SiPM)
 
 % -------------------------------------------------
 
@@ -270,7 +270,7 @@ A MPPC or Silicon Photomultiplier (SiPM) consists of an array of APDs which are 
 Compared to the regular APD, the SiPM has the advantage of being much faster, achieving a response time similar to that of analogue photomultiplier tubes. That makes them fast enough for time-of-flight PET. Current timing resolution is around 400 ps, and prototypes with still better timing are currently being developed.
 
 (solid-state-detectors)=
-##### Solid state detectors
+### Solid state detectors
 
 % ------------------------------------
 
@@ -436,7 +436,7 @@ where {math}`a` is the distance between neighboring septa and {math}`s` is the s
 % ===================================================================
 
 (electronic-collimation-coincidence-detection)=
-##### Electronic collimation: coincidence detection
+### Electronic collimation: coincidence detection
 
 % ------------------------------------
 
@@ -522,7 +522,7 @@ This is the maximum sensitivity, obtained for {math}`x = 0`. The average over {m
 ```
 
 (resolution-of-coincidence-detection)=
-##### Resolution of coincidence detection
+### Resolution of coincidence detection
 
 % ------------------------------------
 
@@ -543,9 +543,7 @@ Until now, we have always assumed that annihilation takes place very close to th
 
     *   Mean path [mm]
 
-*   *   {sup}`11`
-
-        C
+*   *   {sup}`11`C
 
     *   0.96
 
@@ -555,9 +553,7 @@ Until now, we have always assumed that annihilation takes place very close to th
 
     *   1.1
 
-*   *   {sup}`13`
-
-        N
+*   *   {sup}`13`N
 
     *   1.19
 
@@ -567,9 +563,7 @@ Until now, we have always assumed that annihilation takes place very close to th
 
     *   1.5
 
-*   *   {sup}`15`
-
-        O
+*   *   {sup}`15`O
 
     *   1.72
 
@@ -579,9 +573,7 @@ Until now, we have always assumed that annihilation takes place very close to th
 
     *   2.5
 
-*   *   {sup}`18`
-
-        F
+*   *   {sup}`18`F
 
     *   0.64
 
@@ -591,9 +583,7 @@ Until now, we have always assumed that annihilation takes place very close to th
 
     *   0.6
 
-*   *   {sup}`68`
-
-        Ga
+*   *   {sup}`68`Ga
 
     *   1.90
 
@@ -603,9 +593,7 @@ Until now, we have always assumed that annihilation takes place very close to th
 
     *   2.9
 
-*   *   {sup}`82`
-
-        Rb
+*   *   {sup}`82`Rb
 
     *   3.35
 
@@ -647,7 +635,7 @@ Momentum is preserved during annihilation, so the momentum of both photons must 
 The resolution is further degraded by the unknown “depth of interaction” of the photon inside the crystal. As shown in [](#fig:doi), photons emitted near the edge of the field of view might traverse one crystal to scintillate only in the next one. Because we don’t know where in the crystal the scintillation took place, we always have to assign a fixed depth of interaction to the event. The mispositioning of these events causes a loss of resolution that increases with the distance from the center. PET systems have been designed and built that can measure the depth of interaction to reduce this loss of resolution.
 
 (sec:septa)=
-##### Mechanical collimation: inter-plane septa
+### Mechanical collimation: inter-plane septa
 
 % ------------------------------------
 
@@ -780,7 +768,7 @@ Similarly, we can compute the probability of a “**triple coincidence**”, res
 As you can see, the trues count rate is not affected by either τ nor {math}`T`, in contrast to the unwanted events. Consequently, we want τ to be as short as possible to reduce the randoms and triples count rate. We have seen that for current systems this is about 10 ns or even less. Similarly, we want {math}`T` to be as large as possible to reduce all unwanted events. Obviously, we need to leave some room for the patient.
 
 (sec:2d3dpet)=
-##### 2D and 3D PET
+### 2D and 3D PET
 
 % ------------------------------------
 
@@ -799,7 +787,7 @@ In 2D mode, there are two types of planes: direct planes, located in the center 
 According to the Nyquist criterion, the sampling distance should not be longer than half the period of the highest special frequency component in the acquired signal (you need at least two samples per period to represent a sine correctly). Without the cross-planes, the criterion would be violated. So the cross-planes are not only useful to increase sensitivity, the are needed to avoid aliasing as well.\
 
 
-In 3D mode, the septa are retracted, except for the first and last one. The detection is no longer restricted to parallel planes, photon pairs traveling along oblique lines are now accepted as well. In chapter [??](#ch:image_formation) we will see that this has a strong impact on image reconstruction.
+In 3D mode, the septa are retracted, except for the first and last one. The detection is no longer restricted to parallel planes, photon pairs traveling along oblique lines are now accepted as well. In chapter [](05_image_formation.md) we will see that this has a strong impact on image reconstruction.
 
 This has no effect on spatial resolution, since that is determined by the detector size. But the impact on sensitivity is very high. In fact, we have already computed all the sensitivities in section [](#sec:septa). Those expressions are still valid for 3D PET, if we replace {math}`d` (the distance between the septa) with {math}`Nd`, where {math}`N` is the number of neighboring detector rings. To see the improvement for 3D mode, you have to compare to a concatenation of {math}`N` independent detector rings (2D mode), which are {math}`N` times more sensitive than a single ring (at least if we wish to scan an axial range larger than that seen by a single ring). So you can see that the sensitivity for trues increases with a factor of {math}`N` when going from 2D to 3D. However, scatters increase with {math}`N^2` and randoms even with {math}`N^3`. Because the 3D PET is more sensitive, we can decrease the injected dose with a factor of {math}`N` (preserving the count rate). If we do that, randoms will only increase with {math}`N^2`. Consequently, the price we pay for increased sensitivity is an even larger increase of disturbing events. So scatter and randoms correction will be more important in 3D PET than in 2D PET. It turns out that scatter in particular poses problems: it was usually ignored in 2D PET, but this is no longer acceptable in 3D PET. Various scatter correction algorithms for 3D PET have been proposed in the literature, the one mostly used is described below ([](#sec:petscatcor)).
 
@@ -883,7 +871,7 @@ Since not all unwanted photons can be rejected, an additional correction may be 
 
 Just like the gamma camera, the PET camera uses a primary energy window to reject photons with an energy that is clearly different from 511 keV. However, the energy resolution of current PET systems is poorer than that of the gamma camera (15{math}`\ldots`20%). Unfortunately, with poorer energy resolution, scatter correction based on an additional energy window is less accurate. The reason is that the center of the scatter window C2 has to be shifted farther away from the primary energy peak, here 511 keV. Hence, the photons in that window have lost more energy, implying that they have been scattered over larger angles. Consequently, they are a poorer estimate of the scatter inside the primary window, which has been scattered over smaller angles.
 
-For that reason, PET systems use a different approach to scatter correction. As will be seen in chapter [??](#ch:trans), PET scanners are capable of measuring the attenuation coefficients of the patient body. This can be used to calculate an estimate of the Compton scatter contribution, if an estimate of the tracer distribution is available, and if the characteristics of the PET system are known. Such computations are done with Monte Carlo simulation. The simulator software “emits” photons in a similar way as nature does: more photons are emitted where more activity is present, and the photons are emitted in random (pseudo-random in the software) directions. In a similar way, photon-electron interactions are simulated, and each photon is followed until it is detected or lost for detection (e.g. because it flies in the wrong direction). This must be repeated for a sufficient amount of photons, in order to generate a reasonable estimate of the scatter contribution. Various clever tricks have been invented to accelerate the computations, such that the whole procedure can be done in a few minutes.
+For that reason, PET systems use a different approach to scatter correction. As will be seen in chapter [](06_transmission_scan.md), PET scanners are capable of measuring the attenuation coefficients of the patient body. This can be used to calculate an estimate of the Compton scatter contribution, if an estimate of the tracer distribution is available, and if the characteristics of the PET system are known. Such computations are done with Monte Carlo simulation. The simulator software “emits” photons in a similar way as nature does: more photons are emitted where more activity is present, and the photons are emitted in random (pseudo-random in the software) directions. In a similar way, photon-electron interactions are simulated, and each photon is followed until it is detected or lost for detection (e.g. because it flies in the wrong direction). This must be repeated for a sufficient amount of photons, in order to generate a reasonable estimate of the scatter contribution. Various clever tricks have been invented to accelerate the computations, such that the whole procedure can be done in a few minutes.
 
 In practice, the method works as follows. First, a reconstruction of the tracer uptake without scatter correction is computed. Based on this tracer distribution and on the attenuation image of the patient, the scatter contribution to the measured data is estimated with the simulation software. This scatter contribution can then be subtracted to produce a better reconstruction of the tracer distribution. This procedure can be iterated to refine the scatter estimate.
 
@@ -994,7 +982,7 @@ The energy correction table needs to be rebuilt about every six months or after 
 When linearity and energy correction have been applied, the image of a uniform activity distribution should be a uniform image. In practice, there may still be small differences, due to small variations of the characteristics with position (e.g. crystal transparency, optical coupling between crystal and PMT etc). Most likely, those are simply differences in sensitivity, so they do not produce deformation errors, only multiplicative errors. Again, these sensitivity changes can be measured and stored in order to correct them.
 
 (gamma-camera)=
-##### Gamma camera
+### Gamma camera
 
 % ---------------------------
 
@@ -1032,7 +1020,7 @@ Consequently, if a uniformity correction is applied to a planar image, one Poiss
 (see appendix [](#app:error) for estimating the error on a function of noisy variables).
 
 (sec:normalization1)=
-##### PET camera
+### PET camera
 
 % -------------------------
 
@@ -1075,7 +1063,7 @@ Alternatively, an indirect approach can be used. A sinogram is acquired for a la
 :::
 
 (front-end-dead-time)=
-##### Front-end dead time
+### Front-end dead time
 
 % ------------------------------------
 
@@ -1090,7 +1078,7 @@ R_1 = R_0 e^{-R_0 \tau_1}.
 Notice that if {math}`R_0` is extremely large, {math}`R_1` goes to zero: the system is said to be *paralyzable*. Indeed, if the count rate is extremely high, every scintillation will be disturbed by the next one, and the camera will accept no events at all.
 
 (data-processing-dead-time)=
-##### Data-processing dead time
+### Data-processing dead time
 
 % ------------------------------------
 
@@ -1114,7 +1102,7 @@ This function is monotonically increasing with upper limit {math}`1 /
 \tau_2` (as you would expect: this is the number of intervals of length {math}`\tau_2` in one second). Consequently, the electronics is non-paralyzable. You cannot paralyze it, but you can saturate it: if you put in too much data, it simply performs at maximum speed ignoring all the rest.
 
 (effective-dead-time)=
-##### Effective dead time
+### Effective dead time
 
 % ------------------------------------
 

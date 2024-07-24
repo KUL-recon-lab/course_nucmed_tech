@@ -10,7 +10,7 @@ title: Image formation
 *Information acquired along lines in the PET camera, the gamma camera and the CT-scanner.*
 :::
 
-(introduction)=
+(introduction-image-formation)=
 # Introduction
 
 The tomographic systems are shown (once again) in [](#fig:spect_pet_ct_bis). They have in common that they perform an indirect measurement of what we want to know: we want to obtain information about the distribution in every point, but we acquire information integrated over projection lines. So the desired information must be computed from the measured data. In order to do that, we need a mathematical function that describes (simulates) what happens during the acquisition: this function is an operator that computes measurements from distributions. If we have that function, we must derive its inverse: this will be an operator that computes distributions from measurements.
@@ -193,7 +193,7 @@ The Fourier theorem is very easy to prove for projection along the y-axis (so {m
 \end{align}
 ```
 
-Here, {math}`j = \sqrt{-1}`. Let us now compute the 2-D Fourier transform Λ of λ:
+Here, {math}`j = \sqrt{-1}`. Let us now compute the 2-D Fourier transform {math}`\Lambda` of λ:
 
 ```{math}
 \Lambda(\nu_x, \nu_y)  =   \int_{-\infty}^{\infty}  \int_{-\infty}^{\infty}
@@ -275,7 +275,7 @@ where it equals {math}`A`, we find:
 ```{math}
 \begin{align}
   f(x,y) &= A \delta(x) \delta(y)\\
- b(x,y) &= (\mbox{backproj}(\mbox{proj}(f))(x,y) \; = \;
+ b(x,y) &= \mbox{backproj}(\mbox{proj}(f))(x,y) \; = \;
   \frac{A}{\sqrt{x^2 + y^2}}.
 \end{align}
 ```
@@ -331,9 +331,6 @@ Mathematically, filtered backprojection is identical to Fourier-based reconstruc
 :name: fig:rampfilter
 :alt: The rampfilter in the frequency domain (left) and its point spread function (right). The latter is by definition also the mask needed to compute the filter with a convolution in the spatial domain.
 
-
-
-% \centering
 :::
 
 The ramp filter obviously amplifies high frequencies. If the projection data are noisy, the reconstructed image will suffer from high frequency noise. To reduce that noise, filtered backprojection is always applied in combination with a smoothing (low pass) filter.
@@ -388,7 +385,8 @@ The algorithm is based on a Bayesian description of the problem. In addition, it
 
 % --------------------------------
 
-Assume that somehow we have computed the reconstruction Λ from the measurement {math}`Q`. The likelihood that both the measurement and the reconstruction are the true ones ({math}`p(Q \; \mbox{and} \; \Lambda)`) can be rewritten as:
+Assume that somehow we have computed the reconstruction {math}`\Lambda` from the measurement {math}`Q`. 
+The likelihood that both the measurement and the reconstruction are the true ones ({math}`p(Q \; \mbox{and} \; \Lambda)`) can be rewritten as:
 
 ```{math}
 p(\Lambda | Q) p(Q) = p(Q | \Lambda) p(\Lambda).
@@ -402,7 +400,7 @@ It follows that
 p(\Lambda | Q) = \frac{p(Q | \Lambda) p(\Lambda)}{p(Q)}.
 ```
 
-This expression is known as *Bayes’ rule*. The function {math}`p(\Lambda)` is called *the prior*. It is the likelihood of an image, without taking into account the data. It is only based on knowledge we already have prior to the measurement. E.g. the likelihood of a patient image, clearly showing that the patient has no lungs and four livers is zero. The function {math}`p(Q | \Lambda)` is simply called *the likelihood* and gives the probability to obtain measurement {math}`Q` assuming that the true distribution is Λ. The function {math}`p(\Lambda | Q)` is called *the posterior*. The probability {math}`p(Q)` is a constant value, since the data {math}`Q` have been measured and are fixed during the reconstruction.
+This expression is known as *Bayes’ rule*. The function {math}`p(\Lambda)` is called *the prior*. It is the likelihood of an image, without taking into account the data. It is only based on knowledge we already have prior to the measurement. E.g. the likelihood of a patient image, clearly showing that the patient has no lungs and four livers is zero. The function {math}`p(Q | \Lambda)` is simply called *the likelihood* and gives the probability to obtain measurement {math}`Q` assuming that the true distribution is {math}`\Lambda`. The function {math}`p(\Lambda | Q)` is called *the posterior*. The probability {math}`p(Q)` is a constant value, since the data {math}`Q` have been measured and are fixed during the reconstruction.
 
 Maximizing {math}`p(\Lambda | Q)` is called the *maximum-a-posteriori (MAP)* approach. It produces “the most probable” solution. Note that this doesn’t have to be the true solution. We can only hope that this solution shares sufficient features with the true solution to be useful for our purposes.
 
@@ -413,12 +411,12 @@ Since it is not trivial to find good mathematical expressions for the prior prob
 
 % --------------------------------------------------------------
 
-We have to compute the likelihood {math}`p(Q | \Lambda)`, assuming that the reconstruction image Λ is available and represents the true distribution. In other words, how likely is it to measure {math}`Q` with a PET or SPECT camera, when the true tracer distribution is Λ?
+We have to compute the likelihood {math}`p(Q | \Lambda)`, assuming that the reconstruction image {math}`\Lambda` is available and represents the true distribution. In other words, how likely is it to measure {math}`Q` with a PET or SPECT camera, when the true tracer distribution is {math}`\Lambda`?
 
 We start by computing what we would expect to measure. We have already done that, it is the attenuated projection from equations [](#eq:spect_proj) and [](#eq:pet_proj). However, we want a discrete version here:
 
 ```{math}
-:label: jn:mlproj
+:label: eq:mlproj
 
 r_i = \sum_{j=1,J} c_{ij} \lambda_j, \;\; i = 1,I.
 ```
@@ -434,22 +432,21 @@ p(q_i | r_i) = \frac{e^{-r_i} r_i^{q_i}}{q_i!}.
 The history of one photon (emission, trajectory, possible interaction with electrons, possible detection) is independent of that of the other photons, so the overall probability is the product of the individual ones:
 
 ```{math}
-:label: jn:mllik
+:label: eq:mllik
 
 p(Q | \Lambda) = \prod_i \frac{e^{-r_i} r_i^{q_i}}{q_i!}.
 ```
 
 Obviously, this is going to be a very small number: e.g. {math}`p(q_i = 15 | r_i = 15) = 0.1` and smaller for any other {math}`r_i`. For larger {math}`q_i`, the maximum {math}`p`-value is even smaller. In a measurement for a single slice, we have in the order of 10000 detector positions, so the maximum likelihood value may be in the order of , which is zero in practice. We are *sure* the solution will be wrong. However, we hope it will be close enough to the true solution to be useful.
 
-Maximizing [](#eq:mllik) is equivalent to maximizing its logarithm, since the logarithm is monotonically increasing. When maximizing over Λ, factors not depending on {math}`\lambda_j` can be ignored, so we will drop {math}`q_i!` from the equations. The resulting log-likelihood function is
+Maximizing [](#eq:mllik) is equivalent to maximizing its logarithm, since the logarithm is monotonically increasing. When maximizing over {math}`\Lambda`, factors not depending on {math}`\lambda_j` can be ignored, so we will drop {math}`q_i!` from the equations. The resulting log-likelihood function is
 
 ```{math}
 :label: eq:likelihood
 
 \begin{align}
   L(Q | \Lambda) &= \sum_i q_i \ln(r_i) - r_i \\
-        &= \sum_i q_i \ln(\sum_j c_{ij} \lambda_j) - \sum_j c_{ij}
-           \lambda_j. 
+                 &= \sum_i q_i \ln(\sum_j c_{ij} \lambda_j) - \sum_j c_{ij} \lambda_j . 
 \end{align}
 ```
 
@@ -471,11 +468,11 @@ Since we can compute the first derivative (the gradient), many algorithms can be
 
 This produces a huge set of equations, and analytical solution is not feasible.
 
-Iterative optimization, such as a gradient ascent algorithm, is a suitable alternative. Starting with an arbitrary image Λ, the gradient for every {math}`\lambda_j` is computed, and a value proportional to that gradient is added. Gradient ascent is robust but can be very slow, so more sophisticated algorithms have been investigated.
+Iterative optimization, such as a gradient ascent algorithm, is a suitable alternative. Starting with an arbitrary image {math}`\Lambda`, the gradient for every {math}`\lambda_j` is computed, and a value proportional to that gradient is added. Gradient ascent is robust but can be very slow, so more sophisticated algorithms have been investigated.
 
 A very nice and simple algorithm with guaranteed convergence is the *expectation- maximization (EM)* algorithm. Although the resulting algorithm is simple, the underlying theory is not. In the following we simply state that convergence is proved and only show what the EM algorithm does. The interested reader is referred to appendix [](#app:em) for some notes on convergence.
 
-(expected-value-of-poisson-variables-given-a-single-measurement)=
+(sec:expect_a_b)=
 ### Expected value of Poisson variables, given a single measurement 
 
 % ''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -511,7 +508,7 @@ and similar for {math}`b`. So if more counts {math}`N` were measured than the ex
 
 % ''''''''''''''''''''''''''''''''''
 
-To maximize the likelihood [](#eq:likelihood), a trick is applied which at first seems to make the problem more complicated. We introduce a so-called set of “complete” variables {math}`X = \{ x_{ij}\}`, where {math}`x_{ij}` is the (unknown) number of photons that have been emitted in {math}`j` and detected in {math}`i`. The {math}`x_{ij}` are not observable, but if we would have known them, the observed variables {math}`q_i` could be computed, since {math}`q_i = \sum_j x_{ij}`. Obviously, the expected value of {math}`x_{ij}`, given Λ is
+To maximize the likelihood [](#eq:likelihood), a trick is applied which at first seems to make the problem more complicated. We introduce a so-called set of “complete” variables {math}`X = \{ x_{ij}\}`, where {math}`x_{ij}` is the (unknown) number of photons that have been emitted in {math}`j` and detected in {math}`i`. The {math}`x_{ij}` are not observable, but if we would have known them, the observed variables {math}`q_i` could be computed, since {math}`q_i = \sum_j x_{ij}`. Obviously, the expected value of {math}`x_{ij}`, given {math}`\Lambda` is
 
 ```{math}
 E(x_{ij} | \Lambda) =  c_{ij} \lambda_j
@@ -535,7 +532,7 @@ The EM algorithm prescribes a two stage procedure (and guarantees that applying 
     However, we can calculate its *expected* value, using the current estimate 
     {math}`\Lambda^{old}`. This is called the *E-step*.
 
-2.  Calculate a new estimate of Λ that maximizes the function derived in the first step. This is the *M-step*.
+2.  Calculate a new estimate of {math}`\Lambda` that maximizes the function derived in the first step. This is the *M-step*.
 
 (the-e-step)=
 ### The E-step 
@@ -563,10 +560,12 @@ n_{ij} = c_{ij} \lambda_j^{old} \frac{q_i}{\sum_k c_{ik} \lambda_k^{old}}
 
 
 
-Equation [](#eq:jnestep1) is identical to equation [](#eq:jnlx), except that the unknown {math}`x_{ij}` values have been replaced by their expected values {math}`n_{ij}`. We would expect that {math}`n_{ij}` 
-equals {math}`c_{ij} \lambda_j^{old}`. However, we also know that the sum of all 
-{math}`c_{ij}\lambda_j^{old}` equals the number of measured photons {math}`q_i`. 
-This situation is identical to the problem studied in section [](#sec:expect_a_b), and equation [](#eq:jnestep2) is the straightforward extension of equation [](#eq:expect_a_b) for multiple sources.
+Equation [](#eq:jnestep1) is identical to equation [](#eq:jnlx), except that the unknown {math}`x_{ij}` 
+values have been replaced by their expected values {math}`n_{ij}`. We would expect that {math}`n_{ij}` 
+equals {math}`c_{ij} \lambda_j^{old}`. 
+However, we also know that the sum of all {math}`c_{ij}\lambda_j^{old}` equals the number of measured photons {math}`q_i`. 
+This situation is identical to the problem studied in section [](#sec:expect_a_b), 
+and equation [](#eq:jnestep2) is the straightforward extension of equation [](#eq:expect_a_b) for multiple sources.
 
 (the-m-step)=
 ### The M-step 
@@ -640,7 +639,7 @@ So the gradient is weighted by the current reconstruction value, which is guaran
 As explained in section [](#sec:randoms), an estimate of the randoms contribution to the PET sinogram can be obtained, e.g. with the delayed window technique. Similarly, various methods exist to estimate the scatter contribution in SPECT (section [](#sec:spectscatcor)) and PET (section [](#sec:petscatcor)). If an estimate of such an additive contribution to the sinogram is available, it can be incorporated in the ML-EM algorithm. The forward acquisition model of [](#eq:mlproj) is then extended as
 
 ```{math}
-:label: jn:mlprojscat
+:label: eq:mlprojscat
 
 r_i = \sum_{j=1,J} c_{ij} \lambda_j + s_i, \;\; i = 1 \ldots I,
 ```
@@ -756,7 +755,7 @@ In some configurations this approach is not possible and the problem has to be t
 
 Note that the terminology may create some confusion about the dimensions. 2D PET actually generates 3D sinogram data: the dimensions are the detector and the projection angle (defining the projection line within one slice), and the position of slice. Fully 3D PET produces 4D sinogram data. The PET detector covers typically a cylindrical surface. Two coordinates are needed to identify a single detector, hence four coordinates are needed to identify a projection line between a pair of detectors. And as will be discussed later, a series of images can be acquired over time (dynamic acquisitions), which adds another dimension to the data.
 
-(filtered-backprojection)=
+(filtered-backprojection-3d)=
 ### Filtered backprojection
 
 % ---------------------------------------

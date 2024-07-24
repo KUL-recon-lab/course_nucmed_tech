@@ -119,7 +119,7 @@ dN(s) = - \mu(s) N(s) ds.
 If initially {math}`N(a)` photons are emitted in point {math}`s = a` along the {math}`s`-axis, the number of photons {math}`N(d)` we expect to arrive in the detector at position {math}`s = d` is obtained by integrating [](#eq:diff_atten):
 
 ```{math}
-:label: jn:spectatten
+:label: eq:spectatten
 
 N(d) = N(a) \  e^{- \int_a^d \mu(s) ds}.
 ```
@@ -137,7 +137,7 @@ Obviously, the attenuation of a photon depends on where it has been emitted.
 For positron emission, a pair of photons need to be detected. Since the fate of both photons is independent, the detection probabilities must be multiplied. Assume that one detector is positioned in {math}`s = d_1`, the second one in {math}`s = d_2`, and a point source in {math}`s = a`, somewhere between the two detectors. Assume further that during a measurement, {math}`N(a)` photon pairs were emitted along the {math}`s`-axis ([](#fig:jn_petatten)). The number of detected pairs then is:
 
 ```{math}
-:label: jn:petatten
+:label: eq:petatten
 
 \begin{align}
   N(d_1,d_2) &= N(a)  e^{- \int_{d_1}^a \mu(s) ds} e^{- \int_a^{d_2} \mu(s)

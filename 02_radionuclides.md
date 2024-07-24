@@ -113,7 +113,7 @@ dN = - N \alpha dt.
 Integration over time yields
 
 ```{math}
-:label: jn:decay
+:label: eq:decay
 
 N(t) = N(t_0) e^{- \alpha (t - t_0)}.
 ```
@@ -144,7 +144,7 @@ t_{\frac{1}{2}}  = \frac{\ln 2}{\alpha} .
 As shown in appendix [](#app:poisson), the probability of measuring {math}`n` photons, when {math}`r` photons are expected equals
 
 ```{math}
-:label: jn:Poisson
+:label: eq:Poisson
 
 \begin{align}
   p_r(n) &= \frac{e^{-r} r^n}{n!}  \\

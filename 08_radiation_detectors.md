@@ -118,7 +118,7 @@ With a still higher voltage, the avalanche effect is so high that a maximum effe
 
 The Geiger-Muller counter detects individual particles, but its output is independent of the energy deposited by the particle.
 
-(radionuclide-calibrator)=
+(radionuclide-calibrator-two)=
 ## Radionuclide calibrator
 
 % ---------------------------

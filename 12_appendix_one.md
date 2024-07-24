@@ -11,7 +11,7 @@ Assume that the expected amount of measured photons per unit time equals {math}`
 k`. A measurement of {math}`n` photons must consist of {math}`n` intervals with one photon, and {math}`k - n` intervals with no photons. The probability of such a measurement is:
 
 ```{math}
-:label: jn:poisson:1
+:label: eq:poisson:1
 
 p_r(n) = \left( \frac{r}{k} \right)^n \left(1 - \frac{r}{k} \right)^{k-n}
        \frac{k!}{n!(k-n)!}
@@ -321,13 +321,13 @@ It follows that {math}`\nu_x x + \nu_y y = \nu_s s + \nu_r r`. The Jacobian of t
 \end{align}
 ```
 
-Comparison with [](#eq:Q1) reveals that setting {math}`\nu_r = 0` in Λ produces {math}`Q_1`:
+Comparison with [](#eq:Q1) reveals that setting {math}`\nu_r = 0` in {math}`\Lambda` produces {math}`Q_1`:
 
 ```{math}
 Q_1(\nu_s, \theta) = \Lambda(\nu_s\cos\theta, \nu_s\sin\theta )
 ```
 
-A central profile through Λ along θ yields the Fourier transform of the projection {math}`q(s,\theta)`.
+A central profile through {math}`\Lambda` along θ yields the Fourier transform of the projection {math}`q(s,\theta)`.
 
 (app:ramp)=
 # The inverse Fourier transform of the ramp filter

@@ -87,7 +87,7 @@ Combining numerator and denominator results in:
 
 This section explains why maximizing the likelihood of the complete variables {math}`L_x` is equivalent to maximizing the likelihood {math}`L` of the observed variables {math}`Q`.
 
-First some notations and definitions must be introduced. As in the text, Λ denotes the reconstruction, {math}`Q` the measured sinogram and {math}`X` the complete variables. We want to maximize the logarithm of the likelihood given the reconstruction:
+First some notations and definitions must be introduced. As in the text, {math}`\Lambda` denotes the reconstruction, {math}`Q` the measured sinogram and {math}`X` the complete variables. We want to maximize the logarithm of the likelihood given the reconstruction:
 
 ```{math}
 L(\Lambda) = \ln g(Q | \Lambda)
@@ -115,7 +115,7 @@ The objective function we construct during the E-step is defined as
 h(\Lambda' | \Lambda) = E\left[\ln f(X | \Lambda') | Q, \Lambda)\right],
 ```
 
-which means that we write the log-likelihood of the complete variables as a function of {math}`\Lambda'`, and that we eliminate the unknown variables {math}`X` by computing the expectation based on the current reconstruction Λ. Combining [](#eq:appmlem_f) and [](#eq:appmlem_h) results in
+which means that we write the log-likelihood of the complete variables as a function of {math}`\Lambda'`, and that we eliminate the unknown variables {math}`X` by computing the expectation based on the current reconstruction {math}`\Lambda`. Combining [](#eq:appmlem_f) and [](#eq:appmlem_h) results in
 
 ```{math}
 :label: eq:appmlem_h2

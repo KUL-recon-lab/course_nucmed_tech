@@ -10,7 +10,7 @@ This chapter gives an overview of tests which provide valuable information on ca
 
 Quality control can be tedious sometimes, and it is not productive on the short term: it costs time, and if you find an error, it also costs money. Most of the time, the camera is working well, so if you assume that the camera is working fine, you are probably right and you save time. This is why a quality control program needs continuous monitoring: if you don’t insist on quality control measurements, the QC-program will silently die, and image quality will slowly deteriorate.
 
-(gamma-camera)=
+(gamma-camera-main)=
 # Gamma camera
 
 % %%%%%%%%%%%%%%%%%%%%%
@@ -43,7 +43,7 @@ Quality control typically involves
 
 The scheme can be adapted according to the strengths and weaknesses of the systems.
 
-(planar-imaging)=
+(planar-imaging-main)=
 ## Planar imaging
 
 % ==========================
@@ -245,7 +245,7 @@ where {math}`(x,y)` is the normal planar coordinate, {math}`v` is the table spee
 
 The bed motion can be measured directly to check if the true scanning speed is identical to the specified one.
 
-(uniformity)=
+(uniformity-bed)=
 ### Uniformity
 
 % --------------
