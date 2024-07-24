@@ -35,7 +35,8 @@ project:
     - file: 13_appendix_two.md
 
   export:
-    - pdf
+    - format: pdf
+      output: exports/course.pdf
     
 site:
   template: book-theme
