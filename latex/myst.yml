@@ -29,6 +29,7 @@ project:
     - file: 10_radiation_biology.md
     - file: 11_RNT_dosimetry.md
     - file: 12_appendix_one.md
+    - file: 13_appendix_two.md
 
   export:
     - md

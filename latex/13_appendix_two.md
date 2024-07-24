@@ -1,24 +1,9 @@
 ---
-title: Nuclear Medicine Technology and Techniques
-authors:
-- name: Johan Nuyts
-  affiliations:
-    - id: kul
-      institution: KU Leuven
-- name: Georg Schramm
-  affiliation: kul
-bliography:
-  - main
-math: {}
-github: https://github.com/KUL-recon-lab/course_nucmed_tech
+title: Second appendix
 ---
 
-+++
-(second-appendix)=
-## Second appendix
-
 (app:expected_a_b)=
-### Expectation of Poisson data contributing to a measurement
+# Expectation of Poisson data contributing to a measurement
 
 % =========================
 
@@ -96,7 +81,7 @@ Combining numerator and denominator results in:
 ```
 
 (app:em)=
-### The convergence of the EM algorithm
+# The convergence of the EM algorithm
 
 % =============================================
 
@@ -159,8 +144,8 @@ Now, from equation [](#eq:appmlem_h2) we can compute what happens with {math}`L`
 \end{align}
 ```
 
-Because {math}`M` is a GEM-algorithm, we already know that {math}`h(M(\Lambda) | \Lambda) -
-h(\Lambda, \Lambda)` is positive. If we can also show that
+Because {math}`M` is a GEM-algorithm, we already know that {math}`h(M(\Lambda) | \Lambda) - h(\Lambda, \Lambda)` 
+is positive. If we can also show that
 
 ```{math}
 :label: eq:appmlem_k
@@ -198,8 +183,8 @@ with the additional requirement that
 It turns out that [](#eq:appmlem_k2) is always positive, due to the convexity of {math}`t \ln t`. We will have a look at that now.\
 
 
-Consider the function {math}`\psi(t) = t \ln t`. It is only defined for {math}`t >
-0`. Here are its derivatives:
+Consider the function {math}`\psi(t) = t \ln t`. 
+It is only defined for {math}`t > 0`. Here are its derivatives:
 
 ```{math}
 \begin{align}
@@ -249,12 +234,12 @@ We can rework it such that we can exploit the convexity of {math}`t \ln t`:
 Now we have proved that the GEM-step increases {math}`L`. It still remains to be shown that the algorithm indeed converges towards the maximum likelihood solution. If you want to know really everything about it, you should read the paper by Dempster, Laird and Rubin, “Maximum likelihood from incomplete data via the EM algorithm”, *J R Statist Soc* 1977; 39; 1-38.
 
 (app:bprojproj)=
-### Backprojection of a projection of a point source
+# Backprojection of a projection of a point source
 
 % =========================
 
 (id-2d-parallel-projection)=
-#### 2D parallel projection
+## 2D parallel projection
 
 % ----------------------------------
 
@@ -283,16 +268,15 @@ To proceed, the argument of the delta function must be changed. This can be done
 \delta(f(x)) = \sum_1^N \frac{\delta(x_n)}{|f'(x_n)|},
 ```
 
-where {math}`f'` is the derivative of {math}`f`, and {math}`x_n, n=1 \ldots N` are the zeros of {math}`f(x)`, i.e. {math}`f(x_n) = 0`. A simple example is {math}`\delta(ax) =
-\delta(x) / |a|`. Applying this to [](#eq:app2bp1) yields:
+where {math}`f'` is the derivative of {math}`f`, and {math}`x_n, n=1 \ldots N` are the zeros of {math}`f(x)`, i.e. {math}`f(x_n) = 0`. A simple example is 
+{math}`\delta(ax) = \delta(x) / |a|`. Applying this to [](#eq:app2bp1) yields:
 
 ```{math}
 b(x,y)  =  \int_0^\pi \frac{\delta(\theta - \theta_0)}
                               {|-x\sin\theta_0 + y\cos\theta_0|} d\theta,
 ```
 
-where {math}`\theta_0` is such that {math}`x\cos\theta_0 + y\sin\theta_0 =
-0`. This is satisfied if
+where {math}`\theta_0` is such that {math}`x\cos\theta_0 + y\sin\theta_0 = 0`. This is satisfied if
 
 ```{math}
 \cos\theta_0 = \pm \frac{y}{\sqrt{x^2+y^2}} 
@@ -307,7 +291,7 @@ b(x,y) = \frac{1}{\sqrt{x^2 + y^2}}.
 ```
 
 (id-2d-parallel-projection-with-tof)=
-#### 2D parallel projection with TOF
+## 2D parallel projection with TOF
 
 % -------------------------------------------
 
