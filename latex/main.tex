@@ -14,10 +14,6 @@
 \usepackage{lmodern}
 \usepackage[utf8]{inputenc}
 \usepackage{microtype}
-\usepackage[backend=bibtex,style=ieee]{biblatex} % or use another style like 'authoryear'
-
-% Specify the bibliography file
-\addbibresource{main.bib}
 
 %------------------------------------
 % set default fonts
@@ -7320,12 +7316,6 @@ provided that
 \end{itemize}
 
 
-
-%\end{document}
-
-
-\printbibliography
-
 \section{Appendix}
 
 \subsection{Poisson noise} \label{app:poisson}
@@ -8040,5 +8030,8 @@ multiplying its standard deviation with $\sqrt{2}$ (see appendix
                \exp(-\frac{x^2+y^2}{4 \sigma^2}),
 \end{align}
 which is equivalent to equation (\ref{eq:TOFpsf}).
+
+\bibliographystyle{plain}
+\bibliography{main}
 
 \end{document}
