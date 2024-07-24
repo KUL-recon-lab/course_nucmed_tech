@@ -1,4 +1,4 @@
-\documentclass[11pt,oneside]{book}
+\documentclass[11pt,oneside]{article}
 \usepackage[T1]{fontenc}
 \usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
 %\usepackage{cite}
@@ -48,7 +48,7 @@
 
 \tableofcontents
 
-\chapter{Introduction}
+\section{Introduction}
 
 The use of radioactive isotopes for medical purposes has been investigated
 since 1920, and since 1940 attempts have been undertaken at imaging
@@ -104,7 +104,7 @@ Agency (IAEA) publishes books with free online access, e.g. \cite{IAEA}.
 
 
 
-\chapter{Radionuclides}
+\section{Radionuclides}
 
 In nuclear medicine, a tracer molecule is administered to the patient, usually
 by intravenous injection. A tracer is a particular molecule, carrying an
@@ -124,7 +124,7 @@ However, nuclear medicine techniques provide concentration measurements with a
 sensitivity that is orders of magnitude higher than that of any other
 modality.
 
-\section{Radioactive decay modes}
+\subsection{Radioactive decay modes}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The radionuclides emit electromagnetic rays during radioactive decay. These
 rays are called ``gamma rays'' or ``X-rays''.  Usually, electromagnetic rays
@@ -316,7 +316,7 @@ isotope. So if we administer a tracer to a patient, we know exactly what
 photons we will have to measure.
 
 
-\section{Statistics} \label{sec:statistics}
+\subsection{Statistics} \label{sec:statistics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The exact moment at which an atom will decay cannot be predicted. All that is
 known is the probability that it will decay in the next time interval $dt$.
@@ -409,7 +409,7 @@ expected number of accepted photons is $fN$. Since the probability of
 surviving the whole procedure (original process followed by selection)
 has a fixed probability, the resulting process is still Poisson.
 
-\chapter{Interaction of photons with matter}
+\section{Interaction of photons with matter}
 
 \begin{figure}[tb]
 \centering
@@ -435,7 +435,7 @@ of 511 keV. Rayleigh scatter (absorption and re-emission of (all or a
 fraction of) the absorbed energy as a photon in a different direction) has a
 low probability.
 
-\section{Photo-electric effect}
+\subsection{Photo-electric effect}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 A photon ``hits'' an electron, usually from an inner shell (strong
 binding energy). The electron absorbs all the energy of the photon. If
@@ -459,7 +459,7 @@ to $Z^3 / E^3$, where $Z$ is the atomic number of the material, and $E$ is the
 energy of the photon. So the photo-electric effect is particularly important for
 low energy radiation and for dense materials.
 
-\section{Compton scatter} \label{sec:compton_scatter}
+\subsection{Compton scatter} \label{sec:compton_scatter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[tb]
 \centering
@@ -531,7 +531,7 @@ The probability of a Compton decreases very slowly with increasing $E$
 Because the energy of the photon after scattering is less than before,
 Compton scatter is sometimes also called ``inelastic scattering''.
 
-\section{Rayleigh scatter}
+\subsection{Rayleigh scatter}
 %%%%%%%%%%%%%%%%%%%%%
 Rayleigh scattering or coherent scattering can be regarded as the
 collision between a photon and an entire atom. Because of the huge
@@ -543,7 +543,7 @@ medicine applications. Because the energy of the photon after
 scattering is the same as before, this effect is also called ``elastic
 scattering''.
 
-\section{Attenuation}
+\subsection{Attenuation}
 %%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[tb]
@@ -605,7 +605,7 @@ Photon-electron interactions will be more likely if there are more electrons
 per unit length. So dense materials (with lots of electrons per atom) have a
 high linear attenuation coefficient.
 
-\chapter{Data acquisition}
+\section{Data acquisition}
 
 In nuclear medicine, photon detection hardware differs considerably from that
 used in CT. In CT, large numbers of photons must be acquired in a very short
@@ -623,7 +623,7 @@ In single photon imaging, \textsuperscript{99m}Tc\ is the tracer that is mostly 
 an energy of 140 keV and the gamma camera performance is often optimized for
 this energy.  Obviously, PET-cameras have to be optimized for 511~keV.
 
-\section{Detecting the photon}
+\subsection{Detecting the photon}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Different detector types exist, but the current standard, both in SPECT and
 PET, is the scintillation detector. The following sections describe the
@@ -631,7 +631,7 @@ scintillation crystal, the photomultiplier tube and how crystal and tubes
 can be combined to make a two-dimensional gamma detector. After that, some
 alternative designs and new developments will be mentioned.
 
-\subsection{Scintillation crystal}
+\subsubsection{Scintillation crystal}
 %=================================
 A scintillation crystal is a remarkable material that stops the incoming
 photon and in doing so produces a flash of visible light, a scintillation.
@@ -730,7 +730,7 @@ difficult to process (formed at very high temperature), and it is
 slightly radioactive. Table \ref{tab:crystals} lists some
 characteristics of three scintillation crystals.
 
-\subsection{Photo Multiplier Tube}
+\subsubsection{Photo Multiplier Tube}
 %=================================
 The scintillation crystal transforms the incoming photon into a light flash.
 That flash must be detected. In particular, we want to know {\em where} it
@@ -763,7 +763,7 @@ The response time of a PMT is very short (a few ns) compared to the
 scintillation decay time.
 
 
-\subsection{Two-dimensional gamma detector}
+\subsubsection{Two-dimensional gamma detector}
 %==========================================
 % Single crystal vs multicrystal
 % position (intrinsic resolution), energy (-resolution)
@@ -774,7 +774,7 @@ scintillation. One way is to use a single very large crystal and connect
 multiple PMT's to it. The other way is to combine small crystals in a
 large matrix.
 
-\subsubsection{Single crystal detector} \label{sec:single_crystal}
+\paragraph{Single crystal detector} \label{sec:single_crystal}
 %------------------------------------
 This is the standard design for single photon detectors with NaI(Tl). One
 side of a single large crystal (e.g. 50 cm x 40 cm, 1 cm thick) is covered
@@ -838,7 +838,7 @@ resolution of about 400 ps.
 
 \end{itemize}
 
-\subsubsection{Multi-crystal detector matrix}
+\paragraph{Multi-crystal detector matrix}
 %------------------------------------
 Instead of using a single large crystal, a large detector area can be
 obtained by combining many small crystals in a two-dimensional
@@ -888,7 +888,7 @@ detectors. However, single crystal PET systems and multi-crystal gamma cameras
 exist as well.
 
 
-\subsection{Resolution} \label{sec:resolution}
+\subsubsection{Resolution} \label{sec:resolution}
 %=================================
 The coordinates $(x, y, E, t)$ can only be measured with limited precision.
 They depend on the actual depth where the incoming photon was stopped, on
@@ -932,7 +932,7 @@ Energy resolution is about 10\% FWHM (so 14 keV for a 140 keV tracer) in
 NaI(Tl) cameras, about 20\% FWHM (about 130 keV at 511 keV) or worse in
 BGO PET-systems, and about 15\% FWHM in LSO and GSO PET-systems.
 
-\subsection{Storing the data} \label{sec:storing_data}
+\subsubsection{Storing the data} \label{sec:storing_data}
 %=================================
 To store the data, the information must be digitized. We do not want to lose
 information, so the round-off errors made during digitization should be small
@@ -952,7 +952,7 @@ result as an image on the screen. Brightness (or some pseudo-color)
 corresponds to tracer concentration.
 
 
-\subsection{Alternative designs}
+\subsubsection{Alternative designs}
 %=================================
 Although most current gamma cameras and PET systems are based on
 scintillation crystals combined with photomultipliers, there are many
@@ -963,7 +963,7 @@ can be exploited. In the following, we only mention two promising
 technologies. Avalanche photodiodes can replace the PMT, CdZnTe detectors
 can replace the entire standard detection system.
 
-\subsubsection{Avalanche photodiodes}
+\paragraph{Avalanche photodiodes}
 %------------------------------------
 A semiconductor is a material in which the large majority of electrons are
 strongly bound to the atoms, but not all of them. Some electrons have enough
@@ -1009,7 +1009,7 @@ devices must be used instead of PMTs.
 A limitation of the APD is the long response time. Their timing
 resolution is not good enough for time-of-flight PET.
 
-\subsubsection{Multi-pixel photon counters (MPPC or SiPM)}
+\paragraph{Multi-pixel photon counters (MPPC or SiPM)}
 %-------------------------------------------------
 A MPPC or Silicon Photomultiplier (SiPM) consists of an array of APDs
 which are operated in Geiger mode. This Geiger mode is obtained by
@@ -1027,7 +1027,7 @@ photomultiplier tubes. That makes them fast enough for time-of-flight
 PET. Current timing resolution is around 400 ps, and prototypes with
 still better timing are currently being developed.
 
-\subsubsection{Solid state detectors}
+\paragraph{Solid state detectors}
 %------------------------------------
 An effect similar to the one described above can be used to directly
 detect the high energy photon instead of the scintillation
@@ -1049,7 +1049,7 @@ designs and accompanying algorithms to fully exploit the excellent
 performance of this type of detectors.
 
 
-\section{Collimation}
+\subsection{Collimation}
 %%%%%%%%%%%%%%%%%%%%%
 % PSF. Combinatie van resoluties.
 % PET sensitiever dan spect. Dus hogere count rates bij zelfde activiteit.
@@ -1117,7 +1117,7 @@ two-dimensional image can be regarded as a set of line integrals of a
 three dimensional distribution. Such images are usually called {\em
 projections}.
 
-\subsection{Mechanical collimation in the gamma camera} \label{sec:collimation}
+\subsubsection{Mechanical collimation in the gamma camera} \label{sec:collimation}
 %====================================================
 Figure \ref{fig:lenscollimator} shows that the sensitivity obtained
 with a mechanical collimation is very poor compared to that obtained with a
@@ -1290,9 +1290,9 @@ thickness. Using thicker septa while keeping the resolution reduces
 the collimator sensitivity.
 
 
-\subsection{Electronic and mechanical collimation in the PET camera} \label{sec:petcollim}
+\subsubsection{Electronic and mechanical collimation in the PET camera} \label{sec:petcollim}
 %===================================================================
-\subsubsection{Electronic collimation: coincidence detection}
+\paragraph{Electronic collimation: coincidence detection}
 %------------------------------------
 During positron annihilation, two photons are emitted in opposite
 directions. If both are detected, we know that the annihilation occurred
@@ -1390,7 +1390,7 @@ sensitivity varies linearly between the maximum and zero:
   \mbox{PETsens} = \frac{d}{4R}. \label{eq:petsens}
 \end{equation}
 
-\subsubsection{Resolution of coincidence detection}
+\paragraph{Resolution of coincidence detection}
 %------------------------------------
 Until now, we have always assumed that annihilation takes place very close to
 the emission point, and that the photons are emitted in exactly opposite
@@ -1462,7 +1462,7 @@ been designed and built that can measure the depth of interaction to
 reduce this loss of resolution.
 
 
-\subsubsection{Mechanical collimation: inter-plane septa} \label{sec:septa}
+\paragraph{Mechanical collimation: inter-plane septa} \label{sec:septa}
 %------------------------------------
 In the previous section we have seen why a PET-camera does not need a
 collimator. We also know that the PET-camera can only measure photon pairs
@@ -1660,7 +1660,7 @@ reduce all unwanted events. Obviously, we need to leave some room for
 the patient.
 
 
-\subsubsection{2D and 3D PET} \label{sec:2D3DPET}
+\paragraph{2D and 3D PET} \label{sec:2D3DPET}
 %------------------------------------
 In the previous paragraphs we have studied a single ring of PET
 detectors, and we have shown that shielding the detectors with septa
@@ -1735,7 +1735,7 @@ is no longer acceptable in 3D PET. Various scatter correction
 algorithms for 3D PET have been proposed in the literature, the one
 mostly used is described below (\ref{sec:petscatcor}).
 
-\section{Partial volume effect} \label{sec:pv}
+\subsection{Partial volume effect} \label{sec:pv}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[tb]
 \centering
@@ -1779,12 +1779,12 @@ maximum. The so-called {\em spill over} is the amount of apparent
 activity showing up outside the true object boundaries due to the
 blurring.
 
-\section{Compton scatter correction} \label{sec:scatter}
+\subsection{Compton scatter correction} \label{sec:scatter}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Scatter in SPECT, evt meerdere energieen.
 % Pile-up
 %----
-\subsection{Gamma camera} \label{sec:spectscatcor}
+\subsubsection{Gamma camera} \label{sec:spectscatcor}
 %------------------------
 Compton scatter causes photons to be deviated from their original trajectory,
 and to propagate with reduced energy along a new path. Consequently, photons
@@ -1883,7 +1883,7 @@ amount of scattered photons accepted in window C1 is estimated as a fraction
 of the counts in windows C2 and C3.}}
 \end{figure}
 
-\subsection{PET camera} \label{sec:petscatcor}
+\subsubsection{PET camera} \label{sec:petscatcor}
 %----------------------
 Just like the gamma camera, the PET camera uses a primary energy
 window to reject photons with an energy that is clearly different from
@@ -1945,7 +1945,7 @@ of the detector pairs (see also fig. \ref{fig:pet_norm}). The scatter
 distribution is smooth, and its amplitude is significant.
 
 
-\section{Other corrections} \label{sec:corrections}
+\subsection{Other corrections} \label{sec:corrections}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Typische gamma camera
 % Typische PET camera
@@ -1981,7 +1981,7 @@ camera with a single large scintillation crystal and parallel hole
 collimator.}}
 \end{figure}
 
-\subsection{Linearity correction}
+\subsubsection{Linearity correction}
 %=================================
 \begin{figure}[tb]
 \centering
@@ -2027,7 +2027,7 @@ receive approximately the same amount of photons. With this set up, an image
 is acquired. Deviations between the image and the known dot pattern allow to
 compute $\Delta_x(x,y)$ and $\Delta_y(x,y)$.
 
-\subsection{Energy correction}
+\subsubsection{Energy correction}
 %=================================
 Recall that the energy of the detected photon was computed as the sum of all
 PMT responses (section \ref{sec:single_crystal}). Of course, the sum is
@@ -2062,7 +2062,7 @@ multicrystal systems.
 
 %%%% TOT HIER NAGEZIEN.
 
-\subsection{Uniformity correction}
+\subsubsection{Uniformity correction}
 %=================================
 When linearity and energy correction have been applied, the image of a uniform
 activity distribution should be a uniform image. In practice, there may still
@@ -2072,7 +2072,7 @@ etc). Most likely, those are simply differences in sensitivity, so they do not
 produce deformation errors, only multiplicative errors. Again, these
 sensitivity changes can be measured and stored in order to correct them.
 
-\subsubsection{Gamma camera}
+\paragraph{Gamma camera}
 %---------------------------
 To measure the uniformity of the detector, we acquire an image of
 a uniform activity. For the gamma camera, one approach is to put a
@@ -2123,7 +2123,7 @@ the corrected image will be the sum of the relative noise variances on the
 two Poisson variables (see appendix \ref{app:error} for estimating the error
 on a function of noisy variables).
 
-\subsubsection{PET camera} \label{sec:normalization1}
+\paragraph{PET camera} \label{sec:normalization1}
 %-------------------------
 In PET-vocabulary, uniformity correction is often called {\em detector
 normalization}. The approach is similar as for the gamma camera, but
@@ -2172,7 +2172,7 @@ data must first be filled with some interpolation algorithm.
 \end{figure}
 
 
-\subsection{Dead time correction} \label{sec:deadtime}
+\subsubsection{Dead time correction} \label{sec:deadtime}
 %=================================
 ``Dead time'' means that the system has a limited data processing capacity. If
 the data input is too high, a fraction of the data will be ignored because of
@@ -2193,7 +2193,7 @@ dead time of 700 ns, the axes are in counts per second. Measured count rate is
 20\% low near 300000 counts per second.}}
 \end{figure}
 
-\subsubsection{Front-end dead time}
+\paragraph{Front-end dead time}
 %------------------------------------
 Recall (section \ref{sec:single_crystal}) that the scintillation has
 a finite duration. E.g., the decay time of NaI(Tl) is 230 ns. The PMT
@@ -2222,7 +2222,7 @@ said to be {\em paralyzable}. Indeed, if the count rate is extremely high,
 every scintillation will be disturbed by the next one, and the camera will
 accept no events at all.
 
-\subsubsection{Data-processing dead time}
+\paragraph{Data-processing dead time}
 %------------------------------------
 When the event is accepted, the linearity correction must be applied and it
 must be stored somehow: the electronics either stores it in a list, and
@@ -2251,7 +2251,7 @@ non-paralyzable. You cannot paralyze it, but you can saturate it: if
 you put in too much data, it simply performs at maximum speed ignoring
 all the rest.
 
-\subsubsection{Effective dead time}
+\paragraph{Effective dead time}
 %------------------------------------
 Combining (\ref{eq:deadtime_front}) and (\ref{eq:deadtime_proc}) tells us the
 acceptance rate for an incident photon rate of $R_0$:
@@ -2284,7 +2284,7 @@ clinical gamma cameras and all PET systems provide dead time correction based
 on some dead time model. However, for very high count rates the models are no
 longer valid and the correction will not be accurate.
 
-\subsection{Random coincidence correction} \label{sec:randoms}
+\subsubsection{Random coincidence correction} \label{sec:randoms}
 %=========================================
 The random coincidence was defined in section \ref{sec:petcollim}: two
 non-related events may be detected simultaneously and be interpreted as a
@@ -2310,7 +2310,7 @@ are identical. Subtraction will eliminate the bias, but will increase the
 variance on the estimated number of trues. See appendix \ref{app:error} for
 some comments on error propagation.
 
-\chapter{Image formation} \label{ch:image_formation}
+\section{Image formation} \label{ch:image_formation}
 
 % Wat meten we: CT, PET, SPECT (attenuated projection)
 %--------------
@@ -2332,7 +2332,7 @@ some comments on error propagation.
 in the PET camera, the gamma camera and the CT-scanner.}}
 \end{figure}
 
-\section{Introduction}
+\subsection{Introduction}
 %%%%%%%%%%%%%%%%%%%%%%
 The tomographic systems are shown (once again) in figure
 \ref{fig:spect_pet_ct_bis}. They have in common that they perform an indirect
@@ -2406,7 +2406,7 @@ rotated if all possible projections must be acquired. In contrast, a PET ring
 detector acquires all projections simultaneously (with ``all'' we mean here a
 sufficiently dense sampling).
 
-\section{Planar imaging}
+\subsection{Planar imaging}
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Scatter
 % Count rate, dead time
@@ -2489,7 +2489,7 @@ In contrast, planar PET studies are very uncommon, because most PET-cameras
 are acquiring all projections simultaneously, so the three-dimensional image
 can always be reconstructed.
 
-\section{2D Emission Tomography}
+\subsection{2D Emission Tomography}
 %%%%%%%%%%%%%%%%%%%%%%%
 % Sinogram
 % FBP
@@ -2520,7 +2520,7 @@ a radioactive disk. Center: the corresponding sinogram. Right: the
 conventions, $\theta$ is positive in clockwise direction.}}
 \end{figure}
 
-\subsection{2D filtered backprojection}
+\subsubsection{2D filtered backprojection}
 %=================================
 Filtered backprojection (FBP) is the mathematical inverse of an idealized
 acquisition model: it computes a two-dimensional continuous distribution from
@@ -2545,7 +2545,7 @@ life.
 
 \end{itemize}
 
-\subsubsection{Projection}
+\paragraph{Projection}
 %------------------------------------
 \begin{figure}[tb]
 \centering
@@ -2571,7 +2571,7 @@ closest to the center of the field of view.  By adding $(r \sin \theta, - r
 \ref{fig:fbp_math}).
 
 
-\subsubsection{The Fourier theorem}
+\paragraph{The Fourier theorem}
 %------------------------------------
 The Fourier theorem (also called the {\em central slice theorem})
 states that there is a simple relation between the one-dimensional
@@ -2647,7 +2647,7 @@ for each slice through the patient body}}
 \end{figure}
 
 
-\subsubsection{Backprojection} \label{sec:backprojection}
+\paragraph{Backprojection} \label{sec:backprojection}
 %------------------------------------
 This Fourier-based reconstruction works, but usually an alternative expression
 is used, called ``filtered backprojection''. To explain it, we must first define
@@ -2704,7 +2704,7 @@ idealized case considered here, it is also a shift invariant
 operation. Consequently, we have actually computed the point spread function
 of that operation.
 
-\subsubsection{Filtered backprojection}
+\paragraph{Filtered backprojection}
 %------------------------------------
 Filtered backprojection follows directly from the Fourier theorem:
 \begin{align}
@@ -2768,7 +2768,7 @@ projection data are noisy, the reconstructed image will suffer from
 high frequency noise. To reduce that noise, filtered backprojection is
 always applied in combination with a smoothing (low pass) filter.
 
-\subsubsection{Attenuation correction} \label{sec:attencor}
+\paragraph{Attenuation correction} \label{sec:attencor}
 %------------------------------------
 From a CT-measurement, we can directly compute a sinogram of line integrals.
 Starting from eq (\ref{eq:ct_proj}) we obtain:
@@ -2814,7 +2814,7 @@ came a bit late in fact, because by then, iterative reconstruction had replaced
 analytical reconstruction as the standard approach in SPECT. And in iterative
 reconstruction, non-uniform attenuation poses no particular problems.
 
-\subsection{Iterative Reconstruction} \label{sec:iterrecon}
+\subsubsection{Iterative Reconstruction} \label{sec:iterrecon}
 %====================================
 Filtered backprojection is elegant and fast, but not very
 flexible. The actual acquisition differs considerably from the ideal
@@ -2847,7 +2847,7 @@ measurement are stored in a digital way. However, the true tracer
 distribution is continuous, so the underlying assumption is that this
 distribution can be well described with a discrete representation.
 
-\subsubsection{Bayesian approach} \label{sec:bayes}
+\paragraph{Bayesian approach} \label{sec:bayes}
 %--------------------------------
 Assume that somehow we have computed the reconstruction $\Lambda$ from the
 measurement $Q$. The likelihood that both the measurement and the
@@ -2884,7 +2884,7 @@ correct.  Maximizing $p(\Lambda | Q)$ then reduces to maximizing the
 likelihood $p(Q | \Lambda)$, which is easier to calculate.  This is called the
 {\em maximum-likelihood (ML)} approach, discussed in the following.
 
-\subsubsection{The likelihood function for emission tomography}
+\paragraph{The likelihood function for emission tomography}
 %--------------------------------------------------------------
 We have to compute the likelihood $p(Q | \Lambda)$, assuming that the
 reconstruction image $\Lambda$ is available and represents the true
@@ -2951,7 +2951,7 @@ definite if the matrix $c_{ij}$ has maximum rank. In practice, this means that
 the likelihood function has a single maximum, provided that a sufficient amount
 of different detector positions $i$ were used.
 
-\subsubsection{Maximum-Likelihood Expectation-Maximization}
+\paragraph{Maximum-Likelihood Expectation-Maximization}
 %----------------------------------------------------------
 Since we can compute the first derivative (the gradient), many algorithms can
 be devised to maximize $L$. A straightforward one is to set the first
@@ -3151,7 +3151,7 @@ image are due to the statistical noise on the measured projection (Poisson
 noise).}}
 \end{figure}
 
-\subsection{Compton scatter, random coincidences}
+\subsubsection{Compton scatter, random coincidences}
 %================================================
 As explained in section \ref{sec:randoms}, an estimate of the randoms
 contribution to the PET sinogram can be obtained, e.g. with the
@@ -3176,7 +3176,7 @@ the ML-EM algorithm then becomes
 
 
 
-\subsection{Regularization} \label{sec:regularization}
+\subsubsection{Regularization} \label{sec:regularization}
 %==========================
 Since the levels of radioactivity must be low, the number of detected photons
 is also low. As a result, the uncertainty due to Poisson noise is important:
@@ -3234,7 +3234,7 @@ instead! Deleting high spatial frequencies results in poorer resolution (wider
 point spread function), so excessive smoothing is ill advised if you hope to
 see small structures in the image.
 
-\subsection{Convergence} \label{sec:mlemconverge}
+\subsubsection{Convergence} \label{sec:mlemconverge}
 %==========================
 \begin{figure}[tb]
 \centering
@@ -3306,7 +3306,7 @@ size, more iterations are needed for larger images. So if computer time is not
 a problem, it is recommended to apply really many iterations (several
 hundreds) and regularize with a prior or with post-smoothing.
 
-\subsection{OSEM} \label{sec:osem}
+\subsubsection{OSEM} \label{sec:osem}
 %==========================
 \begin{figure}[tb]
 \centering
@@ -3371,7 +3371,7 @@ ML-algorithm on SPECT and PET systems.
 
 
 
-\section{Fully 3D Tomography}
+\subsection{Fully 3D Tomography}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Until now, we have only discussed the reconstruction of a single 2D slice from
 a set of 1D projection data. An entire volume can be obtained by
@@ -3399,7 +3399,7 @@ of images can be acquired over time (dynamic acquisitions), which adds
 another dimension to the data.
 
 
-\subsubsection{Filtered backprojection}
+\paragraph{Filtered backprojection}
 %---------------------------------------
 Filtered backprojection can be extended to the fully 3D PET case. The data are
 backprojected along their detection lines, and then filtered to undo the
@@ -3419,7 +3419,7 @@ into a single set of data, that now meets the requirement of shift-invariance.
 Finally, this completed data set is reconstructed with 3D filtered
 backprojection.
 
-\subsubsection{ML-EM reconstruction}
+\paragraph{ML-EM reconstruction}
 %-----------------------------------
 ML-EM can be directly applied to the 3D data set: the formulation is very
 general, the coefficients $c_{ij}$ in (\ref{eq:jnmlem}) can be directly used
@@ -3430,7 +3430,7 @@ every individual projection line. As a result, the computational burden may
 become pretty heavy for a fully 3D configuration.
 
 
-\subsubsection{Fourier rebinning}
+\paragraph{Fourier rebinning}
 %--------------------------------
 In PET, a rebinning algorithm is an algorithm that resamples the data
 in the sinogram space, so as to reorganize them into a form that
@@ -3455,7 +3455,7 @@ only applies an approximate expression derived from it, because it is
 much faster and sufficiently accurate for most configurations. This
 algorithm (called FORE) is available on all commercial PET systems.
 
-\section{Time-of-flight PET} \label{sec:TOF}
+\subsection{Time-of-flight PET} \label{sec:TOF}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The speed of light is c = 30 cm/ns. Suppose that a point source is put
 exactly in the center between two PET detectors, which are connected
@@ -3631,7 +3631,7 @@ true, for imaging a point source, TOF-PET does not better than non-TOF
 PET.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Reconstruction with resolution modeling} \label{sec:resol}
+\subsection{Reconstruction with resolution modeling} \label{sec:resol}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In every MLEM iteration a projection and backprojection is
 executed. The projection $\sum_j c_{ij} \lambda_j$ simulates the
@@ -3796,14 +3796,14 @@ as is often done in PET for oncology. Therefore, depending on the
 imaging task, it may be necessary to smooth the image a bit to avoid
 quantification errors due to these Gibbs effects.
 
-\chapter{The transmission scan} \label{ch:trans}
+\section{The transmission scan} \label{ch:trans}
 
 % CT, PET, SPECT
 % blank, trans
 % verschil SPECT - PET
 % FBP, MLTR (geen afleiding)
 
-\section{System design}
+\subsection{System design}
 %%%%%%%%%%%%%%%%%%%%%%%
 To accurately reconstruct images from emission sinograms, information about
 the attenuation is needed. Recall that more information is needed for SPECT
@@ -3888,7 +3888,7 @@ that there is nothing in the field of view. Blank scans can be
 acquired over night, so they do not increase the study duration. Long
 acquisition times can be used, to reduce the noise in the blank scan.
 
-\section{Transmission reconstruction}
+\subsection{Transmission reconstruction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 For PET, only the ratio between blank and transmission is required. However,
 it is useful to reconstruct the transmission image for two reasons. First,
@@ -3971,9 +3971,9 @@ systems. However, since the introduction of PET/CT, the CT image has
 been used for attenuation correction, and most PET/CT systems do no
 longer have the hardware for PET transmission scanning.
 
-\section{Combined PET/CT}
+\subsection{Combined PET/CT}
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The CT system}
+\subsubsection{The CT system}
 %=========================
 \begin{figure}[tbp]
 \centering \includegraphics[width=0.54\textwidth]{figs/fig_ct.pdf} 
@@ -4031,7 +4031,7 @@ where $(x,y,z)$ represents the coordinate of the considered voxel in
 the CT image.  Consequently, the attenuation of vacuum corresponds to
 -1000 HU, and the attenuation of water to 0 HU.
 
-\subsection{The PET/CT system}
+\subsubsection{The PET/CT system}
 %=============================
 In oncology, patients often undergo a CT and a PET $^{18}$F-FDG scan. The
 CT-image provides very fine anatomical detail, but cannot easily differentiate
@@ -4079,7 +4079,7 @@ impossible to buy a PET-system without CT. Also SPECT-CT systems are
 being offered now, although they are not nearly as successful (yet?)
 as the PET/CT systems.
 
-\subsection{CT-based attenuation correction}
+\subsubsection{CT-based attenuation correction}
 %===========================================
 In the beginning, the PET in the PET/CT system still had a transmission
 source, allowing a comparison between the PET-transmission image (using a
@@ -4094,7 +4094,7 @@ there are problems too. The two most important problems are the
 conversion of the linear attenuation coefficients and dealing with
 patient motion.
 
-\subsubsection{Conversion of the attenuation coefficients}
+\paragraph{Conversion of the attenuation coefficients}
 %---------------------------------------------------------
 The attenuation of photons in CT and PET is dominated by the photo-electric and
 Compton interactions. The photo-electric effect varies approximately with
@@ -4178,7 +4178,7 @@ in the CT-reconstruction, which will propagate into the PET image via
 the CT-based attenuation correction. (Partial) solutions exist, but
 currently, they are not yet included in commercial CT-software.
 
-\subsubsection{Geometrical calibration}
+\paragraph{Geometrical calibration}
 %--------------------------------------
 To make sure that the PET and CT images are well aligned
 (fig. \ref{fig:petctimg}), careful geometrical calibration of the two
@@ -4197,7 +4197,7 @@ systems are pulled apart. After combining them again, the spatial
 alignment could be change by a few mm, so a new calibration is then
 required.
 
-\subsubsection{Patient motion}
+\paragraph{Patient motion}
 %-----------------------------
 The time between the helical CT-scan and the last PET-scan is about half an
 hour. That is a long time to ly motionless, and in most PET/CT images one can
@@ -4268,7 +4268,7 @@ attenuation correction.}}
 The correction of these artifacts is a current research topics, no standard
 solutions exist.
 
-\chapter{System maintenance}
+\section{System maintenance}
 
 The photomultiplier tubes are analog devices, with characteristics
 that are influenced by the age and the history of the device. To
@@ -4306,7 +4306,7 @@ monitoring: if you don't insist on quality control measurements, the
 QC-program will silently die, and image quality will slowly
 deteriorate.
 
-\section{Gamma camera}
+\subsection{Gamma camera}
 %%%%%%%%%%%%%%%%%%%%%%
 For gamma camera quality control and acceptance testing, the {\em Nederlandse
 Vereniging voor Nucleaire Geneeskunde} has published a very useful book
@@ -4350,9 +4350,9 @@ The scheme can be adapted according to the strengths and weaknesses of the
 systems.
 
 
-\subsection{Planar imaging}
+\subsubsection{Planar imaging}
 %==========================
-\subsubsection{Uniformity}
+\paragraph{Uniformity}
 %--------------
 Uniformity is evaluated by acquiring a uniform image. As a phantom, either
 a point source at large distance is measured without collimator, or a
@@ -4415,7 +4415,7 @@ image acquired on a dual head gamma camera, with a linearity correction
 problem in head 1 (left)}}
 \end{figure}
 
-\subsubsection{Pixel size}
+\paragraph{Pixel size}
 %--------------
 The $x$ and $y$ coordinates are computed according to equation
 (\ref{eq:gammaposition}), so they are affected by the PMT characteristics, the
@@ -4455,7 +4455,7 @@ different pixel size.}}
 \end{figure}
 
 
-\subsubsection{Spatial resolution}
+\paragraph{Spatial resolution}
 %--------------
 In theory, one could measure the FWHM of the PSF directly from a point source
 measurement. However, a point source affects only a few pixels, so the FWHM
@@ -4481,7 +4481,7 @@ average one-dimensional profile by summing image columns or rows and use that
 for LSF computations.  Again, measurements for $x$ and $y$ must be made
 because the resolution can become anisotropic.
 
-\subsubsection{Energy resolution}
+\paragraph{Energy resolution}
 %--------------
 Most gamma cameras can display the measured energy spectrum. Because it is not
 always clear where the origin of the energy axis is located, it is save to use
@@ -4501,7 +4501,7 @@ for \textsuperscript{99m}Tc\ means 14 keV.
 ($^{57}$Co, 122 keV) and technetium (\textsuperscript{99m}Tc, 140 keV).}}
 \end{figure}
 
-\subsubsection{Linearity}
+\paragraph{Linearity}
 %--------------
 The linearity is measured with a line source phantom as shown in
 figure \ref{fig:qc_linearity}. This can be obtained in several
@@ -4538,7 +4538,7 @@ described above was a good compromise.
 gamma camera with poor linearity correction.}}
 \end{figure}
 
-\subsubsection{Dead time}
+\paragraph{Dead time}
 %--------------
 The dead time measurements are based on some dead time model, for example
 equations (\ref{eq:dead1}) or (\ref{eq:dead2}). The effective dead time $\tau$
@@ -4583,7 +4583,7 @@ very high ones (which should be avoided at all times anyway, because
 in such a situation limited information is obtained at the cost of
 increased radiation to the patient).
 
-\subsubsection{Sensitivity}
+\paragraph{Sensitivity}
 %--------------
 Sensitivity is measured by recording the count rate for a known radioactive
 source. Because the measurement should not be affected by attenuation, NEMA
@@ -4592,7 +4592,7 @@ water (3 mm high) to which about 10 MBq radioactive tracer has been added. The
 result depends mainly on the collimator, and will be worse if the resolution
 is better.
 
-\subsection{Whole body imaging}
+\subsubsection{Whole body imaging}
 %==========================
 A camera which is not ready for planar imaging, is obviously not ready
 for whole body imaging either. In contrast, a camera that meets all
@@ -4621,12 +4621,12 @@ s. Consequently, whole body image quality will only be optimal if
   \item the motor is working at the correct speed.
 \end{itemize}
 
-\subsubsection{Bed motion}
+\paragraph{Bed motion}
 %--------------
 The bed motion can be measured directly to check if the true scanning
 speed is identical to the specified one.
 
-\subsubsection{Uniformity}
+\paragraph{Uniformity}
 %--------------
 If the table motion is not constant, the image of a uniform source will not be
 uniform. Of course, this uniformity test will also be affected if something is
@@ -4634,7 +4634,7 @@ wrong with planar performance. Uniformity is not affected if the motion is
 wrong but constant, except possibly at the beginning and the end, depending on
 implementation details.
 
-\subsubsection{Pixel size, resolution}
+\paragraph{Pixel size, resolution}
 %--------------
 If there is something wrong with the conversion of table position to pixel
 coordinate, this is very likely to affect the pixel size and spatial
@@ -4645,13 +4645,13 @@ or line phantom, which gives an immediate impression of the spatial
 resolution.
 
 
-\subsection{SPECT}
+\subsubsection{SPECT}
 %=================
 A gamma camera which survives all quality control tests for planar
 imaging may still fail for SPECT, since SPECT poses additional
 requirements on the geometry of the system.
 
-\subsubsection{Center-of-rotation}
+\paragraph{Center-of-rotation}
 %--------------
 In SPECT, the gamma camera is used to acquire a set of sinograms, one for each
 slice. Sinogram data are two-dimensional, one coordinate is the angle, the
@@ -4708,7 +4708,7 @@ measurement. Older cameras suffered a lot from this problem, newer
 cameras seem to be far more stable.
 
 
-\subsubsection{Detector parallel to rotation axis}
+\paragraph{Detector parallel to rotation axis}
 %--------------
 If the detector is not parallel to the rotation axis, the projections
 for different angles are not parallel. This gives rise to serious
@@ -4732,7 +4732,7 @@ rotation.}}
 \end{figure}
 
 
-\subsubsection{SPECT phantom}
+\paragraph{SPECT phantom}
 %--------------
 It is a good idea to scan a complex phantom every now and then, and
 compare the reconstruction to images obtained when the camera was
@@ -4759,7 +4759,7 @@ phantom is truly uniform. The water must be stirred.
     49:1114-1131).}}
 \end{figure}
 
-\subsubsection{Quantification} \label{sec:spectquant}
+\paragraph{Quantification} \label{sec:spectquant}
 %-----------------------------
 In principle, a SPECT system can produce quantitative images, just
 like a PET system, albeit with poorer resolution. This has long been
@@ -4813,7 +4813,7 @@ The calibration factor must be verified, and corrected if necessary, a
 few times per year, to ensure that the SPECT system remains
 quantitatively accurate.
 
-\section{Positron emission tomograph}
+\subsection{Positron emission tomograph}
 %%%%%%%%%%%%%%%%%%
 A PET-system is more expensive and more complicated than a gamma camera,
 because it contains more and faster electronics. However, in principle,
@@ -4823,7 +4823,7 @@ system works well. A module contains only a few PMT's and a few crystals, and
 keeping such a small system well-tuned is ``easier'' than doing the same for a
 large single crystal detector.
 
-\subsection{Evolution of blank scan}
+\subsubsection{Evolution of blank scan}
 %==========
 Older PET-systems have computer controlled transmission sources: the
 computer can bring them in the field of view, and can have them
@@ -4854,7 +4854,7 @@ the performance of these detector pairs must be deduced from the
 performance of the individual detectors.
 
 
-\subsection{Normalization}
+\subsubsection{Normalization}
 %==========
 Normalization is used to correct for non-uniformities in PET detector
 sensitivities (see section \ref{sec:normalization1}). The
@@ -4865,7 +4865,7 @@ PET/CT (or PET/MR) systems do not have a transmission scan. Instead of
 the blank scan, they use a scan of this phantom to detect, quantify
 and correct changes in detector performance over time.
 
-\subsection{Front end calibration}
+\subsubsection{Front end calibration}
 %==========
 The term ``calibration'' refers here to a complex automated procedure
 which
@@ -4886,7 +4886,7 @@ spectra and construct histograms as a function of position. The timing
 calibration is based on purely electronic procedures, without the phantom
 (since one cannot predict when the photons will arrive).
 
-\subsection{Quantification} \label{sec:scalefactor}
+\subsubsection{Quantification} \label{sec:scalefactor}
 %==========
 When a PET system is well tuned, the reconstructed intensity values
 are proportional to the activity that was in the field of view during
@@ -4905,7 +4905,7 @@ must be verified, and corrected if necessary, a few times per year, to
 ensure that the PET system remains quantitatively accurate.
 
 
-\chapter[Well counters, radionuclide calibrators, survey meters]
+\section[Well counters, radionuclide calibrators, survey meters]
         {Well counters, radionuclide calibrators and survey meters}
 
 On many occasions, it is very handy or even essential to have
@@ -4937,7 +4937,7 @@ detectors have been designed for each of these tasks:
         where there should be none.
 \end{itemize}
 
-\section{Well counter}
+\subsection{Well counter}
 %%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[tb]
 \centering
@@ -5040,12 +5040,12 @@ measurements. Of course, if there would be a significant background
 contribution, it would usually be much better to remove or shield it
 than to leave it there and correct for it.
 
-\section{Radionuclide calibrator}
+\subsection{Radionuclide calibrator}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 Because the radionuclide calibrator is a gas filled detector, a small introduction
 to gas filled detectors is given first.
 
-\subsection{Gas filled detectors}
+\subsubsection{Gas filled detectors}
 %--------------------------------
 A gas filled detector consists of an anode and a cathode with a gas
 between them. When a photon or particle travels through the gas, it
@@ -5112,7 +5112,7 @@ The Geiger-M\"uller counter detects individual particles, but its
 output is independent of the energy deposited by the particle.
 
 
-\subsection{Radionuclide calibrator}
+\subsubsection{Radionuclide calibrator}
 %---------------------------
 A radionuclide calibrator looks similar to a well counter, it also has a small
 cylindrical hole surrounded by the detector. But instead of a crystal
@@ -5226,7 +5226,7 @@ An important quality control test is to verify the linearity of the
 radionuclide calibrator over the entire range of activities that is
 supported, from 1 MBq to about 400 GBq.
 
-\section{Survey meter}
+\subsection{Survey meter}
 %%%%%%%%%%%%%%%%%%%%%%
 Survey meters are small hand held, battery powered devices, usually
 containing a gas detector, i.e. an unshielded ionization chamber,
@@ -5264,7 +5264,7 @@ beta-particles, the survey meter must be hold at small distance, because
 in contrast to x-rays or gamma rays,
 beta-particles have non-negigible attenuation in air.
 
-\chapter{Image analysis}
+\section{Image analysis}
 
 % ROI
 % SUV
@@ -5304,7 +5304,7 @@ by Cherry, Sorenson and Phelps \cite{Cherry} contains an excellent
 chapter on kinetic modeling and discusses several analysis techniques.
 
 
-\section{Standardized Uptake Value}
+\subsection{Standardized Uptake Value}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The standardized uptake value provides a robust scale of tracer amounts. It is
 defined as:
@@ -5348,9 +5348,9 @@ concentration is not nicely proportional to the metabolic activity, it is
 often an increasing function of that activity, so it still provides useful
 information.
 
-\section{Tracer kinetic modeling}
+\subsection{Tracer kinetic modeling}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Introduction}
+\subsubsection{Introduction}
 %========================
 \begin{figure}[tb]
 \centering
@@ -5394,9 +5394,9 @@ describes the most important features of the metabolism for this
 particular tracer. Since different tracers trace different metabolic
 processes, different models may be required for different tracer.
 
-\subsection{The compartmental model}
+\subsubsection{The compartmental model}
 %===================================
-\subsubsection{The compartments}
+\paragraph{The compartments}
 %-------------------------------
 In this section, the three compartment model is described. It is a
 relatively general model and can be used for a few different
@@ -5472,7 +5472,7 @@ and by the tracer exchange with the entire body. The contribution of
 the small region we study to the blood concentration is negligible
 compared to the contribution of the entire body.
 
-\subsubsection{The rate constants}
+\paragraph{The rate constants}
 %---------------------------------
 The amount of tracer in a compartment can be specified in several ways: number
 of molecules, mole, gram or Bq. All these numbers are directly proportional to
@@ -5519,7 +5519,7 @@ metabolized in every second, so the unit of $k_3$ is 1/s. The physical meaning
 of $k_2$ and $k_4$ is similar: they specify the fractional transfer per
 second.
 
-\subsubsection{The target molecule}
+\paragraph{The target molecule}
 %----------------------------------
 The tracer is injected to study the metabolism of a particular molecule. It is
 assumed that the metabolic process being studied is constant during the
@@ -5590,7 +5590,7 @@ rate constants and the lumped constant would have been 1. But as
 mentioned before, with glucose as a tracer, the radioactivity would
 not accumulate in the cells, which would result in poorer PET images.
 
-\subsubsection{The tracer}
+\paragraph{The tracer}
 %-------------------------
 \paragraph{Problem statement\\}
 %''''''''''''''''''''''''''''''
@@ -5895,14 +5895,14 @@ slope of the linear term is indeed $\bar{K}$. A potential disadvantage is that
 the values of the rate constants are not computed.
 
 
-\section{Image quality}
+\subsection{Image quality}
 %======================
 It is extremely difficult to give a useful definition of image quality. As a
 result, it is even more difficult to measure it. Consequently, often debatable
 measures of image quality are being used. This is probably unavoidable, but it
 is good to be fully aware about the limitations.
 
-\subsection{Subjective evaluation}
+\subsubsection{Subjective evaluation}
 %---------------------------------
 A very bad but very popular way to assess the performance of some new method
 is to display the image produced by the new method together with the image
@@ -5924,7 +5924,7 @@ It is not forbidden to look at an image (in fact, it is usually a good
 idea to look at it carefully), but it is important not to jump to a
 conclusion.
 
-\subsection{Task dependent evaluation}
+\subsubsection{Task dependent evaluation}
 %-------------------------------------
 The best way to find out if an image is good, is to use it as planned and
 check if the results are good. Consequently, if a new image generation or
@@ -5935,7 +5935,7 @@ scoring the image from the second method, the score is no longer objective. If
 possible the observer should not even be aware of the method, in order to
 exclude the influence of possible prejudice about the methods.
 
-\subsection{Continuous and digital}
+\subsubsection{Continuous and digital}
 %----------------------------------
 Intuitively, the best image is the one closest to the truth. But in emission
 tomography, the truth is a continuous tracer distribution, while the image is
@@ -5945,7 +5945,7 @@ becomes particularly difficult if the images to be compared use a different
 sampling grid (shifted points or different sampling density). So if possible,
 make sure that the sampling is identical.
 
-\subsection{Bias and variance}
+\subsubsection{Bias and variance}
 %-----------------------------
 Assume that we have a reference image e.g. in a simulation experiment. In
 this case, we know the true image, and in most cases it is even digital. Then
@@ -5997,7 +5997,7 @@ block wave and the same measurements, smoothed with a simple rectangular
 smoothing kernel.}}
 \end{figure}
 
-\subsection{Evaluating a new algorithm}
+\subsubsection{Evaluating a new algorithm}
 %-----------------------------------
 A good way to evaluate a new image processing algorithm (e.g. an algorithm for
 image reconstruction, for image segmentation, for registration of images from
@@ -6052,7 +6052,7 @@ The final stage is the evaluation on patient data, and comparing the output of
 the new method to that of the classical method. As mentioned before, not all
 failures will be detected since the correct answer may not be known.
 
-\chapter{Biological effects of radiation} \label{chap:biol}
+\section{Biological effects of radiation} \label{chap:biol}
 
 
 Radiation which interacts with electrons can affect chemical bonds in
@@ -6189,7 +6189,7 @@ computation:
 In the following paragraphs, we will discuss these factors in more detail, and
 illustrate the procedure with two examples.
 
-\section{The particle $i$}
+\subsection{The particle $i$}
 %=========================
 The ideal tracer for single photon emission would emit exactly one photon in
 every radioactive event. However, most realistic tracers have a more complex
@@ -6208,7 +6208,7 @@ energy. Each of those has its own probability. In principle, we need to
 include them all, but it usually suffices to include only the few dominating
 emissions.
 
-\section{The total number of particles $N_{iA}$}
+\subsection{The total number of particles $N_{iA}$}
 %=========================
 The number of particles emitted per s changes with time. Due to the finite
 half life, the radioactivity decays exponentially (see eq
@@ -6248,7 +6248,7 @@ half life with a shorter, effective half life in (\ref{eq:biol_decay}).
 In other cases, it may
 be necessary to integrate the measured time activity curves numerically.
 
-\section{The probability $p_i(A \rightarrow B)$}
+\subsection{The probability $p_i(A \rightarrow B)$}
 %=========================
 This probability depends on the geometric configuration of the organs
 and on the attenuation coefficients. The situation is very different
@@ -6264,7 +6264,7 @@ probability that it deposits all or a part of its energy in B depends
 on the attenuation coefficient in organ B.
 
 
-\section{The energy $E_i$}
+\subsection{The energy $E_i$}
 %=========================
 As mentioned above, $E_i$ denotes kinetic energy for electrons and positrons,
 and the total amount of energy for photons. This energy is usually given in
@@ -6277,7 +6277,7 @@ times volt, we have that
              = 1.6 \times 10^{-19} \mbox{J}.
 \end{equation}
 
-\section{Example 1: single photon emission}
+\subsection{Example 1: single photon emission}
 %=========================
 Consider the configuration shown in fig \ref{fig:biol-singlephoton}.
 Assume that the point source in the left box contains 1 MBq of the
@@ -6401,7 +6401,7 @@ This is much less than the dose of the left box. The right box is protected by i
 distance from the source!
 
 
-\section{Example 2: positron emission tomography}
+\subsection{Example 2: positron emission tomography}
 %=========================
 Here, we study the same setup of fig \ref{fig:biol-singlephoton}, but
 now with a point source containing 1 MBq of $^{18}$F. This is a
@@ -6452,7 +6452,7 @@ And for the dose to the right box we get:
 \end{equation}
 
 
-\section{Internal dosimetry calculations}
+\subsection{Internal dosimetry calculations}
 %=========================
 Internal dosimetry calculations use the same principle as in the
 examples above to compute the dosage to every organ. Because there are
@@ -6477,9 +6477,9 @@ residence times; for new ones, measurements in humans have to be
 carried out to estimate the dosimetry.
 
 
-\chapter{Radionuclide therapy and dosimetry}
+\section{Radionuclide therapy and dosimetry}
 
-\section{Introduction}
+\subsection{Introduction}
 %%%%%%%%%%%%%%%%%%%%%%
 In nuclear medicine, radiopharmaca are mostly used for diagnostic
 imaging (with SPECT or PET) and activity concentration measurements in
@@ -6635,7 +6635,7 @@ after treatment.
 \end{figure}
 
 
-\section{MIRD formalism}
+\subsection{MIRD formalism}
 %%%%%%%%%%%%%%%%%%%%%%%%
 MIRD refers to the Committee on Medical Internal Radiation Dose of the
 Society of Nuclear Medicine, which provides standard methods for
@@ -6833,7 +6833,7 @@ GPU. Consequently, personalized dosimetry for radionuclide therapy in
 clinically acceptable times and with acceptable efforts seems
 possible.
 
-\section{Radiation Biologically Effective Dose (BED)}
+\subsection{Radiation Biologically Effective Dose (BED)}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 As mentioned above, for diagnostic applications, the effect of the
 radiation is converted to an effective dose in mSv using a simple
@@ -6936,7 +6936,7 @@ who derived these equations). It is easy to check that with $\mu =
 (\ref{eq:BED}). Fortunately, normal cells are typically better at
 repairing radiation damage than tumor cells.
 
-\section{Dosimetry software}
+\subsection{Dosimetry software}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Several software tools have been developed and commercialized to
 support dosimetry calculations. The first tools (e.g. Olinda/EXM,
@@ -6980,7 +6980,7 @@ analysis of the dose in regions $r_T$ can now be made more
 informative, by taking into account the non-uniform dose distribution
 in the region.
 
-\section{Examples}
+\subsection{Examples}
 %%%%%%%%%%%%%%%%%%
 % isotopes 131-I, 177-Lu, 90-Y, 223-Ra
 % radiopharmaceuticals
@@ -6993,7 +6993,7 @@ in the region.
 %      lymphoma or B-cell non-Hodgkin's lymphoma
 %    - 90Y microspheres for SIRT
 %    - 166Ho microspheres
-\subsection{Annual effective dose due to natural $^{40}$K}
+\subsubsection{Annual effective dose due to natural $^{40}$K}
 %========================================================
 $^{40}$K is a naturally occurring radioactive isotope of potassium.
 Its abundance, i.e. the amount of $^{40}$K in natural K, is 0.012\%.
@@ -7056,7 +7056,7 @@ year:
 This calculation seems OK, since the UNSCEAR 2008 report gives also
 0.17 mSv for the effective dose from natural $^{40}$K irradiation.
 
-\subsection{Thyroid therapy with $^{131}$I}
+\subsubsection{Thyroid therapy with $^{131}$I}
 %=========================================
 The thyroid has a strong affinity for iodine, and thyroid tumors
 inherit this affinity from the normal cells. Consequently, a
@@ -7108,7 +7108,7 @@ the total dose to the thyroid involves a very strong extrapolation
 beyond the last time point (see figure \ref{fig:thyroid}).
 
 
-\subsection{$^{131}$I-mIBG therapy for neuroblastoma}
+\subsubsection{$^{131}$I-mIBG therapy for neuroblastoma}
 %==================================================
 The compound mIBG (meta-iodobenzylguanidine) is taken up by cells of
 the sympathetic nervous system. Neuroblastoma usually inherit this
@@ -7159,7 +7159,7 @@ tissues, which would facilitate the development of even more effective,
 personalized treatment.
 
 
-\subsection{$^{90}$Y selective internal radiation therapy for liver tumors}
+\subsubsection{$^{90}$Y selective internal radiation therapy for liver tumors}
 %============================================
 The liver can be affected by a primary liver (hepatic) tumor or by
 tumor metastases originating from elsewhere in the body.
@@ -7202,7 +7202,7 @@ treatment is called {\em selective internal radiation therapy} (SIRT).
 One of the electron-emitting isotopes that is often used for SIRT
 is the yttrium isotope $^{90}$Y. 
 
-\subsubsection{Dose verification for SIRT with $^{90}$Y microspheres}
+\paragraph{Dose verification for SIRT with $^{90}$Y microspheres}
 %'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 As shown in table \ref{tab:rntisotopes}, $^{90}$Y is really a pure
 $\beta$-emitter, but in 32 of each million decays, it produces a
@@ -7261,7 +7261,7 @@ $49.7 \cdot 10^{-9}$ Js $\cdot$ 1000 g/kg = $49.7 \cdot 10^{-6}$ Gy\,g\,s.
 
 % Annual exposure in Belgium (laatste dia van Kristof)
 
-\subsubsection{SIRT treatment planning with \textsuperscript{99m}Tc\ labeled
+\paragraph{SIRT treatment planning with \textsuperscript{99m}Tc\ labeled
   micro-aggregated albumin}
 %''''''''''''''''''''''''''''''''''''''''''''''''''''
 Albumin microaggregates (MAA) are very small particles (a few microns)
@@ -7292,7 +7292,7 @@ post-treatment images was obtained.
 \end{figure}
 %
 
-\section{Quantitative imaging}
+\subsection{Quantitative imaging}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Treatment planning and dose verification require quantitative imaging,
 since we need activity images in Bq/ml to compute dose images in
@@ -7326,9 +7326,9 @@ provided that
 
 \printbibliography
 
-\chapter{Appendix}
+\section{Appendix}
 
-\section{Poisson noise} \label{app:poisson}
+\subsection{Poisson noise} \label{app:poisson}
 %=========================
 Assume that the expected amount of measured photons per unit time equals $r$.
 Let us now divide this unit of time in a $k$ time intervals. If $k$ is
@@ -7373,7 +7373,7 @@ So it follows that
 \end{equation}
 
 \newpage
-\section{Convolution and PSF} \label{app:convolution}
+\subsection{Convolution and PSF} \label{app:convolution}
 %=========================
 In section \ref{sec:collimation}, the collimator point spread function (PSF)
 was computed. The collimator PSF tells us which image is obtained for a point
@@ -7436,7 +7436,7 @@ distance, using the corresponding distance dependent PSF. Finally, all
 convolved images have to be summed to yield the expected image.
 
 \newpage
-\section{Combining resolution effects: convolution of two Gaussians} \label{app:convol2gauss}
+\subsection{Combining resolution effects: convolution of two Gaussians} \label{app:convol2gauss}
 %=========================
 Very often, the PSF can be well approximated as a Gaussian. This fact comes in
 handy if we want to combine two PSFs. For example: what is the combined effect
@@ -7501,7 +7501,7 @@ multiple PSFs:
 \end{equation}
 
 \newpage
-\section{Error propagation} \label{app:error}
+\subsection{Error propagation} \label{app:error}
 %==========================
 The mean and the variance of a distribution $a$ are defined as:
 \begin{align}
@@ -7525,7 +7525,7 @@ Keep in mind that these derivations only hold for {\em independent}
 samples. If some of them are dependent, you should first eliminate them using
 the equations for the dependencies.
 
-\subsection{Sum or difference of two independent variables}
+\subsubsection{Sum or difference of two independent variables}
 %----------------------------------------------
 We have two variables $a$ and $b$ with mean $\overline{a}$ and $\overline{b}$
 and variance $\sigma_a^2$ and $\sigma_b^2$. We compute $a \pm b$ and estimate
@@ -7548,7 +7548,7 @@ independent variables is zero.
 So in linear combinations the noise adds up, even
 if the variables are subtracted!
 
-\subsection{Product of two independent variables}
+\subsubsection{Product of two independent variables}
 %------------------------------------
 For independent variables, the expectation of the product is the
 product of the expectations, so we have:
@@ -7583,7 +7583,7 @@ The last line is a first order approximation which is acceptable if the
 relative errors are small. We conclude that when two variables are multiplied
 the relative variances must be added. 
 
-\subsection{Any function of independent variables}
+\subsubsection{Any function of independent variables}
 %-----------------------------------------
 If we can live with first order approximations, the variance of any function
 of one or more variables can be easily estimated. Consider a function
@@ -7612,7 +7612,7 @@ With this approach you can easily verify that the variance on a product or
 division is obtained by summing the relative variances.
 
 \newpage
-\section{Central slice theorem} \label{app:cs}
+\subsection{Central slice theorem} \label{app:cs}
 %=================================
 This appendix gives a proof of eq (\ref{fouriertheorem}) for any angle
 $\theta$. The projection $q(s,\theta)$ can be written as
@@ -7657,7 +7657,7 @@ A central profile through $\Lambda$ along $\theta$ yields the Fourier
 transform of the projection $q(s,\theta)$.
 
 \newpage
-\section{The inverse Fourier transform of the ramp filter} \label{app:ramp}
+\subsection{The inverse Fourier transform of the ramp filter} \label{app:ramp}
 %========================
 To compute the inverse Fourier transform of the ramp filter, it is
 useful to consider it as the difference between a rectangular and a
@@ -7751,7 +7751,7 @@ these discrete function values for $W = 0.5$.
 
 
 \newpage
-\section{The Laplace transform} \label{app:laplace}
+\subsection{The Laplace transform} \label{app:laplace}
 %=========================
 The Laplace transform is defined as:
 \begin{equation}
@@ -7778,9 +7778,9 @@ By combining (\ref{eq:lap1}) and (\ref{eq:lap2}) one obtains
 \int_0^\infty F(u) e^{-a(t - u)} du & \Longleftrightarrow \frac{f(s)}{s-a}
 \end{align}
 
-\chapter{Second appendix}
+\section{Second appendix}
 
-\section{Expectation of Poisson data contributing to a measurement} \label{app:expected_a_b}
+\subsection{Expectation of Poisson data contributing to a measurement} \label{app:expected_a_b}
 %=========================
 Assume the configuration of figure \ref{fig:expected_a_b}: two radioactive
 sources contribute to a single measurement $N$. We know the a-priori expected
@@ -7843,7 +7843,7 @@ Combining numerator and denominator results in:
 \end{align}
 
 \newpage
-\section{The convergence of the EM algorithm} \label{app:em}
+\subsection{The convergence of the EM algorithm} \label{app:em}
 %=============================================
 This section explains why maximizing the likelihood of the complete variables
 $L_x$ is equivalent to maximizing the likelihood $L$ of the observed variables
@@ -7973,9 +7973,9 @@ Statist Soc} 1977; 39; 1-38.
 
 
 \newpage
-\section{Backprojection of a projection of a point source} \label{app:bprojproj}
+\subsection{Backprojection of a projection of a point source} \label{app:bprojproj}
 %=========================
-\subsection{2D parallel projection}
+\subsubsection{2D parallel projection}
 %----------------------------------
 Consider a point source located in the center of the field of view.
 The projection is a sinogram $q(s, \theta)$, given by
@@ -8015,7 +8015,7 @@ which results in
   b(x,y) = \frac{1}{\sqrt{x^2 + y^2}}.
 \end{equation}
 
-\subsection{2D parallel projection with TOF}
+\subsubsection{2D parallel projection with TOF}
 %-------------------------------------------
 Consider again the projection of a point source in the center of the
 field of view. With time-of-flight, the parallel projection along
