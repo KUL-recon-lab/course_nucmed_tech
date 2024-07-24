@@ -2270,10 +2270,15 @@ Applying this to (\ref{eq:deadtime_front}) and (\ref{eq:deadtime_proc}) yields:
   R_2 &\simeq R_1 (1 - R_1 \tau_2)
 \end{align}
 Combining both equation and deleting higher order terms results in
-\begin{align}
-  R_2 &\simeq R_0 \left(1 - R_0 (\tau_1 + \tau_2) \right) \label{eq:dead1}\\
-      &\simeq R_0 e^{- R_0 (\tau_1 + \tau_2)} \label{eq:dead2}
-\end{align}
+%
+\begin{equation}
+  R_2 \simeq R_0 \left(1 - R_0 (\tau_1 + \tau_2) \right) \label{eq:dead1}
+\end{equation}
+%
+\begin{equation}
+  R_2  \simeq R_0 e^{- R_0 (\tau_1 + \tau_2)} \label{eq:dead2}
+\end{equation}
+%
 So if the count rate is relatively low, there is little difference between
 paralyzable and non-paralyzable dead time, and we can obtain a global dead
 time for the whole machine by simply adding the contributing dead times.  Most
@@ -5600,10 +5605,15 @@ we must know the FDG rate constants. Since the tracer is not in steady state,
 the equations will be a bit more difficult than for the target molecule.  We
 can easily derive differential equations for the concentration changes in the
 second and third compartment:
-\begin{align}
-  \frac{dC_E(t)}{dt} &= K_1 C_P(t) - (k_2 + k_3) C_E(t) \label{eq:C_E}\\
-  \frac{dC_M(t)}{dt} &= k_3 C_E(t) \label{eq:C_M}
-\end{align}
+%
+\begin{equation}
+  \frac{dC_E(t)}{dt} = K_1 C_P(t) - (k_2 + k_3) C_E(t) \label{eq:C_E}
+\end{equation}
+%
+\begin{equation}
+  \frac{dC_M(t)}{dt} = k_3 C_E(t) \label{eq:C_M}
+\end{equation}
+%
 For a cardiac study, we can derive the tracer concentration $C_P(t)$ in the
 blood from the pixel values in the center of the left ventricle or atrium. If
 the heart is not in the field of view, we can still determine $C_P(t)$ by
@@ -5633,10 +5643,12 @@ transform is that derivatives and integrals with respect to $t$ become simple
 functions of $s$. After transformation, elimination of variables is easy. The
 result is then back-transformed to the time domain.  Laplace transform of
 (\ref{eq:C_E}) and (\ref{eq:C_M}) results in
-\begin{align}
-  s c_E(s) &= K_1 c_P(s) - (k_2 + k_3) c_E(s) \label{eq:sc_E}\\
-  s c_M(s) &= k_3 c_E(s)  \label{eq:sc_M}
-\end{align}
+\begin{equation}
+  s c_E(s) = K_1 c_P(s) - (k_2 + k_3) c_E(s) \label{eq:sc_E}
+\end{equation}
+\begin{equation}
+  s c_M(s) = k_3 c_E(s) \label{eq:sc_M}
+\end{equation}
 where we have assumed that at time $t=0$ (time of injection) all tracer
 amounts are zero.  From (\ref{eq:sc_E}) we find $c_E(s)$ as a function of
 $c_P(s)$. Inserting in (\ref{eq:sc_M}) produces $c_M(s)$ as a function of
@@ -7760,7 +7772,9 @@ the left, the corresponding Laplace transforms are at the right:
 F(t)                        & \Longleftrightarrow f(s) \\
 \frac{dF(t)}{dt}            & \Longleftrightarrow s f(s) - F(0) \\
 e^{at} F(t)                 & \Longleftrightarrow f(s - a)\\
-\int_0^t F(u) G(t - u) du   & \Longleftrightarrow f(s) g(s) \label{eq:lap1}\\
+\int_0^t F(u) G(t - u) du   & \Longleftrightarrow f(s) g(s) \label{eq:lap1}
+\end{align}
+\begin{align}
 \int_0^t F(u) du            & \Longleftrightarrow \frac{f(s)}{s}\\
 1                           & \Longleftrightarrow \frac{1}{s}\\
 e^{at}                      & \Longleftrightarrow \frac{1}{s - a} \label{eq:lap2}
