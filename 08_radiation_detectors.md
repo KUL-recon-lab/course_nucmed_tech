@@ -49,7 +49,7 @@ One problem of the well counter is that its sensitivity varies with the position
   = \frac{1}{4\pi R^2}\int_0^\alpha 2\pi H'(\alpha') \; R d\alpha'
 ```
 
-&#x20;where the value of {math}`H'` in the integral goes from {math}`H'(0) = 0` to {math}`H'(\alpha) = H`. A particular value of {math}`\alpha'` defines a circular line on the sphere, and a small increment {math}`d \alpha'` turns the line into a small strip with thickness {math}`R d \alpha'`.
+where the value of {math}`H'` in the integral goes from {math}`H'(0) = 0` to {math}`H'(\alpha) = H`. A particular value of {math}`\alpha'` defines a circular line on the sphere, and a small increment {math}`d \alpha'` turns the line into a small strip with thickness {math}`R d \alpha'`.
 
 
 

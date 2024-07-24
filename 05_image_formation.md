@@ -917,7 +917,7 @@ The problem is that the blurring during the projection not only suppresses some 
   = e^{- 2 \pi^2 \sigma^2 f^2}.
 ```
 
-&#x20;The wider the Gaussian PSF, the narrower the corresponding Gaussian MTF, and the larger the fraction of frequencies that are suppressed so much that they will be lost in the noise.
+The wider the Gaussian PSF, the narrower the corresponding Gaussian MTF, and the larger the fraction of frequencies that are suppressed so much that they will be lost in the noise.
 
 
 
@@ -931,8 +931,8 @@ The problem is that the blurring during the projection not only suppresses some 
 
 
 
-Now imagine that we apply some deblurring algorithm, which restores the frequency components that are still present in the data. We also assume that it does not “invent” data, but assumes that things not seen by the measurement should be set to zero. That will result in an approximately rectangular PSF. This is illustrated in [](#fig:resolgibbs), where we assumed that all frequencies below 0.16 could still be restored, whereas the higher frequencies were filtered away by the measurement PSF. The inverse Fourier transform of a rectangular function is a sinc function ({math}`\mbox{sinc}(x) =
-\sin(x)/x`), as can easily be verified:
+Now imagine that we apply some deblurring algorithm, which restores the frequency components that are still present in the data. We also assume that it does not “invent” data, but assumes that things not seen by the measurement should be set to zero. That will result in an approximately rectangular PSF. This is illustrated in [](#fig:resolgibbs), where we assumed that all frequencies below 0.16 could still be restored, whereas the higher frequencies were filtered away by the measurement PSF. The inverse Fourier transform of a rectangular function is a sinc function 
+({math}`\mbox{sinc}(x) = \sin(x)/x`), as can easily be verified:
 
 ```{math}
 \begin{align}

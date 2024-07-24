@@ -75,7 +75,7 @@ Many scintillators exist, and quite some research on new scintillators is still 
 
     *   65
 
-*   *   Linear atten. coeff. [/cm] (at 511 keV)
+*   *   linear atten. coeff. [1/cm] (at 511 keV)
 
     *   0.34
 
@@ -95,11 +95,7 @@ Many scintillators exist, and quite some research on new scintillators is still 
 
     *   440
 
-*   *   Melting temperature (
-
-        {sup}`o`
-
-        C)
+*   *   Melting point ({sup}`o`C)
 
     *   651
 
@@ -158,8 +154,9 @@ In principle, all PMT’s contribute to the detection of a single scintillation 
 
 
 
-*   **Position:** {math}`(x,y)`\
-    &#x20;The x-position is computed as
+*   **Position:** {math}`(x,y)`
+
+    The x-position is computed as
 
     ```{math}
     :label: eq:gammaposition
@@ -169,8 +166,9 @@ In principle, all PMT’s contribute to the detection of a single scintillation 
 
     where {math}`i` is the PMT-index, {math}`x_i` the {math}`x`-position of the PMT and {math}`S_i` the integral of the PMT output over the scintillation duration. The {math}`y`-position is computed similarly. [](#eq:gammaposition) is not very accurate and needs correction for systematic errors (linearity correction). The reason is that the response of the PMT’s does not vary nicely with the distance to the pulse. In addition, each PMT behaves a bit differently. This will be discussed later in this chapter.
 
-*   **Energy:** {math}`E`\
-    &#x20;The energy is computed as
+*   **Energy:** {math}`E` 
+
+    The energy is computed as
 
     ```{math}
     E = c_E {\sum_i S_i}
@@ -178,8 +176,10 @@ In principle, all PMT’s contribute to the detection of a single scintillation 
 
     where {math}`c_E` is a coefficient converting voltage (integrated PMT output) to energy. The “constant” {math}`c_E` is not really a constant: it varies slightly with the energy of the high energy photon. Moreover, it depends also on the position of the scintillation, because of the complex and individual behavior of the PMT’s. Compensation of all these effects is called “energy correction”, and will be discussed below.
 
-*   **Time: ** {math}`t`\
-    &#x20;In positron emission tomography, we must detect pairs of photons which have been produced simultaneously during positron-electron annihilation. Consequently, the time of the scintillation must be computed as accurately as possible, so that we can separate truly simultaneous events from events that happen to occur almost simultaneously.
+*   **Time:** {math}`t` 
+
+    In positron emission tomography, we must detect 
+    pairs of photons which have been produced simultaneously during positron-electron annihilation. Consequently, the time of the scintillation must be computed as accurately as possible, so that we can separate truly simultaneous events from events that happen to occur almost simultaneously.
 
     The scintillation has a finite duration, depending on the scintillator (see [](#tab:crystals)). The scintillation duration is characterized by the the decay time τ, assuming that the number of scintillation photons decreases as {math}`\exp(- t/\tau)`. The decay times of the different scintillation crystals are in the range of 40 to several 100 ns. This seems short, but since a photon travels about 1 meter in only 3.3 ns, we want the time resolution to be in the order of a few ns (e.g. to suppress the random coincidence rate in PET, as will be explained in section [](#sec:septa)). To assign such a precise time to a relatively slow event, the electronics typically computes the time at which a predefined fraction of the scintillation light has been collected (constant fraction discriminator). In current time-of-flight PET systems based on LSO, one obtains a timing resolution of about 400 ps.
 
@@ -210,9 +210,9 @@ In a single crystal design, all PMT’s contribute to the detection of a single 
 
 The coordinates {math}`(x, y, E, t)` can only be measured with limited precision. They depend on the actual depth where the incoming photon was stopped, on the number of electrons that was excited, on the time the electrons remain in the excited state, on the direction in which each scintillation photon is emitted when the electron returns to a lower energy state and on the amount of electrons that is activated in the PMT’s in each dynode. These are all random processes: if two identical high energy photons enter the crystal at exactly the same position, all the forthcoming events will be different. We can only describe them with probabilities.
 
-So if the photon really enters the crystal at {math}`(\bar{x}, \bar{y}, \bar{E},
-\bar{t})`, the actual measurement will produce a random realization {math}`(x_i,
-y_i, E_i, t_i)` drawn from a four-dimensional probability distribution {math}`(x, y, E, t)`. We can measure that probability distribution by doing repeated measurements in a well-controlled experimental situation. E.g., we can put a strongly collimated radioactive source in front of the crystal, which sends photons with the same known energy into the crystal at the same known position. This experiment would provide us the distribution for {math}`x`, {math}`y` and {math}`E`. The time resolution can be determined in several ways, e.g. by activating the PMT’s with light emitting diodes. The resolution on {math}`x` and {math}`y` is often called the *intrinsic resolution*.
+So if the photon really enters the crystal at 
+{math}`(\bar{x}, \bar{y}, \bar{E},\bar{t})`, 
+the actual measurement will produce a random realization {math}`(x_i,y_i, E_i, t_i)` drawn from a four-dimensional probability distribution {math}`(x, y, E, t)`. We can measure that probability distribution by doing repeated measurements in a well-controlled experimental situation. E.g., we can put a strongly collimated radioactive source in front of the crystal, which sends photons with the same known energy into the crystal at the same known position. This experiment would provide us the distribution for {math}`x`, {math}`y` and {math}`E`. The time resolution can be determined in several ways, e.g. by activating the PMT’s with light emitting diodes. The resolution on {math}`x` and {math}`y` is often called the *intrinsic resolution*.
 
 If we plot all the measurements in a histogram, we will see the distribution. Usually the distribution is approximately Gaussian, and can be characterized by its standard deviation σ. Often one specifies the full width at half maximum (FWHM) instead 
 ([](#fig:fwhm)). It is easy to show that for a Gaussian, the FWHM {math}`= 2 \sqrt{2 \ln 2} \sigma`. This leads to a useful rule of thumb: *any detail smaller than the FWHM is lost during the measurement*.
@@ -1035,7 +1035,7 @@ Alternatively, an indirect approach can be used. A sinogram is acquired for a la
     \frac{\mbox{mean(sensitivity)}}{\mbox{sensitivity}(i)}.
 ```
 
-&#x20;A typical sensitivity sinogram is shown in [](#fig:pet_norm). The sinogram is dominated by a regular pattern of zero sensitivity projection lines, which are due to small gaps between the detector blocks. In the projections one can see that there is a significant axial variation in the sensitivities. After normalization, the data from a uniform cylinder are indeed fairly uniform, except for these zero sensitivities. In iterative reconstruction, the data in these gaps are simply not used. For filtered backprojection, these data must first be filled with some interpolation algorithm.
+A typical sensitivity sinogram is shown in [](#fig:pet_norm). The sinogram is dominated by a regular pattern of zero sensitivity projection lines, which are due to small gaps between the detector blocks. In the projections one can see that there is a significant axial variation in the sensitivities. After normalization, the data from a uniform cylinder are indeed fairly uniform, except for these zero sensitivities. In iterative reconstruction, the data in these gaps are simply not used. For filtered backprojection, these data must first be filled with some interpolation algorithm.
 
 
 
@@ -1132,7 +1132,7 @@ Applying this to [](#eq:deadtime_front) and [](#eq:deadtime_proc) yields:
 \end{align}
 ```
 
-&#x20;Combining both equation and deleting higher order terms results in
+Combining both equation and deleting higher order terms results in
 
 
 

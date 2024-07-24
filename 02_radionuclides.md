@@ -26,7 +26,7 @@ where {math}`h` is the Planck constant, {math}`c` is the speed of light, ν the 
 
 There are many ways in which unstable isotopes can decay. Depending on the decay mode, one or more gamma rays will be emitted in every event. Some isotopes may use different decay modes. The probability of each mode is called the *branching ratio*. As an example, {sup}`18`F has a branching ratio of 0.97 for positron decay, and a branching ratio of 0.03 for electron capture.
 
-1.  &#x20;{math}`\beta^-` emission.
+1.  {math}`\beta^-` emission.
 
 
 
@@ -40,13 +40,13 @@ There are many ways in which unstable isotopes can decay. Depending on the decay
 
     *   The resulting daughter product of the above transmutation can also be in an excited state, in which case it rapidly decays to a more stable nuclear arrangement, releasing the excess energy as one or more γ photons. The nucleons are unchanged, so there is no additional transmutation in decay from excited to ground state.
 
-    *   &#x20;The daughter nucleus of the decay process may also be in a metastable or isomeric state. In contrast to an excited state, the life time of a metastable state is “much longer” [^ugZOrASKtY][^ugZOrASKtY]: The boundary between excited and metastable is usually said to be about  s, which is rather short in practice. But the half life of some isomers is in the order of days or years..
+    *   The daughter nucleus of the decay process may also be in a metastable or isomeric state. In contrast to an excited state, the life time of a metastable state is "much longer" [^ugZOrASKtY]
+    [^ugZOrASKtY]: The boundary between excited and metastable is usually said to be about  s, which is rather short in practice. But the half life of some isomers is in the order of days or years..
 
+    When it finally decays, it does so by emitting a photon. In many metastable isotopes, this photon may be immediately absorbed by an electron of the very same atom, as a result of which that electron is ejected. This is called a (internal) conversion electron. The kinetic energy of the ejected electron is equal to the difference between the energy of the photon and the electron binding energy.
 
-
-        When it finally decays, it does so by emitting a photon. In many metastable isotopes, this photon may be immediately absorbed by an electron of the very same atom, as a result of which that electron is ejected. This is called a (internal) conversion electron. The kinetic energy of the ejected electron is equal to the difference between the energy of the photon and the electron binding energy.
-
-        The most important single photon isotope {sup}`99m`Tc is an example of this mode. {sup}`99m`Tc is a metastable daughter product of {sup}`99`Mo (half life 66 hours). {sup}`99m`Tc decays to {sup}`99`Tc (half life 6 hours) by emitting a photon of 140 keV. {sup}`99`Mo is produced in a fission reactor [^QequFdbqzy][^QequFdbqzy]: There are only 5 places worldwide where {sup}`99`Mo is produced (one in Mol, Belgium, one in Petten, the Netherlands), and 4 where it can be processed to produce {sup}`99m`Tc generators (one in Petten, one in Fleurus, Belgium)..
+    The most important single photon isotope {sup}`99m`Tc is an example of this mode. {sup}`99m`Tc is a metastable daughter product of {sup}`99`Mo (half life 66 hours). {sup}`99m`Tc decays to {sup}`99`Tc (half life 6 hours) by emitting a photon of 140 keV. {sup}`99`Mo is produced in a fission reactor [^QequFdbqzy]
+    [^QequFdbqzy]: There are only 5 places worldwide where {sup}`99`Mo is produced (one in Mol, Belgium, one in Petten, the Netherlands), and 4 where it can be processed to produce {sup}`99m`Tc generators (one in Petten, one in Fleurus, Belgium)..
 
 2.  Electron capture (EC).
 
@@ -72,7 +72,7 @@ There are many ways in which unstable isotopes can decay. Depending on the decay
     *Decay scheme of {sup}`111`In, by electron capture. The scheme is dominated by the emission of two gamma rays (171 and 245 keV). These gamma rays can be involved in production of conversion electrons. A more complete table is given in {cite:t}`Cherry`.*
     :::
 
-3.  Positron emission ({math}`\beta^+` decay).\
+3.  Positron emission ({math}`\beta^+` decay).
 
 
     *   A proton is transformed into a neutron and a positron (or anti-electron):

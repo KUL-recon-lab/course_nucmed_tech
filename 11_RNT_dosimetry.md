@@ -32,15 +32,9 @@ To be effective, the amount of radioactivity administered to the patient should 
 
 *   *   emission
 
-    *   mean energy
+    *   mean energy (keV)
 
     *   intensity
-
-*   *
-
-    *   keV
-
-    *   %
 
 *   *   {math}`\beta^-`
 
@@ -247,7 +241,7 @@ However, it has been observed that the BED depends non-linearly on the dose. Thi
 k_{\dot D}(t) = \alpha \dot D(t) + 2 \beta D(t) \dot D(t)
 ```
 
-&#x20;The first term corresponds to a single lethal hit at time {math}`t`. The second corresponds to the lethal combination of two sublethal hits, one which happened between 0 and {math}`t`, and the second one at time {math}`t`.
+The first term corresponds to a single lethal hit at time {math}`t`. The second corresponds to the lethal combination of two sublethal hits, one which happened between 0 and {math}`t`, and the second one at time {math}`t`.
 
 
 
@@ -524,7 +518,7 @@ Albumin microaggregates (MAA) are very small particles (a few microns) which ten
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Treatment planning and dose verification require quantitative imaging, since we need activity images in Bq/ml to compute dose images in Gy. The creation and analysis of accurate dose images is not only useful to verify if the treatment was successful, it also provides valuable data to learn more about the complicated relationship between radiation dose and biological effect, both in the tumors and the normal tissues. This new knowledge should enable us to make radionuclide therapy more effective. Doing that will require more accurate treatment planning, and therefore also quantitative imaging.\
+Treatment planning and dose verification require quantitative imaging, since we need activity images in Bq/ml to compute dose images in Gy. The creation and analysis of accurate dose images is not only useful to verify if the treatment was successful, it also provides valuable data to learn more about the complicated relationship between radiation dose and biological effect, both in the tumors and the normal tissues. This new knowledge should enable us to make radionuclide therapy more effective. Doing that will require more accurate treatment planning, and therefore also quantitative imaging.
 
 
 

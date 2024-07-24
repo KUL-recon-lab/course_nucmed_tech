@@ -56,7 +56,7 @@ In section [](#sec:collimation), the collimator point spread function (PSF) was 
 
 The usual mathematical description of this can be considered as a two step approach:
 
-1.  &#x20;Assume that the system is perfect: the image of a point source is a point, located on the perpendicular projection line through the point source. Mathematicians would call that “point” in the image a “Dirac impulse”. The image of two or more point sources contains simply two or more Dirac impulses, located at corresponding projection lines.\
+1.  Assume that the system is perfect: the image of a point source is a point, located on the perpendicular projection line through the point source. Mathematicians would call that “point” in the image a “Dirac impulse”. The image of two or more point sources contains simply two or more Dirac impulses, located at corresponding projection lines.\
 
 
 
@@ -99,7 +99,7 @@ F_1(x) = A \exp\left( -\frac{x^2}{a^2}\right)  \;\;\; \mbox{and} \;\;\;
   F_2(x) = B \exp\left( -\frac{x^2}{b^2}\right)
 ```
 
-&#x20;Thus, {math}`\sigma_1 = a / \sqrt{2}` and {math}`A = 1 / (\sqrt{2 \pi} \sigma_1)`, and similar for the other PSF. The convolution is then written as:
+Thus, {math}`\sigma_1 = a / \sqrt{2}` and {math}`A = 1 / (\sqrt{2 \pi} \sigma_1)`, and similar for the other PSF. The convolution is then written as:
 
 
 
@@ -131,7 +131,7 @@ The exponentiation contains a term in {math}`u^2` and a term in {math}`u`. We ca
 \end{align}
 ```
 
-&#x20;The integrand is a Gaussian. The center is a function of {math}`x`, but the standard deviation is not. The integral from {math}`-\infty` to ∞ of a Gaussian is a finite value, only dependent on its standard deviation. Consequently, the integral is not a function of {math}`x`. Working out the factor in front of the integral sign and combining all constants in a new constant {math}`D`, we obtain
+The integrand is a Gaussian. The center is a function of {math}`x`, but the standard deviation is not. The integral from {math}`-\infty` to ∞ of a Gaussian is a finite value, only dependent on its standard deviation. Consequently, the integral is not a function of {math}`x`. Working out the factor in front of the integral sign and combining all constants in a new constant {math}`D`, we obtain
 
 
 

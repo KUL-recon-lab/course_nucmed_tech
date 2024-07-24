@@ -25,13 +25,9 @@ To quantify (at least approximately) the amount of damage done to living tissue,
 
     *   Q
 
-*   *   X-ray, 
+*   *   X-ray, {math}`\gamma`-ray,
 
-        γ
-
-        -ray,
-
-    *
+    *   1  
 
 *   *   electrons, positrons
 
@@ -43,16 +39,14 @@ To quantify (at least approximately) the amount of damage done to living tissue,
 
 *   *   neutrons
 
-    *   2.5 … 22, depending on energy
+    *   2.5 ... 22, depending on energy
 
-*   *   α
-
-        -particals
+*   *   {math}`\alpha`-particals
 
     *   20
 :::
 
-The dose equivalent is expressed in Sv (sievert). Since {math}`Q = 1` for photons, electrons and positrons, we have 1 mSv per mGy in diagnostic nuclear medicine. The natural background radiation is about 2 mSv per year, or about 0.2 μSv per hour.\
+The dose equivalent is expressed in Sv (sievert). Since {math}`Q = 1` for photons, electrons and positrons, we have 1 mSv per mGy in diagnostic nuclear medicine. The natural background radiation is about 2 mSv per year, or about 0.2 μSv per hour.
 
 
 The older units for radiation dose and dose equivalent are rad and rem:
@@ -101,29 +95,11 @@ When the dose to every organ is computed, one can in addition compute an “effe
 
     *   0.04
 
-*   *   remainder (adrenals, extrathoracic region,
-
-    *
-
-    *
-
-*   *   gallbladder, heart, kidneys, lymphatic nodes,
+*   *   remainder (adrenals, extrathoracic region, gallbladder, heart, kidneys, lymphatic nodes, muscle, oral mucosa, pancreas, prostate, small intestine, spleen, thymus, uterus/cervix)
 
     *   0.00923
 
     *   0.12
-
-*   *   muscle, oral mucosa, pancreas, prostate,
-
-    *
-
-    *
-
-*   *   small intestine, spleen, thymus, uterus/cervix)
-
-    *
-
-    *
 
 *   *   total
 
@@ -237,7 +213,7 @@ Consider the configuration shown in [](#fig:biol-singlephoton). Assume that the 
 
 2.  Conversion electron of 127 keV, with an abundance of 0.13.
 
-&#x20;The half life of {sup}`123`I is 13.0 hours. The boxes are made of plastic or something like that, with an attenuation coefficient of 0.15 cm{sup}`-1` for photons with energy of 159 keV. The density of the boxes is 1 kg/liter. The boxes are hanging motionless in air, the attenuation of air is negligible. Our task is to estimate the dose that both boxes will receive if we don’t touch this configuration for a few days.
+The half life of {sup}`123`I is 13.0 hours. The boxes are made of plastic or something like that, with an attenuation coefficient of 0.15 cm{sup}`-1` for photons with energy of 159 keV. The density of the boxes is 1 kg/liter. The boxes are hanging motionless in air, the attenuation of air is negligible. Our task is to estimate the dose that both boxes will receive if we don’t touch this configuration for a few days.
 
 
 
@@ -273,7 +249,7 @@ N = 1 \mbox{MBq} \times \frac{13\ \mbox{hours}}{\ln(2)}
     = 6.75 \times 10^{10}.
 ```
 
-&#x20;This number must be multiplied with the mean number of particles per desintegration:
+This number must be multiplied with the mean number of particles per desintegration:
 
 
 
