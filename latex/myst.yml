@@ -24,6 +24,7 @@ project:
     - file: 05_image_formation.md
     - file: 06_transmission_scan.md
     - file: 07_system_maintenance.md
+    - file: 08_radiation_detectors.md
 
   export:
     - md
