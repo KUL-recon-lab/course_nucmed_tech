@@ -2,7 +2,7 @@
 title: Interaction of photons with matter
 ---
 
-:::{figure} figs/fig_foto_compton_pair.pdf
+:::{figure} figs/fig_foto_compton_pair.png
 :name: fig:foto_compton_pair
 :align: center
 :alt: Dominating interaction as a function of electron number Z and photon energy.
@@ -32,7 +32,7 @@ The probability of a photo-electric interaction is approximately proportional to
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-:::{figure} figs/fig_compton_scatter.pdf
+:::{figure} figs/fig_compton_scatter.png
 :name: fig:compton_scatter
 :align: center
 :alt: Compton scatter can be regarded as an elastic collision between a photon and an electron.
@@ -99,7 +99,7 @@ Rayleigh scattering or coherent scattering can be regarded as the collision betw
 
 % %%%%%%%%%%%%%%%%%%%%
 
-:::{figure} figs/fig_atten_water.pdf
+:::{figure} figs/fig_atten_water.png
 :name: fig:atten_water
 :align: center
 :alt: Photon attenuation in water as a function of photon energy. The photo-electric component decreases approximately with (Z/E)^3 (of course, Z is a constant here). The Compton components varies slowly.
@@ -126,7 +126,7 @@ N(d) = N(a) \  e^{- \int_a^d \mu(s) ds}.
 
 Obviously, the attenuation of a photon depends on where it has been emitted.
 
-:::{figure} figs/fig_jnpetatten.pdf
+:::{figure} figs/fig_jnpetatten.png
 :name: fig:jn_petatten
 :align: center
 :alt: Positron emitting point source in a non-uniform attenuator.

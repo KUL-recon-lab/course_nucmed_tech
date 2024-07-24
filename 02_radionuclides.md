@@ -83,7 +83,7 @@ There are many ways in which unstable isotopes can decay. Depending on the decay
 
         After a very short time the positron will hit an electron and annihilate ([](#fig:jnpos)). The mass of the two particles is converted into energy, which is emitted as two photons. These photons are emitted in opposite directions. Each photon has an energy of 511 keV (the rest mass of an electron or positron).
 
-        :::{figure} figs/fig_jnpos.pdf
+        :::{figure} figs/fig_jnpos.png
         :name: fig:jnpos
         :align: center
         :alt: Positron-electron annihilation.

@@ -115,7 +115,7 @@ The scintillation photons are emitted to carry away the energy set free when an 
 
 The scintillation crystal transforms the incoming photon into a light flash. That flash must be detected. In particular, we want to know *where* it occurred, *when* it occurred and *how intense* it was (to compute the energy of the incoming photon). All this is usually obtained with photomultiplier tubes (PMT).
 
-:::{figure} figs/fig_jnpmt.pdf
+:::{figure} figs/fig_jnpmt.png
 :name: fig:jnpmt
 :align: center
 :alt: Photomultiplier. Left: the electrical scheme. Right: scintillation photons from the crystal initiate an electric current to the dynode, which is amplified in subsequent stages.
@@ -190,7 +190,7 @@ In principle, all PMT’s contribute to the detection of a single scintillation 
 
 Instead of using a single large crystal, a large detector area can be obtained by combining many small crystals in a two-dimensional matrix. The crystals should be optically separated (such that scintillation photons are mirrored at the edges), to make sure that the scintillation light produced in one crystal stays in that crystal. In the extreme case, each crystal has its own photomultiplier. Computation of position is “trivial” (although complicated in practice): it is the coordinate of the crystal in the matrix (no attempt is made to obtain sub-crystal accuracy). Energy is proportional to the total output of the PMT coupled to the crystal. In such a design, the top of the crystal is usually a square of 3 to 5 mm, and the crystal is a cm (140 keV) or a few cm (511 keV) thick. Consequently, the spatial resolution is about 4 mm, as in the single crystal case (see section [](#sec:resolution)).
 
-:::{figure} figs/fig_multicrystal.pdf
+:::{figure} figs/fig_multicrystal.png
 :name: fig:multicrystal
 :align: center
 :alt: Multi-crystal module. The outputs of four photomultipliers are used to compute in which of the 64 crystals the scintillation occurred.
@@ -217,7 +217,7 @@ the actual measurement will produce a random realization {math}`(x_i,y_i, E_i, t
 If we plot all the measurements in a histogram, we will see the distribution. Usually the distribution is approximately Gaussian, and can be characterized by its standard deviation σ. Often one specifies the full width at half maximum (FWHM) instead 
 ([](#fig:fwhm)). It is easy to show that for a Gaussian, the FWHM {math}`= 2 \sqrt{2 \ln 2} \sigma`. This leads to a useful rule of thumb: *any detail smaller than the FWHM is lost during the measurement*.
 
-:::{figure} figs/fig_fwhm.pdf
+:::{figure} figs/fig_fwhm.png
 :name: fig:fwhm
 :align: center
 :alt: The full width at half max of a probability distribution
@@ -289,7 +289,7 @@ As will be discussed in the next section, the resolution of a camera is dominate
 
 At this point, we know how the position and the energy of a photon impinging on the detector can be determined. Now we need a way to ensure that the impinging photons will produce an image. In photography, a lens is used for that purpose. But there are no easy-to-use lenses to focus the high energy photons used in nuclear medicine. So we must fall back on a more primitive approach: collimation. Collimation is the method used to make the detector “see” along straight lines. Different tomographic systems use different collimation strategies, as shown in [](#fig:spect_pet_ct).
 
-:::{figure} figs/fig_spect_pet_ct.pdf
+:::{figure} figs/fig_spect_pet_ct.png
 :name: fig:spect_pet_ct
 :align: center
 :alt: Collimation in the PET camera, the gamma camera (SPECT) and the CT camera.
@@ -302,7 +302,7 @@ In the CT-camera, collimation is straightforward: there is only one transmission
 Most often, the parallel hole collimator is used, but for particular applications other collimators are used as well. 
 [](#fig:collimators) shows the parallel hole collimator (all lines parallel), the fan beam collimator (lines parallel in one plane, focused in the other), the cone beam collimator (all lines focused in a single point) and the pin hole collimator (single focus point, but in contrast with other collimators, the focus is placed *before* the object).
 
-:::{figure} figs/fig_collimators.pdf
+:::{figure} figs/fig_collimators.png
 :name: fig:collimators
 :align: center
 :alt: Parallel hole, fan beam, cone beam and pin hole collimators.
@@ -319,7 +319,7 @@ Collimation ensures that tomographic systems collect information about lines. In
 
 [](#fig:lenscollimator) shows that the sensitivity obtained with a mechanical collimation is very poor compared to that obtained with a lens. The mechanical collimator has a dominating effect on the resolution and sensitivity of the gamma camera. That is why a more detailed analysis of the collimator point spread function is in order.
 
-:::{figure} figs/fig_lenscollimator.pdf
+:::{figure} figs/fig_lenscollimator.png
 :name: fig:lenscollimator
 :align: center
 :alt: Focusing by a lens compared to ray selection by a parallel hole collimator
@@ -327,7 +327,7 @@ Collimation ensures that tomographic systems collect information about lines. In
 *Focusing by a lens compared to ray selection by a parallel hole collimator*
 :::
 
-:::{figure} figs/fig_collimator_calc.pdf
+:::{figure} figs/fig_collimator_calc.png
 :name: fig:collimator_calc
 :align: center
 :alt: Parallel hole collimator.
@@ -412,7 +412,7 @@ At distances larger than a few cm, the collimator PSF dominates the spatial reso
 
 
 
-:::{figure} figs/fig_collimatorpsf.pdf
+:::{figure} figs/fig_collimatorpsf.png
 :name: fig:collimatorpsf
 :align: center
 :alt: Point spread function of the collimator. The number of detected photons at a point in the detector decreases linearly with the distance r to the central point.
@@ -446,7 +446,7 @@ We first consider a single detector pair as shown in [](#fig:petdetectorpair), a
 
 
 
-:::{figure} figs/fig_petdetectorpair.pdf
+:::{figure} figs/fig_petdetectorpair.png
 :name: fig:petdetectorpair
 :align: center
 :alt: A point source positioned in the field of view of a pair of detectors
@@ -610,7 +610,7 @@ Momentum is preserved during annihilation, so the momentum of both photons must 
 
 
 
-:::{figure} figs/fig_positron_error.pdf
+:::{figure} figs/fig_positron_error.png
 :name: fig:positron_error
 :align: center
 :alt: The distance traveled by the positron and the deviation from 180 degrees in the angle between the photon paths limit the best achievable resolution in PET
@@ -620,7 +620,7 @@ Momentum is preserved during annihilation, so the momentum of both photons must 
 .
 :::
 
-:::{figure} figs/fig_doi.pdf
+:::{figure} figs/fig_doi.png
 :name: fig:doi
 :align: center
 :alt: Resolution loss as a result of uncertainty about the depth of interaction
@@ -643,7 +643,7 @@ In the previous section we have seen why a PET-camera does not need a collimator
 
 
 
-:::{figure} figs/fig_pet_septa.pdf
+:::{figure} figs/fig_pet_septa.png
 :name: fig:pet_septa
 :align: center
 :alt: A PET ring detector (cut in half) with a cylindrical homogeneous object, containing a radioactive wire near the symmetry axis
@@ -663,7 +663,7 @@ For these reasons, current systems use a time window of about 5 to 10 ns. Recent
 
 [](#fig:pet_random_enzo) shows the difference between a true coincidence, which provides valuable information, and several other events which are disturbing or even misleading. A single event provides no information and is harmless. But if two single events are simultaneous (random coincidence), they are indistinguishable from a true coincidence. If one (or both) of the photons is scattered, the coincidence provides wrong information: the decaying atom is not located on the line connecting the two detectors. Finally, a single event may be simultaneous with a true coincidence. Since there is no way to find out which of the three photons is the single one, the entire event is ignored and information is lost.
 
-:::{figure} figs/fig_pet_random_enzo.pdf
+:::{figure} figs/fig_pet_random_enzo.png
 :name: fig:pet_random_enzo
 :align: center
 :alt: True coincidence, scattered coincidence, single event, random coincidence
@@ -774,7 +774,7 @@ As you can see, the trues count rate is not affected by either τ nor {math}`T`,
 
 In the previous paragraphs we have studied a single ring of PET detectors, and we have shown that shielding the detectors with septa reduces the scatter and random coincidence rate, without affecting the true coincidence rate. In current clinical systems, multiple rings are combined in a single device, as shown in [](#fig:jnpet). In the past, many of these systems could be operated in two modes. In 2D-mode, the rings are separated by septa. In 3D-mode, the septa are retracted, only the shielding at the edges of the axial field of view remain. Current PET systems have no septa between the detector rings, they are always operated in 3D mode.
 
-:::{figure} figs/fig_jnpet.pdf
+:::{figure} figs/fig_jnpet.png
 :name: fig:jnpet
 :align: center
 :alt: Positron emission tomograph (cut in half). When septa are in the field of view (a), the camera can be regarded as a series of separate 2D systems. Coincidences along oblique projection lines between neighboring rings can be treated as parallel projection lines from an intermediate plane. This doubles axial sampling: 15 planes are reconstructed from 8 rings. Retracting the septa (b), increases the number of projection lines and hence the sensitivity of the system, but fully 3D reconstruction is required.
@@ -796,7 +796,7 @@ This has no effect on spatial resolution, since that is determined by the detect
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-:::{figure} figs/fig_pv.pdf
+:::{figure} figs/fig_pv.png
 :name: fig:pv
 :align: center
 :alt: The partial volume effect caused by the finite pixel size (left), and by the finite system PSF (right). The first row shows the true objects, the second row illustrates the partial volume effect due to pixels and PSF, and the last row compares horizontal profiles to the true objects and the images. Objects that are small compared to the pixel size and/or the PSF are poorly represented.
@@ -830,7 +830,7 @@ Consequently, nuclear medicine imaging systems tend to underestimate the maximum
 
 Compton scatter causes photons to be deviated from their original trajectory, and to propagate with reduced energy along a new path. Consequently, photons with reduced energy can reach the detector via a broken line. Such photons are harmful: they provide no useful information and produce an unwanted inhomogeneous background in the acquired images ([](#fig:scatter_gammacamera)).
 
-:::{figure} figs/fig_scatter_gammacamera.pdf
+:::{figure} figs/fig_scatter_gammacamera.png
 :name: fig:scatter_gammacamera
 :align: center
 :alt: Compton scatter allows photons to reach the camera via a broken line. These photons produce a smooth background in the acquired projection data.
@@ -842,7 +842,7 @@ We have seen in section [](#sec:compton_scatter) that the photon loses more ener
 
 However, if the energy loss during Compton scatter is smaller than or comparable to the energy resolution of the gamma camera, then it may survive the energy test and get accepted by the camera. [](#fig:scatter_spectrum) shows the energy spectrum as measured by the gamma camera. A Monte Carlo simulation was carried out as well, and the resulting spectrum is very similar to the measured one. The simulation allows to compute the contribution of unscattered (or primary) photons, photons that scattered once and photons that suffered multiple scatter events. If the energy resolution were perfect, the primary photon peak would be infinitely narrow and all scattered photons could be rejected. But with a realistic energy resolution the spectra overlap, and acceptance of scattered photons is unavoidable.
 
-:::{figure} figs/fig_scatter_spectrum.pdf
+:::{figure} figs/fig_scatter_spectrum.png
 :name: fig:scatter_spectrum
 :align: center
 :alt: The energy spectrum measured by the gamma camera, with a simulation in overlay. The simulation allows to compute the spectrum of non-scattered (primary) photons, single scatters and multiple scatters. The true primary spectrum is very narrow, the measured one is widened by the limited energy resolution.
@@ -856,7 +856,7 @@ To reject as much as possible the unwanted photons, a narrow energy window is ce
 
 Since not all unwanted photons can be rejected, an additional correction may be required. [](#fig:TEW_scatter) shows a typical correction method based on three energy windows. Window C1 is the window centered on the energy of the primary photons. If we assume that the spectrum of the unwanted photons varies approximately linearly over the window C1, then we can estimate that spectrum by measuring in two additional windows C2 (just below C1) and C3 (just above C1). If all windows had the same size, then the number of unwanted photons in C1 could be estimated as (counts in C2 + counts in C3) / 2. Usually C2 and C3 are chosen narrower than C1, so the correction must be weighted accordingly. In the example of [](#fig:TEW_scatter) there are very few counts in C3. However, if we would use a second tracer with higher energy, then C3 would receive scattered photons from that tracer.
 
-:::{figure} figs/fig_TEW_scatter.pdf
+:::{figure} figs/fig_TEW_scatter.png
 :name: fig:TEW_scatter
 :align: center
 :alt: Triple energy window correction. The amount of scattered photons accepted in window C1 is estimated as a fraction of the counts in windows C2 and C3.
@@ -875,7 +875,7 @@ For that reason, PET systems use a different approach to scatter correction. As 
 
 In practice, the method works as follows. First, a reconstruction of the tracer uptake without scatter correction is computed. Based on this tracer distribution and on the attenuation image of the patient, the scatter contribution to the measured data is estimated with the simulation software. This scatter contribution can then be subtracted to produce a better reconstruction of the tracer distribution. This procedure can be iterated to refine the scatter estimate.
 
-:::{figure} figs/fig_pet_scatter.pdf
+:::{figure} figs/fig_pet_scatter.png
 :name: fig:petscatter
 :align: center
 :alt: CT and PET images (obtained by maximum intensity projection), and the corresponding raw PET projection data with their estimated scatter contribution. Data were acquired with a Biograph 16 PET/CT system (Siemens). The regular pattern in the raw data is due to sensitivity differences between different detector pairs (see also fig %s).
@@ -910,7 +910,7 @@ Most PET systems have a multi-crystal design, they consist of multiple rings ([]
 
 The performance of the PMT’s is not ideal for our purposes, and in addition they show small individual differences in their characteristics. In current gamma cameras and PET cameras the PMT-gain is computer controlled and procedures are available for automated PMT-tuning. But even after tuning, small differences in characteristics are still present. As a result, some corrections are required to ensure that the acquired information is reliable.
 
-:::{figure} figs/fig_jngamma.pdf
+:::{figure} figs/fig_jngamma.png
 :name: fig:gammacamera
 :align: center
 :alt: Schematic representation of a gamma camera with a single large scintillation crystal and parallel hole collimator.
@@ -923,7 +923,7 @@ The performance of the PMT’s is not ideal for our purposes, and in addition th
 
 % =================================
 
-:::{figure} figs/fig_linearity.pdf
+:::{figure} figs/fig_linearity.png
 :name: fig:linearity
 :align: center
 :alt: The PMTs (represented as circles) have a non-linear response as a function of position. As a result, the image of a straight radioactive line would be distorted as in this drawing.
@@ -962,7 +962,7 @@ E_{\mbox{corrected}}(x,y) = E(x,y) + \Delta_E(x,y)
 
 It is important that the energy window is nicely symmetrical around the photopeak, small shifts of the window result in significant changes in the number of accepted photons ([](#fig:energy_corr)). Consequently, if no energy correction is applied, the sensitivity for acceptable photons would be position dependent.
 
-:::{figure} figs/fig_energy_corr.pdf
+:::{figure} figs/fig_energy_corr.png
 :name: fig:energy_corr
 :align: center
 :alt: Because the characteristics of the photomultipliers are not identical, the conversion of energy to voltage (and therefore to a number in the computer) may be position dependent.
@@ -1039,7 +1039,7 @@ A typical sensitivity sinogram is shown in [](#fig:pet_norm). The sinogram is do
 
 
 
-:::{figure} figs/fig_PETsens.pdf
+:::{figure} figs/fig_PETsens.png
 :name: fig:pet_norm
 :align: center
 :alt: Left: PET sensitivity sinogram. Center: the sinogram of a cylinder filled with a uniform activity. Right: the same sinogram after normalization. The first row are sinograms, the second row projections, the cross-hairs indicate the relative position of both. Because there are small gaps between detector blocks, there is a regular pattern of zero sensitivity projection lines, which are of course not corrected by the normalization.
@@ -1054,7 +1054,7 @@ A typical sensitivity sinogram is shown in [](#fig:pet_norm). The sinogram is do
 
 “Dead time” means that the system has a limited data processing capacity. If the data input is too high, a fraction of the data will be ignored because of lack of time. As a result, the measured count rate is lower than the true count rate, and the error increases with increasing true count rate. [](#fig:dead_time) shows the measured count rate as a function of the true count rate for a dead time of 700 ns. The gamma camera and the PET camera both have a finite dead time, consisting of several components. To describe the dead time, we will assume that all contributions can be grouped in two components, a front-end component and a data-processing component.
 
-:::{figure} figs/fig_dead_time.pdf
+:::{figure} figs/fig_dead_time.png
 :name: fig:dead_time
 :align: center
 :alt: Due to dead time, the measured count rate is lower than the true count rate for high count rates. The figure is for a dead time of 700 ns, the axes are in counts per second. Measured count rate is 20% low near 300000 counts per second.

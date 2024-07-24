@@ -17,7 +17,7 @@ Quality control can be tedious sometimes, and it is not productive on the short 
 
 For gamma camera quality control and acceptance testing, the *Nederlandse Vereniging voor Nucleaire Geneeskunde* has published a very useful book {cite:t}`Aanbevelingen`. It provides detailed recipes for applying the measurement and processing procedures, but does not attempt to explain it, the reader is supposed to be familiar with nuclear medicine. These explanations can be found in “het Leerboek Nucleaire Geneeskunde” {cite:t}`Leerboek`.
 
-:::{figure} figs/fig_en_lin_unif.pdf
+:::{figure} figs/fig_en_lin_unif.png
 :name: fig:en_lin_unif
 :align: center
 :alt: Image of a uniform phantom. E = energy correction, L = linearity correction, U = uniformity correction.
@@ -58,7 +58,7 @@ Uniformity is evaluated by acquiring a uniform image. As a phantom, either a poi
 
 
 
-:::{figure} figs/fig_qc_pmt.pdf
+:::{figure} figs/fig_qc_pmt.png
 :name: fig:qc_pmt
 :align: center
 :alt: Uniform image acquired on a gamma camera with a dead photomultiplier.
@@ -87,7 +87,7 @@ To acquire a uniformity correction matrix, typically 45000 counts per pixel are 
 
 The uniformity test is sensitive to most of the things that can go wrong with a camera, but not all. One undetected problem is deterioration of the pixel size, which stretches or shrinks the image in {math}`x` or {math}`y` direction.
 
-:::{figure} figs/fig_qc_linproblem.pdf
+:::{figure} figs/fig_qc_linproblem.png
 :name: fig:qc_linproblem
 :align: center
 :alt: Flood source (= uniform sheet source) image acquired on a dual head gamma camera, with a linearity correction problem in head 1 (left)
@@ -108,7 +108,7 @@ Measuring the pixel size is simple: put two point sources at a known distance, a
 
 It is useful to verify if the pixel size is independent of the energy. This can be done with a {sup}`67`Ga point source, which emits photons of 93, 184 and 296 keV. Using three appropriate energy windows, three point source images are obtained. The points should coincide when the images are superimposed. Repeat the measurement at a few different positions (or use multiple point sources).
 
-:::{figure} figs/fig_qc_gain.pdf
+:::{figure} figs/fig_qc_gain.png
 :name: fig:qc_gain
 :align: center
 :alt: Images of a dot phantom acquired on a dual head camera with a gain problem. Left: image acquired on head 1. Center: image simultaneously acquired on head 2. Right: superimposed images: head1 + mirror image of head2. The superimposed image is blurred because the heads have a different pixel size.
@@ -146,7 +146,7 @@ Most gamma cameras can display the measured energy spectrum. Because it is not a
 
 The FWHM is usually specified relative to the peak energy. So a FWHM of 10% for {sup}`99m`Tc means 14 keV.
 
-:::{figure} figs/fig_qc_enresol.pdf
+:::{figure} figs/fig_qc_enresol.png
 :name: fig:qc_enresol
 :align: center
 :alt: (Simulated) energy spectra of Cobalt (^{57}Co, 122 keV) and technetium (99mTc, 140 keV).
@@ -167,7 +167,7 @@ The NEMA definition for the *differential linearity* may seem a bit strange. The
 
 With current computers, it is not difficult to implement a better and more reproducible procedure. However, a good standard must not only produce a useful value, it must also be simple. If not, people may be reluctant to accept it, and if they do, they might make programming errors when implementing it. At the time the NEMA standards were defined, the procedure described above was a good compromise.
 
-:::{figure} figs/fig_qc_linearity.pdf
+:::{figure} figs/fig_qc_linearity.png
 :name: fig:qc_linearity
 :align: center
 :alt: Image of a line phantom acquired on a gamma camera with poor linearity correction.
@@ -273,7 +273,7 @@ A gamma camera which survives all quality control tests for planar imaging may s
 
 In SPECT, the gamma camera is used to acquire a set of sinograms, one for each slice. Sinogram data are two-dimensional, one coordinate is the angle, the other one the distance between the origin and the projection line. Consequently, a sinogram can only be correctly interpreted if we know which column in the image represents the projection line at zero distance. By definition, this is the point where the origin, the rotation center is projected.
 
-:::{figure} figs/fig_cor.pdf
+:::{figure} figs/fig_cor.png
 :name: fig:cor
 :align: center
 :alt: Simulation of center of rotation error. Left: sinogram and reconstruction in absence of center of rotation error. Right: filtered backprojection with center of rotation error equal to the diameter of the point.
@@ -304,7 +304,7 @@ If the detector is not parallel to the rotation axis, the projections for differ
 
 The figure tells the way to detect the error: put a point source in the field of view, acquire a SPECT study and check if the point moves up and down in the projections (or disappears from one sinogram to show up in the next one). For a fixed angle, the amplitude of the apparent motion is proportional to the distance between the point and the rotation axis. Nicely centered point sources will detect nothing.
 
-:::{figure} figs/fig_gamma_parallel.pdf
+:::{figure} figs/fig_gamma_parallel.png
 :name: fig:gamma_parallel
 :align: center
 :alt: If the gamma camera is not parallel to the rotation axis, a point apparently moves up and down the axis during rotation.
@@ -321,7 +321,7 @@ It is a good idea to scan a complex phantom every now and then, and compare the 
 
 When filling a phantom with “hot” water, do not count on diffusion of the tracer molecules to obtain a uniform distribution: it takes for ever before the phantom is truly uniform. The water must be stirred.
 
-:::{figure} figs/fig_jaszczakphantom.pdf
+:::{figure} figs/fig_jaszczakphantom.png
 :name: fig:jaszczak
 :align: center
 :alt:  A typical “Jaszczak phantom”, named after a very well known SPECT researcher who developed many such phantoms (figure from P. Zanzonico, J Nucl Med 2008; 49:1114-1131).

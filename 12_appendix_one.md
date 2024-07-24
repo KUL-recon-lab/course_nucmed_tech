@@ -336,7 +336,7 @@ A central profile through {math}`\Lambda` along θ yields the Fourier transform 
 
 To compute the inverse Fourier transform of the ramp filter, it is useful to consider it as the difference between a rectangular and a triangular filter, as illustrated in [](#fig:rampapp2). In practical implementations, the ramp filter must be broken off at some point, which we will call {math}`W` in the following. The highest value of {math}`W` in a discrete implementation is the Nyquist frequency, which is the highest frequency that can be represented with pixels. It equals 0.5, meaning that its period is 0.5 pixels long: a (co)sine at the Nyquist frequence has a value of 1 in one pixel and a value of -1 in the next.
 
-:::{figure} figs/fig_rampfilter2_app.pdf
+:::{figure} figs/fig_rampfilter2_app.png
 :name: fig:rampapp2
 :align: center
 :alt: The ramp filter can be computed as the difference between a rectangular and a triangular filter
@@ -408,7 +408,7 @@ W \frac{\sin(2 \pi W x)}{\pi x} - \frac{\sin^2(\pi W x)}{(\pi x)^2}.
 
 [](#fig:rampapp) shows a plot of [](#eq:ramp). In a discrete implementation, where one only needs the function values at integer positions {math}`x = -N, -N+1, \ldots,N`, the highest possible value for {math}`W` is 0.5, the Nyquist frequency. The red dots in the figure show these discrete function values for {math}`W = 0.5`.
 
-:::{figure} figs/fig_rampfilter_app.pdf
+:::{figure} figs/fig_rampfilter_app.png
 :name: fig:rampapp
 :align: center
 :alt: The inverse Fourier transform of the ramp filter, with a fine sampling (black curve). Also shown is the sampling of the usual discretisation (red dots).
