@@ -2,17 +2,19 @@
 title: Interaction of photons with matter
 ---
 
+In nuclear medicine, photon energy ranges roughly from 60 to 600 keV. For example, {sup}`99m`Tc has an energy of 140 keV. This corresponds to a wave length of 9 pm and a frequency of 3.4 ×  Hz. At such energies, γ photons behave like particles rather than like waves.
+
+At these energies, the dominating interactions of photons with matter are photon-electron interactions: Compton scatter and photo-electric effect. As shown in [](#fig:foto_compton_pair), the dominating interaction is a function of energy and electron number. For typical nuclear medicine energies, Compton scatter dominates in light materials (such as water and human tissue), and photo-electric effect dominates in high density materials. Pair production (conversion of a photon in an electron and a positron) is excluded for energies below 1022 keV, since each of the particles has a mass of 511 keV. Rayleigh scatter (absorption and re-emission of (all or a fraction of) the absorbed energy as a photon in a different direction) has a low probability.
+
+
 :::{figure} figs/fig_foto_compton_pair.png
 :name: fig:foto_compton_pair
+:width: 400px
 :align: center
 :alt: Dominating interaction as a function of electron number Z and photon energy.
 
 *Dominating interaction as a function of electron number Z and photon energy.*
 :::
-
-In nuclear medicine, photon energy ranges roughly from 60 to 600 keV. For example, {sup}`99m`Tc has an energy of 140 keV. This corresponds to a wave length of 9 pm and a frequency of 3.4 ×  Hz. At such energies, γ photons behave like particles rather than like waves.
-
-At these energies, the dominating interactions of photons with matter are photon-electron interactions: Compton scatter and photo-electric effect. As shown in [](#fig:foto_compton_pair), the dominating interaction is a function of energy and electron number. For typical nuclear medicine energies, Compton scatter dominates in light materials (such as water and human tissue), and photo-electric effect dominates in high density materials. Pair production (conversion of a photon in an electron and a positron) is excluded for energies below 1022 keV, since each of the particles has a mass of 511 keV. Rayleigh scatter (absorption and re-emission of (all or a fraction of) the absorbed energy as a photon in a different direction) has a low probability.
 
 (photo-electric-effect)=
 # Photo-electric effect
@@ -34,6 +36,7 @@ The probability of a photo-electric interaction is approximately proportional to
 
 :::{figure} figs/fig_compton_scatter.png
 :name: fig:compton_scatter
+:width: 300px
 :align: center
 :alt: Compton scatter can be regarded as an elastic collision between a photon and an electron.
 
@@ -77,6 +80,7 @@ where {math}`r_e` is the classical electron radius and {math}`P(E_\gamma, \theta
 
 :::{figure} figs/fig_klein_nishina.png
 :name: fig:kleinnishina
+:width: 350px
 :align: center
 :alt: The scattering-angle distribution for a few photon energies. Figure from Wikipedia (https://en.wikipedia.org/wiki/Klein-Nishina_formula).
 
@@ -102,6 +106,7 @@ Rayleigh scattering or coherent scattering can be regarded as the collision betw
 :::{figure} figs/fig_atten_water.png
 :name: fig:atten_water
 :align: center
+:width: 400px
 :alt: Photon attenuation in water as a function of photon energy. The photo-electric component decreases approximately with (Z/E)^3 (of course, Z is a constant here). The Compton components varies slowly.
 
 *Photon attenuation in water as a function of photon energy. The photo-electric component decreases approximately with {math}`(Z/E)^3` (of course, {math}`Z` is a constant here). The Compton components varies slowly.*
@@ -127,6 +132,7 @@ N(d) = N(a) \  e^{- \int_a^d \mu(s) ds}.
 Obviously, the attenuation of a photon depends on where it has been emitted.
 
 :::{figure} figs/fig_jnpetatten.png
+:width: 300px
 :name: fig:jn_petatten
 :align: center
 :alt: Positron emitting point source in a non-uniform attenuator.

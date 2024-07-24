@@ -66,6 +66,7 @@ There are many ways in which unstable isotopes can decay. Depending on the decay
 
     :::{figure} figs/fig_In111.png
     :name: fig:In111
+    :width: 500px
     :align: center
     :alt: Decay scheme of ^{111}In, by electron capture. The scheme is dominated by the emission of two gamma rays (171 and 245 keV). These gamma rays can be involved in production of conversion electrons. A more complete table is given in .
 
@@ -85,6 +86,7 @@ There are many ways in which unstable isotopes can decay. Depending on the decay
 
         :::{figure} figs/fig_jnpos.png
         :name: fig:jnpos
+        :width: 300px
         :align: center
         :alt: Positron-electron annihilation.
 
