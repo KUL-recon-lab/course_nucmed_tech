@@ -27,6 +27,7 @@ project:
     - file: 08_radiation_detectors.md
     - file: 09_image_analysis.md
     - file: 10_radiation_biology.md
+    - file: 11_RNT_dosimetry.md
 
   export:
     - md
