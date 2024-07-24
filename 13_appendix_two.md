@@ -218,13 +218,13 @@ We can rework it such that we can exploit the convexity of {math}`t \ln t`:
 
 ```{math}
 \begin{align}
-  &  \int f_1(x) \ln \frac{f_1(x)}{f_2(x)} dx \nonumber\\
+  &  \int f_1(x) \ln \frac{f_1(x)}{f_2(x)} dx \nonumber \\
   &= \int \frac{f_1(x)}{f_2(x)} \ln \left( \frac{f_1(x)}{f_2(x)} \right)
-        f_2(x) dx \nonumber\\
+        f_2(x) dx \nonumber \\
   &= \int \left[ \frac{f_1(x)}{f_2(x)} -1 + 
        \frac{1}{2}\left( \frac{f_1(x)}{f_2(x)} - 1\right)^2 
         \psi''(u(x)) \right]  f_2(x) dx \; \mbox{with} \; 0 < u(x) < \infty 
-        \nonumber\\
+        \nonumber \\
   &= \int \left( f_1(x) - f_2(x) \right) dx + 
         \frac{1}{2} \int \left( \frac{f_1(x)}{f_2(x)} - 1 2\right)^2
         \psi''(u(x)) f_2(x) dx \;\; \geq \;\; 0
