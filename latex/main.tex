@@ -588,12 +588,12 @@ one in $s = d_2$, and a point source in $s = a$, somewhere between the two
 detectors. Assume further that during a measurement, $N(a)$ photon pairs were
 emitted along the $s$-axis (fig.\ref{fig:jn_petatten}). The number of
 detected pairs then is:
-\begin{equation}
-  N(d_1,d_2) = N(a)  e^{- \int_{d_1}^a \mu(s) ds} e^{- \int_a^{d_2} \mu(s)
+\begin{align}
+  N(d_1,d_2) &= N(a)  e^{- \int_{d_1}^a \mu(s) ds} e^{- \int_a^{d_2} \mu(s)
              ds} \\
-             = N(a)  e^{- \int_{d_1}^{d_2} \mu(s) ds}. \\
+             &= N(a)  e^{- \int_{d_1}^{d_2} \mu(s) ds}.
 \label{jn:petatten}
-\end{equation}
+\end{align}
 Equation (\ref{jn:petatten}) shows that for PET, the effect of attenuation is
 independent of the position along the line of detection.
 
@@ -6323,12 +6323,12 @@ Consequently, the total number of desintegrations is estimated as
 \end{equation}
 This number must be multiplied with the mean number of particles per
 desintegration:
-\begin{tabbing}
-  \hspace{4mm} \= number of electrons is \= 0.13 N \= = 8.78 $\times$ 10$^{9}$ \kill
-               \> number of photons is \> 0.84 N \> = 5.67 $\times$ 10$^{10}$\\
-               \> number of electrons is   \> 0.13 N \> = 8.78 $\times$ 10$^9$
-\end{tabbing}
-
+%
+\begin{itemize}
+  \item number of photons is 0.84 N = 5.67 $\times$ 10$^{10}$\\
+  \item number of electrons is 0.13 N = 8.78 $\times$ 10$^9$
+\end{itemize}
+%
 The radius of the left box is large compared with the mean path length
 of the electrons, so the box receives all of their energy:
 $p_{\beta^-}(\mbox{leftbox} \rightarrow \mbox{leftbox}) = 1$. Thus, the
@@ -7023,11 +7023,10 @@ $T_{1/2} = 1.25 \cdot 10^9 \; s_y$.
 Avogadro's number equals $N_A = 6.022 \cdot 10^{23}$ atoms/mole, and 1 mole
 of $^{40}K$ weighs 40 g. Consequently, the activity per kg tissue equals
 \begin{equation}
-  A = \frac{\ln 2}{T_{1/2}} \;
-  \frac{N_A}{40 \mathrm{g}} \;
-  \frac{2 \mathrm{g} \;}{\mathrm{kg}} \;
-  \frac{1.2 \cdot 10^{-4} \,
-    ^{40}\mathrm{K\_atoms}}{\mathrm{K\_atom}}
+  \frac{A}{m} = \frac{\ln 2}{T_{1/2}} \;
+  \frac{N_A}{40 \text{g}} \;
+  \frac{2 \text{g} \;}{\text{kg}} \;
+  1.2 \cdot 10^{-4}
 \end{equation}
 This produces an activity per mass in Bq/kg.  In 90\% of these decays,
 an electron is emitted which deposits on average an energy of 0.59
@@ -7041,7 +7040,7 @@ s in J / (kg s) = Gy / s. Finally, we multiply this with the number of
 seconds per year $s_y$ and with 1000 to obtain the result in mGy per
 year:
 \begin{align}
-  &A\;E \; \frac{\mbox{1000 mGy}}{\mbox{Gy}} \frac{s_y}{\mbox{ year}}\\
+  &\frac{A}{m}\;E \; \frac{\mbox{1000 mGy}}{\mbox{Gy}} \frac{s_y}{\mbox{ year}}\\
   &= \frac{\ln 2}{1.25 \cdot 10^9 \; s_y} \;
   \frac{6.022 \cdot 10^{23}}{40} \;
   \frac{2 \cdot 1.2 \cdot 10^{-4}}{\mbox{kg}} \;
@@ -7631,13 +7630,13 @@ We now switch to a rotated coordinate system by setting:
 \end{align}
 It follows that $\nu_x x + \nu_y y = \nu_s s + \nu_r r$. The Jacobian
 of the transformation equals unity, so $dx dy = dr ds$. Thus, we obtain:
-\begin{multline}
-\Lambda(\nu_s \cos\theta - \nu_r\sin\theta, 
-      \nu_s\sin\theta + \nu_r\cos\theta) \\
-   = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} 
+\begin{align}
+&\Lambda(\nu_s \cos\theta - \nu_r\sin\theta, 
+      \nu_s\sin\theta + \nu_r\cos\theta) \nonumber \\
+&= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} 
      \lambda(s \cos\theta - r\sin\theta, s\sin\theta + r\cos\theta) 
        e^{-j2\pi (\nu_s s + \nu_r r)} ds dr
-\end{multline}
+\end{align}
 Comparison with (\ref{eq:Q1}) reveals that setting $\nu_r = 0$ in
 $\Lambda$ produces $Q_1$:
 \begin{equation}
@@ -7995,11 +7994,12 @@ zeros of $f(x)$, i.e. $f(x_n) = 0$. A simple example is $\delta(ax) =
 \end{equation}
 where $\theta_0$ is such that $x\cos\theta_0 + y\sin\theta_0 =
 0$. This is satisfied if
-\begin{displaymath}
+
+\begin{equation}
   \cos\theta_0 = \pm \frac{y}{\sqrt{x^2+y^2}} 
        \;\;\;\mbox{and}\;\;\;
   \sin\theta_0 = \mp \frac{x}{\sqrt{x^2+y^2}},
-\end{displaymath}
+\end{equation}
 which results in
 \begin{equation}
   b(x,y) = \frac{1}{\sqrt{x^2 + y^2}}.
