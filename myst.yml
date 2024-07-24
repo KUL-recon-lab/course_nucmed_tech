@@ -4,15 +4,17 @@ project:
   date: 2024-07-24
   id: bf844a96-f2b5-474b-8383-cd34aa72971a
   title: Nuclear Medicine Technology and Techniques
-  # description:
-  # keywords: []
+  affiliations:
+  - id: kul
+    institution: KU Leuven
+    department: Department of Imaging and Pathology
   authors:
   - name: Johan Nuyts
-    affiliations:
-      - id: kul
-        institution: KU Leuven
+    affiliations: kul
+    orcid: 0000-0003-1923-6198
   - name: Georg Schramm
     affiliation: kul
+    orcid: 0000-0002-2251-3195
 
   github: https://github.com/KUL-recon-lab/course_nucmed_tech
    
