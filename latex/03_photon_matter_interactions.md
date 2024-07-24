@@ -146,7 +146,7 @@ For positron emission, a pair of photons need to be detected. Since the fate of 
 \end{align}
 ```
 
-Equation ([18](#jn:petatten)) shows that for PET, the effect of attenuation is independent of the position along the line of detection.
+Equation ([18](#eq:petatten)) shows that for PET, the effect of attenuation is independent of the position along the line of detection.
 
 Photon-electron interactions will be more likely if there are more electrons per unit length. So dense materials (with lots of electrons per atom) have a high linear attenuation coefficient.
 

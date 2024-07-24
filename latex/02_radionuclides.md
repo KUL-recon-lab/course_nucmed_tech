@@ -62,7 +62,7 @@ There are many ways in which unstable isotopes can decay. Depending on the decay
 
     *   Similarly, the daughter product may be metastable, decaying via isomeric transition after a longer time.
 
-    Examples of radionuclides decaying with EC are {sup}`57`Co, {sup}`111`In, {sup}`123`I and {sup}`201`Tl. Figure [1](#fig:In111) shows the decay scheme for {sup}`111`In and (a small part of) the decay table. Conversion electrons are denoted with “ce-{math}`X`, {math}`y`”, where {math}`X` is the electron shell and {math}`y` is the gamma ray. The table also gives the kinetic energy of the conversion electron, which must of course be less than the energy of the photon that produced it. The ejection of the conversion electron creates a vacancy in the involved electron shell, which is filled by an electron from a higher shell. The excess energy is released as an X-ray or as an Auger electron. In the decay table, X-rays are denoted with “{math}`Xa` X-ray”, where {math}`X` is the electron shell that had a vacancy, and {math}`a` says (in code) from which shell the new electron comes. The energy of this X-ray exactly equals the difference between the energies of the two electron shells. Instead of emitting an X-ray, the excess energy can be used to emit another electron from the atom. This is called the Auger-effect, and the emitted electron is called an Auger-electron. In the table an Auger electron is denoted as “Auger-{math}`XYZ`”, if a vacancy in shell {math}`X` is filled by an electron from shell {math}`Y`, using the excess energy to emit an electron from shell {math}`Z`. The table gives the kinetic energy of the emitted Auger-electron. The table also gives the frequency, i.e. the probability that each particular emission occurs when the isotope decays.
+    Examples of radionuclides decaying with EC are {sup}`57`Co, {sup}`111`In, {sup}`123`I and {sup}`201`Tl. [](#fig:In111) shows the decay scheme for {sup}`111`In and (a small part of) the decay table. Conversion electrons are denoted with “ce-{math}`X`, {math}`y`”, where {math}`X` is the electron shell and {math}`y` is the gamma ray. The table also gives the kinetic energy of the conversion electron, which must of course be less than the energy of the photon that produced it. The ejection of the conversion electron creates a vacancy in the involved electron shell, which is filled by an electron from a higher shell. The excess energy is released as an X-ray or as an Auger electron. In the decay table, X-rays are denoted with “{math}`Xa` X-ray”, where {math}`X` is the electron shell that had a vacancy, and {math}`a` says (in code) from which shell the new electron comes. The energy of this X-ray exactly equals the difference between the energies of the two electron shells. Instead of emitting an X-ray, the excess energy can be used to emit another electron from the atom. This is called the Auger-effect, and the emitted electron is called an Auger-electron. In the table an Auger electron is denoted as “Auger-{math}`XYZ`”, if a vacancy in shell {math}`X` is filled by an electron from shell {math}`Y`, using the excess energy to emit an electron from shell {math}`Z`. The table gives the kinetic energy of the emitted Auger-electron. The table also gives the frequency, i.e. the probability that each particular emission occurs when the isotope decays.
 
     :::{figure} figs/fig_In111.pdf
     :name: fig:In111
@@ -81,7 +81,7 @@ There are many ways in which unstable isotopes can decay. Depending on the decay
         p^+ \rightarrow n + e^+ + \nu_e \ .
         ```
 
-        After a very short time the positron will hit an electron and annihilate (fig. [2](#fig:jnpos)). The mass of the two particles is converted into energy, which is emitted as two photons. These photons are emitted in opposite directions. Each photon has an energy of 511 keV (the rest mass of an electron or positron).
+        After a very short time the positron will hit an electron and annihilate ([](#fig:jnpos)). The mass of the two particles is converted into energy, which is emitted as two photons. These photons are emitted in opposite directions. Each photon has an energy of 511 keV (the rest mass of an electron or positron).
 
         :::{figure} figs/fig_jnpos.pdf
         :name: fig:jnpos
@@ -120,7 +120,7 @@ N(t) = N(t_0) e^{- \alpha (t - t_0)}.
 
 This is what we *expect*. If we actually measure it, we may obtain a different value, since the process is statistical. As shown below, the estimate will be better for larger {math}`dN/dt`.
 
-The amount of radioactivity is not expressed as the number of radioactive atoms present, but as the number of radioactive atoms decaying per unit of time. From ([5](#eq:dN)) we find that
+The amount of radioactivity is not expressed as the number of radioactive atoms present, but as the number of radioactive atoms decaying per unit of time. From [](#eq:dN) we find that
 
 ```{math}
 \mbox{radioactivity} = -\frac{dN}{dt} = \alpha N =
@@ -135,13 +135,13 @@ Therefore, for the same amount of radioactivity, more radioactive atoms are need
 
 The amounts of radioactivity used in nuclear medicine imaging are typically in the order of  Mbq.
 
-The half life of a tracer is the amount of time after which only half the amount of radioactivity is left. It is easy to compute it from equation ([6](#jn:decay)):
+The half life of a tracer is the amount of time after which only half the amount of radioactivity is left. It is easy to compute it from equation [](#eq:decay):
 
 ```{math}
 t_{\frac{1}{2}}  = \frac{\ln 2}{\alpha} .
 ```
 
-As shown in appendix [??](#app:poisson), the probability of measuring {math}`n` photons, when {math}`r` photons are expected equals
+As shown in appendix [](#app:poisson), the probability of measuring {math}`n` photons, when {math}`r` photons are expected equals
 
 ```{math}
 :label: jn:Poisson
@@ -178,5 +178,5 @@ SNR = \frac{r}{\sqrt{r}} = \sqrt{r},
 
 where {math}`r` is the expection of the number of measured photons. Hence, if we measure the amount of radioactivity with particle detectors, the SNR becomes larger if we measure longer.
 
-The only assumption made in the derivation in appendix [??](#app:poisson) was that the probability of an event was constant in time. It follows that “thinning” a Poisson process results in a new Poisson process. With thinning, we mean that we randomly accept or reject events, using a fixed acceptance probability. If we expect {math}`N` photons, and we randomly accept with a probability {math}`f`, then the expected number of accepted photons is {math}`fN`. Since the probability of surviving the whole procedure (original process followed by selection) has a fixed probability, the resulting process is still Poisson.
+The only assumption made in the derivation in appendix [](#app:poisson) was that the probability of an event was constant in time. It follows that “thinning” a Poisson process results in a new Poisson process. With thinning, we mean that we randomly accept or reject events, using a fixed acceptance probability. If we expect {math}`N` photons, and we randomly accept with a probability {math}`f`, then the expected number of accepted photons is {math}`fN`. Since the probability of surviving the whole procedure (original process followed by selection) has a fixed probability, the resulting process is still Poisson.
 
