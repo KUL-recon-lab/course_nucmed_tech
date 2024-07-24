@@ -1197,11 +1197,12 @@ the ratio, this poses no problems.
 \mbox{sens} &= \frac{1}{4 \pi H^2}
                   \int_0^R (1 - \frac{r T}{a H}) 2 \pi r dr \nonumber \\
             &= \frac{1}{4 \pi H^2}\frac{\pi R^2}{3}
-             = \frac{1}{12} \left( \frac{a}{T} \right)^2
-    \label{eq:collim:sens}\\
-R & = & \frac{a H}{T} 
-\label{eq:collim:fwhm}
+             = \frac{1}{12} \left( \frac{a}{T} \right)^2 \label{eq:collim:sens}
 \end{align}
+with
+\begin{equation}
+  R = \frac{a H}{T} \label{eq:collim:fwhm}
+\end{equation}
 %
 Note that a similar result is obtained if one assumes that the
 collimator consists of square grid of square holes. One finds:
@@ -3048,13 +3049,16 @@ $\Lambda^{new}$. The two stages are:
 \paragraph{The E-step\\}
 %'''''''''''''''''''''''
 The E-step yields the following expressions:
-\begin{align}
-E(L_x(X, \Lambda) | Q, \Lambda^{old}) &= 
-   \sum_i \sum_j ( n_{ij} \ln (c_{ij} \lambda_j) -  c_{ij} \lambda_j)
-   \label{eq:jnestep1}\\
-n_{ij} &= c_{ij} \lambda_j^{old} \frac{q_i}{\sum_k c_{ik} \lambda_k^{old}}
-   \label{eq:jnestep2}
-\end{align}
+%
+\begin{equation}
+E(L_x(X, \Lambda) | Q, \Lambda^{old}) = 
+   \sum_i \sum_j ( n_{ij} \ln (c_{ij} \lambda_j) -  c_{ij} \lambda_j) \label{eq:jnestep1}
+\end{equation}
+%
+\begin{equation}
+n_{ij} = c_{ij} \lambda_j^{old} \frac{q_i}{\sum_k c_{ik} \lambda_k^{old}} \label{eq:jnestep2}
+\end{equation}
+%
 Equation (\ref{eq:jnestep1}) is identical to equation (\ref{eq:jnlx}), except
 that the unknown $x_{ij}$ values have been replaced by their expected values
 $n_{ij}$. We would expect that $n_{ij}$ equals $c_{ij}
