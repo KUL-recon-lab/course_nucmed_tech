@@ -16,10 +16,10 @@ project:
   github: https://github.com/KUL-recon-lab/course_nucmed_tech
    
   toc:
-    - file: root.md
-    - file: introduction.md
-    - file: radionuclides.md
-    - file: photon_matter_interactions.md
+    - file: 00_root.md
+    - file: 01_introduction.md
+    - file: 02_radionuclides.md
+    - file: 03_photon_matter_interactions.md
 
   export:
     - md
