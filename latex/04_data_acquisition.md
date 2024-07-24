@@ -110,7 +110,7 @@ Many scintillators exist, and quite some research on new scintillators is still 
     *   1950
 :::
 
-The scintillation photons are emitted to carry away the energy set free when an electron returns to a lower energy level. Consequently, these photons contain just the right amount of energy to drive an electron from a lower level to the higher one. In pure NaI this happens all the time, so the photons are reabsorbed and the scintillation light never leaves the crystal. To avoid this, the NaI crystal is doped with a bit of Tl (Thallium). This disturbs the lattice and creates additional energy levels. Electrons returning to the ground state via these levels emit photons that are not reabsorbed. NaI is hygroscopic (similar as NaCl (salt)), so it must be protected against water. LSO has excellent characteristic, but is difficult to process (formed at very high temperature), and it is slightly radioactive. Table [1](#tab:crystals) lists some characteristics of three scintillation crystals.
+The scintillation photons are emitted to carry away the energy set free when an electron returns to a lower energy level. Consequently, these photons contain just the right amount of energy to drive an electron from a lower level to the higher one. In pure NaI this happens all the time, so the photons are reabsorbed and the scintillation light never leaves the crystal. To avoid this, the NaI crystal is doped with a bit of Tl (Thallium). This disturbs the lattice and creates additional energy levels. Electrons returning to the ground state via these levels emit photons that are not reabsorbed. NaI is hygroscopic (similar as NaCl (salt)), so it must be protected against water. LSO has excellent characteristic, but is difficult to process (formed at very high temperature), and it is slightly radioactive. [](#tab:crystals) lists some characteristics of three scintillation crystals.
 
 (photo-multiplier-tube)=
 ## Photo Multiplier Tube
@@ -127,7 +127,8 @@ The scintillation crystal transforms the incoming photon into a light flash. Tha
 *Photomultiplier. Left: the electrical scheme. Right: scintillation photons from the crystal initiate an electric current to the dynode, which is amplified in subsequent stages.*
 :::
 
-The PMT’s are glued onto the crystal, in order to detect the incoming scintillation photons. The PMT consists of multiple dynodes, the first of which (the photocathode) is in optical contact with the crystal. High negative voltage (in the order of 100 V) between the dynodes makes the electrons want to jump from one to the other, but they do not have enough energy to cross the gap in between (fig [8](#fig:jnpmt)). This energy is provided by the scintillation photon. The electron acquiring the threshold energy will be accelerated by the electrical field, and activate multiple electrons in the next dynode. After a few steps, a measurable voltage is created which is digitized with an analog-to-digital converter. There are usually about 10 to 12 dynodes, and each step amplifies the signal with a factor 3 … 6, so amplification can be in the order of one million.
+The PMT’s are glued onto the crystal, in order to detect the incoming scintillation photons. The PMT consists of multiple dynodes, the first of which (the photocathode) is in optical contact with the crystal. High negative voltage (in the order of 100 V) between the dynodes makes the electrons want to jump from one to the other, but they do not have enough energy to cross the gap in between 
+([](#fig:jnpmt)). This energy is provided by the scintillation photon. The electron acquiring the threshold energy will be accelerated by the electrical field, and activate multiple electrons in the next dynode. After a few steps, a measurable voltage is created which is digitized with an analog-to-digital converter. There are usually about 10 to 12 dynodes, and each step amplifies the signal with a factor 3 … 6, so amplification can be in the order of one million.
 
 The response time of a PMT is very short (a few ns) compared to the scintillation decay time.
 
@@ -166,7 +167,7 @@ In principle, all PMT’s contribute to the detection of a single scintillation 
     x = \frac{\sum_i x_i S_i}{\sum_i S_i},
     ```
 
-    where {math}`i` is the PMT-index, {math}`x_i` the {math}`x`-position of the PMT and {math}`S_i` the integral of the PMT output over the scintillation duration. The {math}`y`-position is computed similarly. Expression ([19](#eq:gammaposition)) is not very accurate and needs correction for systematic errors (linearity correction). The reason is that the response of the PMT’s does not vary nicely with the distance to the pulse. In addition, each PMT behaves a bit differently. This will be discussed later in this chapter.
+    where {math}`i` is the PMT-index, {math}`x_i` the {math}`x`-position of the PMT and {math}`S_i` the integral of the PMT output over the scintillation duration. The {math}`y`-position is computed similarly. [](#eq:gammaposition) is not very accurate and needs correction for systematic errors (linearity correction). The reason is that the response of the PMT’s does not vary nicely with the distance to the pulse. In addition, each PMT behaves a bit differently. This will be discussed later in this chapter.
 
 *   **Energy:** {math}`E`\
     &#x20;The energy is computed as
@@ -180,14 +181,14 @@ In principle, all PMT’s contribute to the detection of a single scintillation 
 *   **Time: ** {math}`t`\
     &#x20;In positron emission tomography, we must detect pairs of photons which have been produced simultaneously during positron-electron annihilation. Consequently, the time of the scintillation must be computed as accurately as possible, so that we can separate truly simultaneous events from events that happen to occur almost simultaneously.
 
-    The scintillation has a finite duration, depending on the scintillator (see table [1](#tab:crystals)). The scintillation duration is characterized by the the decay time τ, assuming that the number of scintillation photons decreases as {math}`\exp(- t/\tau)`. The decay times of the different scintillation crystals are in the range of 40 to several 100 ns. This seems short, but since a photon travels about 1 meter in only 3.3 ns, we want the time resolution to be in the order of a few ns (e.g. to suppress the random coincidence rate in PET, as will be explained in section [??](#sec:septa)). To assign such a precise time to a relatively slow event, the electronics typically computes the time at which a predefined fraction of the scintillation light has been collected (constant fraction discriminator). In current time-of-flight PET systems based on LSO, one obtains a timing resolution of about 400 ps.
+    The scintillation has a finite duration, depending on the scintillator (see [](#tab:crystals)). The scintillation duration is characterized by the the decay time τ, assuming that the number of scintillation photons decreases as {math}`\exp(- t/\tau)`. The decay times of the different scintillation crystals are in the range of 40 to several 100 ns. This seems short, but since a photon travels about 1 meter in only 3.3 ns, we want the time resolution to be in the order of a few ns (e.g. to suppress the random coincidence rate in PET, as will be explained in section [](#sec:septa)). To assign such a precise time to a relatively slow event, the electronics typically computes the time at which a predefined fraction of the scintillation light has been collected (constant fraction discriminator). In current time-of-flight PET systems based on LSO, one obtains a timing resolution of about 400 ps.
 
 (multi-crystal-detector-matrix)=
 ##### Multi-crystal detector matrix
 
 % ------------------------------------
 
-Instead of using a single large crystal, a large detector area can be obtained by combining many small crystals in a two-dimensional matrix. The crystals should be optically separated (such that scintillation photons are mirrored at the edges), to make sure that the scintillation light produced in one crystal stays in that crystal. In the extreme case, each crystal has its own photomultiplier. Computation of position is “trivial” (although complicated in practice): it is the coordinate of the crystal in the matrix (no attempt is made to obtain sub-crystal accuracy). Energy is proportional to the total output of the PMT coupled to the crystal. In such a design, the top of the crystal is usually a square of 3 to 5 mm, and the crystal is a cm (140 keV) or a few cm (511 keV) thick. Consequently, the spatial resolution is about 4 mm, as in the single crystal case (see section [??](#sec:resolution)).
+Instead of using a single large crystal, a large detector area can be obtained by combining many small crystals in a two-dimensional matrix. The crystals should be optically separated (such that scintillation photons are mirrored at the edges), to make sure that the scintillation light produced in one crystal stays in that crystal. In the extreme case, each crystal has its own photomultiplier. Computation of position is “trivial” (although complicated in practice): it is the coordinate of the crystal in the matrix (no attempt is made to obtain sub-crystal accuracy). Energy is proportional to the total output of the PMT coupled to the crystal. In such a design, the top of the crystal is usually a square of 3 to 5 mm, and the crystal is a cm (140 keV) or a few cm (511 keV) thick. Consequently, the spatial resolution is about 4 mm, as in the single crystal case (see section [](#sec:resolution)).
 
 :::{figure} figs/fig_multicrystal.pdf
 :name: fig:multicrystal
@@ -197,7 +198,8 @@ Instead of using a single large crystal, a large detector area can be obtained b
 *Multi-crystal module. The outputs of four photomultipliers are used to compute in which of the 64 crystals the scintillation occurred.*
 :::
 
-Photomultipliers are expensive, so the manufacturing cost can be reduced by a more efficient use of the PMT’s. Figure [9](#fig:multicrystal) shows a typical design, where a matrix of 64 (or more) crystals is connected to only four multipliers. The transparent block between the crystals and the PMT is called the *light guide*. It guides the light towards the PMT’s in such a way that the PMT amplitude changes monotonically with distance to the scintillating crystal. Thus, the relative amplitudes of the four PMT-outputs allow to compute in which crystal the scintillation occurred. For PET, the crystals have typically a cross section of about 4mm × 4 mm, and they are about 2 cm long.
+Photomultipliers are expensive, so the manufacturing cost can be reduced by a more efficient use of the PMT’s. 
+[](#fig:multicrystal) shows a typical design, where a matrix of 64 (or more) crystals is connected to only four multipliers. The transparent block between the crystals and the PMT is called the *light guide*. It guides the light towards the PMT’s in such a way that the PMT amplitude changes monotonically with distance to the scintillating crystal. Thus, the relative amplitudes of the four PMT-outputs allow to compute in which crystal the scintillation occurred. For PET, the crystals have typically a cross section of about 4mm × 4 mm, and they are about 2 cm long.
 
 In a single crystal design, all PMT’s contribute to the detection of a single scintillation. If two photons happen to hit the crystal simultaneously, both 2scintillations will be combined in the calculations and the resulting energy and position will be wrong! Thus, the maximum count rate is limited by the decay time of the scintillation event. In a multi-crystal design, many modules can work in parallel, so count rates can be much higher than in the single crystal design. Count rates tend to be much higher in PET than in SPECT or planar single photon imaging (see below). That is why most PET-cameras are using the multicrystal design, and gamma cameras are mostly single crystal detectors. However, single crystal PET systems and multi-crystal gamma cameras exist as well.
 
@@ -212,7 +214,8 @@ So if the photon really enters the crystal at {math}`(\bar{x}, \bar{y}, \bar{E},
 \bar{t})`, the actual measurement will produce a random realization {math}`(x_i,
 y_i, E_i, t_i)` drawn from a four-dimensional probability distribution {math}`(x, y, E, t)`. We can measure that probability distribution by doing repeated measurements in a well-controlled experimental situation. E.g., we can put a strongly collimated radioactive source in front of the crystal, which sends photons with the same known energy into the crystal at the same known position. This experiment would provide us the distribution for {math}`x`, {math}`y` and {math}`E`. The time resolution can be determined in several ways, e.g. by activating the PMT’s with light emitting diodes. The resolution on {math}`x` and {math}`y` is often called the *intrinsic resolution*.
 
-If we plot all the measurements in a histogram, we will see the distribution. Usually the distribution is approximately Gaussian, and can be characterized by its standard deviation σ. Often one specifies the full width at half maximum (FWHM) instead (figure [10](#fig:fwhm)). It is easy to show that for a Gaussian, the FWHM {math}`= 2 \sqrt{2 \ln 2} \sigma`. This leads to a useful rule of thumb: *any detail smaller than the FWHM is lost during the measurement*.
+If we plot all the measurements in a histogram, we will see the distribution. Usually the distribution is approximately Gaussian, and can be characterized by its standard deviation σ. Often one specifies the full width at half maximum (FWHM) instead 
+([](#fig:fwhm)). It is easy to show that for a Gaussian, the FWHM {math}`= 2 \sqrt{2 \ln 2} \sigma`. This leads to a useful rule of thumb: *any detail smaller than the FWHM is lost during the measurement*.
 
 :::{figure} figs/fig_fwhm.pdf
 :name: fig:fwhm
@@ -229,8 +232,9 @@ Position resolution of a scintillation detector has a FWHM of 3 to 4 mm. Energy 
 
 % =================================
 
-To store the data, the information must be digitized. We do not want to lose information, so the round-off errors made during digitization should be small compared to the resolution. Thus, we obtain four digital numbers {math}`(x, y, E,
-t)`, which are the coordinates of a single detected photon. If all information must be preserved, we can directly store the four numbers in a list (list-mode acquisition). Obviously, this list may become very long. Often, we do not need all this information. The energy is usually simply used to decide whether we will accept or discard the photon, it does not need to be stored (this will be explained in section [??](#sec:scatter)). Similarly, we often want to make a single image representing the situation in a certain time interval, so we only need a single two-dimensional image. To store this information efficiently, we prepare a zero two-dimensional matrix, an “empty” image, and increment the value at coordinates {math}`x_i, y_i` for the {math}`i`-th accepted photon. The number can be interpreted as a brightness, so we can display the result as an image on the screen. Brightness (or some pseudo-color) corresponds to tracer concentration.
+To store the data, the information must be digitized. We do not want to lose information, so the round-off errors made during digitization should be small compared to the resolution. Thus, we obtain four digital numbers 
+{math}`(x, y, E,t)`, 
+which are the coordinates of a single detected photon. If all information must be preserved, we can directly store the four numbers in a list (list-mode acquisition). Obviously, this list may become very long. Often, we do not need all this information. The energy is usually simply used to decide whether we will accept or discard the photon, it does not need to be stored (this will be explained in section [](#sec:scatter)). Similarly, we often want to make a single image representing the situation in a certain time interval, so we only need a single two-dimensional image. To store this information efficiently, we prepare a zero two-dimensional matrix, an “empty” image, and increment the value at coordinates {math}`x_i, y_i` for the {math}`i`-th accepted photon. The number can be interpreted as a brightness, so we can display the result as an image on the screen. Brightness (or some pseudo-color) corresponds to tracer concentration.
 
 (alternative-designs)=
 ## Alternative designs
@@ -283,7 +287,7 @@ As will be discussed in the next section, the resolution of a camera is dominate
 
 %  PET sensitiever dan spect. Dus hogere count rates bij zelfde activiteit.
 
-At this point, we know how the position and the energy of a photon impinging on the detector can be determined. Now we need a way to ensure that the impinging photons will produce an image. In photography, a lens is used for that purpose. But there are no easy-to-use lenses to focus the high energy photons used in nuclear medicine. So we must fall back on a more primitive approach: collimation. Collimation is the method used to make the detector “see” along straight lines. Different tomographic systems use different collimation strategies, as shown in figure [11](#fig:spect_pet_ct).
+At this point, we know how the position and the energy of a photon impinging on the detector can be determined. Now we need a way to ensure that the impinging photons will produce an image. In photography, a lens is used for that purpose. But there are no easy-to-use lenses to focus the high energy photons used in nuclear medicine. So we must fall back on a more primitive approach: collimation. Collimation is the method used to make the detector “see” along straight lines. Different tomographic systems use different collimation strategies, as shown in [](#fig:spect_pet_ct).
 
 :::{figure} figs/fig_spect_pet_ct.pdf
 :name: fig:spect_pet_ct
@@ -295,7 +299,8 @@ At this point, we know how the position and the energy of a photon impinging on 
 
 In the CT-camera, collimation is straightforward: there is only one transmission source, so any photon arriving in the detector has traveled along the straight line connecting source and detector. In the PET-camera, a similar collimation is obtained: if two photons are detected simultaneously, we can assume they have originated from the same annihilation, which must have occurred somewhere on the line connecting the two detectors. But for the gamma camera there is a problem: only one photon is detected, and there is no simple way to find out where it came from. To solve that problem, mechanical collimation is used. A mechanical collimator is essentially a thick sieve with long narrow holes separated by thin septa. The septa are made from a material with strong attenuation (usually lead), so photons hitting a septum will be eliminated, mostly by photo-electric interaction. Only photons traveling along lines parallel to the collimator holes will reach the detector. So instead of computing the trajectory of a detected photon, we eliminate all trajectories but one, so that we know the trajectory even before the photon was detected. Obviously, this approach reduces the sensitivity of the detector, since many photons will end up in the septa. This is why a PET-system acquires more photons per second than a gamma camera, for the same activity in the field of view.
 
-Most often, the parallel hole collimator is used, but for particular applications other collimators are used as well. Figure [12](#fig:collimators) shows the parallel hole collimator (all lines parallel), the fan beam collimator (lines parallel in one plane, focused in the other), the cone beam collimator (all lines focused in a single point) and the pin hole collimator (single focus point, but in contrast with other collimators, the focus is placed *before* the object).
+Most often, the parallel hole collimator is used, but for particular applications other collimators are used as well. 
+[](#fig:collimators) shows the parallel hole collimator (all lines parallel), the fan beam collimator (lines parallel in one plane, focused in the other), the cone beam collimator (all lines focused in a single point) and the pin hole collimator (single focus point, but in contrast with other collimators, the focus is placed *before* the object).
 
 :::{figure} figs/fig_collimators.pdf
 :name: fig:collimators
@@ -312,7 +317,7 @@ Collimation ensures that tomographic systems collect information about lines. In
 
 % ====================================================
 
-Figure [13](#fig:lenscollimator) shows that the sensitivity obtained with a mechanical collimation is very poor compared to that obtained with a lens. The mechanical collimator has a dominating effect on the resolution and sensitivity of the gamma camera. That is why a more detailed analysis of the collimator point spread function is in order.
+[](#fig:lenscollimator) shows that the sensitivity obtained with a mechanical collimation is very poor compared to that obtained with a lens. The mechanical collimator has a dominating effect on the resolution and sensitivity of the gamma camera. That is why a more detailed analysis of the collimator point spread function is in order.
 
 :::{figure} figs/fig_lenscollimator.pdf
 :name: fig:lenscollimator
@@ -330,7 +335,7 @@ Figure [13](#fig:lenscollimator) shows that the sensitivity obtained with a mech
 *Parallel hole collimator.*
 :::
 
-Fig. [14](#fig:collimator_calc) shows the cross section of a parallel hole collimator with septa length {math}`T` and septa spacing {math}`a`. At a distance of {math}`H`, a radioactive point source is located. If the collimator would really absorb all photons except those propagating exactly perpendicular to the detector, then the image would be a point. However, fig. [14](#fig:collimator_calc) shows that photons propagating along slightly inclined lines may also reach the detector. Therefore the image will not be a point. Because the image of a point is characteristic for the system, such images are often studied. By definition, the image of a point is the *point spread function* (PSF) of the imaging system.
+[](#fig:collimator_calc) shows the cross section of a parallel hole collimator with septa length {math}`T` and septa spacing {math}`a`. At a distance of {math}`H`, a radioactive point source is located. If the collimator would really absorb all photons except those propagating exactly perpendicular to the detector, then the image would be a point. However, [](#fig:collimator_calc) shows that photons propagating along slightly inclined lines may also reach the detector. Therefore the image will not be a point. Because the image of a point is characteristic for the system, such images are often studied. By definition, the image of a point is the *point spread function* (PSF) of the imaging system.
 
 Assume that the thickness of the septa can be ignored, that {math}`H` is large compared to the length of the septa {math}`T`, and that {math}`T` is large compared to {math}`a`. We will also ignore septal penetration (i.e. gamma-photons traveling through the septa instead of getting absorbed). The light (e.g. 140 keV photons) emitted by the source makes the septa cast a shadow on the detector surface. In fact, most of the detector is in that shadow, except for a small region facing the source. We will regard the center of that region, immediately under the source, as the origin of the detector plane. The length of the shadow {math}`s` cast by a septum on the detector is then
 
@@ -354,9 +359,10 @@ This expression holds for {math}`r` between 0 and {math}`R`, where {math}`R` is 
 \mbox{PSF}(r) = (1 -  \frac{r T}{a H}) \frac{1}{4 \pi H^2}
 ```
 
-In this expression, we have ignored the fact that for a flat detector, the distance to the point increases with {math}`r`. The approximation is fair if {math}`r` is much smaller than {math}`H`. Consequently, the PSF has a triangular profile, as illustrated in figure [15](#fig:collimatorpsf).
+In this expression, we have ignored the fact that for a flat detector, the distance to the point increases with {math}`r`. The approximation is fair if {math}`r` is much smaller than {math}`H`. Consequently, the PSF has a triangular profile, 
+as illustrated in [](#fig:collimatorpsf).
 
-To calculate (approximately) the total collimator sensitivity, expression ([23](#eq:collim:psf)) must be integrated over the region where PSF{math}`(r)` is non-zero. We assume circular symmetry and use integration instead of the summation (actually required by the discrete nature of the problem). Integration assumes that {math}`a` and {math}`T` are infinitely small. Since we use only the ratio, this poses no problems.
+To calculate (approximately) the total collimator sensitivity, expression [](#eq:collim:psf) must be integrated over the region where PSF{math}`(r)` is non-zero. We assume circular symmetry and use integration instead of the summation (actually required by the discrete nature of the problem). Integration assumes that {math}`a` and {math}`T` are infinitely small. Since we use only the ratio, this poses no problems.
 
 
 
@@ -390,15 +396,17 @@ Note that a similar result is obtained if one assumes that the collimator consis
   \;\; = \;\; \frac{1}{4 \pi} \left( \frac{a}{T} \right)^2.
 ```
 
-In reality, the holes are usually hexagonal. With a septa length of 2 cm and septa spacing of 1 mm, about 1 in 5000 photons is passing through the collimator, according to equation ([24](#eq:collim:sens)). It is fortunate that the sensitivity does not depend on the distance {math}`H`.
+In reality, the holes are usually hexagonal. With a septa length of 2 cm and septa spacing of 1 mm, about 1 in 5000 photons is passing through the collimator, according to equation [](#eq:collim:sens). It is fortunate that the sensitivity does not depend on the distance {math}`H`.
 
-It is easy to show that ([25](#eq:collim:fwhm)) is also equal to the FWHM of the PSF: you can verify by computing the FWHM from ([23](#eq:collim:psf)). So the FWHM of the spatial resolution *increases linearly with the distance to the collimator!* Therefore, the collimator must always be as close as possible to the patient, and failure to do so leads to important image degradation! Many gamma cameras have hardware to automically minimize the distance between patient and collimator during scanning.
+It is easy to show that [](#eq:collim:fwhm) is also equal to the FWHM of the PSF: you can verify by computing the FWHM from 
+[](#eq:collim:psf). 
+So the FWHM of the spatial resolution *increases linearly with the distance to the collimator!* Therefore, the collimator must always be as close as possible to the patient, and failure to do so leads to important image degradation! Many gamma cameras have hardware to automically minimize the distance between patient and collimator during scanning.
 
 To improve the resolution, the ratio {math}`a/T` must be decreased. However, the sensitivity is proportional to the square of {math}`a/T`. As a result, the collimator must be a compromise between high sensitivity and low FWHM.
 
-The PSF is an important characteristic of the linear system, which allows us to predict how the system will react to any input. See appendix [??](#app:convolution) if you are not familiar with the concept of PSF and convolution integrals.
+The PSF is an important characteristic of the linear system, which allows us to predict how the system will react to any input. See appendix [](#app:convolution) if you are not familiar with the concept of PSF and convolution integrals.
 
-In section [??](#sec:resolution) we have seen that the *intrinsic resolution* of a typical scintillation detector has a FWHM of about 4 mm. Now, we have seen that the collimator contributes significantly to the FWHM, but in the derivation, we have ignored the intrinsic resolution. Obviously, they have to be combined to obtain realistic results, so we must “superimpose” the two random processes. The probability distribution of each random process is described as a PSF. To compute the overall probability distribution, the second PSF must be “applied” to every point of the first one. Mathematically, this means that the two PSFs must be convolved. If we make the reasonable assumption that the PSFs are Gaussian, convolution becomes very simple, as shown in appendix [??](#app:convol2gauss): the result is again a Gaussian, and its variance equals the sum of variances of the contributing Gaussians.
+In section [](#sec:resolution) we have seen that the *intrinsic resolution* of a typical scintillation detector has a FWHM of about 4 mm. Now, we have seen that the collimator contributes significantly to the FWHM, but in the derivation, we have ignored the intrinsic resolution. Obviously, they have to be combined to obtain realistic results, so we must “superimpose” the two random processes. The probability distribution of each random process is described as a PSF. To compute the overall probability distribution, the second PSF must be “applied” to every point of the first one. Mathematically, this means that the two PSFs must be convolved. If we make the reasonable assumption that the PSFs are Gaussian, convolution becomes very simple, as shown in appendix [](#app:convol2gauss): the result is again a Gaussian, and its variance equals the sum of variances of the contributing Gaussians.
 
 At distances larger than a few cm, the collimator PSF dominates the spatial resolution. The PSF increases in the order of half a cm per 10 cm distance, but there is a wide range: different types of collimator exist, either focusing on resolution or on sensitivity.
 
@@ -412,7 +420,8 @@ At distances larger than a few cm, the collimator PSF dominates the spatial reso
 *Point spread function of the collimator. The number of detected photons at a point in the detector decreases linearly with the distance {math}`r` to the central point.*
 :::
 
-In the calculations above, the thickness of the septa has been ignored. In reality, the septa have to be thick enough to stop the photons hitting them. Septa are made from high-Z materials, like lead or tungsten, to maximize the photon attenuation. High resolution collimators are optimized for imaging with {sup}`99m`Tc: the septa are relatively thin, and {math}`a/T` is small, resulting in high resolution but not so high sensitivity. High sensitivity collimators have a larger {math}`a/T`, producing poorer resolution. High energy collimators are designed for isotopes emitting high energy photons, such as {sup}`131`I (see table [6](#tab:rntisotopes)). They have thicker septa to minimize the number of photons penetrating them. To account for the septa thickness, equation ([24](#eq:collim:sens)) can be extended to
+In the calculations above, the thickness of the septa has been ignored. In reality, the septa have to be thick enough to stop the photons hitting them. Septa are made from high-Z materials, like lead or tungsten, to maximize the photon attenuation. High resolution collimators are optimized for imaging with {sup}`99m`Tc: the septa are relatively thin, and {math}`a/T` is small, resulting in high resolution but not so high sensitivity. High sensitivity collimators have a larger {math}`a/T`, producing poorer resolution. High energy collimators are designed for isotopes emitting high energy photons, such as {sup}`131`I (see [](#tab:rntisotopes)). They have thicker septa to minimize the number of photons penetrating them. To account for the septa thickness, equation 
+[](#eq:collim:sens) can be extended to
 
 ```{math}
 \mbox{sens} =  \frac{1}{12} \left( \frac{a}{T} \right)^2
@@ -433,7 +442,7 @@ where {math}`a` is the distance between neighboring septa and {math}`s` is the s
 
 During positron annihilation, two photons are emitted in opposite directions. If both are detected, we know that the annihilation occurred somewhere on the line connecting the two detectors. So in contrast to SPECT, no mechanical collimator is needed. However, we need fast electronics, since the only way to test if two detected photons could belong together, is by checking if they have been emitted simultaneously.
 
-We first consider a single detector pair as shown in figure [16](#fig:petdetectorpair), and study its characteristics by computing its response to a point source. The detector has a square surface of size {math}`d`, and the distance between the detectors is {math}`2R`. We choose the origin in the point of symmetry, and see how the response changes if we change the position of the point source. Keep in mind that an event is only valid if both photons of the photon pair are detected.
+We first consider a single detector pair as shown in [](#fig:petdetectorpair), and study its characteristics by computing its response to a point source. The detector has a square surface of size {math}`d`, and the distance between the detectors is {math}`2R`. We choose the origin in the point of symmetry, and see how the response changes if we change the position of the point source. Keep in mind that an event is only valid if both photons of the photon pair are detected.
 
 
 
@@ -455,7 +464,8 @@ Assume that the point source is moved along the {math}`r`-axis: {math}`x = 0`. T
 
 This is an approximation: we assume that the far detector surface coincides with the surface of a sphere of radius {math}`R+r`. It does not, because it is flat. However, because {math}`d` is very small compared to {math}`R`, the approximation is very good.
 
-We now move the point source vertically over a distance {math}`x`. As long as the point is between the dashed lines in figure [16](#fig:petdetectorpair), nothing changes (that is, if we ignore the small decrease in solid angle due to the fact that the detector surface is now slightly tilted when viewed from the point source). However, when the point crosses the dashed line, the far detector is no longer fully irradiated. A part of the detector surface no longer contributes: if a photon reaches that part, the other photon will miss the other detector. The height {math}`s` is computed from simple geometry (figure [16](#fig:petdetectorpair)):
+We now move the point source vertically over a distance {math}`x`. As long as the point is between the dashed lines in 
+[](#fig:petdetectorpair), nothing changes (that is, if we ignore the small decrease in solid angle due to the fact that the detector surface is now slightly tilted when viewed from the point source). However, when the point crosses the dashed line, the far detector is no longer fully irradiated. A part of the detector surface no longer contributes: if a photon reaches that part, the other photon will miss the other detector. The height {math}`s` is computed from simple geometry ([](#fig:petdetectorpair)):
 
 ```{math}
 s(x) = \left( |x| - \frac{d |r|}{2 R} \right) \frac{2R}{R-|r|}
@@ -606,9 +616,9 @@ Until now, we have always assumed that annihilation takes place very close to th
     *   5.9
 :::
 
-As shown in table [2](#tab:positron_length), the path depends on the kinetic energy of the positron. The positron can only annihilate if its kinetic energy is sufficiently low, so if it is emitted at high speed, it will travel “far” (up to a few mm). During its trajectory, it dissipates its energy in collisions with surrounding electrons. The mean path length (positron range) of {sup}`18`F is small and has a very limited effect on the spatial resolution. For some other isotopes, like {sup}`68`Ga and {sup}`82`Rb, the positron range is several mm.
+As shown in [](#tab:positron_length), the path depends on the kinetic energy of the positron. The positron can only annihilate if its kinetic energy is sufficiently low, so if it is emitted at high speed, it will travel “far” (up to a few mm). During its trajectory, it dissipates its energy in collisions with surrounding electrons. The mean path length (positron range) of {sup}`18`F is small and has a very limited effect on the spatial resolution. For some other isotopes, like {sup}`68`Ga and {sup}`82`Rb, the positron range is several mm.
 
-Momentum is preserved during annihilation, so the momentum of both photons must equal the momentum of the positron and the electron. This momentum is usually not zero, so the photons cannot be emitted in exactly opposite directions (the momentum of a photon is a vector with amplitude {math}`h/\lambda` and pointing in the direction of propagation). As shown in figure [17](#fig:positron_error), there is a deviation of about 0.5º, which corresponds to a 2.0 mm offset for a detector ring with 80 cm diameter.
+Momentum is preserved during annihilation, so the momentum of both photons must equal the momentum of the positron and the electron. This momentum is usually not zero, so the photons cannot be emitted in exactly opposite directions (the momentum of a photon is a vector with amplitude {math}`h/\lambda` and pointing in the direction of propagation). As shown in [](#fig:positron_error), there is a deviation of about 0.5º, which corresponds to a 2.0 mm offset for a detector ring with 80 cm diameter.
 
 
 
@@ -634,14 +644,14 @@ Momentum is preserved during annihilation, so the momentum of both photons must 
 
 
 
-The resolution is further degraded by the unknown “depth of interaction” of the photon inside the crystal. As shown in figure [18](#fig:doi), photons emitted near the edge of the field of view might traverse one crystal to scintillate only in the next one. Because we don’t know where in the crystal the scintillation took place, we always have to assign a fixed depth of interaction to the event. The mispositioning of these events causes a loss of resolution that increases with the distance from the center. PET systems have been designed and built that can measure the depth of interaction to reduce this loss of resolution.
+The resolution is further degraded by the unknown “depth of interaction” of the photon inside the crystal. As shown in [](#fig:doi), photons emitted near the edge of the field of view might traverse one crystal to scintillate only in the next one. Because we don’t know where in the crystal the scintillation took place, we always have to assign a fixed depth of interaction to the event. The mispositioning of these events causes a loss of resolution that increases with the distance from the center. PET systems have been designed and built that can measure the depth of interaction to reduce this loss of resolution.
 
 (sec:septa)=
 ##### Mechanical collimation: inter-plane septa
 
 % ------------------------------------
 
-In the previous section we have seen why a PET-camera does not need a collimator. We also know that the PET-camera can only measure photon pairs originating somewhere within the detection plane. However, photons coming from radioactivity outside that plane could also reach the detectors, and produce undesired scintillations, which provide no information, or even worse, wrong information. Therefore, it is useful to shield the detector ring against photons coming from outside the field of view. This is done with so-called septa, as shown in figure [19](#fig:pet_septa). The septa provide some collimation in the direction perpendicular to the detection plane, but there is no collimation within the plane. The septa reduce the number of single photons, scattered photons, random coincidences and triple (or more) coincidences.
+In the previous section we have seen why a PET-camera does not need a collimator. We also know that the PET-camera can only measure photon pairs originating somewhere within the detection plane. However, photons coming from radioactivity outside that plane could also reach the detectors, and produce undesired scintillations, which provide no information, or even worse, wrong information. Therefore, it is useful to shield the detector ring against photons coming from outside the field of view. This is done with so-called septa, as shown in [](#fig:pet_septa). The septa provide some collimation in the direction perpendicular to the detection plane, but there is no collimation within the plane. The septa reduce the number of single photons, scattered photons, random coincidences and triple (or more) coincidences.
 
 
 
@@ -661,9 +671,9 @@ Before these events are described, we have to better define what is meant with a
 
 *   The diameter of the PET-camera is typically about 1 m for a whole body system, and about half that for a brain system. Light travels about 1 m in 3 ns. Consequently, the time window should not be below 3 ns for a 1 m diameter system.
 
-For these reasons, current systems use a time window of about 5 to 10 ns. Recently, PET systems have been built with a time resolution better than 1 ns. With those systems, one can measure the difference in arrival time between the two photons and deduce some position information from it. This will be discussed in section [??](#sec:TOF).
+For these reasons, current systems use a time window of about 5 to 10 ns. Recently, PET systems have been built with a time resolution better than 1 ns. With those systems, one can measure the difference in arrival time between the two photons and deduce some position information from it. This will be discussed in section [](#sec:TOF).
 
-Figure [20](#fig:pet_random_enzo) shows the difference between a true coincidence, which provides valuable information, and several other events which are disturbing or even misleading. A single event provides no information and is harmless. But if two single events are simultaneous (random coincidence), they are indistinguishable from a true coincidence. If one (or both) of the photons is scattered, the coincidence provides wrong information: the decaying atom is not located on the line connecting the two detectors. Finally, a single event may be simultaneous with a true coincidence. Since there is no way to find out which of the three photons is the single one, the entire event is ignored and information is lost.
+[](#fig:pet_random_enzo) shows the difference between a true coincidence, which provides valuable information, and several other events which are disturbing or even misleading. A single event provides no information and is harmless. But if two single events are simultaneous (random coincidence), they are indistinguishable from a true coincidence. If one (or both) of the photons is scattered, the coincidence provides wrong information: the decaying atom is not located on the line connecting the two detectors. Finally, a single event may be simultaneous with a true coincidence. Since there is no way to find out which of the three photons is the single one, the entire event is ignored and information is lost.
 
 :::{figure} figs/fig_pet_random_enzo.pdf
 :name: fig:pet_random_enzo
@@ -675,7 +685,7 @@ Figure [20](#fig:pet_random_enzo) shows the difference between a true coincidenc
 .
 :::
 
-To see how the septa dimensions influence the relative contribution of the various possible events, some simple computations can be carried out using the geometry shown in figure [19](#fig:pet_septa). Assume that we have a cylindrical object in the PET-camera. In the center of the cylinder, there is a radioactive wire, with activity ρ per unit length. The cylinder has radius {math}`r` and attenuation coefficient μ. This object represents an idealized patient: there is activity, attenuation and Compton scatter in the attenuating object as in a patient; the unrealistic choice of dimensions makes the computations easier. The PET-camera diameter is {math}`D`, the detector size is {math}`d` and the septa have length {math}`T`. The duration of the time window is τ. Finally, we assume that the detector efficiency is ε, which means that if a photon reaches the detector, it has a chance of ε to produce a valid scintillation, and a chance of {math}`1 - \epsilon` to remain undetected.
+To see how the septa dimensions influence the relative contribution of the various possible events, some simple computations can be carried out using the geometry shown in [](#fig:pet_septa). Assume that we have a cylindrical object in the PET-camera. In the center of the cylinder, there is a radioactive wire, with activity ρ per unit length. The cylinder has radius {math}`r` and attenuation coefficient μ. This object represents an idealized patient: there is activity, attenuation and Compton scatter in the attenuating object as in a patient; the unrealistic choice of dimensions makes the computations easier. The PET-camera diameter is {math}`D`, the detector size is {math}`d` and the septa have length {math}`T`. The duration of the time window is τ. Finally, we assume that the detector efficiency is ε, which means that if a photon reaches the detector, it has a chance of ε to produce a valid scintillation, and a chance of {math}`1 - \epsilon` to remain undetected.
 
 
 To compute the number of **true coincidences** per unit of time, we must keep in mind that both photons must be detected, but that their paths are not independent. To take into account the influence of the time window, it helps to consider first a short time interval equal to the time window τ. After that, we convert the result to counts per unit of time by dividing by τ. Why we do this will become clear when dealing with randoms. We proceed as follows:
@@ -690,7 +700,7 @@ To compute the number of **true coincidences** per unit of time, we must keep in
 
 
 
-*   As we have derived above (see eq ([35](#eq:petsens))), the geometrical sensitivity is {math}`d/(2D)`.
+*   As we have derived above (see equation [](#eq:petsens)), the geometrical sensitivity is {math}`d/(2D)`.
 
 
 
@@ -731,7 +741,7 @@ where the last equation is obtained by setting {math}`e^{-\mu r} = a`.
 
 The other issue is that the combined photon path is a broken line. This has two consequences. First, the field of view is larger than for the trues. Second, the path of the second photon is (nearly) independent of that of the first one.
 
-We will assume that only one of the photons undergoes a single Compton scatter event, so the path contains only a single break point. The corresponding field of view is indicated with the dashed line in figure [19](#fig:pet_septa). The length of the wire in the field of view is then {math}`d (D-T) / T`, but since {math}`T` is much smaller than {math}`D` we approximate it as {math}`d D/T`.
+We will assume that only one of the photons undergoes a single Compton scatter event, so the path contains only a single break point. The corresponding field of view is indicated with the dashed line in [](#fig:pet_septa). The length of the wire in the field of view is then {math}`d (D-T) / T`, but since {math}`T` is much smaller than {math}`D` we approximate it as {math}`d D/T`.
 
 Each of the photons goes its own way. This will only lead to detection if both happen to end up on a detector and are detected. For each of them, that probability is proportional to {math}`\epsilon d / D`, so for the pair the detection probability is {math}`(\epsilon d / D)^2`. For the trues this factor was not squared, because detection of one photon guarantees detection of the other!
 
@@ -774,7 +784,7 @@ As you can see, the trues count rate is not affected by either τ nor {math}`T`,
 
 % ------------------------------------
 
-In the previous paragraphs we have studied a single ring of PET detectors, and we have shown that shielding the detectors with septa reduces the scatter and random coincidence rate, without affecting the true coincidence rate. In current clinical systems, multiple rings are combined in a single device, as shown in figure [21](#fig:jnpet). In the past, many of these systems could be operated in two modes. In 2D-mode, the rings are separated by septa. In 3D-mode, the septa are retracted, only the shielding at the edges of the axial field of view remain. Current PET systems have no septa between the detector rings, they are always operated in 3D mode.
+In the previous paragraphs we have studied a single ring of PET detectors, and we have shown that shielding the detectors with septa reduces the scatter and random coincidence rate, without affecting the true coincidence rate. In current clinical systems, multiple rings are combined in a single device, as shown in [](#fig:jnpet). In the past, many of these systems could be operated in two modes. In 2D-mode, the rings are separated by septa. In 3D-mode, the septa are retracted, only the shielding at the edges of the axial field of view remain. Current PET systems have no septa between the detector rings, they are always operated in 3D mode.
 
 :::{figure} figs/fig_jnpet.pdf
 :name: fig:jnpet
@@ -791,7 +801,7 @@ According to the Nyquist criterion, the sampling distance should not be longer t
 
 In 3D mode, the septa are retracted, except for the first and last one. The detection is no longer restricted to parallel planes, photon pairs traveling along oblique lines are now accepted as well. In chapter [??](#ch:image_formation) we will see that this has a strong impact on image reconstruction.
 
-This has no effect on spatial resolution, since that is determined by the detector size. But the impact on sensitivity is very high. In fact, we have already computed all the sensitivities in section [??](#sec:septa). Those expressions are still valid for 3D PET, if we replace {math}`d` (the distance between the septa) with {math}`Nd`, where {math}`N` is the number of neighboring detector rings. To see the improvement for 3D mode, you have to compare to a concatenation of {math}`N` independent detector rings (2D mode), which are {math}`N` times more sensitive than a single ring (at least if we wish to scan an axial range larger than that seen by a single ring). So you can see that the sensitivity for trues increases with a factor of {math}`N` when going from 2D to 3D. However, scatters increase with {math}`N^2` and randoms even with {math}`N^3`. Because the 3D PET is more sensitive, we can decrease the injected dose with a factor of {math}`N` (preserving the count rate). If we do that, randoms will only increase with {math}`N^2`. Consequently, the price we pay for increased sensitivity is an even larger increase of disturbing events. So scatter and randoms correction will be more important in 3D PET than in 2D PET. It turns out that scatter in particular poses problems: it was usually ignored in 2D PET, but this is no longer acceptable in 3D PET. Various scatter correction algorithms for 3D PET have been proposed in the literature, the one mostly used is described below ([??](#sec:petscatcor)).
+This has no effect on spatial resolution, since that is determined by the detector size. But the impact on sensitivity is very high. In fact, we have already computed all the sensitivities in section [](#sec:septa). Those expressions are still valid for 3D PET, if we replace {math}`d` (the distance between the septa) with {math}`Nd`, where {math}`N` is the number of neighboring detector rings. To see the improvement for 3D mode, you have to compare to a concatenation of {math}`N` independent detector rings (2D mode), which are {math}`N` times more sensitive than a single ring (at least if we wish to scan an axial range larger than that seen by a single ring). So you can see that the sensitivity for trues increases with a factor of {math}`N` when going from 2D to 3D. However, scatters increase with {math}`N^2` and randoms even with {math}`N^3`. Because the 3D PET is more sensitive, we can decrease the injected dose with a factor of {math}`N` (preserving the count rate). If we do that, randoms will only increase with {math}`N^2`. Consequently, the price we pay for increased sensitivity is an even larger increase of disturbing events. So scatter and randoms correction will be more important in 3D PET than in 2D PET. It turns out that scatter in particular poses problems: it was usually ignored in 2D PET, but this is no longer acceptable in 3D PET. Various scatter correction algorithms for 3D PET have been proposed in the literature, the one mostly used is described below ([](#sec:petscatcor)).
 
 (sec:pv)=
 # Partial volume effect
@@ -808,9 +818,9 @@ This has no effect on spatial resolution, since that is determined by the detect
 
 
 
-As explained above, resolution is not the strongest point of nuclear medicine. Other medical imaging systems (CT, MR, ultrasound) have a much better resolution. One often uses the term *partial volume effect* to refer to problems caused by poor resolution. The idea is that if an object only fills part of a pixel, the pixel contains two things: object and background. Because the pixel has only one value, it does not give a reliable representation of either. Figure [22](#fig:pv) illustrates this for a disk imaged with some imaging system. If the object is large compared to the pixels of the image, then the image gives a good representation of the object. However, small objects are poorly represented. As can be seen in the profiles, the maximum value in the image is much smaller than the true maximum intensity of the object. The obvious remedy is to use sufficiently small pixels.
+As explained above, resolution is not the strongest point of nuclear medicine. Other medical imaging systems (CT, MR, ultrasound) have a much better resolution. One often uses the term *partial volume effect* to refer to problems caused by poor resolution. The idea is that if an object only fills part of a pixel, the pixel contains two things: object and background. Because the pixel has only one value, it does not give a reliable representation of either. [](#fig:pv) illustrates this for a disk imaged with some imaging system. If the object is large compared to the pixels of the image, then the image gives a good representation of the object. However, small objects are poorly represented. As can be seen in the profiles, the maximum value in the image is much smaller than the true maximum intensity of the object. The obvious remedy is to use sufficiently small pixels.
 
-However, if the pixels are small, the imaging performance is limited by the system point spread function, as illustrated in the second panel of figure [22](#fig:pv). The image can be regarded as a convolution of the true intensities with the PSF. The effect is very similar as that of the big pixels, one could say that the object only partially fills the PSF. Again, the maximum intensity of small objects is severely underestimated, and their size is overestimated.
+However, if the pixels are small, the imaging performance is limited by the system point spread function, as illustrated in the second panel of [](#fig:pv). The image can be regarded as a convolution of the true intensities with the PSF. The effect is very similar as that of the big pixels, one could say that the object only partially fills the PSF. Again, the maximum intensity of small objects is severely underestimated, and their size is overestimated.
 
 Consequently, nuclear medicine imaging systems tend to underestimate the maximum intensity and overestimate the size of small objects. The *recovery coefficient* is the ratio of the estimated and true maximum. The so-called *spill over* is the amount of apparent activity showing up outside the true object boundaries due to the blurring.
 
@@ -830,7 +840,7 @@ Consequently, nuclear medicine imaging systems tend to underestimate the maximum
 
 % ------------------------
 
-Compton scatter causes photons to be deviated from their original trajectory, and to propagate with reduced energy along a new path. Consequently, photons with reduced energy can reach the detector via a broken line. Such photons are harmful: they provide no useful information and produce an unwanted inhomogeneous background in the acquired images (fig [23](#fig:scatter_gammacamera)).
+Compton scatter causes photons to be deviated from their original trajectory, and to propagate with reduced energy along a new path. Consequently, photons with reduced energy can reach the detector via a broken line. Such photons are harmful: they provide no useful information and produce an unwanted inhomogeneous background in the acquired images ([](#fig:scatter_gammacamera)).
 
 :::{figure} figs/fig_scatter_gammacamera.pdf
 :name: fig:scatter_gammacamera
@@ -840,9 +850,9 @@ Compton scatter causes photons to be deviated from their original trajectory, an
 *Compton scatter allows photons to reach the camera via a broken line. These photons produce a smooth background in the acquired projection data.*
 :::
 
-We have seen in section [??](#sec:compton_scatter) that the photon loses more energy for larger scatter angles. The gamma camera (or the PET camera) measures the energy of the photon, so it can reject the photon if its energy is low.
+We have seen in section [](#sec:compton_scatter) that the photon loses more energy for larger scatter angles. The gamma camera (or the PET camera) measures the energy of the photon, so it can reject the photon if its energy is low.
 
-However, if the energy loss during Compton scatter is smaller than or comparable to the energy resolution of the gamma camera, then it may survive the energy test and get accepted by the camera. Figure [24](#fig:scatter_spectrum) shows the energy spectrum as measured by the gamma camera. A Monte Carlo simulation was carried out as well, and the resulting spectrum is very similar to the measured one. The simulation allows to compute the contribution of unscattered (or primary) photons, photons that scattered once and photons that suffered multiple scatter events. If the energy resolution were perfect, the primary photon peak would be infinitely narrow and all scattered photons could be rejected. But with a realistic energy resolution the spectra overlap, and acceptance of scattered photons is unavoidable.
+However, if the energy loss during Compton scatter is smaller than or comparable to the energy resolution of the gamma camera, then it may survive the energy test and get accepted by the camera. [](#fig:scatter_spectrum) shows the energy spectrum as measured by the gamma camera. A Monte Carlo simulation was carried out as well, and the resulting spectrum is very similar to the measured one. The simulation allows to compute the contribution of unscattered (or primary) photons, photons that scattered once and photons that suffered multiple scatter events. If the energy resolution were perfect, the primary photon peak would be infinitely narrow and all scattered photons could be rejected. But with a realistic energy resolution the spectra overlap, and acceptance of scattered photons is unavoidable.
 
 :::{figure} figs/fig_scatter_spectrum.pdf
 :name: fig:scatter_spectrum
@@ -852,11 +862,11 @@ However, if the energy loss during Compton scatter is smaller than or comparable
 *The energy spectrum measured by the gamma camera, with a simulation in overlay. The simulation allows to compute the spectrum of non-scattered (primary) photons, single scatters and multiple scatters. The true primary spectrum is very narrow, the measured one is widened by the limited energy resolution.*
 :::
 
-Figure [24](#fig:scatter_spectrum) shows a deviation between simulation and measurement for high energies. In the measurement it happens that two photons arrive simultaneously. If that occurs, the gamma camera adds their energies and averages their position, producing a mispositioned count with high energy. Such photons must be rejected as well. The simulator assumed that each photon was measured independently. The simulator deviates also at low energies from the measured spectrum, because the camera has not recorded these low-energy photons.
+[](#fig:scatter_spectrum) shows a deviation between simulation and measurement for high energies. In the measurement it happens that two photons arrive simultaneously. If that occurs, the gamma camera adds their energies and averages their position, producing a mispositioned count with high energy. Such photons must be rejected as well. The simulator assumed that each photon was measured independently. The simulator deviates also at low energies from the measured spectrum, because the camera has not recorded these low-energy photons.
 
 To reject as much as possible the unwanted photons, a narrow energy window is centered around the tracer energy peak, and all photons with energy outside that window are rejected. Current gamma cameras can use multiple energy windows simultaneously. That allows us to administer two or more different tracers to the patient at the same time, if we make sure that each tracer emits photons at a different energy. The gamma camera separates the photons based on their energy and produces a different image for each tracer. For example, {sup}`201`Tl emits photons of about 70 keV (with a frequency of 0.70 per desintegration) and 80 keV (0.27 per desintegration), while {sup}`99m`Tc emits photons of about 140 keV (0.9 per desintegration). {sup}`201`Tl labeled thallium chloride can be used as a tracer for myocardial blood perfusion. There are also {sup}`99m`Tc labeled perfusion tracers. These tracers are trapped in proportion to perfusion, and their distribution depends mostly on the perfusion at the time of injection. Protocols have been used to measure simultaneously or sequentially the perfusion of the heart under different conditions. In one such protocol, {sup}`201`Tl is injected at rest, and a single energy scan is made. Then the patient exercises to induce the stress condition, the {sup}`99m`Tc tracer is injected at maximum excercise, and after 30 to 60 min, a scan with energy window at 140 keV is made. If the same tracer were used twice, the image of the stress perfusion would be contaminated by the tracer contribution injected previously at rest.
 
-Since not all unwanted photons can be rejected, an additional correction may be required. Figure [25](#fig:TEW_scatter) shows a typical correction method based on three energy windows. Window C1 is the window centered on the energy of the primary photons. If we assume that the spectrum of the unwanted photons varies approximately linearly over the window C1, then we can estimate that spectrum by measuring in two additional windows C2 (just below C1) and C3 (just above C1). If all windows had the same size, then the number of unwanted photons in C1 could be estimated as (counts in C2 + counts in C3) / 2. Usually C2 and C3 are chosen narrower than C1, so the correction must be weighted accordingly. In the example of figure [25](#fig:TEW_scatter) there are very few counts in C3. However, if we would use a second tracer with higher energy, then C3 would receive scattered photons from that tracer.
+Since not all unwanted photons can be rejected, an additional correction may be required. [](#fig:TEW_scatter) shows a typical correction method based on three energy windows. Window C1 is the window centered on the energy of the primary photons. If we assume that the spectrum of the unwanted photons varies approximately linearly over the window C1, then we can estimate that spectrum by measuring in two additional windows C2 (just below C1) and C3 (just above C1). If all windows had the same size, then the number of unwanted photons in C1 could be estimated as (counts in C2 + counts in C3) / 2. Usually C2 and C3 are chosen narrower than C1, so the correction must be weighted accordingly. In the example of [](#fig:TEW_scatter) there are very few counts in C3. However, if we would use a second tracer with higher energy, then C3 would receive scattered photons from that tracer.
 
 :::{figure} figs/fig_TEW_scatter.pdf
 :name: fig:TEW_scatter
@@ -882,10 +892,10 @@ In practice, the method works as follows. First, a reconstruction of the tracer 
 :align: center
 :alt: CT and PET images (obtained by maximum intensity projection), and the corresponding raw PET projection data with their estimated scatter contribution. Data were acquired with a Biograph 16 PET/CT system (Siemens). The regular pattern in the raw data is due to sensitivity differences between different detector pairs (see also fig %s).
 
-*CT and PET images (obtained by maximum intensity projection), and the corresponding raw PET projection data with their estimated scatter contribution. Data were acquired with a Biograph 16 PET/CT system (Siemens). The regular pattern in the raw data is due to sensitivity differences between different detector pairs (see also fig [30](#fig:pet_norm)).*
+*CT and PET images (obtained by maximum intensity projection), and the corresponding raw PET projection data with their estimated scatter contribution. Data were acquired with a Biograph 16 PET/CT system (Siemens). The regular pattern in the raw data is due to sensitivity differences between different detector pairs (see also [](#fig:pet_norm)).*
 :::
 
-Figure [26](#fig:petscatter) gives an example of the original raw PET data from a 3D PET scan (slightly smoothed so you would see something), together with the corresponding estimated scatter contribution (using the same gray scales). Maximum intensity projections of the CT and PET images are shown as well. The regular pattern in the raw PET data is due to position dependent sensitivities of the detector pairs (see also fig. [30](#fig:pet_norm)). The scatter distribution is smooth, and its amplitude is significant.
+[](#fig:petscatter) gives an example of the original raw PET data from a 3D PET scan (slightly smoothed so you would see something), together with the corresponding estimated scatter contribution (using the same gray scales). Maximum intensity projections of the CT and PET images are shown as well. The regular pattern in the raw PET data is due to position dependent sensitivities of the detector pairs (see also [](#fig:pet_norm)). The scatter distribution is smooth, and its amplitude is significant.
 
 (sec:corrections)=
 # Other corrections
@@ -906,9 +916,9 @@ Figure [26](#fig:petscatter) gives an example of the original raw PET data from 
 
 % ---
 
-Currently, most gamma camera designs are based on a single crystal detector as shown in figure [27](#fig:gammacamera). To increase the sensitivity, a single gamma camera may have two or three detector heads, enabling simultaneous acquisition of two or three views along different angles simultaneously. Because the detector head represents a significant portion of the cost of the gamma camera, the price increases rapidly with the number of detector heads.
+Currently, most gamma camera designs are based on a single crystal detector as shown in [](#fig:gammacamera). To increase the sensitivity, a single gamma camera may have two or three detector heads, enabling simultaneous acquisition of two or three views along different angles simultaneously. Because the detector head represents a significant portion of the cost of the gamma camera, the price increases rapidly with the number of detector heads.
 
-Most PET systems have a multi-crystal design, they consist of multiple rings (fig [21](#fig:jnpet)) of small detectors. The detectors are usually arranged in modules (fig [9](#fig:multicrystal)) to reduce the number of PMT’s.
+Most PET systems have a multi-crystal design, they consist of multiple rings ([](#fig:jnpet)) of small detectors. The detectors are usually arranged in modules ([](#fig:multicrystal)) to reduce the number of PMT’s.
 
 The performance of the PMT’s is not ideal for our purposes, and in addition they show small individual differences in their characteristics. In current gamma cameras and PET cameras the PMT-gain is computer controlled and procedures are available for automated PMT-tuning. But even after tuning, small differences in characteristics are still present. As a result, some corrections are required to ensure that the acquired information is reliable.
 
@@ -933,7 +943,8 @@ The performance of the PMT’s is not ideal for our purposes, and in addition th
 *The PMTs (represented as circles) have a non-linear response as a function of position. As a result, the image of a straight radioactive line would be distorted as in this drawing.*
 :::
 
-In section [??](#sec:single_crystal) we have seen that the position of a scintillation in a large crystal is computed as the first moment in {math}`x` and {math}`y` directions (the “mass” center of the PMT response). This would be exact if the PMT response would vary linearly with position. In reality, the response is not perfectly linear, and as a result, the image is distorted. Figure [28](#fig:linearity) illustrates how the image of a straight radioactive wire can be deformed by this non-linear response. The response is systematic, so it can be measured, and the errors {math}`\Delta_x` and {math}`\Delta_y` can be stored as a function of {math}`x` and {math}`y` in a lookup table. Correction is then straightforward:
+In section [](#sec:single_crystal) we have seen that the position of a scintillation in a large crystal is computed as the first moment in {math}`x` and {math}`y` directions (the “mass” center of the PMT response). This would be exact if the PMT response would vary linearly with position. In reality, the response is not perfectly linear, and as a result, the image is distorted. 
+[](#fig:linearity) illustrates how the image of a straight radioactive wire can be deformed by this non-linear response. The response is systematic, so it can be measured, and the errors {math}`\Delta_x` and {math}`\Delta_y` can be stored as a function of {math}`x` and {math}`y` in a lookup table. Correction is then straightforward:
 
 ```{math}
 \begin{align}
@@ -955,13 +966,13 @@ To measure the linearity, we must make an image of a *phantom*, a well known obj
 
 % =================================
 
-Recall that the energy of the detected photon was computed as the sum of all PMT responses (section [??](#sec:single_crystal)). Of course, the sum is dominated by the few PMTs close to the point of scintillation, the other PMT’s receive very few or even no scintillation photons. Because the PMT-characteristics show small individual differences, the computed energy is position dependent. This results in small shifts of the computed energy spectrum with position. The deviations are systematic (they vary only very slowly in time), so they can be measured and stored, so that a position dependent correction can be applied:
+Recall that the energy of the detected photon was computed as the sum of all PMT responses (section [](#sec:single_crystal)). Of course, the sum is dominated by the few PMTs close to the point of scintillation, the other PMT’s receive very few or even no scintillation photons. Because the PMT-characteristics show small individual differences, the computed energy is position dependent. This results in small shifts of the computed energy spectrum with position. The deviations are systematic (they vary only very slowly in time), so they can be measured and stored, so that a position dependent correction can be applied:
 
 ```{math}
 E_{\mbox{corrected}}(x,y) = E(x,y) + \Delta_E(x,y)
 ```
 
-It is important that the energy window is nicely symmetrical around the photopeak, small shifts of the window result in significant changes in the number of accepted photons (figure [29](#fig:energy_corr)). Consequently, if no energy correction is applied, the sensitivity for acceptable photons would be position dependent.
+It is important that the energy window is nicely symmetrical around the photopeak, small shifts of the window result in significant changes in the number of accepted photons ([](#fig:energy_corr)). Consequently, if no energy correction is applied, the sensitivity for acceptable photons would be position dependent.
 
 :::{figure} figs/fig_energy_corr.pdf
 :name: fig:energy_corr
@@ -1009,7 +1020,7 @@ we obtain for the number of photons detected in {math}`dx\ dy`:
 
 Thus, if we know the size of the detector and the uniformity error we will tolerate we can compute the required distance {math}`H`. You can verify that with {math}`H = 5 D`, where {math}`D` is the length of the crystal diagonal, the maximum error equals about 1.5%.
 
-The number of photons detected in every pixel is Poisson distributed. Recall from section [??](#sec:statistics) that the standard deviation of a Poisson number is proportional to the square root of the expected value. So if we accept an error (a standard deviation) of 0.5%, we need to continue the measurement until we have about 40000 counts per pixel. Computation of the uniformity correction matrix is straightforward:
+The number of photons detected in every pixel is Poisson distributed. Recall from section [](#sec:statistics) that the standard deviation of a Poisson number is proportional to the square root of the expected value. So if we accept an error (a standard deviation) of 0.5%, we need to continue the measurement until we have about 40000 counts per pixel. Computation of the uniformity correction matrix is straightforward:
 
 ```{math}
 \mbox{sensitivity\_corr}(x,y) = \frac{\mbox{mean}(I)}{I(x,y)}
@@ -1017,7 +1028,8 @@ The number of photons detected in every pixel is Poisson distributed. Recall fro
 
 where {math}`I` is the acquired image.
 
-Consequently, if a uniformity correction is applied to a planar image, one Poisson variable is divided by another one. The relative noise variance in the corrected image will be the sum of the relative noise variances on the two Poisson variables (see appendix [??](#app:error) for estimating the error on a function of noisy variables).
+Consequently, if a uniformity correction is applied to a planar image, one Poisson variable is divided by another one. The relative noise variance in the corrected image will be the sum of the relative noise variances on the two Poisson variables 
+(see appendix [](#app:error) for estimating the error on a function of noisy variables).
 
 (sec:normalization1)=
 ##### PET camera
@@ -1035,7 +1047,7 @@ Alternatively, an indirect approach can be used. A sinogram is acquired for a la
     \frac{\mbox{mean(sensitivity)}}{\mbox{sensitivity}(i)}.
 ```
 
-&#x20;A typical sensitivity sinogram is shown in figure [30](#fig:pet_norm). The sinogram is dominated by a regular pattern of zero sensitivity projection lines, which are due to small gaps between the detector blocks. In the projections one can see that there is a significant axial variation in the sensitivities. After normalization, the data from a uniform cylinder are indeed fairly uniform, except for these zero sensitivities. In iterative reconstruction, the data in these gaps are simply not used. For filtered backprojection, these data must first be filled with some interpolation algorithm.
+&#x20;A typical sensitivity sinogram is shown in [](#fig:pet_norm). The sinogram is dominated by a regular pattern of zero sensitivity projection lines, which are due to small gaps between the detector blocks. In the projections one can see that there is a significant axial variation in the sensitivities. After normalization, the data from a uniform cylinder are indeed fairly uniform, except for these zero sensitivities. In iterative reconstruction, the data in these gaps are simply not used. For filtered backprojection, these data must first be filled with some interpolation algorithm.
 
 
 
@@ -1052,7 +1064,7 @@ Alternatively, an indirect approach can be used. A sinogram is acquired for a la
 
 % =================================
 
-“Dead time” means that the system has a limited data processing capacity. If the data input is too high, a fraction of the data will be ignored because of lack of time. As a result, the measured count rate is lower than the true count rate, and the error increases with increasing true count rate. Figure [31](#fig:dead_time) shows the measured count rate as a function of the true count rate for a dead time of 700 ns. The gamma camera and the PET camera both have a finite dead time, consisting of several components. To describe the dead time, we will assume that all contributions can be grouped in two components, a front-end component and a data-processing component.
+“Dead time” means that the system has a limited data processing capacity. If the data input is too high, a fraction of the data will be ignored because of lack of time. As a result, the measured count rate is lower than the true count rate, and the error increases with increasing true count rate. [](#fig:dead_time) shows the measured count rate as a function of the true count rate for a dead time of 700 ns. The gamma camera and the PET camera both have a finite dead time, consisting of several components. To describe the dead time, we will assume that all contributions can be grouped in two components, a front-end component and a data-processing component.
 
 :::{figure} figs/fig_dead_time.pdf
 :name: fig:dead_time
@@ -1067,7 +1079,7 @@ Alternatively, an indirect approach can be used. A sinogram is acquired for a la
 
 % ------------------------------------
 
-Recall (section [??](#sec:single_crystal)) that the scintillation has a finite duration. E.g., the decay time of NaI(Tl) is 230 ns. The PMT response time adds a few ns. To have an accurate estimate of the energy, we need to integrate over a sufficient fraction of the PMT-outputs, such that most of the scintillation photons get the chance to contribute. Let us assume that the effective scintillation time is {math}`\tau_1 / 2`, and that we integrate over that time to compute position and energy. Then the result is only correct if no new scintillation starts during that period, and no old one is ending during that period (so the previous scintillation must be older than {math}`\tau_1/2`). Otherwise, part of this other scintillation will contribute as well, the energy will be overestimated and the photon is rejected. Consequently, a photon is only detected if in a time {math}`\tau_1` exactly one photon arrives. If we have a true count rate of {math}`R_0`, then we expect {math}`R_0 \tau_1` photons in the interval {math}`\tau_1`. Recall that the number of photons is Poisson distributed, so the probability of having 1 photon when {math}`R_0 \tau_1` are expected is {math}`\exp(- R_0 \tau_1) R_0 \tau_1`. This is the count per time {math}`\tau_1`, so the count rate of accepted events will be
+Recall (section [](#sec:single_crystal)) that the scintillation has a finite duration. E.g., the decay time of NaI(Tl) is 230 ns. The PMT response time adds a few ns. To have an accurate estimate of the energy, we need to integrate over a sufficient fraction of the PMT-outputs, such that most of the scintillation photons get the chance to contribute. Let us assume that the effective scintillation time is {math}`\tau_1 / 2`, and that we integrate over that time to compute position and energy. Then the result is only correct if no new scintillation starts during that period, and no old one is ending during that period (so the previous scintillation must be older than {math}`\tau_1/2`). Otherwise, part of this other scintillation will contribute as well, the energy will be overestimated and the photon is rejected. Consequently, a photon is only detected if in a time {math}`\tau_1` exactly one photon arrives. If we have a true count rate of {math}`R_0`, then we expect {math}`R_0 \tau_1` photons in the interval {math}`\tau_1`. Recall that the number of photons is Poisson distributed, so the probability of having 1 photon when {math}`R_0 \tau_1` are expected is {math}`\exp(- R_0 \tau_1) R_0 \tau_1`. This is the count per time {math}`\tau_1`, so the count rate of accepted events will be
 
 ```{math}
 :label: eq:deadtime_front
@@ -1106,7 +1118,7 @@ This function is monotonically increasing with upper limit {math}`1 /
 
 % ------------------------------------
 
-Combining ([48](#eq:deadtime_front)) and ([50](#eq:deadtime_proc)) tells us the acceptance rate for an incident photon rate of {math}`R_0`:
+Combining [](#eq:deadtime_front) and [](#eq:deadtime_proc) tells us the acceptance rate for an incident photon rate of {math}`R_0`:
 
 ```{math}
 R_2 = \frac{R_0 e^{-R_0 \tau_1}}{ 1 + R_0 e^{-R_0 \tau_1} \tau_2}.
@@ -1123,7 +1135,7 @@ If the count rates are small compared to the dead times (such that {math}`R_x
 \end{align}
 ```
 
-Applying this to ([48](#eq:deadtime_front)) and ([50](#eq:deadtime_proc)) yields:
+Applying this to [](#eq:deadtime_front) and [](#eq:deadtime_proc) yields:
 
 ```{math}
 \begin{align}
@@ -1159,8 +1171,8 @@ So if the count rate is relatively low, there is little difference between paral
 
 % =========================================
 
-The random coincidence was defined in section [??](#sec:petcollim): two non-related events may be detected simultaneously and be interpreted as a coincidence. There is no way to discriminate between true and random coincidences. However, there is a “simple” way to measure a reliable estimate of the number of randoms along every projection line. This is done via the delayed window technique.
+The random coincidence was defined in section [](#sec:petcollim): two non-related events may be detected simultaneously and be interpreted as a coincidence. There is no way to discriminate between true and random coincidences. However, there is a “simple” way to measure a reliable estimate of the number of randoms along every projection line. This is done via the delayed window technique.
 
-The number of randoms (equation ([40](#eq:pet_randoms))) was obtained by squaring the probability to measure a single event during a time window τ. In the delayed window technique, an additional time window is used, which is identical in length to the normal one but delayed over a short time interval. The data for the second window are monitored with the same coincidence electronics and algorithms as used for the regular coincidence detection, ignoring the delay between the windows. If a coincidence is obtained between an event in the normal and an event in the delayed window, then we know it has to be a random coincidence: because of the delay the events cannot be due to the same annihilation. Consequently, with regular windowing we obtain *trues + randoms1*, and with the delayed method we obtain a value *randoms2*. The values *randoms1* and *randoms2* are not identical because of Poisson noise, but at least their expectations are identical. Subtraction will eliminate the bias, but will increase the variance on the estimated number of trues. See appendix [??](#app:error) for some comments on error propagation.
+The number of randoms (equation [](#eq:pet_randoms)) was obtained by squaring the probability to measure a single event during a time window τ. In the delayed window technique, an additional time window is used, which is identical in length to the normal one but delayed over a short time interval. The data for the second window are monitored with the same coincidence electronics and algorithms as used for the regular coincidence detection, ignoring the delay between the windows. If a coincidence is obtained between an event in the normal and an event in the delayed window, then we know it has to be a random coincidence: because of the delay the events cannot be due to the same annihilation. Consequently, with regular windowing we obtain *trues + randoms1*, and with the delayed method we obtain a value *randoms2*. The values *randoms1* and *randoms2* are not identical because of Poisson noise, but at least their expectations are identical. Subtraction will eliminate the bias, but will increase the variance on the estimated number of trues. See appendix [](#app:error) for some comments on error propagation.
 
 

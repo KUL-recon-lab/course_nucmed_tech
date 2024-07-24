@@ -12,7 +12,7 @@ title: Interaction of photons with matter
 
 In nuclear medicine, photon energy ranges roughly from 60 to 600 keV. For example, {sup}`99m`Tc has an energy of 140 keV. This corresponds to a wave length of 9 pm and a frequency of 3.4 ×  Hz. At such energies, γ photons behave like particles rather than like waves.
 
-At these energies, the dominating interactions of photons with matter are photon-electron interactions: Compton scatter and photo-electric effect. As shown in figure [3](#fig:foto_compton_pair), the dominating interaction is a function of energy and electron number. For typical nuclear medicine energies, Compton scatter dominates in light materials (such as water and human tissue), and photo-electric effect dominates in high density materials. Pair production (conversion of a photon in an electron and a positron) is excluded for energies below 1022 keV, since each of the particles has a mass of 511 keV. Rayleigh scatter (absorption and re-emission of (all or a fraction of) the absorbed energy as a photon in a different direction) has a low probability.
+At these energies, the dominating interactions of photons with matter are photon-electron interactions: Compton scatter and photo-electric effect. As shown in [](#fig:foto_compton_pair), the dominating interaction is a function of energy and electron number. For typical nuclear medicine energies, Compton scatter dominates in light materials (such as water and human tissue), and photo-electric effect dominates in high density materials. Pair production (conversion of a photon in an electron and a positron) is excluded for energies below 1022 keV, since each of the particles has a mass of 511 keV. Rayleigh scatter (absorption and re-emission of (all or a fraction of) the absorbed energy as a photon in a different direction) has a low probability.
 
 (photo-electric-effect)=
 # Photo-electric effect
@@ -73,7 +73,7 @@ The expression {math}`m_e c^2` is the energy available in the mass of the electr
     \left( P(E_\gamma, \theta) + \frac{1}{P(E_\gamma, \theta)} - \sin^2\theta \right),
 ```
 
-where {math}`r_e` is the classical electron radius and {math}`P(E_\gamma, \theta)` is defined above. The cross section σ has the unit of area, Ω is the solid angle. Integrating over Ω would produce the total cross section for Compton scatter. For that integration, {math}`d\Omega` can be written as {math}`2 \pi \sin\theta \,d\theta` [^dBuExnTevh][^dBuExnTevh]: If you are not sure why, this is explained in the derivation of equation ([107](#eq:wellcounter)).. The differential cross section ([15](#eq:kleinnishina)) is shown for a few incoming photon energies in figure [5](#fig:kleinnishina). For higher energies, smaller scatter angles become increasingly likely.
+where {math}`r_e` is the classical electron radius and {math}`P(E_\gamma, \theta)` is defined above. The cross section σ has the unit of area, Ω is the solid angle. Integrating over Ω would produce the total cross section for Compton scatter. For that integration, {math}`d\Omega` can be written as {math}`2 \pi \sin\theta \,d\theta` [^dBuExnTevh][^dBuExnTevh]: If you are not sure why, this is explained in the derivation of equation [](#eq:wellcounter). The differential cross section [](#eq:kleinnishina) is shown for a few incoming photon energies in [](#fig:kleinnishina). For higher energies, smaller scatter angles become increasingly likely.
 
 :::{figure} figs/fig_klein_nishina.png
 :name: fig:kleinnishina
@@ -83,7 +83,7 @@ where {math}`r_e` is the classical electron radius and {math}`P(E_\gamma, \theta
 *The scattering-angle distribution for a few photon energies. Figure from Wikipedia (https://en.wikipedia.org/wiki/Klein-Nishina\_formula).*
 :::
 
-The probability of a Compton decreases very slowly with increasing {math}`E` (see fig. [6](#fig:atten_water)) and with increasing {math}`Z`.
+The probability of a Compton decreases very slowly with increasing {math}`E` (see [](#fig:atten_water)) and with increasing {math}`Z`.
 
 Because the energy of the photon after scattering is less than before, Compton scatter is sometimes also called “inelastic scattering”.
 
@@ -92,7 +92,7 @@ Because the energy of the photon after scattering is less than before, Compton s
 
 % %%%%%%%%%%%%%%%%%%%%
 
-Rayleigh scattering or coherent scattering can be regarded as the collision between a photon and an entire atom. Because of the huge mass of the atom, the photon is deflected from its original trajectory without any noticeable loss of energy (replace {math}`m_e c^2` with ∞ in ([14](#eq:jn_compton_energy))). Rayleigh scattering contributes only significantly at low energies, and can be safely ignored in typical nuclear medicine applications. Because the energy of the photon after scattering is the same as before, this effect is also called “elastic scattering”.
+Rayleigh scattering or coherent scattering can be regarded as the collision between a photon and an entire atom. Because of the huge mass of the atom, the photon is deflected from its original trajectory without any noticeable loss of energy (replace {math}`m_e c^2` with {math}`\infty` in [](#eq:jn_compton_energy)). Rayleigh scattering contributes only significantly at low energies, and can be safely ignored in typical nuclear medicine applications. Because the energy of the photon after scattering is the same as before, this effect is also called “elastic scattering”.
 
 (attenuation)=
 # Attenuation
@@ -107,7 +107,8 @@ Rayleigh scattering or coherent scattering can be regarded as the collision betw
 *Photon attenuation in water as a function of photon energy. The photo-electric component decreases approximately with {math}`(Z/E)^3` (of course, {math}`Z` is a constant here). The Compton components varies slowly.*
 :::
 
-The *linear attenuation coefficient* μ is defined as the probability of interaction per unit length (unit: cm{sup}`-1`). Figure [6](#fig:atten_water) shows the mass attenuation coefficients as a function of energy in water. Multiply the mass attenuation coefficient with the mass density to obtain the linear attenuation coefficient. When photons are traveling in a particular direction through matter, their number will gradually decrease, since some of them will interact with an electron and get absorbed (photo-electric effect) or deviated (Compton scatter) into another direction. By definition, the fraction that is eliminated over distance {math}`ds` equals {math}`\mu(s) N(s)`:
+The *linear attenuation coefficient* μ is defined as the probability of interaction per unit length (unit: cm{sup}`-1`). 
+[](#fig:atten_water) shows the mass attenuation coefficients as a function of energy in water. Multiply the mass attenuation coefficient with the mass density to obtain the linear attenuation coefficient. When photons are traveling in a particular direction through matter, their number will gradually decrease, since some of them will interact with an electron and get absorbed (photo-electric effect) or deviated (Compton scatter) into another direction. By definition, the fraction that is eliminated over distance {math}`ds` equals {math}`\mu(s) N(s)`:
 
 ```{math}
 :label: eq:diff_atten
@@ -115,7 +116,7 @@ The *linear attenuation coefficient* μ is defined as the probability of interac
 dN(s) = - \mu(s) N(s) ds.
 ```
 
-If initially {math}`N(a)` photons are emitted in point {math}`s = a` along the {math}`s`-axis, the number of photons {math}`N(d)` we expect to arrive in the detector at position {math}`s = d` is obtained by integrating ([16](#eq:diff_atten)):
+If initially {math}`N(a)` photons are emitted in point {math}`s = a` along the {math}`s`-axis, the number of photons {math}`N(d)` we expect to arrive in the detector at position {math}`s = d` is obtained by integrating [](#eq:diff_atten):
 
 ```{math}
 :label: jn:spectatten
@@ -133,7 +134,7 @@ Obviously, the attenuation of a photon depends on where it has been emitted.
 *Positron emitting point source in a non-uniform attenuator.*
 :::
 
-For positron emission, a pair of photons need to be detected. Since the fate of both photons is independent, the detection probabilities must be multiplied. Assume that one detector is positioned in {math}`s = d_1`, the second one in {math}`s = d_2`, and a point source in {math}`s = a`, somewhere between the two detectors. Assume further that during a measurement, {math}`N(a)` photon pairs were emitted along the {math}`s`-axis (fig.[7](#fig:jn_petatten)). The number of detected pairs then is:
+For positron emission, a pair of photons need to be detected. Since the fate of both photons is independent, the detection probabilities must be multiplied. Assume that one detector is positioned in {math}`s = d_1`, the second one in {math}`s = d_2`, and a point source in {math}`s = a`, somewhere between the two detectors. Assume further that during a measurement, {math}`N(a)` photon pairs were emitted along the {math}`s`-axis ([](#fig:jn_petatten)). The number of detected pairs then is:
 
 ```{math}
 :label: jn:petatten
@@ -146,7 +147,7 @@ For positron emission, a pair of photons need to be detected. Since the fate of 
 \end{align}
 ```
 
-Equation ([18](#eq:petatten)) shows that for PET, the effect of attenuation is independent of the position along the line of detection.
+Equation [](#eq:petatten) shows that for PET, the effect of attenuation is independent of the position along the line of detection.
 
 Photon-electron interactions will be more likely if there are more electrons per unit length. So dense materials (with lots of electrons per atom) have a high linear attenuation coefficient.
 
