@@ -24,6 +24,7 @@ To use a PET or gamma camera for these tasks would obviously be overkill (no ima
 % %%%%%%%%%%%%%%%%%%%%
 
 :::{figure} figs/fig_wellcounter.png
+:width: 150px
 :name: fig:wellcounter
 :align: center
 :alt: Diagram of a well counter, showing a test tube inside the well.
@@ -38,6 +39,7 @@ The crystal is usually several centimeters thick to further improve the detectio
 
 
 :::{figure} figs/fig_wellcountersens.png
+:width: 200px
 :name: fig:wellcountersens
 :alt: Left: diagram of a well counter, showing a test tube inside the well. Right: the geometrical sensitivity of the well counter to activity inside the tube, as a function of the depth inside the crystal (H = 2 cm).
 :::
@@ -101,6 +103,7 @@ If the voltage between the cathode and the anode is low, the electrons and ions 
 
 
 :::{figure} figs/fig_gasdetector.png
+:width: 500px
 :name: fig:gasdetector
 :alt: The gas detector. Left: the detector consists of a box containing a gas. In this drawing, the anode is a central wire, the cathode is the surrounding box. A photon or particle traveling through the gas produces ionizations, which produce a current between anode and cathode. Right: the current created by a particle depends on the applied voltage.
 
@@ -182,6 +185,7 @@ The high sensitivity at low energies can be problematic for isotopes such as {su
 :::
 
 :::{figure} figs/fig_dosecalib1.png
+:width: 400px
 :name: fig:dosecalib
 :alt: Left: loss of photons due to attenuation in the test tube, detector wall etc., probability of interaction of the photons with the gas and the number of ionisations that could be produced with the energy of the photon (in arbitrary units), all as a function of the photon energy. Right: the combination of these three effects yields the sensitivity of the radionuclide calibrator as a function of the photon energy (solid line). The dashed line shows the sensitivity when the sample is surrounded by an additional Cu-filter of 0.2 mm thick.
 :::
