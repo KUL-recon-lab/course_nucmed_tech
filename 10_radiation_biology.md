@@ -220,6 +220,7 @@ The half life of {sup}`123`I is 13.0 hours. The boxes are made of plastic or som
 
 
 :::{figure} figs/fig_biol_singlephoton.png
+:width: 400px
 :name: fig:biol-singlephoton
 :align: center
 :alt: Two objects, one with a radioactive source in the center. The size of the right box is 2 \times 2 \times 4 cm^3.
