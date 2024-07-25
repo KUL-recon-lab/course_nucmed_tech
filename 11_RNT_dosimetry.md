@@ -74,6 +74,7 @@ To be effective, the amount of radioactivity administered to the patient should 
 :::
 
 :::{figure} figs/fig_223Ra.png
+:width: 500px
 :name: fig:223Ra
 :align: center
 :alt: Decay scheme of   ^{223}Ra, based on .
@@ -172,6 +173,7 @@ This should really be done for each individual patient (“personalized dosimetr
 
 
 :::{figure} figs/fig_MIRD_average_man.png
+:width: 300px
 :name: fig:MIRD
 :align: center
 :alt: Left: representation of the average man for MIRD dose computation, as used in 1969 . Right: human body models based on non-uniform rational B-splines (NURBS) .
@@ -337,6 +339,7 @@ By taking directly the images of the activity distribution as input, the need fo
 {sup}`40`K is a naturally occurring radioactive isotope of potassium. Its abundance, i.e. the amount of {sup}`40`K in natural K, is 0.012%. Humans have approximately 2 g K per kg body weight. The half life of {sup}`40`K is {math}`1.25 \cdot 10^9` years. It decays by {math}`\beta^-` emission with a branching ratio of 90%, see [](#fig:40Kdecay). The mean energy of the emitted electron equals 0.59 MeV.
 
 :::{figure} figs/fig_40K_decay.png
+:width: 250px
 :name: fig:40Kdecay
 :align: center
 :alt: Decay scheme of ^{40}K.
@@ -402,6 +405,7 @@ To determine the activity to be administered, a low activity of {sup}`131`I is a
 [](#fig:thyroid) illustrates the calibration and activity monitoring with a photon counting detector (typically a NaI crystal with PMT). A standard setup is used to scan the patient, to ensure good reproducibility, such that after calibration the measurement is quantitative. For calibration, a phantom mimicking the geometry and attenuation of the neck is used, containing {sup}`131`I at the position of the thyroid.
 
 :::{figure} figs/fig_thyroid_therapy.png
+:width: 500px
 :name: fig:thyroid
 :align: center
 :alt: Thyroid therapy with ^{\it{131}}I. At different time points, activity measurements are done with a simple detector, calibrated with a phantom. A tracer kinetic model is applied to estimate the time activity curve from a few measurements. The figures are from . (RIU(t) denotes fractional ^{\it{131}}I uptake in the target tissue at time t, and k_t, k_B and k_T are time constants of the kinetic model.)
@@ -421,6 +425,7 @@ The compound mIBG (meta-iodobenzylguanidine) is taken up by cells of the sympath
 The aim of the {sup}`131`I-mIBG procedure, applied to treat children with metastatic neuroblastoma, is to achieve a whole body dose of 4 Gy. It has been shown that with this whole body dose, the dose to the neuroblastoma is sufficiently high and side effects are limited. To achieve this, the therapy is given in two fractions. The first fraction delivers a first whole body dose well below 4 Gy. In addition, the photons emitted by {sup}`131`I are used to determine the whole body dose. This is often done with a simple gamma detector and appropriate calibration, similar to what is shown in [](#fig:thyroid), but this time focusing on the entire body. Alternatively (and more accurately), planar imaging or SPECT can be used. From that measured dose and the known amount of administered activity in the first fraction, the amount of activity for the second fraction is computed, to obtain the target dose of 4 Gy.
 
 :::{figure} figs/fig_mIBG.png
+:width: 500px
 :name: fig:mibg
 :align: center
 :alt: The whole body doses achieved in 8 patients (left), and the activity that was administered to obtain this dose of approximately 4 Gy (right). The red and green blocks correspond to the first and second fraction, respectively. For patients 6 and 7, much more activity was needed to achieve the same whole body dose. Courtesy of Gaze et al. .
@@ -444,6 +449,7 @@ One approach to treating liver tumors is radioembolization, i.e. to release smal
 The liver is perfused not only by the hepatic artery, but also by the portal vein. Veins are typically outputting blood from organs, but the liver takes input from a vein too, because its task involves processing venous blood from the stomach, intestines and spleen. Healthy liver cells receive about 75% of their blood from the portal vein, and only 25% from the hepatic artery. In contrast, tumors take most of their blood from the hepatic artery. For that reason, the microspheres are released via a catheter that is maneuvered into the hepatic artery. To further increase selectivity, the catheter is steered into one or a few branches of the hepatic artery which are known to supply tumors. As illustrated in [](#fig:Sangro), a better healthy tissue sparing can be achieved when the tumor is more localized in the liver. For this reason, the treatment is called *selective internal radiation therapy* (SIRT).
 
 :::{figure} figs/fig_SIRT_Sangro.png
+:width: 500px
 :name: fig:Sangro
 :align: center
 :alt: Radioactive microspheres are sent into the liver through selected branches of the portal vein, targeting the tumors. .
@@ -504,6 +510,7 @@ Albumin microaggregates (MAA) are very small particles (a few microns) which ten
 
 
 :::{figure} figs/fig_SIRT_Tc_Y.png
+:width: 500px
 :name: fig:SirtMaaY
 :align: center
 :alt: Left: the 99mTc-MAA image (in color) fused with the corresponding CT image (black and white), from the pre-treatment SPECT/CT image. Right: the ^{90}Y-PET image fused with the corresponding MR image, from the post-treatment PET/MR image.
