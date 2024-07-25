@@ -6,7 +6,7 @@ channels:
 dependencies:
 - mystmd
 - imagemagick
-- numpy
+- numpy<2
 - scipy
 - matplotlib
 - jupyter
