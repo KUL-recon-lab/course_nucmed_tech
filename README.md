@@ -1,8 +1,7 @@
 # Course: Technology and Techniques in Nuclear Medicine
 
-## Build latex course pdf
+### Setup of myst conda environment
 
 ```
-cd latex
-latexmk -pdf main.tex
+mamba install mystmd imagemagick numpy scipy matplotlib
 ```

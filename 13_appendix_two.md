@@ -1,5 +1,5 @@
 ---
-title: Second appendix
+title: Appendix Two
 ---
 
 (app:expected_a_b)=
