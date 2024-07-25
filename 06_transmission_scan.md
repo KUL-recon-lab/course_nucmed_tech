@@ -31,6 +31,7 @@ where {math}`w_{ij}` is the detection sensitivity in absence of attenuation.
 Several configurations have been devised to enable transmission scanning on the gamma camera. As a transmission source, point sources, line sources and sheet sources have been proposed. [](#fig:specttrans) shows a scanning line source configuration. The line source is collimated both axially and transaxially. Collimation avoids photon emission along lines that are not accepted by the collimator in front of the crystal. Elimination of those photons reduces exposure to patient and personnel, and reduces the contribution of scattered photons.
 
 :::{figure} figs/fig_specttrans.png
+:width: 500px
 :name: fig:specttrans
 :align: center
 :alt: Scanning transmission source in a gamma camera. An electronic window is synchronized with the source, improving separation of transmission and emission counts.
@@ -43,6 +44,7 @@ The transmission isotope is selected to emit photons at an energy different from
 [](#fig:pettrans) shows a typical PET transmission configuration. One or a few rotating rod sources are used. In theory, a single photon emitter could be used, since the position of the rod sources is known at all times. However, current systems usually use a positron emitter, so separation based on energy windowing is not possible. Again, small electronic windows (selecting only projection lines involving a detector close to the source) are used, which reduce the emission contamination with a factor of about 40. The remaining contamination can be estimated from an emission sinogram acquired immediately before or after the transmission scan.
 
 :::{figure} figs/fig_pettrans.png
+:width: 600px
 :name: fig:pettrans
 :align: center
 :alt: Rotating transmission source in PET. As a reference, a blank scan is acquired daily.
@@ -51,6 +53,7 @@ The transmission isotope is selected to emit photons at an energy different from
 :::
 
 :::{figure} figs/fig_transproj.png
+:width: 600px
 :name: fig:transproj
 :align: center
 :alt: Left: emission PET projections. Right: transmission projections of the same patient.
@@ -79,6 +82,7 @@ The prior {math}`p(\Lambda)` is the probability we assign to the image {math}`\L
 [](#fig:pettranskort) shows the reconstructions of a 1 min transmission scan obtained with the same three algorithms. In this short scan, the noise is prominent. As a result, streak artifacts show up in the filtered backprojection image. The ML-image produces non-correlated noise with high amplitude. As argued in section [](#sec:regularization), this can be expected, since the true number of photons attenuated during the experiment in every pixel is subject to statistical noise. And if that number is small, the relative noise amplitude is large. The MAP-reconstruction is much smoother, because the prior assigns a low probability to noisy solutions. This image is a compromise between what we know from the data and what we (believe to) know a priori.
 
 :::{figure} figs/fig_pettranslang.png
+:width: 500px
 :name: fig:pettranslang
 :align: center
 :alt:  Reconstruction of a PET transmission scan of 10 min. Left: filtered backprojection; Center: MLTR; Right: MAP (Maximum a posteriori reconstruction).
@@ -87,6 +91,7 @@ The prior {math}`p(\Lambda)` is the probability we assign to the image {math}`\L
 :::
 
 :::{figure} figs/fig_pettranskort.png
+:width: 500px
 :name: fig:pettranskort
 :align: center
 :alt:  Reconstruction of a PET transmission scan of 1 min. Left: filtered backprojection; Center: MLTR; Right: MAP (Maximum a posteriori reconstruction).
@@ -107,6 +112,7 @@ Transmission scanning has never become very popular in SPECT, because the physic
 % =========================
 
 :::{figure} figs/fig_ct.png
+:width: 200px
 :name: fig:ct
 :align: center
 :alt: A CT system consists of a collimated X-ray tube and a detector mounted on a rotating gantry. The detector has tens to hundreds of rows, each consisting of about a thousand detector elements
@@ -152,6 +158,7 @@ Around 2000, the first PET/CT prototype system has been introduced. A PET-camera
 
 
 :::{figure} figs/fig_petct.png
+:width: 300px
 :name: fig:petct
 :align: center
 :alt: A PET/CT system consists of a PET and a CT system, sharing the same patient table.
@@ -164,6 +171,7 @@ Typically, a patient examination starts with a helical CT-scan from the head to 
 
 
 :::{figure} figs/fig_petctimg.png
+:width: 400px
 :name: fig:petctimg
 :align: center
 :alt: Images from a PET/CT system, allowing simultaneous inspection of anatomy and function.
@@ -194,6 +202,7 @@ The CT produces radiation by bombarding an anode with electrons in a vacuum tube
 
 
 :::{figure} figs/fig_ctspectrum.png
+:width: 300px
 :name: fig:ctspectrum
 :align: center
 :alt: Typical CT spectrum with continuous Bremsstrahlung and a few characteristic radiation peaks.
@@ -206,6 +215,7 @@ Human tissue consists mostly of very light atoms. For attenuation correction, th
 
 
 :::{figure} figs/fig_petctconversion.png
+:width: 400px
 :name: fig:petctconversion
 :align: center
 :alt: Piecewise linear conversion typically used in PET/CT software to move attenuation coefficients from 70 to 511 keV.
@@ -214,6 +224,7 @@ Human tissue consists mostly of very light atoms. For attenuation correction, th
 :::
 
 :::{figure} figs/fig_CTcontrast.png
+:width: 500px
 :name: fig:CTcontrast
 :align: center
 :alt: Left: CT image, acquisition with 30 mAs and no contrast. Right: CT image, acquisition with 140 mAs and intravenously injected contrast agent.
@@ -244,6 +255,7 @@ Another example is given in [](#fig:petctatcor). Because of potential attenuatio
 
 
 :::{figure} figs/fig_petctbreathing.png
+:width: 500px
 :name: fig:petctbreathing
 :align: center
 :alt: PET/CT attenuation artifact due to breathing. The tumor is really located in the liver, but the mismatch with the CT and the resulting attenuation correction errors make it show up in the lung.This figure is from a paper by Sarikaya, Yeung, Erdi and Larson, Clinical Nuclear Medicine, 2003; 11: 943
@@ -252,6 +264,7 @@ Another example is given in [](#fig:petctatcor). Because of potential attenuatio
 :::
 
 :::{figure} figs/fig_petctatcor.png
+:width: 500px
 :name: fig:petctatcor
 :align: center
 :alt: Coronal slice of a whole body PET/CT study reconstructed without (A) and with (C) attenuation correction based on a whole body CT (B). PET and CT are combined in a fusion image (D). The relative intensity of the subcutaneous metastasis (small arrow) compared to the primary tumor (large arrow) is much higher in the non corrected image than in the corrected one, because the activity in this peripheral lesion is much less attenuated than the activity in the primary tumor. A striking artifact in (A) is the apparent high uptake in the skin and the lungs. Note also that regions of homogenous uptake, such as the heart (thick arrow), are no longer homogenous, but show a gradient. The uptake in the left side of the brain (dotted arrow) is apparently lower than in the contralateral one in (C). The fusion image shows that the head did move between the acquisition of the CT and the emission data, resulting in an apparent decrease in activity in the left side of the brain due errors in the attenuation correction.
