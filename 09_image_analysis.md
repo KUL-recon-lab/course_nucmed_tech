@@ -47,6 +47,7 @@ The SUV is a way to quantify the tracer concentration. But we don’t really wan
 % ========================
 
 :::{figure} figs/fig_dyncardio.png
+:width: 500px
 :name: fig:dyncardio
 :align: center
 :alt: Four samples from a dynamic study. Each sample shows a short axis and long axis slice through the heart. The wall of the left ventricle is delineated. 20 s after injection, the tracer is in the right ventricle. At 40 s it arrives in the left ventricle. At 3 min, the tracer is accumulating in the ventricular wall. At 20 min, the tracer concentration in the wall is increased, resulting in better image quality.
@@ -73,6 +74,7 @@ The most important factor determining the dynamic behavior of ammonia is blood f
 In this section, the three compartment model is described. It is a relatively general model and can be used for a few different tracers. We will focus on the tracer {sup}`18`F-fluorodeoxyglucose (FDG), which is a glucose analog. “Analog” means that it is *no* glucose, but that it is sufficiently similar to follow, to some extent, the same metabolic pathway as glucose. In fact, it is a better tracer than radioactive glucose, because it is trapped in the cell, while glucose is not. When glucose enters the cell, it is metabolized and the metabolites may escape from the cell. As a result, radioactive glucose will never give a strong signal. In contrast, FDG is not completely metabolized (because of the missing oxide), and the radioactive {sup}`18`F atom stays in the cell. If the cells have a high metabolism, a lot of tracer will get accumulated resulting in a strong signal (many photons will be emitted from such a region, so the signal to noise ratio in the reconstructed image will be good).
 
 :::{figure} figs/fig_kinemodel.png
+:width: 500px
 :name: fig:kinemodel
 :align: center
 :alt: Three compartment model, and corresponding regions in a cardiac study. The first compartment represents plasma concentration (blood pool ROI), the second and third compartment represent the extavascular tracer in original and metabolized form (tissue ROI). For the tissue curve, both the measured points and the fitted curve are shown.
@@ -89,6 +91,7 @@ To analyse the tracer concentration curves with the compartmental model, regions
 
 
 :::{figure} figs/fig_kinemodel2.png
+:width: 600px
 :name: fig:kinemodel2
 :align: center
 :alt: The time-dependent tracer concentration in the blood and the rate constants in the tissue region determine the evolution of the tissue tracer concentration. The blood interacts with a large amount of tissue. Since the tissue region we study is small, its effect on the blood concentration is negligible.
@@ -262,6 +265,7 @@ C_I(t) = \frac{K_1 k_2}{k_2 + k_3} \int_0^t C_P(u) e^{-(k_2 + k_3)(t - u)}du
 ```
 
 :::{figure} figs/fig_3comp_ci.png
+:width: 500px
 :name: fig:3comp_ci
 :align: center
 :alt: The tracer amount C_I(t) and its two terms when C_P(t) is a step function (equation (%s)).
@@ -540,6 +544,7 @@ where {math}`E(x)` is the expectation of {math}`x`. Variance can be directly com
 In many cases, there is the possibility to trade in variance for bias by smoothing or imposing some constraints. Consequently, if images are compared, bias and variance must be separated. If an image has better bias for the same variance, it is probably a “better” image. If an image has larger bias and lower variance when compared to another image, the comparison is meaningless.
 
 :::{figure} figs/fig_bias_var.png
+:width: 500px
 :name: fig:bias_var
 :align: center
 :alt: Top: a simulated true block wave and two measurements A and B with different noise distributions. Bottom: the true block wave and the same measurements, smoothed with a simple rectangular smoothing kernel.
