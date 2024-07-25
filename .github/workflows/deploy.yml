@@ -36,6 +36,13 @@ jobs:
       - uses: mamba-org/setup-micromamba@v1
         with:
           environment-file: environment.yml
+          init-shell: >-
+            bash
+          cache-environment: true
+          post-cleanup: 'all'
+      - name: Import numpy in micromamba environment (bash)
+        run: python -c "import numpy"
+        shell: bash -el {0}
       #- name: Install MyST Markdown
       #  run: npm install -g mystmd
       - name: Build HTML Assets
