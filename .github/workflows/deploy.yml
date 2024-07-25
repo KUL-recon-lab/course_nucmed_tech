@@ -33,8 +33,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18.x
-      - name: Install MyST Markdown
-        run: npm install -g mystmd
+      - uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-file: environment.yml
+      #- name: Install MyST Markdown
+      #  run: npm install -g mystmd
       - name: Build HTML Assets
         run: myst build --html --execute
       - name: Upload artifact

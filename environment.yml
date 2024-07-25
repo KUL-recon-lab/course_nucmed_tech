@@ -1,0 +1,13 @@
+name: course-nucmed-myst
+
+channels:
+- conda-forge
+
+dependencies:
+- mystmd
+- imagemagick
+- numpy
+- scipy
+- matplotlib
+- parallelproj
+
