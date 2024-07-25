@@ -47,6 +47,7 @@ jobs:
       #  run: npm install -g mystmd
       - name: Build HTML Assets
         run: myst build --html --execute
+        shell: bash -el {0}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
