@@ -287,7 +287,6 @@ The 1D Fourier transform of {math}`q(s,\theta)` along {math}`s` equals:
   Q_1(\nu_s, \theta) &= \int_{-\infty}^{\infty} q(s, \theta) e^{-j2\pi \nu_s s} ds \nonumber \\
   &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\lambda(s\cos\theta - r\sin\theta, 
                           s\sin\theta + r\cos\theta)e^{-j2\pi \nu_s s} dr ds
-      
 \end{align}
 ```
 

@@ -174,7 +174,6 @@ Therefore, the left hand side of equation [](#eq:appmlem_k) can be rewritten as
   - \int k(X | Q, \Lambda) \ln k(X | Q, M(\Lambda)) dX \\
 &= \int k(X | Q, \Lambda)
         \ln \frac{k(X | Q, \Lambda)}{k(X | Q, M(\Lambda))} dX, 
-        
 \end{align}
 ```
 
@@ -258,7 +257,6 @@ where {math}`\delta(x)` is the delta function: {math}`\delta(x) = 1` if {math}`x
   b(x,y) &= \int_0^\pi q(x \cos\theta + y\sin\theta, \theta)
                 d\theta \nonumber\\
          &= \int_0^\pi \delta(x\cos\theta + y\sin\theta) d\theta
-                
 \end{align}
 ```
 

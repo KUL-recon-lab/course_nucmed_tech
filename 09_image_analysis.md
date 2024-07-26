@@ -238,7 +238,6 @@ where we have assumed that at time {math}`t=0` (time of injection) all tracer am
   c_I(s) &= c_E(s) + c_M(s) \\
          &= \left( \frac{K_1}{s + k_2 + k_3} 
                     + \frac{K_1 k_3}{s (s + k_2 + k_3)}\right) c_P(s)
-           
 \end{align}
 ```
 

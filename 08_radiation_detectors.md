@@ -66,7 +66,6 @@ Substituting {math}`H'(\alpha') = R \sin(\alpha'))` one obtains:
  &=  \frac{1}{2} \left. (- \cos(\alpha')) \right|_0^\alpha \nonumber\\
  &=  \frac{1}{2} (1 - \cos(\alpha)) 
      \;\; = \;\; \frac{1}{2}\left(1 - \frac{D}{\sqrt{D^2 + H^2}}\right)
-     
 \end{align}
 ```
 

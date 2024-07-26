@@ -152,7 +152,6 @@ For positron emission, a pair of photons need to be detected. Since the fate of 
   N(d_1,d_2) &= N(a)  e^{- \int_{d_1}^a \mu(s) ds} e^{- \int_a^{d_2} \mu(s)
              ds} \\
              &= N(a)  e^{- \int_{d_1}^{d_2} \mu(s) ds}.
-
 \end{align}
 ```
 

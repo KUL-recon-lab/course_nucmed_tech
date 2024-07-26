@@ -48,7 +48,6 @@ where {math}`\lambda(s)` is the activity in {math}`s`. For the PET camera, the s
   q(b) &= \int_a^b \lambda(s) e^{- \int_a^s \mu(\xi) d\xi} 
                              e^{- \int_s^b \mu(\xi) d\xi} ds \\
   &= e^{- \int_a^b \mu(\xi) d\xi} \int_a^b \lambda(s) ds.
-        
 \end{align}
 ```
 
