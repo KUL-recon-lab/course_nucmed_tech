@@ -76,7 +76,10 @@ The expression {math}`m_e c^2` is the energy available in the mass of the electr
     \left( P(E_\gamma, \theta) + \frac{1}{P(E_\gamma, \theta)} - \sin^2\theta \right),
 ```
 
-where {math}`r_e` is the classical electron radius and {math}`P(E_\gamma, \theta)` is defined above. The cross section σ has the unit of area, Ω is the solid angle. Integrating over Ω would produce the total cross section for Compton scatter. For that integration, {math}`d\Omega` can be written as {math}`2 \pi \sin\theta \,d\theta` [^dBuExnTevh][^dBuExnTevh]: If you are not sure why, this is explained in the derivation of equation [](#eq:wellcounter). The differential cross section [](#eq:kleinnishina) is shown for a few incoming photon energies in [](#fig:kleinnishina). For higher energies, smaller scatter angles become increasingly likely.
+where {math}`r_e` is the classical electron radius and {math}`P(E_\gamma, \theta)` is defined above. The cross section σ has the unit of area, Ω is the solid angle. Integrating over Ω would produce the total cross section for Compton scatter. For that integration, {math}`d\Omega` can be written as {math}`2 \pi \sin\theta \,d\theta` [^dBuExnTevh]
+[^dBuExnTevh]: If you are not sure why, this is explained in the derivation of equation [](#eq:wellcounter). 
+
+The differential cross section [](#eq:kleinnishina) is shown for a few incoming photon energies in [](#fig:kleinnishina). For higher energies, smaller scatter angles become increasingly likely.
 
 :::{figure} figs/fig_klein_nishina.png
 :name: fig:kleinnishina

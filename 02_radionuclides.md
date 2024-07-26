@@ -41,7 +41,7 @@ There are many ways in which unstable isotopes can decay. Depending on the decay
     *   The resulting daughter product of the above transmutation can also be in an excited state, in which case it rapidly decays to a more stable nuclear arrangement, releasing the excess energy as one or more γ photons. The nucleons are unchanged, so there is no additional transmutation in decay from excited to ground state.
 
     *   The daughter nucleus of the decay process may also be in a metastable or isomeric state. In contrast to an excited state, the life time of a metastable state is "much longer" [^ugZOrASKtY]
-    [^ugZOrASKtY]: The boundary between excited and metastable is usually said to be about  s, which is rather short in practice. But the half life of some isomers is in the order of days or years..
+    [^ugZOrASKtY]: The boundary between excited and metastable is usually said to be about s, which is rather short in practice. But the half life of some isomers is in the order of days or years.
 
     When it finally decays, it does so by emitting a photon. In many metastable isotopes, this photon may be immediately absorbed by an electron of the very same atom, as a result of which that electron is ejected. This is called a (internal) conversion electron. The kinetic energy of the ejected electron is equal to the difference between the energy of the photon and the electron binding energy.
 

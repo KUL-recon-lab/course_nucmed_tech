@@ -620,7 +620,10 @@ This equation has a simple intuitive explanation:
     \mbox{backprojection of $f$ equals: } b_j = \sum_i c_{ij} f_i.
     ```
 
-    We have seen the continuous version of the backprojection in [](#eq:jnbackproj). The digital version clearly shows that backprojection is the transpose (or the adjoint) of projection [^l8ZaYv4Zt1][^l8ZaYv4Zt1]: The adjoint of a matrix is its conjugate transpose. Because the projection coefficients are real values, the adjoint of the projection matrix is its transpose. : the operations are identical, except that backprojection sums over {math}`i`, while projection sums over {math}`j`. Note that if the projection takes attenuation into account, the backprojection does so to. The backprojection does not attempt to correct for attenuation (it is not the inverse), it simply applies the same attenuation factors as in the forward projection.
+    We have seen the continuous version of the backprojection in [](#eq:jnbackproj). The digital version clearly shows that backprojection is the transpose (or the adjoint) of projection [^l8ZaYv4Zt1]
+    [^l8ZaYv4Zt1]: The adjoint of a matrix is its conjugate transpose. Because the projection coefficients are real values, the adjoint of the projection matrix is its transpose. 
+    
+    The operations are identical, except that backprojection sums over {math}`i`, while projection sums over {math}`j`. Note that if the projection takes attenuation into account, the backprojection does so to. The backprojection does not attempt to correct for attenuation (it is not the inverse), it simply applies the same attenuation factors as in the forward projection.
 
 3.  Finally, the backprojected image is normalized and multiplied with the current reconstruction image. It is clear that if the measured and computed sinograms are identical, the entire operation has no effect. If the measured projection values are higher than the computed ones, the reconstruction values tend to get increased.
 

@@ -155,7 +155,9 @@ The time integrated activity {math}`\tilde A` has no units, since Bq is the numb
 
 and therefore {math}`\tilde A(r_S) = \tilde a(r_S) A_0`. 
 The unit of {math}`\tilde a` is time, and for that reason it was called the *residence time*. 
-If all the administered activity {math}`A_0` would stay for a short duration {math}`\tilde a(r_S)` in the region {math}`r_S` and then vanish, then the same {math}`\tilde A(r_S)` would be obtained. Since 2009, {math}`\tilde a(r_S)` is called the *time-integrated activity coefficient* of {math}`r_S` [^w6qBGbp2DM][^w6qBGbp2DM]: In 2009, the MIRD committee adopted a standardization of nomenclature (Journal of Nuclear Medicine, 2009; 50: 477-484)..
+If all the administered activity {math}`A_0` would stay for a short duration {math}`\tilde a(r_S)` in the region {math}`r_S` and then vanish, then the same {math}`\tilde A(r_S)` would be obtained. Since 2009, {math}`\tilde a(r_S)` is called the *time-integrated activity coefficient* of {math}`r_S` [^w6qBGbp2DM]
+
+[^w6qBGbp2DM]: In 2009, the MIRD committee adopted a standardization of nomenclature (Journal of Nuclear Medicine, 2009; 50: 477-484)..
 
 To apply equation [](#eq:mirddose) for treatment planning or verification, we need
 
@@ -244,9 +246,6 @@ k_{\dot D}(t) = \alpha \dot D(t) + 2 \beta D(t) \dot D(t)
 ```
 
 The first term corresponds to a single lethal hit at time {math}`t`. The second corresponds to the lethal combination of two sublethal hits, one which happened between 0 and {math}`t`, and the second one at time {math}`t`.
-
-
-
 [^t5hYUpKegJ]
 
 [^t5hYUpKegJ]: The factor 2 in the second term of [](#eq:kdotD) is added to make the final expression [](#eq:BED) slightly shorter. We can add any factor, it will be absorbed in β, which must be determined from measurements.
@@ -292,7 +291,10 @@ The G-factor is called the Lea-Catcheside factor (after the authors who derived 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Several software tools have been developed and commercialized to support dosimetry calculations. The first tools (e.g. Olinda/EXM, [^cSFbKGFd6J][^cSFbKGFd6J]: Organ Level INternal Dose Assessment & EXponential Modeling developed by Vanderbilt University, TN, USA and recently commercialized) focused on dosimetry for diagnostic imaging procedures. This kind of software takes as input the activity values in organs at a few different time points, and provides
+Several software tools have been developed and commercialized to support dosimetry calculations. The first tools (e.g. Olinda/EXM, [^cSFbKGFd6J] focused on dosimetry for diagnostic imaging procedures. This kind of software takes as input the activity values in organs at a few different time points, and provides
+
+
+[^cSFbKGFd6J]: Organ Level INternal Dose Assessment & EXponential Modeling developed by Vanderbilt University, TN, USA and recently commercialized) 
 
 *   pre-computed S-values based on anatomical models, such as in [](#fig:MIRD) (and listed in MIRD pamphlet 11), for many radionuclides, and
 
