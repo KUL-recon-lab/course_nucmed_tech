@@ -42,13 +42,13 @@ q(b) = \int_a^b \lambda(s) e^{- \int_s^b \mu(\xi) d\xi} ds,
 where {math}`\lambda(s)` is the activity in {math}`s`. For the PET camera, the situation is similar, except that it must detect both photons. Both have a different probability of surviving attenuation. Since the detection is only valid if both arrive, and since their fate is independent, we must multiply the survival probabilities:
 
 ```{math}
+q(b) = \int_a^b \lambda(s) e^{- \int_a^s \mu(\xi) d\xi} e^{- \int_s^b \mu(\xi) d\xi} ds
+```
+
+```{math}
 :label: eq:pet_proj
 
-\begin{align}
-  q(b) &= \int_a^b \lambda(s) e^{- \int_a^s \mu(\xi) d\xi} 
-                             e^{- \int_s^b \mu(\xi) d\xi} ds \\
-  &= e^{- \int_a^b \mu(\xi) d\xi} \int_a^b \lambda(s) ds.
-\end{align}
+q(b) = e^{- \int_a^b \mu(\xi) d\xi} \int_a^b \lambda(s) ds.
 ```
 
 In CT, only the attenuation coefficients are unknown. In emission tomography, both the attenuation and the source distribution are unknown. In PET, the attenuation is the same for the entire projection line, while in single photon emission, it is different for every point on the line.
@@ -249,14 +249,15 @@ As mentioned before, the PET camera consisting of detector rings measures all pr
 This Fourier-based reconstruction works, but usually an alternative expression is used, called “filtered backprojection”. To explain it, we must first define the operation *backprojection*:
 
 ```{math}
+b(x,y) = \int_0^\pi q(x \cos \theta + y \sin \theta, \theta) d \theta \nonumber
+```
+
+```{math}
 :label: eq:jnbackproj
 
-\begin{align}
- b(x,y) &= \int_0^\pi q(x \cos \theta + y \sin \theta, \theta) d \theta
-             \nonumber\\
-      &= \mbox{Backproj} \left( q(s, \theta) \right). 
-\end{align}
+b(x,y) = \mbox{Backproj} \left( q(s, \theta) \right). 
 ```
+
 
 :::{figure} figs/fig_backproj.png
 :width: 400px
@@ -453,13 +454,15 @@ Obviously, this is going to be a very small number: e.g. {math}`p(q_i = 15 | r_i
 Maximizing [](#eq:mllik) is equivalent to maximizing its logarithm, since the logarithm is monotonically increasing. When maximizing over {math}`\Lambda`, factors not depending on {math}`\lambda_j` can be ignored, so we will drop {math}`q_i!` from the equations. The resulting log-likelihood function is
 
 ```{math}
+L(Q | \Lambda) = \sum_i q_i \ln(r_i) - r_i
+```
+
+```{math}
 :label: eq:likelihood
 
-\begin{align}
-  L(Q | \Lambda) &= \sum_i q_i \ln(r_i) - r_i \\
-                 &= \sum_i q_i \ln(\sum_j c_{ij} \lambda_j) - \sum_j c_{ij} \lambda_j . 
-\end{align}
+L(Q | \Lambda) = \sum_i q_i \ln(\sum_j c_{ij} \lambda_j) - \sum_j c_{ij} \lambda_j . 
 ```
+
 
 It turns out that the Hessian (the matrix of second derivatives) is negative definite if the matrix {math}`c_{ij}` has maximum rank. In practice, this means that the likelihood function has a single maximum, provided that a sufficient amount of different detector positions {math}`i` were used.
 

@@ -251,14 +251,15 @@ q(s, \theta) = \delta(s),
 where {math}`\delta(x)` is the delta function: {math}`\delta(x) = 1` if {math}`x = 0`, and {math}`\delta(x) = 0` if {math}`x \neq 0`. The backprojection {math}`b(x,y)` is then given by
 
 ```{math}
+b(x,y) = \int_0^\pi q(x \cos\theta + y\sin\theta, \theta) d\theta \nonumber
+```
+
+```{math}
 :label: eq:app2bp1
 
-\begin{align}
-  b(x,y) &= \int_0^\pi q(x \cos\theta + y\sin\theta, \theta)
-                d\theta \nonumber\\
-         &= \int_0^\pi \delta(x\cos\theta + y\sin\theta) d\theta
-\end{align}
+b(x,y) = \int_0^\pi \delta(x\cos\theta + y\sin\theta) d\theta
 ```
+
 
 To proceed, the argument of the delta function must be changed. This can be done with the following expression:
 

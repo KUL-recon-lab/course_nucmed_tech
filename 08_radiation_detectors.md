@@ -58,15 +58,16 @@ where the value of {math}`H'` in the integral goes from {math}`H'(0) = 0` to {ma
 Substituting {math}`H'(\alpha') = R \sin(\alpha'))` one obtains:
 
 ```{math}
+\begin{align}
+ \mbox{escape-chance}(D) &= \frac{1}{4\pi R^2}\int_0^\alpha 2\pi R^2 \sin(\alpha') d\alpha' \nonumber\\
+ &=  \frac{1}{2} \left. (- \cos(\alpha')) \right|_0^\alpha
+\end{align}
+```
+
+```{math}
 :label: eq:wellcounter
 
-\begin{align}
-  \mbox{escape-chance}(D)
- &= \frac{1}{4\pi R^2}\int_0^\alpha 2\pi R^2 \sin(\alpha') d\alpha' \nonumber\\
- &=  \frac{1}{2} \left. (- \cos(\alpha')) \right|_0^\alpha \nonumber\\
- &=  \frac{1}{2} (1 - \cos(\alpha)) 
-     \;\; = \;\; \frac{1}{2}\left(1 - \frac{D}{\sqrt{D^2 + H^2}}\right)
-\end{align}
+\mbox{escape-chance}(D) =  \frac{1}{2} (1 - \cos(\alpha)) \;\; = \;\; \frac{1}{2}\left(1 - \frac{D}{\sqrt{D^2 + H^2}}\right)
 ```
 
 And the chance that the photon will be detected equals

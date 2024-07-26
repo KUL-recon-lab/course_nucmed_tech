@@ -146,13 +146,12 @@ Obviously, the attenuation of a photon depends on where it has been emitted.
 For positron emission, a pair of photons need to be detected. Since the fate of both photons is independent, the detection probabilities must be multiplied. Assume that one detector is positioned in {math}`s = d_1`, the second one in {math}`s = d_2`, and a point source in {math}`s = a`, somewhere between the two detectors. Assume further that during a measurement, {math}`N(a)` photon pairs were emitted along the {math}`s`-axis ([](#fig:jn_petatten)). The number of detected pairs then is:
 
 ```{math}
-:label: eq:petatten
+N(d_1,d_2) = N(a)  e^{- \int_{d_1}^a \mu(s) ds} e^{- \int_a^{d_2} \mu(s) ds}
+```
 
-\begin{align}
-  N(d_1,d_2) &= N(a)  e^{- \int_{d_1}^a \mu(s) ds} e^{- \int_a^{d_2} \mu(s)
-             ds} \\
-             &= N(a)  e^{- \int_{d_1}^{d_2} \mu(s) ds}.
-\end{align}
+```{math}
+:label: eq:petatten
+   N(d_1,d_2) = N(a)  e^{- \int_{d_1}^{d_2} \mu(s) ds}.
 ```
 
 Equation [](#eq:petatten) shows that for PET, the effect of attenuation is independent of the position along the line of detection.

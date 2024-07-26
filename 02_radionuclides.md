@@ -146,12 +146,13 @@ t_{\frac{1}{2}}  = \frac{\ln 2}{\alpha} .
 As shown in appendix [](#app:poisson), the probability of measuring {math}`n` photons, when {math}`r` photons are expected equals
 
 ```{math}
+p_r(n) = \frac{e^{-r} r^n}{n!}
+```
+
+```{math}
 :label: eq:Poisson
 
-\begin{align}
-  p_r(n) &= \frac{e^{-r} r^n}{n!}  \\
-         &= e^{-r} \frac{r}{1} \frac{r}{2} \frac{r}{3} \ldots \frac{r}{n}
-\end{align}
+ p_r(n) = e^{-r} \frac{r}{1} \frac{r}{2} \frac{r}{3} \ldots \frac{r}{n}
 ```
 
 This is a Poisson distribution with {math}`r` the average number of expected photons. The mean of the distribution is {math}`r`, and the standard deviation equals {math}`\sqrt{r}`. For large {math}`r`, it can be well approximated by a Gaussian with mean {math}`r` and standard deviation {math}`\sqrt{r}`:

@@ -374,15 +374,15 @@ To calculate (approximately) the total collimator sensitivity, expression [](#eq
 
 
 ```{math}
+\mbox{sens} = \frac{1}{4 \pi H^2} \int_0^R (1 - \frac{r T}{a H}) 2 \pi r dr \nonumber
+```
+
+```{math}
 :label: eq:collim:sens
 
-\begin{align}
-\mbox{sens} &= \frac{1}{4 \pi H^2}
-                  \int_0^R (1 - \frac{r T}{a H}) 2 \pi r dr \nonumber \\
-            &= \frac{1}{4 \pi H^2}\frac{\pi R^2}{3}
-             = \frac{1}{12} \left( \frac{a}{T} \right)^2 
-\end{align}
+\mbox{sens} = \frac{1}{4 \pi H^2}\frac{\pi R^2}{3} = \frac{1}{12} \left( \frac{a}{T} \right)^2 
 ```
+
 
 with
 
