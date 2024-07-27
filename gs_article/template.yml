@@ -41,9 +41,7 @@ packages:
   - geometry
   - babel
   - fontenc
-  - lmodern
   - inputenc
-  - helvet
   - hyperref
   - microtype
   - sectsty

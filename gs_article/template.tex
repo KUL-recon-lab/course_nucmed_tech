@@ -15,12 +15,10 @@
 \usepackage[a4paper,top=3.0cm,bottom=2.5cm,left=3.0cm,right=3.0cm, headheight=1cm]{geometry}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
 \usepackage[utf8]{inputenc}
 \usepackage{datetime}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage[scaled=0.95]{helvet}
 \usepackage[colorlinks]{hyperref}
 \hypersetup{linkcolor = black, citecolor = black, urlcolor = blue}
 \usepackage{microtype}
@@ -52,10 +50,10 @@
 \date{\displaydate{articleDate}}
 
 \author{[# for author in doc.authors -#]
-\bfseries\sffamily [-author.name-]\mdseries\\
+\mdseries [-author.name-]\\
 [#- if author.affiliations #]
 [# for affiliation in author.affiliations #]
-\sffamily [-affiliation.value.name-][# if not loop.last #], [# endif #]
+\small [-affiliation.value.name-][# if not loop.last #], [# endif #]
 [# endfor #]\\
 [#- endif -#]
 [#- if not loop.last -#]
