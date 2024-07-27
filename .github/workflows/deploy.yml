@@ -40,6 +40,8 @@ jobs:
             bash
           cache-environment: true
           post-cleanup: 'all'
+      - name: Install TeXlive
+        run: sudo apt-get update && sudo apt-get install texlive texlive-publishers texlive-science latexmk 
       - name: Build pdf version
         run: myst build --pdf --execute
         shell: bash -el {0}
