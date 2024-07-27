@@ -1,0 +1,96 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copy in your template with your latex document!
+
+[# if options.draft #]
+\documentclass[draft, twoside, 11pt]{article}
+[# else #]
+\documentclass[twoside, 11pt]{article}
+[# endif #]
+
+\PassOptionsToPackage{nodayofweek}{datetime}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You should have an imports section
+\usepackage[a4paper,top=3.0cm,bottom=2.5cm,left=3.0cm,right=3.0cm, headheight=1cm]{geometry}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage{datetime}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[scaled=0.95]{helvet}
+\usepackage[colorlinks]{hyperref}
+\hypersetup{linkcolor = black, citecolor = black, urlcolor = blue}
+\usepackage{microtype}
+\usepackage{sectsty}
+\usepackage[font={small},labelfont={sf,bf}, margin=0cm, indention = 0cm]{caption}
+\usepackage{fancyhdr}
+
+\bibliographystyle{abbrvnat}
+
+% change font of setion titles
+\allsectionsfont{\sffamily\bfseries}
+
+% change header
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyhead[LE,RO]{\sffamily\bfseries \thepage}
+\fancyhead[RE,LO]{\sffamily\bfseries \rightmark}
+
+\setlength{\parindent}{0cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+[- IMPORTS -]
+
+\title{\bfseries\sffamily [-doc.title-]}
+
+\newdate{articleDate}{[-doc.date.day-]}{[-doc.date.month-]}{[-doc.date.year-]}
+\date{\displaydate{articleDate}}
+
+\author{[# for author in doc.authors -#]
+\bfseries\sffamily [-author.name-]\mdseries\\
+[#- if author.affiliations #]
+[# for affiliation in author.affiliations #]
+\sffamily [-affiliation.value.name-][# if not loop.last #], [# endif #]
+[# endfor #]\\
+[#- endif -#]
+[#- if not loop.last -#]
+\and
+[#- endif -#]
+[#- endfor -#]
+}
+
+\begin{document}
+
+\maketitle
+
+\clearpage
+
+\tableofcontents
+
+[# if parts.abstract -#]
+\begin{abstract}
+Abstract: [-parts.abstract-]
+\end{abstract}
+[#- endif -#]
+[#- if doc.keywords -#]
+\keywords{[-doc.keywords|join(", ")-]}
+[# endif #]
+
+[# if parts.abstract #]
+\begin{abstract}
+[-parts.abstract-]
+\end{abstract}
+[# endif #]
+
+[-CONTENT-]
+
+[# if doc.bibliography #]
+\bibliography{[- doc.bibliography | join(", ") -]}
+[# endif #]
+
+\end{document}

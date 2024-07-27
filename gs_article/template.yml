@@ -1,0 +1,51 @@
+jtex: v1
+title: 'gs_article'
+description: 'simple article template'
+version: 1.0.0
+license: Apache-2.0
+source: 'https://example.com/author-guidelines/latex-submission'
+thumbnail: ./thumbnail.png
+authors:
+  - name: 'Georg Schramm'
+    website: 'https://gschramm.github.io'
+    affiliations:
+      - 'KU Leuven'
+tags:
+  - article
+parts:
+  - id: abstract
+    required: false
+    description: >
+      A good abstract will begin with a short description of the problem being
+      addressed, briefly describe the new data or analyses, then briefly states
+      the main conclusion(s) and how they are supported and uncertainties.
+doc:
+  - id: title
+    required: true
+  - id: authors
+    required: true
+  - id: bibliography
+  - id: date
+  - id: keywords
+
+options:
+  - type: boolean
+    id: draft
+    description: Mark the document as draft
+files:
+  - template.tex
+packages:
+  - datetime
+  - amsmath
+  - amssymb
+  - geometry
+  - babel
+  - fontenc
+  - lmodern
+  - inputenc
+  - helvet
+  - hyperref
+  - microtype
+  - sectsty
+  - small
+  - fancyhdr

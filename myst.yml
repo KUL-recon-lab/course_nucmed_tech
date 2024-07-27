@@ -38,6 +38,9 @@ project:
   export:
     - format: pdf
       output: export/course.pdf
+      template: ./gs_article
+    - format: tex
+      template: ./gs_article
 
   downloads:
     - file: export/course.pdf
@@ -48,6 +51,6 @@ project:
     
 site:
   template: book-theme
-  # options:
+  #options:
+    #logo: logo.png
   #   favicon: favicon.ico
-  #   logo: site_logo.png
