@@ -42,6 +42,8 @@ The crystal is usually several centimeters thick to further improve the detectio
 :width: 200px
 :name: fig:wellcountersens
 :alt: Left: diagram of a well counter, showing a test tube inside the well. Right: the geometrical sensitivity of the well counter to activity inside the tube, as a function of the depth inside the crystal (H = 2 cm).
+
+Left: diagram of a well counter, showing a test tube inside the well. Right: the geometrical sensitivity of the well counter to activity inside the tube, as a function of the depth inside the crystal (H = 2 cm).
 :::
 
 One problem of the well counter is that its sensitivity varies with the position of the source inside the crystal: the deeper a point source is positioned inside the crystal, the smaller the chance that its photons will escape through the entrance of the cavity. A simple approximate calculation illustrates the effect. Suppose that the radius of the cylindrical cavity is {math}`H` and that a point source is positioned centrally in the hole at a depth {math}`D`. As illustrated in [](#fig:wellcountersens), we have to compute the solid angle of the entrance, as seen from the point source, to obtain the chance that a photon escapes. A similar computation was done near equation [](#eq:collim:fwhm), but this time, we cannot ignore the curvature of the sphere surface, because the entrance hole is fairly large:
@@ -188,6 +190,8 @@ The high sensitivity at low energies can be problematic for isotopes such as {su
 :width: 400px
 :name: fig:dosecalib
 :alt: Left: loss of photons due to attenuation in the test tube, detector wall etc., probability of interaction of the photons with the gas and the number of ionisations that could be produced with the energy of the photon (in arbitrary units), all as a function of the photon energy. Right: the combination of these three effects yields the sensitivity of the radionuclide calibrator as a function of the photon energy (solid line). The dashed line shows the sensitivity when the sample is surrounded by an additional Cu-filter of 0.2 mm thick.
+
+Left: loss of photons due to attenuation in the test tube, detector wall etc., probability of interaction of the photons with the gas and the number of ionisations that could be produced with the energy of the photon (in arbitrary units), all as a function of the photon energy. Right: the combination of these three effects yields the sensitivity of the radionuclide calibrator as a function of the photon energy (solid line). The dashed line shows the sensitivity when the sample is surrounded by an additional Cu-filter of 0.2 mm thick.
 :::
 
 Just like the well counter, the dosis calibrator can measure the background contribution and correct for it during measurements of radioactive sources.

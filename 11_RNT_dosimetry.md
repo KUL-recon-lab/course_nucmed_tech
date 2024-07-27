@@ -180,7 +180,9 @@ This should really be done for each individual patient (“personalized dosimetr
 :width: 300px
 :name: fig:MIRD
 :align: center
-:alt: Left: representation of the average man for MIRD dose computation, as used in 1969 . Right: human body models based on non-uniform rational B-splines (NURBS) .
+:alt: Left: representation of the average man for MIRD dose computation, as used in 1969 . Right: human body models based on non-uniform rational B-splines (NURBS)
+
+ Left: representation of the average man for MIRD dose computation, as used in 1969 . Right: human body models based on non-uniform rational B-splines (NURBS).
 :::
 
 When the patient model is available, the S-value can be computed with equation [](#eq:Svalue) for every region pair and for all radionuclides of interest. For electrons, positrons and α-particles, one can usually assume that their energy is deposited locally. That makes the calculation of 

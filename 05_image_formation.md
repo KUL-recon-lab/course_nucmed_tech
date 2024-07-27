@@ -100,6 +100,8 @@ Before discussing how the activity and/or attenuation distributions can be recon
 :name: fig:renalroi
 :align: center
 :alt: Summing all frames of the dynamic renal study yields the image on the left, where the kidneys can be easily delineated. The total count in these regions as a function of time (time activity curves or TACs) are shown on the right, revealing a distinct difference in kidney function.
+
+Summing all frames of the dynamic renal study yields the image on the left, where the kidneys can be easily delineated. The total count in these regions as a function of time (time activity curves or TACs) are shown on the right, revealing a distinct difference in kidney function.
 :::
 
 The dynamic behaviour of the tracer can be measured by acquiring a series of consecutive images. To study the function of the kidneys, a {sup}`99m`Tc labeled tracer (in this example ethylene dicysteine, known as {sup}`99m`Tc-EC) is injected, and its renal uptake is studied over time. The first two minutes after injection, 120 images of 1 s are acquired to study the perfusion. Then, about a hundred planar images are acquired over 40 min to study the clearance. [](#fig:renaldyn) and [](#fig:renalroi) show the results in a patient with one healthy and one poorly functioning kidney.
@@ -341,6 +343,8 @@ Mathematically, filtered backprojection is identical to Fourier-based reconstruc
 :width: 400px
 :name: fig:rampfilter
 :alt: The rampfilter in the frequency domain (left) and its point spread function (right). The latter is by definition also the mask needed to compute the filter with a convolution in the spatial domain.
+
+The rampfilter in the frequency domain (left) and its point spread function (right). The latter is by definition also the mask needed to compute the filter with a convolution in the spatial domain.
 
 :::
 
