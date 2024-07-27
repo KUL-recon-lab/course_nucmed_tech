@@ -42,6 +42,7 @@ jobs:
           post-cleanup: 'all'
       - name: Build pdf version
         run: myst build --pdf --execute
+        shell: bash -el {0}
       - name: Build HTML Assets
         run: myst build --html --execute
         shell: bash -el {0}
