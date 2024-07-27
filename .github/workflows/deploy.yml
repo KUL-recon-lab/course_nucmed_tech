@@ -51,7 +51,7 @@ jobs:
       - name: Upload artifact pdf
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './course.pdf'
+          path: 'export'
       - name: Upload artifact html
         uses: actions/upload-pages-artifact@v1
         with:

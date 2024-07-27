@@ -37,10 +37,10 @@ project:
 
   export:
     - format: pdf
-      output: course.pdf
+      output: export/course.pdf
 
   downloads:
-    - file: course.pdf
+    - file: export/course.pdf
       title: PDF version of the course
   
   settings:
