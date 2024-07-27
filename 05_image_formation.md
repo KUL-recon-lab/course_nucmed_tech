@@ -168,15 +168,14 @@ The line consists of the points {math}`\vec{p} + \vec{r}`, with {math}`\vec{p} =
 Such an ideal projection {math}`q` is then defined as follows (using the conventions of [](#fig:sinogram)):
 
 ```{math}
+
+q(s, \theta) = \int_{(x,y) \in \; \mbox{projection line}} \lambda(x,y) dx dy
+```
+
+```{math}
 :label: eq:jnidealproj
 
-\begin{align}
-q(s, \theta) &= \int_{(x,y) \in \; \mbox{projection line}}
-                  \lambda(x,y) dx dy\\
-             &= \int_{-\infty}^{\infty}
-        \lambda(s \cos \theta + r \sin \theta,
-                s \sin \theta - r \cos \theta) dr. 
-\end{align}
+q(s, \theta) = \int_{-\infty}^{\infty} \lambda(s \cos \theta + r \sin \theta, s \sin \theta - r \cos \theta) dr. 
 ```
 
 The point {math}`(s \cos \theta, s \sin \theta)` is the point on the projection line closest to the center of the field of view. 

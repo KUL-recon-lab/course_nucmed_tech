@@ -230,15 +230,18 @@ s c_M(s) = k_3 c_E(s)
 where we have assumed that at time {math}`t=0` (time of injection) all tracer amounts are zero. From [](#eq:sc_E) we find {math}`c_E(s)` as a function of {math}`c_P(s)`. Inserting in [](#eq:sc_M) produces {math}`c_M(s)` as a function of {math}`c_P(s)`.
 
 ```{math}
-:label: eq:c_I
 
 \begin{align}
   c_E(s) &= \frac{K_1}{s + k_2 + k_3} c_P(s)\\
   c_M(s) &= \frac{K_1 k_3}{s (s + k_2 + k_3)} c_P(s)\\
   c_I(s) &= c_E(s) + c_M(s) \\
-         &= \left( \frac{K_1}{s + k_2 + k_3} 
-                    + \frac{K_1 k_3}{s (s + k_2 + k_3)}\right) c_P(s)
 \end{align}
+```
+
+```{math}
+:label: eq:c_I
+
+c_I(s) = \left( \frac{K_1}{s + k_2 + k_3}  + \frac{K_1 k_3}{s (s + k_2 + k_3)}\right) c_P(s)
 ```
 
 The two factors in {math}`s` can be split from the denominator using the equation
@@ -325,7 +328,6 @@ The solution is {math}`C_E(t) = A e^{-\beta t}`. Now we assume that the solution
 Inserting this in [](#eq:vp1) we obtain:
 
 ```{math}
-:label: eq:vp2
 
 \begin{align}
    \frac{d ( A(t) \; e^{-\beta t})}{dt} 
@@ -337,12 +339,14 @@ Inserting this in [](#eq:vp1) we obtain:
    \frac{d A(t)}{dt} \; e^{-\beta t} &= K_1 C_P(t)\\
 \Leftrightarrow  \hspace{5mm} 
    A(t) &= K_1 \int_0^t C_P(u) e^{\beta u} du\\
-\Leftrightarrow  \hspace{5mm} 
-   C_E(t) = A(t)  \; e^{-\beta t}
-      &= K_1 \int_0^t C_P(u) e^{- \beta (t -u)} du 
 \end{align}
 ```
 
+```{math}
+:label: eq:vp2
+
+C_E(t) = A(t)  \; e^{-\beta t} = K_1 \int_0^t C_P(u) e^{- \beta (t -u)} du 
+```
 
 
 Having solved the equation for the first tissue compartment, we can use {math}`C_E(t)` to find the activity in the second compartment. We simply insert [](#eq:vp2) in the equation [](#eq:C_M) for {math}`C_M(t)` to obtain:
@@ -395,17 +399,19 @@ We apply this trick to get rid of the inner integral in [](#eq:vp3) as follows:
 With these definitions, the left hand side of [](#eq:vptrick) is equal to [](#eq:vp3). Note that {math}`g(0) = 0` here, which makes things slightly simpler. The trick converts [](#eq:vp3) into:
 
 ```{math}
-:label: eq:vp4
 
-\begin{align}
- C_M(t) &= K_1 k_3 \left( 
+ C_M(t) = K_1 k_3 \left( 
   -\frac{e^{-\beta t}}{\beta} \int_0^t  C_P(u) e^{\beta u} du
   - \int_0^t (-\frac{e^{-\beta u}}{\beta}) C_P(u) e^{\beta u} du
-   \right) \nonumber \\
- &= \frac{K_1 k_3}{k_2 + k_3} \left(
+   \right) \nonumber
+```
+
+```{math}
+:label: eq:vp4
+
+ C_M(t) = \frac{K_1 k_3}{k_2 + k_3} \left(
    - \int_0^t C_P(u) e^{-(k_2 + k_3) (t -u)} du + \int_0^t C_P(u) du
  \right) 
-\end{align}
 ```
 
 where we have replaced β again with {math}`k_2 + k_3`. Finally, to obtain {math}`C_I(t) = C_E(t) + C_M(t)` 

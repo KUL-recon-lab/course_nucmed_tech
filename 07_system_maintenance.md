@@ -71,14 +71,13 @@ Uniformity is evaluated by acquiring a uniform image. As a phantom, either a poi
 For quantitative analysis, the influence of Poisson noise must be minimized by acquiring a large amount of counts (typically 10000) per pixel. Acquisition time will be in the order of an hour. Two parameters are computed from an image reduced to 64 × 64 pixels:
 
 ```{math}
+\mbox{Integral uniformity} = \frac{max - min}{max + min} \times 100 \%
+```
+
+```{math}
 :label: eq:int_unif
 
-\begin{align}
- \mbox{Integral uniformity} &= \frac{max - min}{max + min} \times 100 \%
-      \\
- \mbox{Differential uniformity} &= \max_{i=1..N} \left( \mbox{regional
- uniformity $i$}, \right)
-\end{align}
+\mbox{Differential uniformity} = \max_{i=1..N} \left( \mbox{regional uniformity $i$}, \right)
 ```
 
 where the regional uniformity is computed by applying [](#eq:int_unif) to a small line interval containing only 5 pixels, and this for all possible vertical and horizontal line intervals. The differential uniformity is always a bit smaller than the integral uniformity, and insensitive to gradual changes in image intensity.

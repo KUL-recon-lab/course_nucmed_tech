@@ -134,15 +134,17 @@ Since the dose rate in {math}`r_T` depends on all the radioactivity inside the p
 The dose in {math}`r_T` is obtained by integrating over time:
 
 ```{math}
-:label: eq:mirddose
-
 \begin{align}
   D(r_T) &= \int_0^{T_D} \dot{D}(r_T, t)\;dt \nonumber\\
      &\simeq \sum_j S\left(r_T \leftarrow r_{S_j} \right)
-        \int_0^{T_D} A\left(r_{S_j},t\right) dt \nonumber\\
-     &= \sum_j S\left(r_T \leftarrow r_{S_j} \right)
-        \tilde A \left(r_{S_j} \right) 
+        \int_0^{T_D} A\left(r_{S_j},t\right) dt \nonumber
 \end{align}
+```
+
+```{math}
+:label: eq:mirddose
+
+D(r_T) = \sum_j S\left(r_T \leftarrow r_{S_j} \right) \tilde A \left(r_{S_j} \right) 
 ```
 
 {math}`T_D` is some interesting time duration. In many cases, one can set {math}`T_D = \infty`, because the effective half life (combining decay half life and the biogical dynamics) of the radionuclide will be short. {math}`\tilde A` is the time integrated activity. To put {math}`S` in front of the integral sign, we had to make the common approximation that it does not depend on time.
@@ -255,32 +257,36 @@ The first term corresponds to a single lethal hit at time {math}`t`. The second 
 Integration over time produces
 
 ```{math}
-:label: eq:BED
-
 \begin{align}
   \mbox{BED} &= \int_0^T k_{\dot D}(t) dt \nonumber\\
   &= \alpha \int_0^T \dot D(t) dt
       + 2 \beta \int_0^T D(t) \dot D(t) dt\nonumber\\
   &= \alpha \int_0^T \frac{dD(t)}{dt} dt
       + 2 \beta \int_0^T D(t)\frac{dD(t)}{dt} dt\nonumber\\
-  &= \alpha D(T) + \beta \int_0^T \frac{d D^2(t)}{dt} dt \nonumber\\
-  &= \alpha D(T) + \beta D^2(T) 
+  &= \alpha D(T) + \beta \int_0^T \frac{d D^2(t)}{dt} dt \nonumber
 \end{align}
+```
+
+```{math}
+:label: eq:BED
+
+\mbox{BED} = \alpha D(T) + \beta D^2(T) 
 ```
 
 This expression can be further refined to include also the effect of repair mechanisms. After sublethal damage, the cell may be able to undo that damage, in which case it would survive a second sublethal hit. Assume for convenience that the probability of repair is constant over time, such that a fraction μ of the damaged cells heal themselves per unit of time. Then if {math}`M` cells took a sublethal hit at time {math}`s`, only {math}`M e^{-\mu (t - s)}` of them would still be damaged at time {math}`t > s`. Adjusting equation [](#eq:BED) accordingly produces
 
 ```{math}
+\mbox{BED} =\;\; \alpha \int_0^T \dot D(t) dt + 2 \beta \int_0^T \dot D(t) dt \int_0^t \dot D(s) e^{-\mu(t-s)}ds \nonumber
+```
+
+```{math}
 :label: eq:BEDrepair
 
-\begin{align}
-  \mbox{BED} &=\;\; \alpha \int_0^T \dot D(t) dt
-  + 2 \beta \int_0^T \dot D(t) dt
-  \int_0^t \dot D(s) e^{-\mu(t-s)}ds \nonumber\\
-  &=\;\; \alpha D(T) + \beta \, G \, D^2(T) \\
-  \mbox{with\;\;} G &=\;\; \frac{2}{D^2(T)} \int_0^T \dot D(t) dt
-    \int_0^t \dot D(s) e^{-\mu(t-s)}ds \nonumber
-\end{align}
+\mbox{BED} =\;\; \alpha D(T) + \beta \, G \, D^2(T)
+```
+
+```{math}
+\mbox{with\;\;} G =\;\; \frac{2}{D^2(T)} \int_0^T \dot D(t) dt \int_0^t \dot D(s) e^{-\mu(t-s)}ds \nonumber
 ```
 
 The G-factor is called the Lea-Catcheside factor (after the authors who derived these equations). It is easy to check that with {math}`\mu =

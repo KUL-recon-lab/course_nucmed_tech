@@ -171,12 +171,13 @@ N_{iA} =  \int_0^{\infty} n_{iA}(t) dt,
 where {math}`n_{iA}(t)` is the number of particles emitted per s at time {math}`t`. For some applications, it is reasonable to assume that the tracer behaviour is dominated by its physical decay. Then we have that
 
 ```{math}
+  N_{iA} = n_{iA}(0) \int_0^{\infty} e^{- \ln(2) \frac{t}{t_{1/2}}} dt \nonumber
+```
+
+```{math}
 :label: eq:biol_decay
 
-\begin{align}
-  N_{iA} &= n_{iA}(0) \int_0^{\infty} e^{- \ln(2) \frac{t}{t_{1/2}}} dt \nonumber\\
-         &= n_{iA}(0) \frac{t_{1/2}}{\ln(2)}. 
-\end{align}
+N_{iA} = n_{iA}(0) \frac{t_{1/2}}{\ln(2)}. 
 ```
 
 Here {math}`n_{iA}(0)` is the number of particles or photons emitted per s at time 0, and {math}`t_{1/2}` is the half life. For a source of 1 MBq at time 0, {math}`n_{iA}(0) = 10^6` per s, since 1 Bq is defined as 1 emission per s.

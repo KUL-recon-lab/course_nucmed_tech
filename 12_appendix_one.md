@@ -176,17 +176,19 @@ Keep in mind that these derivations only hold for *independent* samples. If some
 We have two variables {math}`a` and {math}`b` with mean {math}`\overline{a}` and {math}`\overline{b}` and variance {math}`\sigma_a^2` and {math}`\sigma_b^2`. We compute {math}`a \pm b` and estimate the corresponding variance {math}`\sigma_{a \pm b}^2`.
 
 ```{math}
-:label: eq:app_sumerror
-
 \begin{align}
 \sigma_{a \pm b}^2 &= E\left[\left((a \pm b) - (\overline{a} \pm \overline{b}) \right)^2\right]
            \nonumber\\
  &= E\left[(a-\overline{a})^2\right] + E\left[(b-\overline{b})^2\right] \pm E\left[2(a-\overline{a})(b-\overline{b})\right]
            \nonumber\\
- &= E\left[(a-\overline{a})^2\right] + E\left[(b-\overline{b})^2\right] \pm 2 E\left[(a-\overline{a})\right]E\left[(b-\overline{b})\right]
-           \nonumber\\
- &= \sigma_a^2 + \sigma_b^2, 
+ &= E\left[(a-\overline{a})^2\right] + E\left[(b-\overline{b})^2\right] \pm 2 E\left[(a-\overline{a})\right]E\left[(b-\overline{b})\right] \nonumber
 \end{align}
+```
+
+```{math}
+:label: eq:app_sumerror
+
+\sigma_{a \pm b}^2 = \sigma_a^2 + \sigma_b^2, 
 ```
 
 because the expectation of {math}`(a - \overline{a})` is zero. The expectation {math}`E\left[(a-\overline{a})(b-\overline{b})\right]` is the covariance of {math}`a` and {math}`b`. The expectation of the product is the product of the expectations if the variables are independent samples, and therefore, the covariance of independent variables is zero.
@@ -201,13 +203,16 @@ So in linear combinations the noise adds up, even if the variables are subtracte
 For independent variables, the expectation of the product is the product of the expectations, so we have:
 
 ```{math}
-:label: eq:app_noise_prod1
-
 \begin{align}
  \sigma_{ab}^2 &= E\left[\left( ab - \overline{a} \overline{b}\right)^2\right] \nonumber\\
-  &= E\left[a^2b^2\right] + \overline{a}^2\overline{b}^2 - E\left[2 a b \overline{a} \overline{b}\right] \nonumber\\
-  &= E\left[a^2\right] E\left[b^2\right] - \overline{a}^2 \overline{b}^2 
+  &= E\left[a^2b^2\right] + \overline{a}^2\overline{b}^2 - E\left[2 a b \overline{a} \overline{b}\right] \nonumber
 \end{align}
+```
+
+```{math}
+:label: eq:app_noise_prod1
+
+ \sigma_{ab}^2 = E\left[a^2\right] E\left[b^2\right] - \overline{a}^2 \overline{b}^2 
 ```
 
 This expression is not very useful, it must be rewritten as a function of {math}`\overline{a}`, {math}`\overline{b}`, {math}`\sigma_a` and {math}`\sigma_b`. To obtain that, we rewrite {math}`a` as {math}`\overline{a} + (a - \overline{a})`:
@@ -281,13 +286,13 @@ q(s, \theta) = \int_{-\infty}^{\infty} \lambda(s \cos\theta - r\sin\theta,
 The 1D Fourier transform of {math}`q(s,\theta)` along {math}`s` equals:
 
 ```{math}
+ Q_1(\nu_s, \theta) = \int_{-\infty}^{\infty} q(s, \theta) e^{-j2\pi \nu_s s} ds \nonumber
+```
+
+```{math}
 :label: eq:Q1
 
-\begin{align}
-  Q_1(\nu_s, \theta) &= \int_{-\infty}^{\infty} q(s, \theta) e^{-j2\pi \nu_s s} ds \nonumber \\
-  &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\lambda(s\cos\theta - r\sin\theta, 
-                          s\sin\theta + r\cos\theta)e^{-j2\pi \nu_s s} dr ds
-\end{align}
+ Q_1(\nu_s, \theta) = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\lambda(s\cos\theta - r\sin\theta,  s\sin\theta + r\cos\theta)e^{-j2\pi \nu_s s} dr ds
 ```
 
 Now consider the 2D Fourier transform of {math}`\lambda(x,y)`:
@@ -433,24 +438,25 @@ The Laplace transform is defined as:
 The Laplace transform is very useful in computations involving differential equations, because integrals and derivatives with respect to {math}`t` are transformed to very simple functions of {math}`s`. Some of its interesting features are listed below (most are easy to prove). The functions of the time are at the left, the corresponding Laplace transforms are at the right:
 
 ```{math}
-:label: eq:lap1
-
 \begin{align}
 F(t)                        & \Longleftrightarrow f(s) \\
 \frac{dF(t)}{dt}            & \Longleftrightarrow s f(s) - F(0) \\
 e^{at} F(t)                 & \Longleftrightarrow f(s - a)\\
-\int_0^t F(u) G(t - u) du   & \Longleftrightarrow f(s) g(s) 
+\int_0^t F(u) du            & \Longleftrightarrow \frac{f(s)}{s}\\
+1                           & \Longleftrightarrow \frac{1}{s}
 \end{align}
+```
+
+```{math}
+:label: eq:lap1
+
+\int_0^t F(u) G(t - u) du  \Longleftrightarrow f(s) g(s) 
 ```
 
 ```{math}
 :label: eq:lap2
 
-\begin{align}
-\int_0^t F(u) du            & \Longleftrightarrow \frac{f(s)}{s}\\
-1                           & \Longleftrightarrow \frac{1}{s}\\
-e^{at}                      & \Longleftrightarrow \frac{1}{s - a} 
-\end{align}
+e^{at} \Longleftrightarrow \frac{1}{s - a} 
 ```
 
 By combining [](#eq:lap1) and [](#eq:lap2) one obtains

@@ -136,12 +136,7 @@ Now, from equation [](#eq:appmlem_h2) we can compute what happens with {math}`L`
 ```{math}
 :label: eq:appmlem_l
 
-\begin{align}
-  L(M(\Lambda)) - L(\Lambda) &=
-  h(M(\Lambda) | \Lambda) - h(\Lambda, \Lambda) \nonumber \\
-  &  + E\left[\ln k(X | Q, \Lambda) | Q,\Lambda\right] 
-       - E\left[\ln k(X | Q, M(\Lambda)) | Q,\Lambda\right] 
-\end{align}
+L(M(\Lambda)) - L(\Lambda) = h(M(\Lambda) | \Lambda) - h(\Lambda, \Lambda) + E\left[\ln k(X | Q, \Lambda) | Q,\Lambda\right] - E\left[\ln k(X | Q, M(\Lambda)) | Q,\Lambda\right] 
 ```
 
 Because {math}`M` is a GEM-algorithm, we already know that {math}`h(M(\Lambda) | \Lambda) - h(\Lambda, \Lambda)` 
@@ -160,21 +155,20 @@ then we have proven that every GEM-step increases the likelihood {math}`L`.\
 By definition, we have
 
 ```{math}
-E\left[\ln k(X | Q, \Lambda') | Q,\Lambda\right] =
-     \int k(X | Q, \Lambda) \ln k(X | Q, \Lambda') dX.
+E\left[\ln k(X | Q, \Lambda') | Q,\Lambda\right] = \int k(X | Q, \Lambda) \ln k(X | Q, \Lambda') dX.
 ```
 
 Therefore, the left hand side of equation [](#eq:appmlem_k) can be rewritten as
 
 ```{math}
-:label: eq:appmlem_k2
+\int k(X | Q, \Lambda) \ln k(X | Q, \Lambda) dX - \int k(X | Q, \Lambda) \ln k(X | Q, M(\Lambda)) dX,
+```
 
-\begin{align}
-&  \int k(X | Q, \Lambda) \ln k(X | Q, \Lambda) dX 
-  - \int k(X | Q, \Lambda) \ln k(X | Q, M(\Lambda)) dX \\
-&= \int k(X | Q, \Lambda)
-        \ln \frac{k(X | Q, \Lambda)}{k(X | Q, M(\Lambda))} dX, 
-\end{align}
+which can be written as
+
+```{math}
+:label: eq:appmlem_k2
+\int k(X | Q, \Lambda) \ln \frac{k(X | Q, \Lambda)}{k(X | Q, M(\Lambda))} dX, 
 ```
 
 with the additional requirement that 
