@@ -40,10 +40,16 @@ jobs:
             bash
           cache-environment: true
           post-cleanup: 'all'
+      - name: Build pdf version
+        run: myst build --pdf --execute
       - name: Build HTML Assets
         run: myst build --html --execute
         shell: bash -el {0}
-      - name: Upload artifact
+      - name: Upload artifact pdf
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: './course.pdf'
+      - name: Upload artifact html
         uses: actions/upload-pages-artifact@v1
         with:
           path: './_build/html'

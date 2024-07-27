@@ -37,7 +37,14 @@ project:
 
   export:
     - format: pdf
-      output: exports/course.pdf
+      output: course.pdf
+
+  downloads:
+    - file: course.pdf
+      title: PDF version of the course
+  
+  settings:
+    output_matplotlib_strings: remove
     
 site:
   template: book-theme
