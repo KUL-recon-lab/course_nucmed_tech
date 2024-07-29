@@ -20,6 +20,7 @@ project:
     orcid: 0000-0002-2251-3195
 
   github: https://github.com/KUL-recon-lab/course_nucmed_tech
+  jupyter: true
    
   toc:
     - file: 00_root.md
@@ -36,7 +37,11 @@ project:
     - file: 11_RNT_dosimetry.md
     - file: 12_appendix_one.md
     - file: 13_appendix_two.md
-    - file: 14_appendix_three.md
+    - title: Interactive notebooks
+      children:
+        - file: notebooks/simple_plot.ipynb
+        - file: notebooks/animated_plot.ipynb
+        - file: notebooks/DIY_filtered_back_projection.ipynb
 
   export:
     - format: pdf
