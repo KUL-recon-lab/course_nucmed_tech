@@ -10,5 +10,5 @@ dependencies:
 - scipy
 - matplotlib
 - jupyter
-- parallelproj
+- parallelproj>=1.10.0
 

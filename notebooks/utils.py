@@ -1,6 +1,6 @@
 import abc
 from collections.abc import Sequence
-from numpy.array_api._array_object import Array
+from parallelproj import Array
 
 from types import ModuleType
 from array_api_compat import get_namespace, device
