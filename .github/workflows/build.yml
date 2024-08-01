@@ -1,0 +1,29 @@
+name: MyST GitHub Pages Test Build
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+      - uses: mamba-org/setup-micromamba@v1
+        with:
+          environment-file: environment.yml
+          init-shell: >-
+            bash
+          cache-environment: true
+          post-cleanup: 'all'
+      - name: Install TeXlive
+        run: sudo apt-get update && sudo apt-get install texlive texlive-xetex texlive-publishers texlive-science latexmk 
+      - name: Build pdf version
+        run: myst build --pdf --execute
+        shell: bash -el {0}
+      - name: Build HTML Assets
+        run: myst build --html --execute
+        shell: bash -el {0}
