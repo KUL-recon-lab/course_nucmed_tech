@@ -2,6 +2,7 @@
 title: Introduction
 ---
 
+
 The use of radioactive isotopes for medical purposes has been investigated since 1920, and since 1940 attempts have been undertaken at imaging radionuclide concentration in the human body.
 
 In the early 1950s, Ben Cassen introduced the rectilinear scanner, a “zero-dimensional” scanner, which (very) slowly scanned in two dimensions to produce a two-dimensional image of the radionuclide concentration in the body. In the late 1950s, Hal Anger developed the first “true” gamma camera, introducing an approach that is still being used in the design of virtually all modern camera’s: the Anger scintillation camera, a 2D planar detector to produce a 2D projection image without scanning.
