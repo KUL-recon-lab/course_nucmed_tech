@@ -56,11 +56,13 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: 'export'
+        if: github.event_name != 'pull_request'
       - name: Upload artifact html
         uses: actions/upload-pages-artifact@v1
         with:
           path: './_build/html'
+        if: github.event_name != 'pull_request'
       - name: Deploy to GitHub Pages
         id: deployment
-        if: github.event_name != 'pull_request'
         uses: actions/deploy-pages@v2
+        if: github.event_name != 'pull_request'
