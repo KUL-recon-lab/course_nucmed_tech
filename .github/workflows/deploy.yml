@@ -5,9 +5,6 @@ on:
   push:
     # Runs on pushes targeting the default branch
     branches: [main]
-  pull_request:
-    branches:
-      - main
 
 env:
   # `BASE_URL` determines the website is served from, including CSS & JS assets
@@ -56,13 +53,10 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: 'export'
-        if: github.event_name != 'pull_request'
       - name: Upload artifact html
         uses: actions/upload-pages-artifact@v1
         with:
           path: './_build/html'
-        if: github.event_name != 'pull_request'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-        if: github.event_name != 'pull_request'
