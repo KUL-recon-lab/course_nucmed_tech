@@ -1,0 +1,3 @@
+- addition / subtraction of Poisson random variables
+- hands-on partial volume effect (convolution of spheres and measure max)
+- ML/LSE estimator of 2 detector measurements
