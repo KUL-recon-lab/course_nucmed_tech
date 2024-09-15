@@ -284,6 +284,6 @@ ani = animation.FuncAnimation(
 )
 
 # save animation to gif
-ani.save("fbp_animation.mp4", writer=animation.FFMpegWriter(fps=20))
+ani.save("../fbp_animation.mp4", writer=animation.FFMpegWriter(fps=20))
 
 fig2.show()
