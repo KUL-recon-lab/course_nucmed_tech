@@ -215,8 +215,8 @@ for s in ss:
             -2 * R * np.sin(theta[i]),
             2 * R * np.cos(theta[i]),
             color="r",
-            width=0.001,
-            head_width=0.1,
+            width=0.01,
+            head_width=1.0,
         )
     )
     ann.append(
@@ -264,39 +264,47 @@ img6 = ax6.imshow(
     vmax=1.05 * filtered_back_proj.max(),
 )
 
-ax0.set_xlabel(r"$x_0$")
-ax0.set_ylabel(r"$x_1$")
-ax0.set_title("object", fontsize="medium")
+ax0.set_xlabel(r"$x$")
+ax0.set_ylabel(r"$y$")
+ax0.set_title(r"f(x,y)", fontsize="medium")
 ax1.set_xlabel(r"$s$")
 ax2.set_xlabel(r"$s$")
-ax3.set_xlabel(r"$x_0$")
-ax3.set_ylabel(r"$x_1$")
-ax4.set_xlabel(r"$x_0$")
-ax4.set_ylabel(r"$x_1$")
-ax5.set_xlabel(r"$x_0$")
-ax5.set_ylabel(r"$x_1$")
-ax6.set_xlabel(r"$x_0$")
-ax6.set_ylabel(r"$x_1$")
+ax3.set_xlabel(r"$x$")
+ax3.set_ylabel(r"$y$")
+ax4.set_xlabel(r"$x$")
+ax4.set_ylabel(r"$y$")
+ax5.set_xlabel(r"$x$")
+ax5.set_ylabel(r"$y$")
+ax6.set_xlabel(r"$x$")
+ax6.set_ylabel(r"$y$")
 
 ax1.set_title(
-    f"projection profile {(i+1):03} - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\circ$",
+    f"$p(s,\\theta)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\circ$",
     fontsize="medium",
 )
 ax2.set_title(
-    f"filtered projection profile {(i+1):03} - $\\theta$ = {180*theta[i]/np.pi:.1f}",
+    f"ramp filtered $p(s, \\theta)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\circ$",
     fontsize="medium",
 )
-ax3.set_title(f"back projection of profile {(i+1):03}", fontsize="medium")
+ax3.set_title(
+    f"$p(cos(\\theta)x + \sin(\\theta) y, \\theta)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\circ$",
+    fontsize="medium",
+)
 ax4.set_title(f"filtered back projection of profile {(i+1):03}", fontsize="medium")
-ax5.set_title(f"mean of first {(i+1):03} back projections", fontsize="medium")
-ax6.set_title(f"mean of first {(i+1):03} filtered back projections", fontsize="medium")
 
-# create animation
-ani = animation.FuncAnimation(
-    fig2, _update_animation, num_theta, interval=5, blit=False, repeat=False
+ax5.set_title(
+    f"$\int_0^\\theta d\\theta^\prime \, p(cos(\\theta^\prime)x + \sin(\\theta^\prime) y, \\theta^\prime)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\circ$",
+    fontsize="medium",
 )
 
-# save animation to gif
-ani.save("fbp_animation.mp4", writer=animation.FFMpegWriter(fps=20))
+ax6.set_title(f"mean of first {(i+1):03} filtered back projections", fontsize="medium")
+
+## create animation
+# ani = animation.FuncAnimation(
+#    fig2, _update_animation, num_theta, interval=5, blit=False, repeat=False
+# )
+#
+## save animation to gif
+# ani.save("fbp_animation.mp4", writer=animation.FFMpegWriter(fps=20))
 
 fig2.show()
