@@ -55,7 +55,7 @@ for i, theta in enumerate(theta_arr):
     p = radon_transform[i, :]
     kspace_line = interpolate_along_line(img_ft2d, theta)
 
-    fig, ax = plt.subplots(1, 4, figsize=(12, 3), tight_layout=True)
+    fig, ax = plt.subplots(1, 4, figsize=(16, 4), tight_layout=True)
     ax[0].imshow(
         img,
         cmap="Greys",
@@ -136,5 +136,5 @@ for i, theta in enumerate(theta_arr):
 
     ax[3].legend(fontsize="small", ncols=2)
 
-    fig.savefig(f"fourier_slice_theorem_{i}.png")
+    fig.savefig(f"../figs/fourier_slice_theorem_{i}.png")
     fig.show()
