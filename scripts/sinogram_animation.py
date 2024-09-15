@@ -66,6 +66,7 @@ img0 = ax0.imshow(
     cmap="Greys",
     extent=[r.min(), r.max(), r.min(), r.max()],
     origin="lower",
+    aspect=1.0,
 )
 fig2.colorbar(img0, ax=ax0, location="bottom", fraction=0.03)
 
@@ -115,10 +116,10 @@ tmp_sino[(i + 1) :] = 0
 img2 = ax2.imshow(
     tmp_sino,
     cmap="Greys",
-    extent=[r.min(), r.max(), theta.min(), theta.max()],
+    extent=[r.min(), r.max(), 180 * theta.min() / np.pi, 180 * theta.max() / np.pi],
     vmin=0,
     vmax=sino.max(),
-    aspect="auto",
+    aspect=2 * r.max() / (180 * theta.max() / np.pi),
     origin="lower",
 )
 
