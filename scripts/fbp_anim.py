@@ -3,11 +3,9 @@ from __future__ import annotations
 import array_api_compat.numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
-import matplotlib.transforms as mtransforms
 import matplotlib.gridspec as gridspec
 import parallelproj
 
-from scipy.ndimage import gaussian_filter
 from array_api_compat import to_device
 from utils import RadonDisk, RadonObjectSequence
 
@@ -18,7 +16,7 @@ dev = "cpu"
 
 # %%
 # choose number of radial elements, number of views and angular coverage
-num_rad = 201
+num_rad = 301
 theta_max = xp.pi
 num_theta = int(0.5 * num_rad * xp.pi * (theta_max / xp.pi)) + 1
 num_theta = num_theta // 1
@@ -28,9 +26,9 @@ theta = xp.linspace(
     0, theta_max, num_theta, endpoint=False, device=dev, dtype=xp.float32
 )
 R, THETA = xp.meshgrid(r, theta, indexing="ij")
-X0, X1 = xp.meshgrid(r, r, indexing="ij")
-x = xp.linspace(float(xp.min(r)), float(xp.max(r)), 1001, device=dev, dtype=xp.float32)
-X0hr, X1hr = xp.meshgrid(x, x, indexing="ij")
+# X0, X1 = xp.meshgrid(r, r, indexing="ij")
+# x = xp.linspace(float(xp.min(r)), float(xp.max(r)), 1001, device=dev, dtype=xp.float32)
+# X0hr, X1hr = xp.meshgrid(x, x, indexing="ij")
 
 print(f"num rad:   {num_rad}")
 print(f"theta max:   {180*theta_max/xp.pi:.2f} deg")
@@ -136,33 +134,38 @@ def _update_animation(i):
     img5.set_data(back_projs[: (i + 1), ...].mean(axis=0).T)
     img6.set_data(filtered_back_projs[: (i + 1), ...].mean(axis=0).T)
 
+    yl = 180 * theta[i] / np.pi
+    l0.set_ydata([yl, yl])
+
     ax1.set_title(
-        f"projection profile {(i+1):03} - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\circ$",
+        f"$p_\\theta(s)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\\circ$",
         fontsize="medium",
     )
     ax2.set_title(
-        f"filtered projection profile {(i+1):03} - $\\theta$ = {180*theta[i]/np.pi:.1f}",
+        f"$q_\\theta(s) =$ ramp filtered $p_\\theta(s)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\\circ$",
         fontsize="medium",
     )
-    ax3.set_title(f"back projection of profile {(i+1):03}", fontsize="medium")
-    ax4.set_title(f"filtered back projection of profile {(i+1):03}", fontsize="medium")
-    ax5.set_title(f"mean of first {(i+1):03} back projections", fontsize="medium")
-    ax6.set_title(
-        f"mean of first {(i+1):03} filtered back projections", fontsize="medium"
+    ax3.set_title(
+        f"$p(\\cos(\\theta)x + \\sin(\\theta) y, \\theta)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\\circ$",
+        fontsize="medium",
     )
 
-    t = mtransforms.Affine2D().rotate_around(0, 0, theta[i])
-    for ar in arr:
-        ar.set_transform(t + ax0.transData)
-    for k, s in enumerate(ss):
-        d0 = s * np.cos(theta[i])
-        d1 = s * np.sin(theta[i])
-        ann[k].set_position(
-            (1.2 * R * np.sin(theta[i]) + d0, -1.2 * R * np.cos(theta[i]) + d1)
-        )
-        ann[k].xy = (1.2 * R * np.sin(theta[i]) + d0, -1.2 * R * np.cos(theta[i]) + d1)
+    ax4.set_title(
+        f"$q(\\cos(\\theta)x + \\sin(\\theta) y, \\theta)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\\circ$",
+        fontsize="medium",
+    )
 
-    return (p1, p2, img3, img4, img5, img6, arr, ann)
+    ax5.set_title(
+        f"$\\int_0^\\theta d\\theta^\\prime \\, p(\\cos(\\theta^\\prime)x + \\sin(\\theta^\\prime) y, \\theta^\\prime)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\\circ$",
+        fontsize="medium",
+    )
+
+    ax6.set_title(
+        f"$\\int_0^\\theta d\\theta^\\prime \\, q(\\cos(\\theta^\\prime)x + \\sin(\\theta^\\prime) y, \\theta^\\prime)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\\circ$",
+        fontsize="medium",
+    )
+
+    return (p1, p2, img3, img4, img5, img6, l0)
 
 
 # %%
@@ -179,57 +182,26 @@ ax4 = fig2.add_subplot(gs[:2, 4:6])
 ax5 = fig2.add_subplot(gs[2:4, 2:4])
 ax6 = fig2.add_subplot(gs[2:4, 4:6])
 
+i = 0
+
 ax0.imshow(
-    radon_object.values(X0hr, X1hr).T,
+    pre_corrected_sino.T,
     cmap="Greys",
-    extent=[r.min(), r.max(), r.min(), r.max()],
+    extent=[r.min(), r.max(), 180 * theta.min() / np.pi, 180 * theta.max() / np.pi],
     origin="lower",
+    aspect=2 * r.max() / (180 * theta.max() / np.pi),
 )
 
-i = 0
-R = 10.0
-
-arr = []
-ann = []
-
-ss = np.linspace(0.8 * r.min(), 0.8 * r.max(), 9)
+l0 = ax0.axhline(180 * theta[i] / np.pi, color="r", lw=0.5)
 
 p1 = ax1.plot(r, pre_corrected_sino[:, i], color="k")[0]
 ax1.set_ylim(pre_corrected_sino.min(), pre_corrected_sino.max())
 ax1.grid(ls=":")
 
 p2 = ax2.plot(r, np.convolve(pre_corrected_sino[:, i], f, mode="same"), color="k")[0]
-ax2.set_ylim(filtered_back_projs.min(), filtered_back_projs.max())
+ax2.set_ylim(2 * filtered_back_projs.min(), 2 * filtered_back_projs.max())
 ax2.grid(ls=":")
 
-
-for s in ss:
-    ax1.axvline(s, color="r", lw=0.5)
-    ax2.axvline(s, color="r", lw=0.5)
-    d0 = s * np.cos(theta[i])
-    d1 = s * np.sin(theta[i])
-    arr.append(
-        ax0.arrow(
-            R * np.sin(theta[i]) + d0,
-            -R * np.cos(theta[i]) + d1,
-            -2 * R * np.sin(theta[i]),
-            2 * R * np.cos(theta[i]),
-            color="r",
-            width=0.01,
-            head_width=1.0,
-        )
-    )
-    ann.append(
-        ax0.annotate(
-            f"{s:.1f}",
-            (1.2 * R * np.sin(theta[i]) + d0, -1.2 * R * np.cos(theta[i]) + d1),
-            color="r",
-            fontsize="small",
-            ha="center",
-            va="center",
-            annotation_clip=True,
-        )
-    )
 
 img3 = ax3.imshow(
     back_projs[i, ...].T,
@@ -264,9 +236,9 @@ img6 = ax6.imshow(
     vmax=1.05 * filtered_back_proj.max(),
 )
 
-ax0.set_xlabel(r"$x$")
-ax0.set_ylabel(r"$y$")
-ax0.set_title(r"f(x,y)", fontsize="medium")
+ax0.set_xlabel(r"$s$")
+ax0.set_ylabel(r"$\theta$ [$^\circ$]")
+ax0.set_title(r"$p(s,\theta)$", fontsize="medium")
 ax1.set_xlabel(r"$s$")
 ax2.set_xlabel(r"$s$")
 ax3.set_xlabel(r"$x$")
@@ -279,32 +251,39 @@ ax6.set_xlabel(r"$x$")
 ax6.set_ylabel(r"$y$")
 
 ax1.set_title(
-    f"$p(s,\\theta)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\circ$",
+    f"$p_\\theta(s)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\\circ$",
     fontsize="medium",
 )
 ax2.set_title(
-    f"ramp filtered $p(s, \\theta)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\circ$",
+    f"$q_\\theta(s) =$ ramp filtered $p_\\theta(s)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\\circ$",
     fontsize="medium",
 )
 ax3.set_title(
-    f"$p(cos(\\theta)x + \sin(\\theta) y, \\theta)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\circ$",
+    f"$p(\\cos(\\theta)x + \\sin(\\theta) y, \\theta)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\\circ$",
     fontsize="medium",
 )
-ax4.set_title(f"filtered back projection of profile {(i+1):03}", fontsize="medium")
+
+ax4.set_title(
+    f"$q(\\cos(\\theta)x + \\sin(\\theta) y, \\theta)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\\circ$",
+    fontsize="medium",
+)
 
 ax5.set_title(
-    f"$\int_0^\\theta d\\theta^\prime \, p(cos(\\theta^\prime)x + \sin(\\theta^\prime) y, \\theta^\prime)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\circ$",
+    f"$\\int_0^\\theta d\\theta^\\prime \\, p(\\cos(\\theta^\\prime)x + \\sin(\\theta^\\prime) y, \\theta^\\prime)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\\circ$",
     fontsize="medium",
 )
 
-ax6.set_title(f"mean of first {(i+1):03} filtered back projections", fontsize="medium")
+ax6.set_title(
+    f"$\\int_0^\\theta d\\theta^\\prime \\, q(\\cos(\\theta^\\prime)x + \\sin(\\theta^\\prime) y, \\theta^\\prime)$ - $\\theta$ = {180*theta[i]/np.pi:.1f}$^\\circ$",
+    fontsize="medium",
+)
 
-## create animation
-# ani = animation.FuncAnimation(
-#    fig2, _update_animation, num_theta, interval=5, blit=False, repeat=False
-# )
-#
-## save animation to gif
-# ani.save("fbp_animation.mp4", writer=animation.FFMpegWriter(fps=20))
+# create animation
+ani = animation.FuncAnimation(
+    fig2, _update_animation, num_theta, interval=5, blit=False, repeat=False
+)
+
+# save animation to gif
+ani.save("fbp_animation.mp4", writer=animation.FFMpegWriter(fps=20))
 
 fig2.show()
