@@ -1,5 +1,5 @@
 # units cm^2/g, density 4.93g/cm^3
-E, coh_scat, incoh_scat, pe, mu_tot, mu_tot_min_coh   
+E,coh_scat,incoh_scat,pe,mu_tot,mu_tot_min_coh   
 5.000E-02, 3.452E-01, 1.093E-01, 1.187E+01, 1.232E+01, 1.198E+01
 6.000E-02, 2.577E-01, 1.110E-01, 7.208E+00, 7.577E+00, 7.319E+00
 8.000E-02, 1.584E-01, 1.115E-01, 3.240E+00, 3.510E+00, 3.352E+00
