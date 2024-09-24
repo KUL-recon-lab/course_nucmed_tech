@@ -37,11 +37,11 @@ project:
     - file: 11_RNT_dosimetry.md
     - file: 12_appendix_one.md
     - file: 13_appendix_two.md
-    - title: Interactive notebooks
-      children:
-        - file: notebooks/simple_plot.ipynb
-        - file: notebooks/animated_plot.ipynb
-        - file: notebooks/DIY_filtered_back_projection.ipynb
+    #- title: Interactive notebooks
+    #  children:
+    #    - file: notebooks/simple_plot.ipynb
+    #    - file: notebooks/animated_plot.ipynb
+    #    - file: notebooks/DIY_filtered_back_projection.ipynb
 
   export:
     - format: pdf
