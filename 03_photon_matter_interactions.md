@@ -2,9 +2,10 @@
 title: Interaction of photons with matter
 ---
 
-In nuclear medicine, photon energy ranges roughly from 60 to 600 keV. For example, {sup}`99m`Tc has an energy of 140 keV. This corresponds to a wave length of 9 pm and a frequency of 3.4 ×  Hz. At such energies, γ photons behave like particles rather than like waves.
+In nuclear medicine, photon energy ranges roughly from 60 to 600 keV. For example, {sup}`99m`Tc has an energy of 140 keV. This corresponds to a wave length of 9 pm and a frequency of 3.4 Hz. 
+%At such energies, γ photons behave like particles rather than like waves.
 
-At these energies, the dominating interactions of photons with matter are photon-electron interactions: Compton scatter and photo-electric effect. As shown in [](#fig:foto_compton_pair), the dominating interaction is a function of energy and electron number. For typical nuclear medicine energies, Compton scatter dominates in light materials (such as water and human tissue), and photo-electric effect dominates in high density materials. Pair production (conversion of a photon in an electron and a positron) is excluded for energies below 1022 keV, since each of the particles has a mass of 511 keV. Rayleigh scatter (absorption and re-emission of (all or a fraction of) the absorbed energy as a photon in a different direction) has a low probability.
+At these energies, the dominating interactions of photons with matter are photon-electron interactions: Compton scatter and photo-electric effect. As shown in [](#fig:foto_compton_pair), the dominating interaction is a function of energy and electron number. For typical nuclear medicine energies, Compton scatter dominates in light materials (such as water and human tissue), and photo-electric effect dominates in high density materials. Pair production (conversion of a photon in an electron and a positron) is excluded for energies below 1022 keV, since each of the particles has a mass of 511 keV. Rayleigh scatter (absorption and re-emission of (all or a fraction of) the absorbed energy as a photon in a different direction) has a low probability and its effect can be ignored in PET and SPECT imaging.
 
 
 :::{figure} figs/fig_foto_compton_pair.png
@@ -85,7 +86,7 @@ The differential cross section [](#eq:kleinnishina) is shown for a few incoming 
 :name: fig:kleinnishina
 :width: 350px
 :align: center
-:alt: The scattering-angle distribution for a few photon energies. Figure from Wikipedia (https://en.wikipedia.org/wiki/Klein-Nishina_formula).
+:alt: The differential cross section as a function of the scattering angle for a few photon energies. Figure from Wikipedia (https://en.wikipedia.org/wiki/Klein-Nishina_formula).
 
 *The scattering-angle distribution for a few photon energies. Figure from Wikipedia (https://en.wikipedia.org/wiki/Klein-Nishina\_formula).*
 :::
@@ -94,17 +95,13 @@ The probability of a Compton decreases very slowly with increasing {math}`E` (se
 
 Because the energy of the photon after scattering is less than before, Compton scatter is sometimes also called “inelastic scattering”.
 
-(rayleigh-scatter)=
-# Rayleigh scatter
-
-% %%%%%%%%%%%%%%%%%%%%
-
-Rayleigh scattering or coherent scattering can be regarded as the collision between a photon and an entire atom. Because of the huge mass of the atom, the photon is deflected from its original trajectory without any noticeable loss of energy (replace {math}`m_e c^2` with {math}`\infty` in [](#eq:jn_compton_energy)). Rayleigh scattering contributes only significantly at low energies, and can be safely ignored in typical nuclear medicine applications. Because the energy of the photon after scattering is the same as before, this effect is also called “elastic scattering”.
+%(rayleigh-scatter)=
+%# Rayleigh scatter
+%
+%Rayleigh scattering or coherent scattering can be regarded as the collision between a photon and an entire atom. Because of the huge mass of the atom, the photon is deflected from its original trajectory without any noticeable loss of energy (replace {math}`m_e c^2` with {math}`\infty` in [](#eq:jn_compton_energy)). Rayleigh scattering contributes only significantly at low energies, and can be safely ignored in typical nuclear medicine applications. Because the energy of the photon after scattering is the same as before, this effect is also called “elastic scattering”.
 
 (attenuation)=
 # Attenuation
-
-% %%%%%%%%%%%%%%%%%%%%
 
 :::{figure} figs/fig_atten_water.png
 :name: fig:atten_water
