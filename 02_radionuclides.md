@@ -122,20 +122,20 @@ N(t) = N(t_0) e^{- \alpha (t - t_0)}.
 
 This is what we *expect*. If we actually measure it, we may obtain a different value, since the process is statistical. As shown below, the estimate will be better for larger {math}`dN/dt`.
 
-The amount of radioactivity is not expressed as the number of radioactive atoms present, but as the number of radioactive atoms decaying per unit of time. From [](#eq:dN) we find that
+The amount of radioactivity {math}`A(t)` is not expressed as the number of radioactive atoms present, but as the number of radioactive atoms decaying per unit of time. From [](#eq:dN) we find that
 
 ```{math}
-\mbox{radioactivity} = -\frac{dN}{dt} = \alpha N =
+A(t) = -\frac{dN}{dt} = \alpha N =
   \frac{N}{t_{\frac{1}{2}}} \ln 2.
 ```
 
-Therefore, for the same amount of radioactivity, more radioactive atoms are needed if the half life is longer. This quantity used to be expressed in Curie (Ci), but the preferred unit is now Becquerel (Bq) [^qxcTMRcO5d][^qxcTMRcO5d]: Marie and Pierre Curie and Antoine Becquerel received the Nobel prize in 1903, for their discovery of radioactivity in 1896. One Bq means 1 event per s. For the coming years, it is useful to know that
+Therefore, for the same amount of radioactivity, more radioactive atoms are needed if the half life is longer. This quantity used to be expressed in Curie (Ci), but the preferred unit is now Becquerel (Bq). Marie and Pierre Curie and Antoine Becquerel received the Nobel prize in 1903, for their discovery of radioactivity in 1896. One Bq means 1 decay per s. For the coming years, it is useful to know that
 
 ```{math}
 1 \ \mbox{mCi} = 37 \ \mbox{MBq} = 37 \times 10^{6} / \mbox{s}.
 ```
 
-The amounts of radioactivity used in nuclear medicine imaging are typically in the order of  Mbq.
+The amounts of radioactivity used in nuclear medicine imaging are typically in the order of MBq.
 
 The half life of a tracer is the amount of time after which only half the amount of radioactivity is left. It is easy to compute it from equation [](#eq:decay):
 
@@ -143,7 +143,7 @@ The half life of a tracer is the amount of time after which only half the amount
 t_{\frac{1}{2}}  = \frac{\ln 2}{\alpha} .
 ```
 
-As shown in appendix [](#app:poisson), the probability of measuring {math}`n` photons, when {math}`r` photons are expected equals
+As shown in appendix [](#app:poisson), the probability that {math}`n` decays occur, when {math}`r` decays are expected equals
 
 ```{math}
 p_r(n) = \frac{e^{-r} r^n}{n!}
@@ -164,7 +164,9 @@ p_r(n) \simeq \frac{1}{\sqrt{2 \pi r}} \exp \left( \frac{- (n - r)^2}{2 r}
 
 For smaller ones (less than 10 or so) it becomes markedly asymmetrical, since the probability is always 0 for negative values.
 
-Note that the distribution is only defined for integer values of {math}`n`. This is obvious, because one cannot detect partial photons ({math}`r` is a real number, because the average number of expected photons does not have to be integer). Summing over all {math}`n` values yields
+Note that the distribution is only defined for integer values of {math}`n`. 
+Note, however, that {math}`r` is a real number (the expected number of decays does not need to be an integer number).
+Summing over all {math}`n` values yields
 
 ```{math}
 \sum_0^\infty p_r(n) = e^{-r} \sum_0^\infty \frac{r^n}{n!}
@@ -173,13 +175,20 @@ Note that the distribution is only defined for integer values of {math}`n`. This
 
 As with a Gaussian, {math}`r` is not only the mean of the distribution, it is also the value with highest probability.
 
-When one estimates radioactivity by counting emitted photons (or other particles), the signal-to-noise ratio (SNR) of that measurement equals
+When one estimates radioactivity by counting emitted particles after decay, the signal-to-noise ratio (SNR = mean / standard deviation) 
+of that measurement equals
 
 ```{math}
 SNR = \frac{r}{\sqrt{r}} = \sqrt{r},
 ```
 
-where {math}`r` is the expection of the number of measured photons. Hence, if we measure the amount of radioactivity with particle detectors, the SNR becomes larger if we measure longer.
+where {math}`r` is the expection of the number of measured photons. 
+Hence, if we measure the amount of radioactivity with particle detectors, the SNR becomes larger if we detect more particles
+(measure longer).
+In other words, the relative uncertainty (1/SNR = standard deviation / mean), becomes smaller if we detect more particles.
 
+```{math}
+\frac{\sigma}{\text{mean}} = \frac{1}{SNR} = \frac{1}{\sqrt{r}},
+```
 The only assumption made in the derivation in appendix [](#app:poisson) was that the probability of an event was constant in time. It follows that “thinning” a Poisson process results in a new Poisson process. With thinning, we mean that we randomly accept or reject events, using a fixed acceptance probability. If we expect {math}`N` photons, and we randomly accept with a probability {math}`f`, then the expected number of accepted photons is {math}`fN`. Since the probability of surviving the whole procedure (original process followed by selection) has a fixed probability, the resulting process is still Poisson.
 
