@@ -13,7 +13,7 @@ import numpy as xp
 dev = "cpu"
 
 # %%
-counts = 1e7
+counts = 0
 
 # choose number of radial elements, number of views and angular coverage
 num_rad = 301
@@ -68,7 +68,8 @@ img_radon = radon_object.radon_transform(R, THETA)
 
 attn_img_fwd = disk0.radon_transform(R, THETA)
 attn_img_fwd /= 0.3 * attn_img_fwd.max()
-attn_sino = xp.exp(-attn_img_fwd)
+# attn_sino = xp.exp(-attn_img_fwd)
+attn_sino = 1.0
 
 noise_free_emis_sino = img_radon * attn_sino
 
@@ -129,25 +130,25 @@ filtered_back_proj = proj.adjoint(filtered_pre_corrected_sino)
 
 # %%
 
-fig, ax = plt.subplots(3, 1, figsize=(2.5, 7.5), tight_layout=True)
+fig, ax = plt.subplots(2, 1, figsize=(3, 6), tight_layout=True)
 ax[0].imshow(
-    img_radon.T,
-    cmap="Greys",
-    extent=[r.min(), r.max(), 180 * theta.min() / np.pi, 180 * theta.max() / np.pi],
-    origin="lower",
-    aspect=2 * r.max() / (180 * theta.max() / np.pi),
-)
-ax[1].imshow(
     pre_corrected_sino.T,
     cmap="Greys",
     extent=[r.min(), r.max(), 180 * theta.min() / np.pi, 180 * theta.max() / np.pi],
     origin="lower",
     aspect=2 * r.max() / (180 * theta.max() / np.pi),
 )
-ax[2].imshow(
+ax[1].imshow(
     filtered_back_proj.T,
     cmap="Greys",
     extent=[r.min(), r.max(), r.min(), r.max()],
     origin="lower",
 )
+
+# ax[0].set_xlabel(r"$s$")
+# ax[0].set_ylabel(r"$\theta$")
+# ax[1].set_xlabel(r"$x$")
+# ax[1].set_ylabel(r"$y$")
+
+fig.savefig(f"../figs/fbp_counts_{counts:.2E}.png")
 fig.show()
