@@ -238,7 +238,7 @@ def bw_pet_phantom(
         ],
         float,
     ] = bw_map_1,
-) -> np.ndarray:
+) -> tuple[np.ndarray, np.ndarray]:
     """Generate 2D PET brain phantom based on brainweb
 
     Parameters
@@ -261,7 +261,7 @@ def bw_pet_phantom(
 
     Returns
     -------
-    np.ndarray
+    np.ndarray, nd.ndarray
         2D PET array
     """
 
@@ -285,11 +285,18 @@ def bw_pet_phantom(
     brain_seg = np.pad(
         brain_seg, pad_width=pad_width, mode="constant", constant_values=0
     )
+
+    att_img = 0.01 * (brain_seg > 0).astype(float)
+    att_img[brain_seg == 7] = 0.015
+
     pet_img = np.vectorize(map_func)(brain_seg)
 
     for _ in range(num_downsample):
         pet_img = pet_img[::2, :] + pet_img[1::2, :]
         pet_img = pet_img[:, ::2] + pet_img[:, 1::2]
         pet_img /= 4
+        att_img = att_img[::2, :] + att_img[1::2, :]
+        att_img = att_img[:, ::2] + att_img[:, 1::2]
+        att_img /= 4
 
-    return pet_img
+    return pet_img, att_img
