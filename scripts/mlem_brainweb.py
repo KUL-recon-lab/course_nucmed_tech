@@ -13,7 +13,7 @@ from array_api_compat import to_device
 import array_api_compat.numpy as np
 import matplotlib.pyplot as plt
 
-from utils import bw_pet_phantom
+from utils_data import bw_pet_phantom
 
 # choose a device (CPU or CUDA GPU)
 if "numpy" in xp.__name__:
@@ -35,7 +35,7 @@ elif "torch" in xp.__name__:
 num_mlem_iter = 100
 fwhm_mm_data = 4.5
 fwhm_mm_recon = 4.5
-counts = 2e6
+counts = 1e6
 seed = 1
 
 # %%
@@ -164,41 +164,10 @@ else:
 
 
 # %%
-def em_update(
-    x_cur: Array,
-    data: Array,
-    op: parallelproj.LinearOperator,
-    s: Array,
-    adjoint_ones: Array,
-) -> Array:
-    """EM update
-
-    Parameters
-    ----------
-    x_cur : Array
-        current solution
-    data : Array
-        data
-    op : parallelproj.LinearOperator
-        linear forward operator
-    s : Array
-        contamination
-    adjoint_ones : Array
-        adjoint of ones
-
-    Returns
-    -------
-    Array
-        _description_
-    """
-    ybar = op(x_cur) + s
-    return x_cur * op.adjoint(data / ybar) / adjoint_ones
-
-
-# %%
 # Run the MLEM iterations
 # -----------------------
 
+# setup a separate resolution model for the reconstruction
 res_model_recon = parallelproj.GaussianFilterOperator(
     proj.in_shape, sigma=fwhm_mm_recon / (2.35 * proj.voxel_size)
 )
@@ -216,7 +185,10 @@ adjoint_ones = pet_lin_op_recon.adjoint(
 
 for i in range(num_mlem_iter):
     print(f"MLEM iteration {(i + 1):03} / {num_mlem_iter:03}", end="\r")
-    x = em_update(x, y, pet_lin_op_recon, contamination, adjoint_ones)
+    ybar = pet_lin_op_recon(x) + contamination
+    r = y / ybar
+    z = pet_lin_op_recon.adjoint(r)
+    x *= z / adjoint_ones
 
 # %%
 # post smooth the MLEM reconstruction
@@ -248,7 +220,7 @@ x_true_np = parallelproj.to_numpy_array(x_true)
 x_np = parallelproj.to_numpy_array(x)
 x_ps_np = parallelproj.to_numpy_array(x_ps)
 
-fig, ax = plt.subplots(2, 3, figsize=(3 * 4.5, 2 * 4.5))
+fig, ax = plt.subplots(2, 3, figsize=(0.85 * 3 * 4.5, 2 * 4.5))
 vmax = 1.3 * x_true_np.max()
 img00 = ax[0, 0].imshow(x_true_np[:, :, 0].T, cmap="Greys", vmin=0, vmax=vmax)
 img01 = ax[0, 1].imshow(x_np[:, :, 0].T, cmap="Greys", vmin=0, vmax=vmax)
@@ -266,24 +238,27 @@ img12 = ax[1, 2].imshow(
     vmax=0.5 * vmax,
 )
 
-ax[1, 0].set_axis_off()
+img10 = ax[1, 0].imshow(
+    parallelproj.to_numpy_array(y[:, :, 0]).T, cmap="Greys", aspect="auto"
+)
 
 ax[0, 0].set_title(f"true image", fontsize="medium")
 ax[0, 1].set_title(f"MLEM iteration {num_mlem_iter}", fontsize="medium")
 ax[0, 2].set_title(f"MLEM iteration {num_mlem_iter} post smoothed", fontsize="medium")
-
-ax[1, 1].set_title(
-    f"MLEM iteration {num_mlem_iter} - true image, NRMSE {nrmse:.2f}", fontsize="medium"
-)
+ax[1, 0].set_title(f"emission sinogram", fontsize="medium")
+ax[1, 1].set_title(f"MLEM - true image, NRMSE {nrmse:.2f}", fontsize="medium")
 ax[1, 2].set_title(
-    f"MLEM iteration {num_mlem_iter} p. sm. - true image, NRMSE {nrmse_ps:.2f}",
+    f"MLEM p.sm. - true image, NRMSE {nrmse_ps:.2f}",
     fontsize="medium",
 )
 
 fig.colorbar(img00, location="bottom", fraction=0.03)
 fig.colorbar(img01, location="bottom", fraction=0.03)
 fig.colorbar(img02, location="bottom", fraction=0.03)
+fig.colorbar(img10, location="bottom", fraction=0.03)
 fig.colorbar(img11, location="bottom", fraction=0.03)
 fig.colorbar(img12, location="bottom", fraction=0.03)
 fig.tight_layout()
 fig.show()
+
+plt.show()
