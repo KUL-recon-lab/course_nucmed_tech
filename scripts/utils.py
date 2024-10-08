@@ -229,7 +229,6 @@ def bw_map_1(x: int) -> float:
 def bw_pet_phantom(
     sl: tuple[slice, slice, slice] = (slice(None), slice(None), slice(159, 160, None)),
     orientation: str = "LPS",
-    squeeze: bool = True,
     num_downsample: int = 2,
     brainweb_subject_num: int = 4,
     map_func: Callable[
@@ -247,8 +246,6 @@ def bw_pet_phantom(
         slices to extract 2D from 3D volume, by default (slice(None), slice(None), slice(159, 160, None))
     orientation : str, optional
         return image in LPS or RAS, by default "LPS"
-    squeeze : bool, optional
-        squeeze array, by default True
     num_downsample : int, optional
         number of downsampling steps,
         in every step all dimensions are reduced by a factor of 2,
@@ -275,8 +272,7 @@ def bw_pet_phantom(
 
     brain_seg = brain_seg[sl]
 
-    if squeeze:
-        brain_seg = np.squeeze(brain_seg)
+    brain_seg = np.squeeze(brain_seg)
 
     pw0 = (512 - brain_seg.shape[0]) // 2
     pw1 = (512 - brain_seg.shape[1]) // 2
