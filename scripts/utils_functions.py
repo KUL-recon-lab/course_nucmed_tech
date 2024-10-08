@@ -130,3 +130,38 @@ class NegPoissonLogL(SmoothFunction):
     def _gradient(self, x: Array) -> Array:
         exp = self._op(x) + self._contamination
         return self._op.adjoint(1 - self._data / exp)
+
+
+class QuadraticPrior(SmoothFunction):
+
+    def _call(self, x: Array) -> float:
+        s = neighbor_difference(x, self.xp)
+
+        return 0.5 * float(self.xp.sum(s**2))
+
+    def _gradient(self, x: Array) -> Array:
+        s = neighbor_difference(x, self.xp)
+        return 2 * self.xp.sum(s, axis=0)
+
+
+# if __name__ == "__main__":
+#    import array_api_compat.numpy as np
+#
+#    in_shape = (5, 6)
+#    np.random.seed(1)
+#    x = np.random.rand(*in_shape)
+#
+#    p = QuadraticPrior(in_shape, np, "cpu")
+#
+#    x2 = x.copy()
+#
+#    eps = 1e-6
+#
+#    i0 = 0
+#    i1 = 0
+#
+#    x2[i0, i1] += eps
+#
+#    g = p.gradient(x)[i0, i1]
+#
+#    g2 = (p(x2) - p(x)) / eps
