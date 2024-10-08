@@ -4,7 +4,6 @@ Run simple MLEM reconstruction on the brainweb phantom
 
 # %%
 from __future__ import annotations
-from parallelproj import Array
 
 import array_api_compat.numpy as xp
 
@@ -190,6 +189,24 @@ for i in range(num_mlem_iter):
     print(f"MLEM iteration {(i + 1):03} / {num_mlem_iter:03}", end="\r")
     step = x / adjoint_ones
     x -= step * cost_fct.gradient(x)
+
+# %%
+# use L-BFGS-B to optimize the negative Poisson logL
+
+# x_init = xp.ones(x.size, dtype=xp.float32, device=dev)
+#
+# from scipy.optimize import fmin_l_bfgs_b
+#
+# res = fmin_l_bfgs_b(
+#    cost_fct,
+#    x_init,
+#    fprime=cost_fct.gradient,
+#    bounds=x_init.size * [[0, None]],
+#    disp=1,
+#    maxiter=num_mlem_iter,
+# )
+#
+# x_lbfgs = res[0].reshape(pet_lin_op_recon.in_shape)
 
 # %%
 # post smooth the MLEM reconstruction
