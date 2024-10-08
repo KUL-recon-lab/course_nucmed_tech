@@ -160,26 +160,45 @@ class RadonDisk(RadonObject):
         self._radius = value
 
 
-def demo_radon_object(xp: ModuleType = np, dev: str = "cpu") -> RadonObjectSequence:
-    # define an object with known radon transform
-    disk0 = RadonDisk(xp, dev, 8.0)
-    disk0.amplitude = 1.0
-    disk0.s0 = 3.0
+def demo_radon_object(
+    xp: ModuleType = np, dev: str = "cpu", amp: float = 1.0, id: int = 1
+) -> RadonObjectSequence:
 
-    disk1 = RadonDisk(xp, dev, 2.0)
-    disk1.amplitude = 0.5
-    disk1.x1_offset = 4.67
+    if id == 1:
+        disk0 = RadonDisk(xp, dev, 8.0)
+        disk0.amplitude = 1.0 * amp
+        disk0.s0 = 3.0
 
-    disk2 = RadonDisk(xp, dev, 1.4)
-    disk2.amplitude = -0.5
-    disk2.x0_offset = -10.0
+        disk1 = RadonDisk(xp, dev, 2.0)
+        disk1.amplitude = 0.5 * amp
+        disk1.x1_offset = 4.67
 
-    disk3 = RadonDisk(xp, dev, 0.93)
-    disk3.amplitude = -0.5
-    disk3.x1_offset = -4.67
+        disk2 = RadonDisk(xp, dev, 1.4)
+        disk2.amplitude = -0.5 * amp
+        disk2.x0_offset = -10.0
 
-    disk4 = RadonDisk(xp, dev, 0.67)
-    disk4.amplitude = 1.0
-    disk4.x1_offset = -4.67
+        disk3 = RadonDisk(xp, dev, 0.93)
+        disk3.amplitude = -0.5 * amp
+        disk3.x1_offset = -4.67
 
-    return RadonObjectSequence([disk0, disk1, disk2, disk3, disk4])
+        disk4 = RadonDisk(xp, dev, 0.67)
+        disk4.amplitude = 1.0 * amp
+        disk4.x1_offset = -4.67
+
+        res = RadonObjectSequence([disk0, disk1, disk2, disk3, disk4])
+    elif id == 2:
+        disk0 = RadonDisk(xp, dev, 8.0)
+        disk0.amplitude = 1.0 * amp
+        res = RadonObjectSequence([disk0])
+    elif id == 3:
+        disk0 = RadonDisk(xp, dev, 8.0)
+        disk0.amplitude = 1.0 * amp
+        disk0.s1 = 2.0
+        disk1 = RadonDisk(xp, dev, 2.0)
+        disk1.amplitude = 1.5 * amp
+        disk1.x1_offset = -3
+        res = RadonObjectSequence([disk0, disk1])
+    else:
+        raise ValueError(f"unknown id: {id}")
+
+    return res

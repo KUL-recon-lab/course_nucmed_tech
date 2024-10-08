@@ -6,9 +6,12 @@ channels:
 dependencies:
 - mystmd
 - imagemagick
-- numpy
+- numpy~=1.21 # <2 needed for numeric exercises
 - scipy
-- matplotlib
+- matplotlib<=3.8
 - jupyter
 - parallelproj>=1.10.0
-
+- nibabel
+- pymirc
+- sympy~=1.10 # needed for numeric exercises
+- ipython
