@@ -13,7 +13,7 @@ import array_api_compat.numpy as np
 import matplotlib.pyplot as plt
 
 from utils_data import bw_pet_phantom
-from utils_functions import NegPoissonLogL, SmoothFunction, QuadraticPrior
+from utils_functions import NegPoissonLogL, SmoothFunction, QuadraticPrior, LogCoshPrior
 
 from scipy.optimize import fmin_l_bfgs_b
 
@@ -37,10 +37,17 @@ elif "torch" in xp.__name__:
 num_iter_lbfgs = 100
 fwhm_mm_data = 4.5
 fwhm_mm_recon = 4.5
-counts = 1e6
-prior_type = "quadratic"
-betas = [0.003, 0.03, 0.3]
+counts = 1e7
 seed = 1
+prior_type = "logcosh"
+
+if prior_type == "quadratic":
+    betas = [x * (3e6 / counts) for x in [0.00001, 0.0001, 0.001, 0.01]]
+elif prior_type == "logcosh":
+    betas = [0.00001, 0.0001, 0.001, 0.01]
+    delta_rel = 0.01
+else:
+    raise ValueError(f"Invalid prior type {prior_type}")
 
 # %%
 np.random.seed(seed)
@@ -187,6 +194,10 @@ nrmse = []
 
 if prior_type == "quadratic":
     prior: SmoothFunction = QuadraticPrior(pet_lin_op_recon.in_shape, xp, dev)
+elif prior_type == "logcosh":
+    prior: SmoothFunction = LogCoshPrior(
+        pet_lin_op_recon.in_shape, xp, dev, delta=delta_rel * x_true.max()
+    )
 else:
     raise ValueError(f"Invalid prior type {prior_type}")
 
@@ -230,7 +241,7 @@ vmax = 1.3 * float(x_true.max())
 fig, ax = plt.subplots(
     num_rows,
     num_cols,
-    figsize=(0.85 * num_cols * 4.5, num_rows * 4.5),
+    figsize=(0.85 * num_cols * 3.5, num_rows * 3.5),
     tight_layout=True,
 )
 img00 = ax[0, 0].imshow(

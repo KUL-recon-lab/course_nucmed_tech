@@ -144,6 +144,23 @@ class QuadraticPrior(SmoothFunction):
         return 2 * self.xp.sum(s, axis=0)
 
 
+class LogCoshPrior(SmoothFunction):
+    def __init__(self, in_shape, xp, dev, delta=1.0) -> None:
+
+        self._delta = delta
+
+        super().__init__(in_shape, xp, dev)
+
+    def _call(self, x: Array) -> float:
+        s = neighbor_difference(x / self._delta, self.xp)
+
+        return self._delta * float(self.xp.sum(self.xp.log(self.xp.cosh(s))))
+
+    def _gradient(self, x: Array) -> Array:
+        s = neighbor_difference(x / self._delta, self.xp)
+        return 2 * self.xp.sum(self.xp.tanh(s), axis=0)
+
+
 # if __name__ == "__main__":
 #    import array_api_compat.numpy as np
 #
@@ -151,14 +168,14 @@ class QuadraticPrior(SmoothFunction):
 #    np.random.seed(1)
 #    x = np.random.rand(*in_shape)
 #
-#    p = QuadraticPrior(in_shape, np, "cpu")
+#    p = LogCoshPrior(in_shape, np, "cpu", delta=0.1)
 #
 #    x2 = x.copy()
 #
 #    eps = 1e-6
 #
-#    i0 = 0
-#    i1 = 0
+#    i0 = 2
+#    i1 = 1
 #
 #    x2[i0, i1] += eps
 #
