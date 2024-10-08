@@ -14,6 +14,7 @@ import array_api_compat.numpy as np
 import matplotlib.pyplot as plt
 
 from utils_data import bw_pet_phantom
+from utils_functions import NegPoissonLogL, SmoothFunction
 
 # choose a device (CPU or CUDA GPU)
 if "numpy" in xp.__name__:
@@ -175,6 +176,8 @@ res_model_recon = parallelproj.GaussianFilterOperator(
 # compose all 3 operators into a single linear operator
 pet_lin_op_recon = parallelproj.CompositeLinearOperator((att_op, proj, res_model_recon))
 
+# setup the negative poisson logL object
+cost_fct: SmoothFunction = NegPoissonLogL(y, pet_lin_op_recon, contamination)
 
 # initialize x
 x = xp.ones(pet_lin_op_recon.in_shape, dtype=xp.float32, device=dev)
@@ -185,10 +188,8 @@ adjoint_ones = pet_lin_op_recon.adjoint(
 
 for i in range(num_mlem_iter):
     print(f"MLEM iteration {(i + 1):03} / {num_mlem_iter:03}", end="\r")
-    ybar = pet_lin_op_recon(x) + contamination
-    r = y / ybar
-    z = pet_lin_op_recon.adjoint(r)
-    x *= z / adjoint_ones
+    step = x / adjoint_ones
+    x -= step * cost_fct.gradient(x)
 
 # %%
 # post smooth the MLEM reconstruction
