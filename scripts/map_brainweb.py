@@ -13,7 +13,13 @@ import array_api_compat.numpy as np
 import matplotlib.pyplot as plt
 
 from utils_data import bw_pet_phantom
-from utils_functions import NegPoissonLogL, SmoothFunction, QuadraticPrior, LogCoshPrior
+from utils_functions import (
+    NegPoissonLogL,
+    SmoothFunction,
+    QuadraticPrior,
+    LogCoshPrior,
+    RelativeDifferencePrior,
+)
 
 from scipy.optimize import fmin_l_bfgs_b
 
@@ -34,18 +40,21 @@ elif "torch" in xp.__name__:
 # %%
 # Input parameters
 
-num_iter_lbfgs = 100
+num_iter_lbfgs = 300
 fwhm_mm_data = 4.5
 fwhm_mm_recon = 4.5
-counts = 1e7
+counts = 3e7
 seed = 1
 prior_type = "logcosh"
 
 if prior_type == "quadratic":
-    betas = [x * (3e6 / counts) for x in [0.00001, 0.0001, 0.001, 0.01]]
+    betas = [x * (3e6 / counts) ** 1.5 for x in [0.00001, 0.0001, 0.001, 0.01, 0.1]]
 elif prior_type == "logcosh":
-    betas = [0.00001, 0.0001, 0.001, 0.01]
+    betas = [0.00001, 0.0001, 0.001, 0.01, 0.1]
     delta_rel = 0.01
+elif prior_type == "rdp":
+    betas = [0.0003, 0.003, 0.03, 0.3, 3.0]
+    gamma = 2.0
 else:
     raise ValueError(f"Invalid prior type {prior_type}")
 
@@ -198,6 +207,10 @@ elif prior_type == "logcosh":
     prior: SmoothFunction = LogCoshPrior(
         pet_lin_op_recon.in_shape, xp, dev, delta=delta_rel * x_true.max()
     )
+elif prior_type == "rdp":
+    prior: SmoothFunction = RelativeDifferencePrior(
+        pet_lin_op_recon.in_shape, xp, dev, gamma=gamma, eps=(1e-3) * x_true.max()
+    )
 else:
     raise ValueError(f"Invalid prior type {prior_type}")
 
@@ -221,6 +234,7 @@ for i, beta in enumerate(betas):
         bounds=x_init.size * [[0, None]],
         disp=1,
         maxiter=num_iter_lbfgs,
+        factr=10.0,
     )
 
     x = res[0].reshape(pet_lin_op_recon.in_shape)
@@ -267,12 +281,13 @@ for i, x in enumerate(x_map):
     )
 
     ax[0, i + 1].set_title(
-        f"MAP {prior_type} prior $\\beta$ = {betas[i]:.2E}", fontsize="medium"
+        f"MAP {prior_type} prior $\\beta$ = {betas[i]:.1E}", fontsize="medium"
     )
-    ax[1, i + 1].set_title(f"MAP - true image, NRMSE {nrmse[i]:.2f}", fontsize="medium")
+    ax[1, i + 1].set_title(f"MAP - true image, NRMSE {nrmse[i]:.3f}", fontsize="medium")
 
     fig.colorbar(img01, location="bottom", fraction=0.03)
     fig.colorbar(img11, location="bottom", fraction=0.03)
 
+fig.savefig(f"../figs/map_brainweb_{prior_type}_{counts:.2E}.png", dpi=300)
 fig.show()
 plt.show()

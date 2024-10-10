@@ -8,6 +8,42 @@ from typing import TypeAlias
 Array: TypeAlias = np.ndarray
 
 
+def neighbor_difference_and_sum(
+    x: Array, xp: ModuleType, padding: str = "edge"
+) -> tuple[Array, Array]:
+    """get differences and sums with nearest neighbors for an n-dimensional array x
+    using padding (by default in edge mode)
+    a x.ndim*(3,) neighborhood around each element is used
+    """
+    x_padded = xp.pad(x, 1, mode=padding)
+
+    # number of nearest neighbors
+    num_neigh = 3**x.ndim - 1
+
+    # array for differences and sums with nearest neighbors
+    d = xp.zeros((num_neigh,) + x.shape, dtype=x.dtype)
+    s = xp.zeros((num_neigh,) + x.shape, dtype=x.dtype)
+
+    for i, ind in enumerate(xp.ndindex(x.ndim * (3,))):
+        if i != (num_neigh // 2):
+            sl = []
+            for j in ind:
+                if j - 2 < 0:
+                    sl.append(slice(j, j - 2))
+                else:
+                    sl.append(slice(j, None))
+            sl = tuple(sl)
+
+            if i < num_neigh // 2:
+                d[i, ...] = x - x_padded[sl]
+                s[i, ...] = x + x_padded[sl]
+            else:
+                d[i - 1, ...] = x - x_padded[sl]
+                s[i - 1, ...] = x + x_padded[sl]
+
+    return d, s
+
+
 def neighbor_difference(x: Array, xp: ModuleType, padding: str = "edge") -> Array:
     """get differences with nearest neighbors for an n-dimensional array x
     using padding (by default in edge mode)
@@ -161,14 +197,54 @@ class LogCoshPrior(SmoothFunction):
         return 2 * self.xp.sum(self.xp.tanh(s), axis=0)
 
 
+class RelativeDifferencePrior(SmoothFunction):
+    def __init__(
+        self,
+        in_shape: tuple[int, ...],
+        xp: ModuleType,
+        dev: str,
+        eps: float | None = None,
+        gamma: float = 2.0,
+    ) -> None:
+
+        if eps is None:
+            self._eps = xp.finfo(xp.float64).eps
+        else:
+            self._eps = eps
+
+        self._gamma = gamma
+
+        super().__init__(in_shape=in_shape, xp=xp, dev=dev)
+
+    def _call(self, x: Array) -> float:
+
+        if float(self.xp.min(x)) < 0:
+            return self.xp.inf
+
+        d, s = neighbor_difference_and_sum(x, self.xp)
+        phi = s + self._gamma * self.xp.abs(d) + self._eps
+
+        tmp = (d**2) / phi
+
+        return 0.5 * float(self.xp.sum(tmp))
+
+    def _gradient(self, x: Array) -> Array:
+        d, s = neighbor_difference_and_sum(x, self.xp)
+        phi = s + self._gamma * self.xp.abs(d) + self._eps
+
+        tmp = d * (2 * phi - (d + self._gamma * self.xp.abs(d))) / (phi**2)
+
+        return tmp.sum(axis=0)
+
+
 # if __name__ == "__main__":
 #    import array_api_compat.numpy as np
 #
-#    in_shape = (5, 6)
+#    inshape = (5, 6)
 #    np.random.seed(1)
-#    x = np.random.rand(*in_shape)
+#    x = np.random.rand(*inshape)
 #
-#    p = LogCoshPrior(in_shape, np, "cpu", delta=0.1)
+#    p = RelativeDifferencePrior(inshape, np, "cpu", gamma=2.0, eps=0.01)
 #
 #    x2 = x.copy()
 #
