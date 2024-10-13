@@ -56,10 +56,7 @@ In section [](#sec:collimation), the collimator point spread function (PSF) was 
 
 The usual mathematical description of this can be considered as a two step approach:
 
-1.  Assume that the system is perfect: the image of a point source is a point, located on the perpendicular projection line through the point source. Mathematicians would call that “point” in the image a “Dirac impulse”. The image of two or more point sources contains simply two or more Dirac impulses, located at corresponding projection lines.\
-
-
-
+1.  Assume that the system is perfect: the image of a point source is a point, located on the perpendicular projection line through the point source. Mathematicians would call that “point” in the image a “Dirac impulse”. The image of two or more point sources contains simply two or more Dirac impulses, located at corresponding projection lines.
 
     Let {math}`f(x,y)` represent the image value at position {math}`(x,y)`. This image can be regarded as the sum of an infinite number of Dirac impulses {math}`\delta(x,y)`, one at every location {math}`(x,y)`:
 
@@ -349,7 +346,7 @@ To compute the inverse Fourier transform of the ramp filter, it is useful to con
 *The ramp filter can be computed as the difference between a rectangular and a triangular filter*
 :::
 
-Consider the rectangular filter {math}`{\mathbb{R}}(\omega)` of [](#fig:rampapp2): its value equals {math}`W` for frequency ω between {math}`-W` and {math}`W`, and it is zero elsewhere. Its inverse Fourier transform equals:
+Consider the rectangular filter {math}`{\cal R}(\omega)` of [](#fig:rampapp2): its value equals {math}`W` for frequency ω between {math}`-W` and {math}`W`, and it is zero elsewhere. Its inverse Fourier transform equals:
 
 ```{math}
 \begin{align}
@@ -400,8 +397,8 @@ Then it is easy to verify that the convolution of {math}`{\cal R}_2(\omega)` wit
 \end{align}
 ```
 
-Note that the rectangular filters {math}`{\mathbb{R}}_2(\omega)` and 
-{math}`{\mathbb{R}}(\omega)` have a different width and amplitude.
+Note that the rectangular filters {math}`{\cal R}_2(\omega)` and 
+{math}`{\cal R}(\omega)` have a different width and amplitude.
 
 Convolution in the Fourier transform corresponds to a product in the spatial domain, so the inverse Fourier transform of a triangular filter is the square of a sinc function. Therefore, the inverse Fourier transform of the difference between the rectangular and triangular filters, i.e. the ramp filter, equals:
 

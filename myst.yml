@@ -4,7 +4,7 @@ project:
   license:
     code: Apache-2.0
     content: CC-BY-4.0
-  date: 2024-07-29
+  date: 2024-10-13
   id: bf844a96-f2b5-474b-8383-cd34aa72971a
   title: Nuclear Medicine Technology and Techniques
   affiliations:
@@ -37,11 +37,11 @@ project:
     - file: 11_RNT_dosimetry.md
     - file: 12_appendix_one.md
     - file: 13_appendix_two.md
-    - title: Interactive notebooks
-      children:
-        - file: notebooks/simple_plot.ipynb
-        - file: notebooks/animated_plot.ipynb
-        - file: notebooks/DIY_filtered_back_projection.ipynb
+    #- title: Interactive notebooks
+    #  children:
+    #    - file: notebooks/simple_plot.ipynb
+    #    - file: notebooks/animated_plot.ipynb
+    #    - file: notebooks/DIY_filtered_back_projection.ipynb
 
   export:
     - format: pdf
