@@ -203,7 +203,7 @@ Instead of using a single large crystal, a large detector area can be obtained b
 Photomultipliers are expensive, so the manufacturing cost can be reduced by a more efficient use of the PMT’s. 
 [](#fig:multicrystal) shows a typical design, where a matrix of 64 (or more) crystals is connected to only four multipliers. The transparent block between the crystals and the PMT is called the *light guide*. It guides the light towards the PMT’s in such a way that the PMT amplitude changes monotonically with distance to the scintillating crystal. Thus, the relative amplitudes of the four PMT-outputs allow to compute in which crystal the scintillation occurred. For PET, the crystals have typically a cross section of about 4mm × 4 mm, and they are about 2 cm long.
 
-In a single crystal design, all PMT’s contribute to the detection of a single scintillation. If two photons happen to hit the crystal simultaneously, both 2scintillations will be combined in the calculations and the resulting energy and position will be wrong! Thus, the maximum count rate is limited by the decay time of the scintillation event. In a multi-crystal design, many modules can work in parallel, so count rates can be much higher than in the single crystal design. Count rates tend to be much higher in PET than in SPECT or planar single photon imaging (see below). That is why most PET-cameras are using the multicrystal design, and gamma cameras are mostly single crystal detectors. However, single crystal PET systems and multi-crystal gamma cameras exist as well.
+In a single crystal design, all PMT’s contribute to the detection of a single scintillation. If two photons happen to hit the crystal simultaneously, both scintillations will be combined in the calculations and the resulting energy and position will be wrong! Thus, the maximum count rate is limited by the decay time of the scintillation event. In a multi-crystal design, many modules can work in parallel, so count rates can be much higher than in the single crystal design. Count rates tend to be much higher in PET than in SPECT or planar single photon imaging (see below). That is why most PET-cameras are using the multicrystal design, and gamma cameras are mostly single crystal detectors. However, single crystal PET systems and multi-crystal gamma cameras exist as well.
 
 (sec:resolution)=
 ## Resolution
@@ -228,7 +228,7 @@ If we plot all the measurements in a histogram, we will see the distribution. Us
 *The full width at half max of a probability distribution*
 :::
 
-Position resolution of a scintillation detector has a FWHM of 3 to 4 mm. Energy resolution is about 10% FWHM (so 14 keV for a 140 keV tracer) in NaI(Tl) cameras, about 20% FWHM (about 130 keV at 511 keV) or worse in BGO PET-systems, and about 15% FWHM in LSO and GSO PET-systems.
+Position resolution of a scintillation detector has a FWHM of 3 to 4 mm. Energy resolution is about 10% FWHM at 140 keV in NaI(Tl) cameras, about 12% FWHM at 511 keV in BGO PET-systems, and about 10% FWHM in LSO and LYSO PET-systems.
 
 (sec:storing_data)=
 ## Storing the data
@@ -521,8 +521,8 @@ Finally, we can estimate the sensitivity of a complete PET system consisting of 
 \mbox{PETsens}_{x=0} = \frac{2 \pi d R}{ 4 \pi R^2} = \frac{d}{2R}
 ```
 
-This is the maximum sensitivity, obtained for {math}`x = 0`. The average over {math}`=
--d/2 \ldots d/2` is half that value, since in the center of the PET, the sensitivity varies linearly between the maximum and zero:
+This is the maximum sensitivity, obtained for {math}`x = 0`. The average over {math}`=-d/2 \ldots d/2` 
+is half that value, since in the center of the PET, the sensitivity varies linearly between the maximum and zero:
 
 ```{math}
 :label: eq:petsens
@@ -725,7 +725,7 @@ We only care about the influence of the design parameters, so we ignore all cons
 
 For **scatters** the situation is very similar, except for two issues: (1) the probability for a scatter event to occur depends on the attenuating material and (2), the combined photon path is not a straight line but a broken one.
 
-Consider a source with activity λ emitting photons at {math}`x = 0` along the {math}`x`-axis, in a material met linear attenuation coefficient μ that covers the interval {math}`x \in [-r, r]`. Then the probability of a photon arriving at 
+Consider a source with activity λ emitting photons at {math}`x = 0` along the {math}`x`-axis, in a material with linear attenuation coefficient μ that covers the interval {math}`x \in [-r, r]`. Then the probability of a photon arriving at 
 {math}`x` is proportional to {math}`\lambda e^{- \mu x}`, and the probability that it scatters there is proportional to 
 {math}`\lambda e^{- \mu x} \mu \; dx`. 
 The probability that this scattered photon will not be attenuated is determined by how much material it is propagating through,
@@ -887,7 +887,7 @@ Since not all unwanted photons can be rejected, an additional correction may be 
 
 % ----------------------
 
-Just like the gamma camera, the PET camera uses a primary energy window to reject photons with an energy that is clearly different from 511 keV. However, the energy resolution of current PET systems is poorer than that of the gamma camera (15{math}`\ldots`20%). Unfortunately, with poorer energy resolution, scatter correction based on an additional energy window is less accurate. The reason is that the center of the scatter window C2 has to be shifted farther away from the primary energy peak, here 511 keV. Hence, the photons in that window have lost more energy, implying that they have been scattered over larger angles. Consequently, they are a poorer estimate of the scatter inside the primary window, which has been scattered over smaller angles.
+Just like the gamma camera, the PET camera uses a primary energy window to reject photons with an energy that is clearly different from 511 keV. However, the energy resolution of current PET systems is poorer than that of the gamma camera (ca 10%). Unfortunately, with poorer energy resolution, scatter correction based on an additional energy window is less accurate. The reason is that the center of the scatter window C2 has to be shifted farther away from the primary energy peak, here 511 keV. Hence, the photons in that window have lost more energy, implying that they have been scattered over larger angles. Consequently, they are a poorer estimate of the scatter inside the primary window, which has been scattered over smaller angles.
 
 For that reason, PET systems use a different approach to scatter correction. As will be seen in chapter [](06_transmission_scan.md), PET scanners are capable of measuring the attenuation coefficients of the patient body. This can be used to calculate an estimate of the Compton scatter contribution, if an estimate of the tracer distribution is available, and if the characteristics of the PET system are known. Such computations are done with Monte Carlo simulation. The simulator software “emits” photons in a similar way as nature does: more photons are emitted where more activity is present, and the photons are emitted in random (pseudo-random in the software) directions. In a similar way, photon-electron interactions are simulated, and each photon is followed until it is detected or lost for detection (e.g. because it flies in the wrong direction). This must be repeated for a sufficient amount of photons, in order to generate a reasonable estimate of the scatter contribution. Various clever tricks have been invented to accelerate the computations, such that the whole procedure can be done in a few minutes.
 
@@ -1122,8 +1122,9 @@ Rearranging this to obtain {math}`R_2` as a function of {math}`R_1` results in
 R_2 = \frac{R_1}{1 + R_1 \tau_2}.
 ```
 
-This function is monotonically increasing with upper limit {math}`1 /
-\tau_2` (as you would expect: this is the number of intervals of length {math}`\tau_2` in one second). Consequently, the electronics is non-paralyzable. You cannot paralyze it, but you can saturate it: if you put in too much data, it simply performs at maximum speed ignoring all the rest.
+This function is monotonically increasing with upper limit {math}`1 /\tau_2` 
+(as you would expect: this is the number of intervals of length {math}`\tau_2` in one second). Consequently, the electronics is non-paralyzable. 
+You cannot paralyze it, but you can saturate it: if you put in too much data, it simply performs at maximum speed ignoring all the rest.
 
 (effective-dead-time)=
 ### Effective dead time
@@ -1136,8 +1137,8 @@ Combining [](#eq:deadtime_front) and [](#eq:deadtime_proc) tells us the acceptan
 R_2 = \frac{R_0 e^{-R_0 \tau_1}}{ 1 + R_0 e^{-R_0 \tau_1} \tau_2}.
 ```
 
-If the count rates are small compared to the dead times (such that {math}`R_x
-\tau_y` is small), we can introduce an approximation to make the expression simpler. The approximation is based on the following relations, which are acceptable if {math}`x` is small:
+If the count rates are small compared to the dead times (such that {math}`R_x \tau_y` is small), 
+we can introduce an approximation to make the expression simpler. The approximation is based on the following relations, which are acceptable if {math}`x` is small:
 
 ```{math}
 \begin{align}

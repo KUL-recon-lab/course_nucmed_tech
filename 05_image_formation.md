@@ -331,7 +331,7 @@ The ramp filter is defined as the sequence of 1D Fourier transform, multiplicati
                   \otimes q(s, \theta) \right),
 ```
 
-where {math}`\otimes` denotes convolution. This convolution filter is obtained by taking the inverse Fourier transform of the ramp filter, which is done in appendix [](#app:ramp). The ramp filter and the corresponding convolution mask are shown in [](#fig:rampfilter).
+where {math}`\otimes` denotes convolution. This convolution filter is obtained by taking the inverse Fourier transform of the ramp filter, which is done in appendix 1 "[](#app:ramp)". The ramp filter and the corresponding convolution mask are shown in [](#fig:rampfilter).
 
 One can regard the ramp filter as a high pass filter which is designed to undo the blurring caused by backprojecting the projection, where the blurring mask is the point spread function computed in section [](#sec:backprojection).
 
@@ -480,7 +480,7 @@ Since we can compute the first derivative (the gradient), many algorithms can be
 :label: eq:jnmlgrad
 
 \frac{\partial L}{\partial \lambda_j} = \sum_i c_{ij} \left(
-      \frac{q_i}{\sum_k c_{ik} \lambda_k} - 1 \right) = 0, \forall i = 1,I.
+      \frac{q_i}{\sum_k c_{ik} \lambda_k} - 1 \right) = 0, \forall j.
 ```
 
 This produces a huge set of equations, and analytical solution is not feasible.
@@ -818,12 +818,14 @@ In practice, the exact rebinning algorithm is not used. Instead, one only applie
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The speed of light is c = 30 cm/ns. Suppose that a point source is put exactly in the center between two PET detectors, which are connected to coincidence electronics. If two photons from the same annihilation are detected, then they must have arrived simultaneously in the respective detectors. However, the timing will be different if the source is moved 15 cm towards one detector. The photon will arrive in that detector 0.5 ns earlier, the other photon will arrive in the other detector 0.5 ns later. Consequently, if the electronics can measure the difference in arrival times {math}`\Delta t`, then the position of the annihilation along the projection line can be deduced: {math}`\Delta
-R = c \Delta t / 2`, where {math}`\Delta R` is the distance to the center. Using this principle in PET is called time-of-flight PET or TOF-PET.
+The speed of light is c = 30 cm/ns. Suppose that a point source is put exactly in the center between two PET detectors, which are connected to coincidence electronics. If two photons from the same annihilation are detected, then they must have arrived simultaneously in the respective detectors. However, the timing will be different if the source is moved 15 cm towards one detector. The photon will arrive in that detector 0.5 ns earlier, the other photon will arrive in the other detector 0.5 ns later. Consequently, if the electronics can measure the difference in arrival times 
+{math}`\Delta t`, then the position of the annihilation along the projection line can be deduced: 
+{math}`\Delta R = c \Delta t / 2`, where {math}`\Delta R` is the distance to the center. 
+Using this principle in PET is called time-of-flight PET or TOF-PET.
 
 In the eighties, TOF-PET scanners were built, but their performance was disappointing. To obtain a reasonable TOF resolution, one needs to measure the arrival time very accurately. Consequently, crystal detectors with a very short scintillation time must be used. Such crystals were available (e.g. CsF), but these fast crystals all had a poor stopping power (low attenuation coefficient) at 511 keV. Consequently, the gain obtained from the TOF-principle was more than offset by the loss due to the decreased detection sensitivity. For that reason, TOF was abandoned, and nearly all commercial PET scanners were built using BGO, which has a very high stopping power but a long scintillation time (see [](#tab:crystals)).
 
-More recently, new scintillation crystals have been found, which combine high stopping power with fast scintillation decay ([](#tab:crystals)). In current scanners, LSO (or LYSO) is mostly used. And since the eighties, the electronics have become faster as well. The current commercial TOF-PET systems have a TOF resolution ranging from around 500 ps (7.5 cm) for older systems to around 200 ps for new systems (new in 2020).
+More recently, new scintillation crystals have been found, which combine high stopping power with fast scintillation decay ([](#tab:crystals)). In current scanners, LSO (or LYSO) is mostly used. And since the eighties, the electronics have become faster as well. The current commercial TOF-PET systems have a TOF resolution ranging from around 400 ps (6.0 cm) for older systems to around 200 ps for new systems (new in 2020).
 
 :::{figure} figs/fig_tofsino.png
 :width: 600px
