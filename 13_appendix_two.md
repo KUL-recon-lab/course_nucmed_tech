@@ -224,7 +224,8 @@ We can rework it such that we can exploit the convexity of {math}`t \ln t`:
 \end{align}
 ```
 
-Now we have proved that the GEM-step increases {math}`L`. It still remains to be shown that the algorithm indeed converges towards the maximum likelihood solution. If you want to know really everything about it, you should read the paper by Dempster, Laird and Rubin, “Maximum likelihood from incomplete data via the EM algorithm”, *J R Statist Soc* 1977; 39; 1-38.
+Now we have proved that the GEM-step increases {math}`L`. It still remains to be shown that the algorithm indeed converges towards the maximum likelihood solution. If you want to know really everything about it, you should read the paper by Salvo and Defrise, 
+“A Convergence Proof of MLEM and MLEM-3 With Fixed Background”, *IEEE TMI*, 38 (2019).
 
 (app:bprojproj)=
 # Backprojection of a projection of a point source
