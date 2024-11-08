@@ -72,9 +72,15 @@ def bw_pet_phantom(
 
     brain_seg = np.squeeze(brain_seg)
 
-    pw0 = (512 - brain_seg.shape[0]) // 2
-    pw1 = (512 - brain_seg.shape[1]) // 2
-    pad_width = ((pw0, pw0), (pw1, pw1))
+    if brain_seg.ndim == 2:
+        pw0 = (512 - brain_seg.shape[0]) // 2
+        pw1 = (512 - brain_seg.shape[1]) // 2
+        pad_width = ((pw0, pw0), (pw1, pw1))
+    else:
+        pw0 = (512 - brain_seg.shape[0]) // 2
+        pw1 = (512 - brain_seg.shape[1]) // 2
+        pw2 = (512 - brain_seg.shape[2]) // 2
+        pad_width = ((pw0, pw0), (pw1, pw1), (pw2, pw2))
 
     brain_seg = np.pad(
         brain_seg, pad_width=pad_width, mode="constant", constant_values=0
@@ -86,11 +92,21 @@ def bw_pet_phantom(
     pet_img = np.vectorize(map_func)(brain_seg)
 
     for _ in range(num_downsample):
-        pet_img = pet_img[::2, :] + pet_img[1::2, :]
-        pet_img = pet_img[:, ::2] + pet_img[:, 1::2]
-        pet_img /= 4
-        att_img = att_img[::2, :] + att_img[1::2, :]
-        att_img = att_img[:, ::2] + att_img[:, 1::2]
-        att_img /= 4
+        if pet_img.ndim == 2:
+            pet_img = pet_img[::2, :] + pet_img[1::2, :]
+            pet_img = pet_img[:, ::2] + pet_img[:, 1::2]
+            pet_img /= 4
+            att_img = att_img[::2, :] + att_img[1::2, :]
+            att_img = att_img[:, ::2] + att_img[:, 1::2]
+            att_img /= 4
+        else:
+            pet_img = pet_img[::2, :, :] + pet_img[1::2, :, :]
+            pet_img = pet_img[:, ::2, :] + pet_img[:, 1::2, :]
+            pet_img = pet_img[:, :, ::2] + pet_img[:, :, 1::2]
+            pet_img /= 8
+            att_img = att_img[::2, :, :] + att_img[1::2, :, :]
+            att_img = att_img[:, ::2, :] + att_img[:, 1::2, :]
+            att_img = att_img[:, :, ::2] + att_img[:, :, 1::2]
+            att_img /= 8
 
     return pet_img, att_img
